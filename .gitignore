@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.pytest_cache/
+.venv/
+.DS_Store/
+.idea
+zips/
+results/
+.codex_write_probe
+.codex_patch_probe

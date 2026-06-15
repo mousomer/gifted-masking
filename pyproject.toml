@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gifted-masking"
+version = "0.1.0"
+description = "Modular RL simulations and robustness tooling for gifted masking models."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26,<3",
+]
+
+[project.optional-dependencies]
+plot = [
+  "matplotlib>=3.8,<4",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
