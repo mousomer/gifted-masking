@@ -105,10 +105,26 @@
 - [x] Perform the fresh independent E06 smoke review; it returned
       `FIX_IMPLEMENTATION`, created no GO, and kept standard/qualification
       refused.
-- [ ] Correct the E06 packed-raw fail-open fields identified in
+- [x] Write the second bounded E06 `FIX_IMPLEMENTATION` Codex instruction set,
+      covering complete 55-field raw reconstruction, materialized/parsed
+      adversarial tests, the canonical 13-item report, and fail-closed external
+      verification sealing through the user-owned verification boundary.
+- [x] Correct the E06 packed-raw fail-open fields identified in
       `checkpoints/E06_SOL_SMOKE_REVIEW.md`, add comprehensive adversarial raw
-      tests, complete the canonical 13-item report and provenance seal, rerun
-      user-owned full verification, and repeat independent review.
+      tests, complete the canonical 13-item report, and replace the permissive
+      sealer with independently reconstructed evidence checks while preserving
+      the eight scientific artifacts.
+- [x] Run user-owned E06 round-2 full verification and externally seal the
+      pending package from its strict log/exit evidence without scientific-byte
+      or Git-binding drift; complete the fresh independent smoke review as
+      `FIX_IMPLEMENTATION`.
+- [ ] Implement the Round 2 review correction before any E06 GO: add an exact
+      future-GO-gated five-master standard execution/package path, integrate the
+      frozen Student-t/bootstrap/decision outputs and complete seed maps, and
+      replace the non-conservative materialized validation/RSS projection with
+      a bounded streaming/chunked or exactly measured alternative. Correct the
+      raw sort-order declaration, repeat verification/sealing/review, and keep
+      standard and qualification unexecuted meanwhile.
 - [ ] Replicate M4 ramps across seeds and core ramp speeds under a separately
       reviewed standard GO.
 - [ ] Add and independently adjudicate M4 path-separation, loop-area, control,
@@ -182,3 +198,19 @@
 - [ ] Finalize separate figures and supplementary material.
 - [ ] Deposit code and evidence with a permanent identifier.
 - [ ] Complete the submission checklist.
+
+## E06 second corrective handoff
+
+- [x] Replace partial packed-row validation with complete frozen-row
+  reconstruction and add materialized/parsed-CSV adversarial coverage.
+- [x] Preserve the eight E06 smoke scientific artifacts through two independent
+  fresh-directory regenerations.
+- [x] Add E06 external-sealer synthetic acceptance/rejection coverage and bind
+  focused/deterministic preverification evidence in the pending package.
+- [x] User-owned round-2 repository verification, durable evidence archive,
+  canonical external seal, and fresh independent E06 smoke review completed.
+  The decision is `FIX_IMPLEMENTATION`; no GO was created.
+- [ ] Close the Round 2 standard-dispatch/inference/resource blockers recorded
+  in `checkpoints/E06_ROUND2_SOL_SMOKE_REVIEW.md`, then obtain another user-owned
+  verification, external seal, and fresh independent review. E06 standard and
+  qualification remain refused.

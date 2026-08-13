@@ -77,13 +77,10 @@ so the scientific claims can be tested directly.
     unavailable smoke inference, or nonfinite/numerically inconsistent values.
     E06 uses materialized packed rows; no streaming writer exists, and that
     non-applicability is recorded with the frozen raw/RSS capacity rationale.
-    The 2026-08-13 independent smoke review found that the current packed-raw
-    validator does not yet enforce every frozen identity, seed-map, parameter,
-    traversal, reset, and two-Q continuity field. Derived validation is exact
-    for accepted raw rows but inherits that gap. Standard dispatch therefore
-    remains refused until the complete expected row is reconstructed from the
-    config and semantic seed contract and the canonical 13-item report and
-    provenance seal are complete.
+    The second bounded corrective pass reconstructs every ordered raw field
+    from config and semantic seeds before derived validation. Standard dispatch
+    remains refused: the canonical package is intentionally unsealed pending a
+    new user-owned full verification and a fresh independent smoke review.
 - `src/gifted_masking/plotting/legacy_figures.py`
   - figure generation only, with lazy `matplotlib` imports
 - `src/gifted_masking/repro.py`
@@ -156,3 +153,16 @@ Avoided for now:
 - `AGENTS.md` explicitly requires using `/Users/omer/workspace/venvs/venv314`.
 - The Frontiers article sub-project has an explicit RDS, claim ledger, stage
   gates, and completion criteria without changing model semantics.
+
+## E06 second corrective boundary
+
+E06 reconstructs each packed raw row exclusively from frozen config,
+scenario/path semantics, child index, and semantic segment seeds before it
+accepts materialized or parsed-CSV evidence. The experiment-local external
+sealer first reconstructs full-suite counts/runtimes from a strict full log,
+requires the sole newline-terminated `verification_exit_code=0` record, and
+recomputes config, approval, ordered source fingerprints, Git/dirty binding,
+scientific hashes, focused evidence, and deterministic-regeneration evidence.
+It updates report item 12 and the manifest atomically only after validation;
+it never regenerates scientific artifacts. The canonical package remains
+unsealed until the user-owned round-2 verification supplies that evidence.

@@ -5,7 +5,7 @@ its reward, Q-update, receptivity-update, or random-draw semantics.
 """
 from __future__ import annotations
 
-import csv, hashlib, json, math, platform, resource, subprocess, sys, time
+import csv, hashlib, json, math, platform, re, resource, subprocess, sys, time
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -34,7 +34,7 @@ CANONICAL_CONFIG_SHA256={
 SOURCE_FINGERPRINT_PATHS=(
     "src/gifted_masking/experiments/e06.py","src/gifted_masking/cli.py","src/gifted_masking/core.py","src/gifted_masking/models/m4.py","src/gifted_masking/repro.py",
     "configs/frontiers_article/e06_m4_paths_smoke.json","configs/frontiers_article/e06_m4_paths_standard.json","configs/frontiers_article/e06_m4_hysteresis_qualification.json",
-    "tests/test_article_e06.py","projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md","projects/frontiers_article/E06_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md","pyproject.toml","scripts/verify.sh",
+    "tests/test_article_e06.py","projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md","projects/frontiers_article/E06_SECOND_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md","projects/frontiers_article/E06_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md","projects/frontiers_article/E06_CODEX_INSTRUCTION_SET.md","projects/frontiers_article/runbooks/E06_OPERATIONAL_INSTRUCTIONS.md","projects/frontiers_article/checkpoints/E06_SOL_SMOKE_REVIEW.md","projects/frontiers_article/RDS.md","projects/frontiers_article/STAGE2_EXPERIMENT_SPECIFICATIONS.md","ARCHITECTURE.md","pyproject.toml","scripts/verify.sh",
 )
 
 def _no_duplicates(text: str) -> object:
@@ -51,14 +51,68 @@ def _canon(value: object) -> str:
 def _label(x: float) -> str: return f"{x:.4f}"
 def _sha(path: Path) -> str: return hashlib.sha256(path.read_bytes()).hexdigest()
 def _source_fingerprint(root:Path)->str:
-    digest=hashlib.sha256()
-    for relative in SOURCE_FINGERPRINT_PATHS:
-        path=root/relative; digest.update(relative.encode()); digest.update(b"\0"); digest.update(path.read_bytes()); digest.update(b"\0")
-    return digest.hexdigest()
+    # Hash each source first, then bind the complete ordered path/hash map.  A
+    # later sealer can therefore distinguish path-list drift from file drift.
+    return _source_fingerprint_from_records(_source_records(root))
 def _finite(x: object) -> float:
     y=float(x)
     if not math.isfinite(y): raise ValueError("nonfinite value")
     return y
+
+def _strict_json(text: object) -> object:
+    """Decode compact packed JSON without accepting duplicate keys or NaN."""
+    if not isinstance(text, str):
+        raise ValueError("packed JSON must be a string")
+    try:
+        return json.loads(text, object_pairs_hook=lambda pairs: _duplicate_free_object(pairs),
+                          parse_constant=lambda token: (_ for _ in ()).throw(ValueError(f"invalid JSON constant: {token}")))
+    except (TypeError, json.JSONDecodeError) as exc:
+        raise ValueError("invalid packed JSON") from exc
+
+def _duplicate_free_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON key: {key}")
+        result[key] = value
+    return result
+
+def _strict_int(value: object, *, csv_value: bool) -> int:
+    if csv_value:
+        if not isinstance(value, str) or not re.fullmatch(r"-?(?:0|[1-9][0-9]*)", value):
+            raise ValueError("integer CSV field is not an exact integer")
+        return int(value)
+    if type(value) is not int:
+        raise ValueError("materialized integer field has wrong type")
+    return value
+
+def _strict_float(value: object, *, csv_value: bool) -> float:
+    if csv_value:
+        if not isinstance(value, str) or not value or value.strip()!=value:
+            raise ValueError("float CSV field has wrong type")
+        try: result=float(value)
+        except ValueError as exc: raise ValueError("invalid float CSV field") from exc
+    else:
+        if type(value) is not float:
+            raise ValueError("materialized float field has wrong type")
+        result=value
+    if not math.isfinite(result):
+        raise ValueError("nonfinite numeric field")
+    return result
+
+def _semantic_equal(observed: object, expected: object, *, tolerance: float=1e-12) -> bool:
+    """Typed recursive comparison; booleans never stand in for numeric values."""
+    if type(expected) is int:
+        return type(observed) is int and observed==expected
+    if type(expected) is float:
+        return type(observed) is float and math.isfinite(observed) and math.isclose(observed,expected,rel_tol=0,abs_tol=tolerance)
+    if type(expected) is str:
+        return type(observed) is str and observed==expected
+    if type(expected) is list:
+        return type(observed) is list and len(observed)==len(expected) and all(_semantic_equal(a,b,tolerance=tolerance) for a,b in zip(observed,expected,strict=True))
+    if type(expected) is dict:
+        return type(observed) is dict and list(observed)==list(expected) and all(_semantic_equal(observed[key],value,tolerance=tolerance) for key,value in expected.items())
+    raise TypeError(f"unsupported expected raw type: {type(expected).__name__}")
 
 def load_e06_config(path: Path) -> dict[str, Any]:
     c=_no_duplicates(path.read_text())
@@ -243,38 +297,70 @@ def _family(config:dict[str,Any], s:dict[str,Any], master:int, path:str) -> list
 
 def expected_rows(config:dict[str,Any])->int:
     return sum(len(s["path_types"])*int(config["n"]) for s in config["scenarios"]) * (1 if config["tier"]=="smoke" else len(config.get("master_seeds",[])))
-def validate_e06_raw(rows:list[dict[str,object]],config:dict[str,Any])->None:
-    if len(rows)!=expected_rows(config) or any(list(r)!=RAW_FIELDS for r in rows): raise ValueError("E06 raw schema/cardinality mismatch")
-    expected=[]
-    masters=[int(config["master_seed"])] if config["tier"]=="smoke" else list(config["master_seeds"])
+
+_RAW_JSON_FIELDS=frozenset((
+    "policy_environment_seed_map_json","nominal_km_values_json","actual_km_values_json",
+    "traversal_direction_json","traversal_nominal_km_json","traversal_actual_km_json",
+    "mask_rate_json","mask_count_json","auth_count_json","auth_accept_count_json",
+    "auth_reject_count_json","mean_objective_reward_json","p_start_json","p_end_json",
+    "q_mask_start_json","q_auth_start_json","q_mask_end_json","q_auth_end_json",
+    "bounds_violation_count_json",
+))
+_RAW_INT_FIELDS=frozenset(("master_seed","child_id","n","segment_horizon","total_segments","final_window_start","final_window_end"))
+_RAW_FLOAT_FIELDS=frozenset(("final_window_fraction","p0","p_min","p_max","ka","kr","b","a","c","r","alpha","tau","lambda","q0","final_p","final_q_mask","final_q_auth"))
+_EXPECTED_RAW_CACHE: dict[str, tuple[dict[str,object],...]] = {}
+
+def _expected_raw_rows(config:dict[str,Any])->list[dict[str,object]]:
+    """Rebuild ordered frozen rows without reading a candidate row.
+
+    This boundary intentionally starts from the complete approved config and
+    semantic segment seed derivation.  ``_family`` owns the maintained-M4
+    replay and never receives candidate identity, seeds, parameters, traversal,
+    reset state, or Q-continuity values.
+    """
+    _validate_frozen_e06_config(config)
+    cache_key=_canon(config)
+    cached=_EXPECTED_RAW_CACHE.get(cache_key)
+    if cached is not None:
+        # Deep-copying the authoritative baseline prevents a caller from
+        # mutating the cached reconstruction between validation calls.
+        return [dict(row) for row in cached]
+    masters=[int(config["master_seed"])] if config["tier"]=="smoke" else [int(x) for x in config["master_seeds"]]
+    rebuilt=[]
     for master in masters:
-        for s in config["scenarios"]:
-            for path in s["path_types"]:
-                expected.extend((master,s["id"],path,child) for child in range(int(config["n"])))
-    seen=set()
-    for r,identity in zip(rows,expected,strict=True):
-        if (int(r["master_seed"]),str(r["scenario_id"]),str(r["path_type"]),int(r["child_id"]))!=identity or identity in seen: raise ValueError("E06 raw deterministic identity/order mismatch")
-        seen.add(identity)
-        if r["run_id"]!=config["run_id"] or r["experiment_id"]!="E06" or r["tier"]!=config["tier"] or r["model"]!="M4" or r["component"]!="primary": raise ValueError("E06 frozen row identity mismatch")
-        h=int(r["segment_horizon"]); w=int(math.ceil(h*float(r["final_window_fraction"])))
-        arrays={k:json.loads(str(r[k])) for k in ("traversal_direction_json","traversal_nominal_km_json","traversal_actual_km_json","mask_rate_json","mask_count_json","auth_count_json","auth_accept_count_json","auth_reject_count_json","mean_objective_reward_json","p_start_json","p_end_json","q_mask_start_json","q_auth_start_json","q_mask_end_json","q_auth_end_json","bounds_violation_count_json")}
-        lens={len(v) for v in arrays.values()}
-        if lens!={int(r["total_segments"])}: raise ValueError("packed E06 array lengths mismatch")
-        for i in range(int(r["total_segments"])):
-            mc,ac,aa,ar=(int(arrays[k][i]) for k in ("mask_count_json","auth_count_json","auth_accept_count_json","auth_reject_count_json"))
-            if min(mc,ac,aa,ar)<0 or mc+ac!=w or aa+ar!=ac or not math.isclose(float(arrays["mask_rate_json"][i]),mc/w,abs_tol=1e-12): raise ValueError("E06 count/rate mismatch")
-            reconstructed=(mc*(float(r["b"])-float(r["c"]))+aa*(float(r["b"])+float(r["a"]))+ar*(float(r["a"])-float(r["r"])))/w
-            if not math.isclose(float(arrays["mean_objective_reward_json"][i]),reconstructed,rel_tol=0,abs_tol=1e-12): raise ValueError("E06 objective reward reconstruction mismatch")
-            numeric=[arrays[k][i] for k in arrays if k!="traversal_direction_json"]
-            if not all(math.isfinite(float(x)) for x in numeric): raise ValueError("E06 packed field is nonfinite")
-            if not (float(r["p_min"])<=float(arrays["p_end_json"][i])<=float(r["p_max"])): raise ValueError("E06 bounds mismatch")
-            if int(arrays["bounds_violation_count_json"][i])!=0: raise ValueError("E06 bounds violation")
-        if r["path_type"] in {"reversal_only","cold_start"} and any(abs(float(x)-float(r["p0"]))>1e-12 for x in arrays["p_start_json"]): raise ValueError("reset p boundary failed")
-        if r["path_type"] in {"reversal_only","cold_start"} and (any(abs(float(x)-float(r["q0"]))>1e-12 for x in arrays["q_mask_start_json"]) or any(abs(float(x)-float(r["q0"]))>1e-12 for x in arrays["q_auth_start_json"])): raise ValueError("reset Q boundary failed")
-        if r["path_type"] in {"inherited_loop","km_disabled_inherited_loop"}:
-            if any(not math.isclose(float(a),float(b),abs_tol=1e-12) for a,b in zip(arrays["p_end_json"][:-1],arrays["p_start_json"][1:])): raise ValueError("inherited p continuity failed")
-            if any(not math.isclose(float(a),float(b),abs_tol=1e-12) for a,b in zip(arrays["q_mask_end_json"][:-1],arrays["q_mask_start_json"][1:])): raise ValueError("inherited Q continuity failed")
-        if not math.isclose(float(r["final_p"]),float(arrays["p_end_json"][-1]),abs_tol=1e-12) or not math.isclose(float(r["final_q_mask"]),float(arrays["q_mask_end_json"][-1]),abs_tol=1e-12) or not math.isclose(float(r["final_q_auth"]),float(arrays["q_auth_end_json"][-1]),abs_tol=1e-12): raise ValueError("E06 final state does not equal packed segment state")
+        for scenario in config["scenarios"]:
+            for path in scenario["path_types"]:
+                rebuilt.extend(_family(config,scenario,master,path))
+    _EXPECTED_RAW_CACHE[cache_key]=tuple(dict(row) for row in rebuilt)
+    return rebuilt
+
+def _canonical_candidate_raw_value(field:str, value:object, expected:object)->object:
+    """Accept exact materialized types or production CSV text, never coercion."""
+    csv_value=isinstance(value,str) and field not in {"run_id","experiment_id","tier","model","component","scenario_id","scenario_role","path_type","matched_family_id","child_seed","rng_unit","km_mode"}
+    if field in _RAW_JSON_FIELDS:
+        return _strict_json(value)
+    if field in _RAW_INT_FIELDS:
+        return _strict_int(value,csv_value=csv_value)
+    if field in _RAW_FLOAT_FIELDS:
+        return _strict_float(value,csv_value=csv_value)
+    if type(expected) is str:
+        if type(value) is not str:
+            raise ValueError(f"raw string field {field} has wrong type")
+        return value
+    raise AssertionError(f"unclassified raw field: {field}")
+
+def validate_e06_raw(rows:list[dict[str,object]],config:dict[str,Any])->None:
+    if type(rows) is not list or len(rows)!=expected_rows(config):
+        raise ValueError("E06 raw schema/cardinality mismatch")
+    expected_rows_from_config=_expected_raw_rows(config)
+    for index,(candidate,expected) in enumerate(zip(rows,expected_rows_from_config,strict=True)):
+        if type(candidate) is not dict or list(candidate)!=RAW_FIELDS or any(value is None for value in candidate.values()):
+            raise ValueError(f"E06 raw schema/overflow mismatch at row {index}")
+        for field in RAW_FIELDS:
+            observed=_canonical_candidate_raw_value(field,candidate[field],expected[field])
+            wanted=_strict_json(expected[field]) if field in _RAW_JSON_FIELDS else expected[field]
+            if not _semantic_equal(observed,wanted):
+                raise ValueError(f"E06 raw frozen reconstruction mismatch at row {index}, field {field}")
 
 def _derive_tables_from_validated_raw(rows:list[dict[str,object]],config:dict[str,Any])->tuple[list[dict[str,object]],list[dict[str,object]],list[dict[str,object]],list[dict[str,object]],list[dict[str,object]]]:
     """Pure E06 derived reconstruction; callers must validate packed raw rows first."""
@@ -398,14 +484,319 @@ def run_e06_experiment(config_path:Path, output_dir:Path|None=None, approval_rec
     phase={"simulation":simulation_seconds,"serialization":serialization_seconds,"derived":derived_seconds,"figure":figure_seconds,"startup":0.0}
     proj=phase_separated_core_projection(c,phase,raw_bytes,total_bytes,_rss(),root)
     qratio=660000000/345600; qual={"rows":30000,"learner_steps":660000000,"method":"separate_non_authorizing_projection","seconds":simulation_seconds*qratio+serialization_seconds*(30000/320)+derived_seconds*6+figure_seconds,"raw_mib":raw_bytes*(30000/320)/1024**2,"total_mib":total_bytes*(30000/320)/1024**2,"peak_rss_mib":_rss()*1.5,"refused":True}
-    out["report"].write_text(f"# E06 diagnostic smoke checkpoint\n\n1. Run `{rid}` executed only the approved baseline smoke: 320 packed rows and 345,600 learner-steps.\n2. The local diagnostic kernel replays maintained M4 softmax, acceptance draw, objective reward, selected-Q update, then post-reward receptivity update; parity is tested.\n3. Real final-window action/outcome/reward counts, reset/continuity, strict raw validation, and raw-to-derived reconstruction passed.\n4. Loop/transition outputs are diagnostic only (`decision_eligible=false`); no C8/C9 decision or hysteresis claim.\n5. Phase-separated resources: wall={elapsed:.3f}s; raw={raw_bytes} bytes; RSS={_rss():.3f} MiB. Core projection={_canon(proj)}. Qualification projection={_canon(qual)}.\n6. Warnings: none.\n7. Status: `pending_user_full_verification`. No standard or qualification run occurred.\n")
+    out["report"].write_text(f"""# E06 canonical diagnostic-smoke report
+
+1. **Identity and authorization.** Run `{rid}` is the frozen E06 smoke under `{config_path}`; only smoke execution is authorized.
+2. **Frozen design.** It contains 320 packed rows, n=64, 120-step segments, a ceiling final window of steps 96--119, five km values, and 345,600 learner steps.
+3. **Maintained M4 parity.** The E06 recorder uses maintained softmax, one acceptance draw per learner, objective reward, selected-Q update, then clipped receptivity update; replay parity is required.
+4. **Packed diagnostics.** Final-window mask/authentic/accept/reject counts and objective rewards reconcile from the raw rows.
+5. **Seeds and state.** Semantic segment seeds, matched reuse/isolation, traversal, p continuity, both-Q continuity, and reset controls are frozen and validated.
+6. **Derived outputs.** Cells, paths, loops, transitions, and effects reconstruct from raw; smoke is decision-ineligible and smoke intervals are unavailable.
+7. **Fail-closed validation.** Materialized and production parsed-CSV raw validation compare the complete reconstructed 55-field rows; adversarial coverage is recorded in the preverification index.
+8. **Determinism.** Fresh-process regenerations must byte-match every scientific artifact; their comparison evidence is recorded outside this report.
+9. **Resources.** Wall={elapsed:.3f}s; raw={raw_bytes} bytes; RSS={_rss():.3f} MiB. Frozen core projection={_canon(proj)}.
+10. **Qualification.** Qualification projection={_canon(qual)}. Qualification is unconditionally refused.
+11. **Provenance.** The manifest binds normalized config, approval, source fingerprints, Git state, schema, seed maps, and artifact hashes.
+12. **Verification status.** `pending_user_full_verification`: historical user verification does not seal this corrected source; a new user-owned full verification is required.
+13. **Warnings and next gate.** No C8/C9 support, bistability, or hysteresis claim is made. Standard and qualification remain unexecuted/refused; the next gate is user-owned full verification followed by fresh independent review.
+""")
     status=subprocess.run(["git","-C",str(root),"status","--porcelain"],capture_output=True,text=True).stdout
     hashes={k:{"sha256":_sha(v),"bytes":v.stat().st_size} for k,v in out.items() if k!="manifest"}
-    manifest={"run_id":rid,"experiment_id":"E06","tier":"smoke","config_path":str(config_path),"normalized_config":_canon(c),"config_sha256":hashlib.sha256(_canon(c).encode()).hexdigest(),"source_fingerprint_sha256":_source_fingerprint(root),"authorization":{"approval_path":str(root/"projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md"),"approval_sha256":_sha(root/"projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md"),"standard_execution":"refused","qualification_execution":"refused"},"parameters":c,"command":f"PYTHONPATH=src {sys.executable} -m gifted_masking.cli article-experiment --config {config_path} --output-dir {output_dir or root/'results'}","environment":{"python":sys.version,"platform":platform.platform(),"numpy":np.__version__,"matplotlib":__import__('matplotlib').__version__},"git":{"dirty":bool(status),"porcelain_sha256":hashlib.sha256(status.encode()).hexdigest()},"seed_hierarchy":{"segment_derivation":"SHA-256 semantic ID -> SeedSequence([master,6,*little_endian_words]).spawn(1)","bootstrap_derivation":"SHA-256 scenario/response/target ID -> SeedSequence([bootstrap_seed,60,*little_endian_words]).spawn(1)"},"schemas":{"raw":RAW_FIELDS,"cell":CELL_FIELDS,"path":PATH_FIELDS,"loop":LOOP_FIELDS,"transition":TRANSITION_FIELDS,"effect":EFFECT_FIELDS,"sort_keys":["master_seed","scenario_id","path_type","child_id"]},"derived_validation":{"status":"passed","interface":"validate_e06_derived(raw_rows,cells,paths,loops,transitions,effects,config)","materialized":"passed","post_artifact_parsed_csv":"passed","tolerance":1e-12,"streaming_validation":"not_applicable_materialized_packed_rows","streaming_reason":"projected raw and peak RSS remain within frozen limits; no streaming writer exists"},"outputs":{k:{"path":str(v),"rows":len(rows) if k=="raw" else ({"cells":len(cells),"paths":len(paths),"loops":len(loops),"transitions":len(transitions),"effects":len(effects)}.get(k))} for k,v in out.items()},"output_hashes":hashes,"timing":{"wall_seconds":elapsed,"peak_rss_mib":_rss(),"raw_bytes":raw_bytes,"phase_seconds":phase},"standard_projection":proj,"qualification_projection":qual,"warnings":[],"verification":{"status":"pending_user_full_verification","full_verification_command":"MPLCONFIGDIR=/private/tmp/e06_user_verify ./scripts/verify.sh"},"timestamps":{"start_utc":begun,"end_utc":datetime.now(timezone.utc).isoformat()}}
+    git_head=subprocess.run(["git","-C",str(root),"rev-parse","HEAD"],capture_output=True,text=True).stdout.strip()
+    git_branch=subprocess.run(["git","-C",str(root),"branch","--show-current"],capture_output=True,text=True).stdout.strip()
+    seed_maps={f"{row['scenario_id']}|{row['path_type']}":_strict_json(row["policy_environment_seed_map_json"]) for row in rows if row["child_id"]==0}
+    output_records={}
+    output_rows={"cells":len(cells),"paths":len(paths),"loops":len(loops),"transitions":len(transitions),"effects":len(effects)}
+    for name,path in out.items():
+        if name!="manifest": output_records[name]={"path":str(path),"rows":len(rows) if name=="raw" else output_rows.get(name),"bytes":path.stat().st_size,"sha256":_sha(path)}
+    source_records=_source_records(root)
+    scientific_artifacts={name:output_records[name] for name in SCIENTIFIC_OUTPUT_NAMES}
+    manifest={"run_id":rid,"experiment_id":"E06","tier":"smoke","config_path":str(config_path),"normalized_config":_canon(c),"config_sha256":hashlib.sha256(_canon(c).encode()).hexdigest(),"source_fingerprint_paths":list(SOURCE_FINGERPRINT_PATHS),"source_fingerprints":source_records,"source_fingerprint_sha256":_source_fingerprint_from_records(source_records),"authorization":{"approval_path":str(root/"projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md"),"approval_sha256":_sha(root/"projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md"),"standard_execution":"refused","qualification_execution":"refused"},"parameters":c,"command":f"PYTHONPATH=src {sys.executable} -m gifted_masking.cli article-experiment --config {config_path} --output-dir {output_dir or root/'results'}","environment":{"python":sys.version,"platform":platform.platform(),"numpy":np.__version__,"matplotlib":__import__('matplotlib').__version__},"git":{"head":git_head,"branch":git_branch,"dirty":bool(status),"porcelain_sha256":hashlib.sha256(status.encode()).hexdigest()},"seed_hierarchy":{"segment_derivation":"SHA-256 semantic ID -> SeedSequence([master,6,*little_endian_words]).spawn(1)","bootstrap_derivation":"SHA-256 scenario/response/target ID -> SeedSequence([bootstrap_seed,60,*little_endian_words]).spawn(1)","complete_segment_seed_maps":seed_maps},"schemas":{"raw":RAW_FIELDS,"cell":CELL_FIELDS,"path":PATH_FIELDS,"loop":LOOP_FIELDS,"transition":TRANSITION_FIELDS,"effect":EFFECT_FIELDS,"sort_keys":["master_seed","scenario_id","path_type","child_id"]},"derived_validation":{"status":"passed","interface":"validate_e06_derived(raw_rows,cells,paths,loops,transitions,effects,config)","materialized":"passed","post_artifact_parsed_csv":"passed","tolerance":1e-12,"streaming_validation":"not_applicable_materialized_packed_rows","streaming_reason":"projected raw and peak RSS remain within frozen limits; no streaming writer exists"},"outputs":output_records,"scientific_artifacts":scientific_artifacts,"output_hashes":hashes,"timing":{"wall_seconds":elapsed,"peak_rss_mib":_rss(),"raw_bytes":raw_bytes,"phase_seconds":phase},"standard_projection":proj,"qualification_projection":qual,"focused_verification":{"status":"pending_external_focused_logs"},"deterministic_regeneration":{"status":"pending_external_fresh_runs"},"warnings":[],"verification":{"status":"pending_user_full_verification","full_verification_command":"MPLCONFIGDIR=/private/tmp/e06_user_verify_round2 ./scripts/verify.sh","seal_state":"unsealed"},"timestamps":{"start_utc":begun,"end_utc":datetime.now(timezone.utc).isoformat()}}
     write_json(out["manifest"],manifest); return out
 
 def normalize_e06_machine_artifacts(out:dict[str,Path])->dict[str,str]:
     r={k:v.read_text() for k,v in out.items() if k not in {"figure","report","warnings"}}
     m=json.loads(r["manifest"]); m["timing"]="NORMALIZED";m["timestamps"]="NORMALIZED";m["output_hashes"]="NORMALIZED";m["git"]="NORMALIZED";m["command"]="NORMALIZED";m["standard_projection"]="NORMALIZED";m["qualification_projection"]="NORMALIZED";m["outputs"]={k:{**v,"path":k} for k,v in m["outputs"].items()};r["manifest"]=_canon(m);return r
-def seal_e06_verification(out:dict[str,Path], *, focused_count:int, full_count:int)->None:
-    m=json.loads(out["manifest"].read_text()); m["verification"]={"status":"passed","focused_test_count":focused_count,"full_test_count":full_count,"deterministic_cross_directory":True}; m["output_hashes"]={k:{"sha256":_sha(v),"bytes":v.stat().st_size} for k,v in out.items() if k!="manifest"}; write_json(out["manifest"],m)
+
+def normalize_e06_report(path:Path)->str:
+    """Compare reports without hiding science, seed, or decision content."""
+    text=path.read_text()
+    text=re.sub(r"Wall=[^\n]*?Frozen core projection=", "Wall=NORMALIZED; Frozen core projection=", text)
+    text=re.sub(r"\{\"learner_steps\":913000000.*?\}\.", "NORMALIZED.", text)
+    text=re.sub(r"Qualification projection=\{.*?\}\.", "Qualification projection=NORMALIZED.", text)
+    return text
+
+EXPECTED_USER_FULL_COMMAND="MPLCONFIGDIR=/private/tmp/e06_user_verify_round2 ./scripts/verify.sh"
+EXPECTED_WORKSPACE_PYTHON="/Users/omer/workspace/venvs/venv314/bin/python"
+EXPECTED_FULL_VERIFICATION_SUITES=(
+    "repository_discovery", "manifest_completeness", "primary_raw_schema", "summary_matches_raw",
+)
+SCIENTIFIC_OUTPUT_NAMES=("raw", "cells", "paths", "loops", "transitions", "effects", "figure", "warnings")
+FOCUSED_EVIDENCE_ORDER=("E06", "M4", "core_and_determinism", "post_artifact")
+EXPECTED_FOCUSED_COMMANDS={
+    "E06":"MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_article_e06.py -v",
+    "M4":"MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_m4.py -v",
+    "core_and_determinism":"MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_core.py tests/test_determinism.py -v",
+    "post_artifact":"MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_manifest_completeness.py tests/test_primary_raw_schema.py tests/test_summary_matches_raw.py -v",
+}
+NONDETERMINISTIC_NORMALIZATION_RULES=(
+    "manifest.timing", "manifest.timestamps", "manifest.git", "manifest.standard_projection", "manifest.qualification_projection",
+    "manifest.command output-root only", "manifest.outputs.*.path output-root only", "manifest.outputs.report bytes/sha256", "manifest.output_hashes.report",
+    "report item 9 runtime/projection", "report item 10 qualification projection",
+)
+
+def _sha_bytes(value: bytes) -> str:
+    return hashlib.sha256(value).hexdigest()
+
+def _parse_exit_record(path: Path) -> int:
+    """Accept one and only one canonical, newline-terminated zero exit record."""
+    try:
+        payload=path.read_bytes()
+    except OSError as exc:
+        raise ValueError("external verification exit record is unavailable") from exc
+    if payload != b"verification_exit_code=0\n":
+        raise ValueError("external verification exit record is not exactly verification_exit_code=0\\n")
+    return 0
+
+def _parse_full_verification_log(path: Path) -> list[dict[str, object]]:
+    """Reconstruct full-verification suite outcomes from the authoritative log."""
+    try:
+        text=path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError) as exc:
+        raise ValueError("external verification log is unavailable or not UTF-8") from exc
+    python_lines=re.findall(rf"(?m)^Verification Python: {re.escape(EXPECTED_WORKSPACE_PYTHON)}$",text)
+    if len(python_lines)!=1:
+        raise ValueError("verification log does not name the exact workspace Python exactly once")
+    if re.search(r"(?im)^(?:FAILED|ERROR|Traceback)\b|\buncaught exception\b|\bfailure summary\b",text):
+        raise ValueError("verification log contains a failed or errored termination")
+    matches=list(re.finditer(r"(?m)^Ran ([1-9][0-9]*) tests? in ([0-9]+(?:\.[0-9]+)?)s\n\nOK$",text))
+    if len(matches)!=len(EXPECTED_FULL_VERIFICATION_SUITES):
+        raise ValueError("verification log has missing, extra, or incomplete suite completion records")
+    suites=[]
+    for expected_name,match in zip(EXPECTED_FULL_VERIFICATION_SUITES,matches,strict=True):
+        runtime=float(match.group(2))
+        if not math.isfinite(runtime) or runtime<0:
+            raise ValueError("verification log contains an invalid suite runtime")
+        suites.append({"name":expected_name,"test_count":int(match.group(1)),"runtime_seconds":runtime,"passed":True})
+    return suites
+
+def _parse_focused_log(path: Path, command: str) -> dict[str, object]:
+    """Bind each focused log to one exact command and successful unittest result."""
+    try:
+        text=path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError) as exc:
+        raise ValueError("focused verification log is unavailable or not UTF-8") from exc
+    if not text.startswith(f"command={command}\n") or re.search(r"(?m)^exit_code=0$",text) is None:
+        raise ValueError("focused verification log command or exit record is invalid")
+    matches=list(re.finditer(r"(?m)^Ran ([1-9][0-9]*) tests? in ([0-9]+(?:\.[0-9]+)?)s\n\nOK$",text))
+    if len(matches)!=1 or re.search(r"(?im)^(?:FAILED|ERROR|Traceback)\b|\buncaught exception\b",text):
+        raise ValueError("focused verification log is incomplete or failed")
+    runtime=float(matches[0].group(2))
+    if not math.isfinite(runtime) or runtime<0:
+        raise ValueError("focused verification runtime is invalid")
+    return {"test_count":int(matches[0].group(1)),"runtime_seconds":runtime,"passed":True}
+
+def _source_records(root: Path) -> list[dict[str, str]]:
+    return [{"path":relative,"sha256":_sha(root/relative)} for relative in SOURCE_FINGERPRINT_PATHS]
+
+def _source_fingerprint_from_records(records: list[dict[str, str]]) -> str:
+    digest=hashlib.sha256()
+    for record in records:
+        digest.update(record["path"].encode()); digest.update(b"\0"); digest.update(bytes.fromhex(record["sha256"])); digest.update(b"\0")
+    return digest.hexdigest()
+
+def _package_root(manifest: dict[str, object]) -> Path:
+    config_path=manifest.get("config_path")
+    if type(config_path) is not str:
+        raise ValueError("pending package has no config path")
+    return Path(config_path).resolve().parents[2]
+
+def _require_exact_pending_binding(manifest: dict[str, object], *, include_preverification: bool) -> None:
+    """Recompute every pending-package binding before its evidence is trusted."""
+    root=_package_root(manifest)
+    config_path=Path(str(manifest["config_path"]))
+    config=load_e06_config(config_path)
+    normalized=_canon(config); approval=root/"projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md"
+    if manifest.get("normalized_config")!=normalized or manifest.get("config_sha256")!=_sha_bytes(normalized.encode()):
+        raise ValueError("pending package config binding drift")
+    authorization=manifest.get("authorization")
+    if type(authorization) is not dict or authorization.get("approval_path")!=str(approval) or authorization.get("approval_sha256")!=_sha(approval):
+        raise ValueError("pending package approval binding drift")
+    records=manifest.get("source_fingerprints")
+    expected_records=_source_records(root)
+    if records!=expected_records or manifest.get("source_fingerprint_paths")!=list(SOURCE_FINGERPRINT_PATHS) or manifest.get("source_fingerprint_sha256")!=_source_fingerprint_from_records(expected_records):
+        raise ValueError("pending package source-fingerprint binding drift")
+    head=subprocess.run(["git","-C",str(root),"rev-parse","HEAD"],capture_output=True,text=True,check=True).stdout.strip()
+    branch=subprocess.run(["git","-C",str(root),"branch","--show-current"],capture_output=True,text=True,check=True).stdout.strip()
+    porcelain=subprocess.run(["git","-C",str(root),"status","--porcelain"],capture_output=True,text=True,check=True).stdout
+    git=manifest.get("git")
+    if type(git) is not dict or git!={"head":head,"branch":branch,"dirty":bool(porcelain),"porcelain_sha256":_sha_bytes(porcelain.encode())}:
+        raise ValueError("pending package Git binding drift")
+    outputs=manifest.get("outputs")
+    scientific=manifest.get("scientific_artifacts")
+    if type(outputs) is not dict or type(scientific) is not dict or set(scientific)!=set(SCIENTIFIC_OUTPUT_NAMES):
+        raise ValueError("pending package scientific artifact inventory is incomplete")
+    for name in SCIENTIFIC_OUTPUT_NAMES:
+        record=scientific[name]
+        if type(record) is not dict or record!=outputs.get(name):
+            raise ValueError(f"pending package scientific artifact record drift: {name}")
+        path=Path(str(record.get("path","")))
+        if not path.is_file() or record.get("bytes")!=path.stat().st_size or record.get("sha256")!=_sha(path):
+            raise ValueError(f"pending scientific artifact drift: {name}")
+    report=Path(str(outputs.get("report",{}).get("path","")))
+    if not report.is_file() or outputs["report"].get("bytes")!=report.stat().st_size or outputs["report"].get("sha256")!=_sha(report):
+        raise ValueError("pending report binding drift")
+    verification=manifest.get("verification")
+    if type(verification) is not dict or verification.get("status")!="pending_user_full_verification" or verification.get("seal_state")!="unsealed":
+        raise ValueError("canonical package is not consistently pending for external sealing")
+    if include_preverification:
+        _validate_focused_evidence(manifest.get("focused_verification"))
+        _validate_deterministic_evidence(manifest.get("deterministic_regeneration"))
+
+def _validate_focused_evidence(evidence: object) -> None:
+    if type(evidence) is not dict or set(evidence)!={"status","records"} or evidence["status"]!="passed" or type(evidence["records"]) is not list:
+        raise ValueError("focused verification evidence is missing or inconsistent")
+    records=evidence["records"]
+    if [record.get("name") if type(record) is dict else None for record in records] != list(FOCUSED_EVIDENCE_ORDER):
+        raise ValueError("focused verification evidence is missing, duplicated, foreign, or reordered")
+    for record in records:
+        if set(record)!={"name","command","log_path","log_sha256","exit_code","test_count","runtime_seconds","passed"} or record["exit_code"]!=0:
+            raise ValueError("focused verification evidence schema is invalid")
+        if record["command"]!=EXPECTED_FOCUSED_COMMANDS[record["name"]]:
+            raise ValueError("focused verification command differs from the contractual command")
+        path=Path(str(record["log_path"]))
+        if not path.is_file() or record["log_sha256"]!=_sha(path):
+            raise ValueError("focused verification log hash drift")
+        parsed=_parse_focused_log(path,str(record["command"]))
+        if parsed["test_count"]!=record["test_count"] or parsed["runtime_seconds"]!=record["runtime_seconds"] or record["passed"] is not True:
+            raise ValueError("focused verification caller count/runtime/status disagrees with log")
+
+def _normalize_manifest_for_deterministic_comparison(path: Path) -> str:
+    manifest=_strict_json(path.read_text())
+    if type(manifest) is not dict:
+        raise ValueError("deterministic manifest is not an object")
+    for key in ("timing","timestamps","git","standard_projection","qualification_projection"):
+        manifest[key]="NORMALIZED_NONDETERMINISTIC"
+    manifest["command"]="NORMALIZED_OUTPUT_ROOT_ONLY"
+    outputs=manifest.get("outputs")
+    if type(outputs) is not dict:
+        raise ValueError("deterministic manifest has no outputs")
+    for name,record in outputs.items():
+        if type(record) is not dict:
+            raise ValueError("deterministic manifest output record is invalid")
+        record["path"]=name
+        if name=="report":
+            record["bytes"]="NORMALIZED_REPORT_RUNTIME_BYTES"; record["sha256"]="NORMALIZED_REPORT_RUNTIME_SHA256"
+    hashes=manifest.get("output_hashes")
+    if type(hashes) is not dict:
+        raise ValueError("deterministic manifest has no output hashes")
+    hashes["report"]="NORMALIZED_REPORT_RUNTIME_SHA256"
+    scientific=manifest.get("scientific_artifacts")
+    if type(scientific) is not dict:
+        raise ValueError("deterministic manifest has no scientific artifact inventory")
+    for name,record in scientific.items():
+        if type(record) is not dict:
+            raise ValueError("deterministic scientific artifact record is invalid")
+        record["path"]=name
+    return _canon(manifest)
+
+def _validate_deterministic_evidence(evidence: object) -> None:
+    required={"status","runs","scientific_byte_comparison","normalized_manifest_report","normalization_rules"}
+    if type(evidence) is not dict or set(evidence)!=required or evidence["status"]!="passed" or evidence["scientific_byte_comparison"]!="passed" or evidence["normalized_manifest_report"]!="passed" or evidence["normalization_rules"]!=list(NONDETERMINISTIC_NORMALIZATION_RULES):
+        raise ValueError("deterministic-regeneration evidence is missing or inconsistent")
+    runs=evidence["runs"]
+    if type(runs) is not list or len(runs)!=2:
+        raise ValueError("deterministic-regeneration evidence must name exactly two fresh runs")
+    normalized=[]; reports=[]; scientific=[]
+    for run in runs:
+        if type(run) is not dict or set(run)!={"manifest_path","report_path","scientific_artifacts"}:
+            raise ValueError("deterministic-regeneration run record is invalid")
+        manifest_path=Path(str(run["manifest_path"])); report_path=Path(str(run["report_path"]))
+        if not manifest_path.is_file() or not report_path.is_file() or type(run["scientific_artifacts"]) is not dict or set(run["scientific_artifacts"])!=set(SCIENTIFIC_OUTPUT_NAMES):
+            raise ValueError("deterministic-regeneration run evidence is incomplete")
+        normalized.append(_normalize_manifest_for_deterministic_comparison(manifest_path)); reports.append(normalize_e06_report(report_path)); scientific.append(run["scientific_artifacts"])
+        for name,record in run["scientific_artifacts"].items():
+            path=Path(str(record.get("path","")))
+            if not path.is_file() or record.get("bytes")!=path.stat().st_size or record.get("sha256")!=_sha(path):
+                raise ValueError(f"deterministic-regeneration artifact drift: {name}")
+    scientific_identity=[{name:{"bytes":record["bytes"],"sha256":record["sha256"]} for name,record in inventory.items()} for inventory in scientific]
+    if normalized[0]!=normalized[1] or reports[0]!=reports[1] or scientific_identity[0]!=scientific_identity[1]:
+        raise ValueError("deterministic-regeneration comparison no longer matches")
+
+def _atomic_package_write(updates: dict[Path, bytes]) -> None:
+    """Stage both package documents before replacement and roll back a write failure."""
+    originals={path:path.read_bytes() for path in updates}
+    temporaries={path:path.with_name(path.name+".e06tmp") for path in updates}
+    try:
+        for path,temporary in temporaries.items():
+            temporary.write_bytes(updates[path])
+        replaced=[]
+        try:
+            for path,temporary in temporaries.items():
+                temporary.replace(path); replaced.append(path)
+        except Exception:
+            for path in replaced:
+                path.write_bytes(originals[path])
+            raise
+    finally:
+        for temporary in temporaries.values():
+            if temporary.exists(): temporary.unlink()
+
+def _replace_report_item_12(report: str, replacement: str) -> str:
+    result,count=re.subn(r"(?m)^12\. .*?$",replacement,report,count=1)
+    if count!=1:
+        raise ValueError("canonical report does not contain exactly one item 12")
+    return result
+
+def _update_report_hash(manifest: dict[str, object], report_bytes: bytes) -> None:
+    outputs=manifest.get("outputs")
+    hashes=manifest.get("output_hashes")
+    if type(outputs) is not dict or type(hashes) is not dict or type(outputs.get("report")) is not dict:
+        raise ValueError("canonical manifest cannot bind its report")
+    outputs["report"]["bytes"]=len(report_bytes); outputs["report"]["sha256"]=_sha_bytes(report_bytes)
+    hashes["report"]={"sha256":_sha_bytes(report_bytes),"bytes":len(report_bytes)}
+
+def record_e06_preverification(out: dict[str, Path], focused: dict[str, object], deterministic: dict[str, object]) -> None:
+    """Complete a pending package with independently checked preverification evidence."""
+    manifest=_strict_json(out["manifest"].read_text())
+    if type(manifest) is not dict:
+        raise ValueError("canonical manifest is not an object")
+    _require_exact_pending_binding(manifest,include_preverification=False)
+    _validate_focused_evidence(focused); _validate_deterministic_evidence(deterministic)
+    updated=dict(manifest); updated["focused_verification"]=focused; updated["deterministic_regeneration"]=deterministic
+    report_path=out["report"]; report=_replace_report_item_12(report_path.read_text(),"12. **Verification status.** Focused verification and deterministic-regeneration evidence are validated in the pending package; `pending_user_full_verification` remains required before an external seal.")
+    report_bytes=report.encode(); _update_report_hash(updated,report_bytes)
+    manifest_bytes=(json.dumps(updated,indent=2,allow_nan=False)+"\n").encode()
+    _atomic_package_write({out["manifest"]:manifest_bytes,report_path:report_bytes})
+
+def build_e06_full_verification_evidence(log_path: Path, exit_path: Path) -> dict[str, object]:
+    """Build, rather than trust, external verification totals from its immutable files."""
+    suites=_parse_full_verification_log(log_path); _parse_exit_record(exit_path)
+    return {"command":EXPECTED_USER_FULL_COMMAND,"log_path":str(log_path),"log_sha256":_sha(log_path),"exit_path":str(exit_path),"exit_sha256":_sha(exit_path),"suites":suites,"test_count":sum(int(item["test_count"]) for item in suites),"runtime_seconds":math.fsum(float(item["runtime_seconds"]) for item in suites)}
+
+def seal_e06_verification(out:dict[str,Path], evidence:dict[str,object]) -> None:
+    """Seal only a fully bound pending package from strictly parsed external evidence."""
+    manifest=_strict_json(out["manifest"].read_text())
+    if type(manifest) is not dict:
+        raise ValueError("canonical manifest is not an object")
+    _require_exact_pending_binding(manifest,include_preverification=True)
+    required={"command","log_path","log_sha256","exit_path","exit_sha256","suites","test_count","runtime_seconds"}
+    if type(evidence) is not dict or set(evidence)!=required or evidence["command"]!=EXPECTED_USER_FULL_COMMAND:
+        raise ValueError("external seal evidence is incomplete or has the wrong command")
+    log=Path(str(evidence["log_path"])); exit_record=Path(str(evidence["exit_path"]))
+    if not log.is_file() or not exit_record.is_file() or evidence["log_sha256"]!=_sha(log) or evidence["exit_sha256"]!=_sha(exit_record):
+        raise ValueError("external verification evidence hash mismatch")
+    parsed=_parse_full_verification_log(log); _parse_exit_record(exit_record)
+    if evidence["suites"]!=parsed or type(evidence["test_count"]) is not int or evidence["test_count"]!=sum(int(item["test_count"]) for item in parsed) or type(evidence["runtime_seconds"]) is not float or not math.isfinite(evidence["runtime_seconds"]) or evidence["runtime_seconds"]!=math.fsum(float(item["runtime_seconds"]) for item in parsed):
+        raise ValueError("external verification caller count/runtime evidence disagrees with parsed log")
+    # Freshness is supplementary.  Content hashes above are the integrity binding.
+    latest_source=max(((_package_root(manifest)/relative).stat().st_mtime for relative in SOURCE_FINGERPRINT_PATHS),default=0.0)
+    if latest_source>min(log.stat().st_mtime,exit_record.stat().st_mtime):
+        raise ValueError("verification evidence is stale relative to fingerprinted source")
+    updated=dict(manifest)
+    updated["verification"]={"status":"passed","seal_state":"external_evidence_verified","command":evidence["command"],"log_path":str(log),"log_sha256":evidence["log_sha256"],"exit_path":str(exit_record),"exit_sha256":evidence["exit_sha256"],"suites":parsed,"test_count":evidence["test_count"],"runtime_seconds":evidence["runtime_seconds"]}
+    suite_text=", ".join(f"{item['name']}={item['test_count']} tests/{item['runtime_seconds']:.3f}s" for item in parsed)
+    report_path=out["report"]; report=_replace_report_item_12(report_path.read_text(),f"12. **Verification status.** External seal verified `{evidence['command']}`; log SHA-256 `{evidence['log_sha256']}`, exit SHA-256 `{evidence['exit_sha256']}`, parsed suites: {suite_text}; external-seal status `passed`.")
+    report_bytes=report.encode(); _update_report_hash(updated,report_bytes)
+    manifest_bytes=(json.dumps(updated,indent=2,allow_nan=False)+"\n").encode()
+    _atomic_package_write({out["manifest"]:manifest_bytes,report_path:report_bytes})

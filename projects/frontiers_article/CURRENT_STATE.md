@@ -82,19 +82,22 @@
   lower dense boundary, so its crossing was not estimable. Deterministic
   three-shard reproduction, output hashes, focused/full/post-artifact checks,
   and provenance passed. No `T=5000` or publication-tier work occurred.
-- E06 user-owned full repository verification passed: 113 discovery tests and
-  the 1/1/2 post-artifact suites completed with exit code zero under the
-  required workspace Python. The fresh independent smoke review nevertheless
-  returned `FIX_IMPLEMENTATION`. The canonical smoke itself has real action,
-  outcome, reward, and state diagnostics; maintained-M4 parity, exact current
-  raw reconciliation, deterministic fresh-directory regeneration, derived
-  corruption rejection, and the phase-separated core capacity gate passed.
-  However, the packed-raw validator accepted representative frozen identity,
-  seed-map, parameter, traversal, disabled-reset, and authentic-Q continuity
-  corruptions, so the raw-grounded derived boundary is not fail-closed. The
-  canonical report also remains seven rather than 13 items and its manifest has
-  stale/incomplete verification and provenance. Standard, qualification, C8/C9
-  adjudication, ledger, manuscript, and Figure 4 actions remain refused.
+- E06 Round 2 user-owned full repository verification and the production
+  external seal are complete: 116 discovery tests plus the 1/1/2
+  post-artifact suites produced 120 passing tests in 134.934 seconds under the
+  required workspace Python. The durable evidence archive preserved the exact
+  pre-seal Git/dirty binding, and the canonical manifest/report are sealed as
+  `passed` / `external_evidence_verified` without changing the eight
+  scientific artifacts. Independent raw/derived reconstruction, 30
+  materialized plus 30 parsed-CSV mutations, seven derived-boundary mutations,
+  two fresh deterministic roots, and all 33 protected E01--E05 artifacts
+  passed. The fresh Round 2 smoke gate nevertheless returns
+  `FIX_IMPLEMENTATION`: E06 unconditionally refuses standard, its execution
+  loop supports only the single smoke master seed, its derived builder emits
+  only smoke-ineligible/zero-bootstrap outputs, and its materialized standard
+  RSS/runtime projection is not conservative. No `E06_STANDARD_GO.md` exists.
+  Standard, qualification, C8/C9 adjudication, ledger, manuscript, and Figure
+  4 actions remain refused.
 - Model routing is established: Sol owns scientific judgment and release gates;
   Terra owns bounded implementation and production after requirements are fixed.
 - `runbooks/STAGE2_EVIDENCE.md` now provides the complete smoke-first operating
@@ -153,13 +156,16 @@
 
 ## Immediate Next Actions
 
-1. Apply the bounded E06 validation/sealing correction in
-   `checkpoints/E06_SOL_SMOKE_REVIEW.md`: reconstruct every frozen raw field,
-   add complete adversarial coverage, and complete the canonical 13-item report
-   and provenance/verification record without changing scientific bytes. Then
-   repeat user-owned full verification and fresh independent smoke review.
-   Standard, qualification, C8/C9 adjudication, ledger changes, and manuscript
-   changes remain refused.
+1. Implement the bounded Round 2 review correction in
+   `checkpoints/E06_ROUND2_SOL_SMOKE_REVIEW.md`: add an exact future-GO-gated
+   five-master core-standard execution/package path, integrate the frozen
+   Student-t/bootstrap and decision outputs, preserve complete per-master seed
+   maps, and replace the non-conservative materialized resource projection with
+   a bounded streaming/chunked or exactly measured alternative. Correct the raw
+   sort-order declaration. Do not run standard during this correction. Repeat
+   focused/deterministic evidence, user-owned full verification, external
+   sealing, and fresh independent review afterward. Qualification, C8/C9
+   adjudication, ledger changes, and manuscript changes remain refused.
 2. Preserve the paired E05 result in `E05_MAIN_RESULTS.md`: the flat learned
    crossing `bf=0.312852` occurred before the exact objective crossover
    `8/17=0.470588`; no hierarchical crossing was estimable in the approved

@@ -1,5 +1,66 @@
 # Stage 2 Execution Log
 
+## 2026-08-13 — E06 Round 2 external seal and independent smoke gate
+
+**Decision:** `FIX_IMPLEMENTATION`.
+
+The immutable pre-seal audit matched Git HEAD
+`9b2550248540152ad0d76758ee786bf228592880`, branch
+`codex/frontiers-stage2-e06`, dirty state `true`, and porcelain SHA-256
+`5fe733cc7c6f7d9155cd965032ea3716ff83a9c95653c21271cae239429f7316`
+against both the pending manifest and v2 preverification index. Config,
+approval, ordered source fingerprints, focused logs, two fresh deterministic
+roots, and all eight E06 scientific artifacts matched. The Round 2 user log
+parsed as 116 discovery tests in 128.321s and 1/1/2 post-artifact tests in
+1.694/1.679/3.240s: 120 tests in 134.934s total, with exact log SHA-256
+`73a5922e...` and exit SHA-256 `e0eb8bd6...`.
+
+The evidence was archived with metadata under
+`results/reports/e06_round2_user_verification/` without changing the porcelain
+bytes/hash. A temporary production-seal probe passed and left canonical bytes
+unchanged. The production sealer was then called once on the canonical map.
+The manifest is now `passed` / `external_evidence_verified`, SHA-256
+`3cf23f2082f4d8b770d0fc44b8d1c5f5082fa66cc3d9f4e0f64f8abff7cf7b5d`;
+the report SHA-256 is
+`45a2809bc4cc25b792badfcb2fbc7ad42384ca0b894015c2e3fbb573785bf36e`.
+Raw, five summaries, PNG, and warnings retained their exact bytes. Independent
+validation reconstructed 320 ordered 55-field rows, every derived table,
+43,887 mask / 25,233 authentic / 22,608 accepted / 2,625 rejected actions,
+zero bounds violations, 30 materialized and 30 parsed-CSV adversarial
+rejections, seven derived-boundary rejections, and all 33 protected E01--E05
+artifact hashes.
+
+The smoke itself is valid and noninferential, but the standard release gate is
+blocked. `run_e06_experiment` unconditionally rejects every non-smoke tier;
+its execution loop uses only the one smoke `master_seed`; its derived builder
+emits smoke-ineligible, zero-bootstrap diagnostic rows; and its manifest seed
+map cannot preserve all masters. A GO would therefore bind a command that
+cannot produce the frozen five-master standard package. The standard resource
+projection also multiplies smoke RSS by only 1.5 and scales a phase containing
+a complete deterministic replay only by row count despite materializing
+candidate, cached reconstruction, and expected-copy rows. That projection is
+not a conservative executable-standard high-water bound.
+
+No `E06_STANDARD_GO.md` was created. No standard, qualification, C8/C9
+adjudication, claim-ledger, manuscript, or Figure 4 action occurred. The exact
+required correction and evidence are in
+`checkpoints/E06_ROUND2_SOL_SMOKE_REVIEW.md`; another user-owned verification,
+external seal, and fresh review are required after the bounded implementation
+repair.
+
+## 2026-08-13 — E06 second `FIX_IMPLEMENTATION` operational handoff
+
+Wrote `E06_SECOND_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md` for a bounded
+`gpt-5.6-terra`/high implementation pass. The task is limited to complete
+55-field packed-raw reconstruction, materialized/parsed-CSV and derived-boundary
+adversarial coverage, the canonical 13-item report and complete manifest, and a
+fail-closed external verification sealer. It freezes the current scientific
+smoke bytes, preserves the prior successful verification as historical evidence,
+requires new Round 2 user-owned full verification after the correction, and
+stops before standard, qualification, C8/C9, ledger, manuscript, or Figure 4
+work. A fresh `gpt-5.6-sol`/xhigh review remains the only authority that may
+issue a later `GO_STANDARD` decision.
+
 ## 2026-08-13 — E06 independent smoke review after user verification
 
 **Decision:** `FIX_IMPLEMENTATION`.
@@ -1066,6 +1127,35 @@ Primary selectors are `results/raw/frontiers_hot_stove_v1_units.csv` with
 
 No manuscript prose, sensitivity, or publication-tier run was changed or
 executed during adjudication.
+
+## E06 second FIX_IMPLEMENTATION preverification
+
+Implemented the review-directed bounded correction: complete expected packed
+raw-row reconstruction, strict JSON/type comparison, comprehensive named
+materialized and parsed-CSV adversarial tests, a 13-item pending report,
+expanded provenance, and an evidence-driven external seal interface.  Two
+fresh smoke output roots with distinct Matplotlib caches byte-matched the
+preserved raw, five summaries, figure, and warnings artifacts.  Full
+repository verification, E06 standard, and E06 qualification were not run.
+The next gate is the user-owned round-2 verification command.
+
+## 2026-08-13 — E06 second FIX_IMPLEMENTATION external-sealer correction
+
+The remaining sealing defect was corrected without changing M4, any frozen
+config, RNG consumption, or the eight scientific artifacts. The external
+sealer now reconstructs all full-verification suite totals and runtimes from a
+strict log, accepts only the exact newline-terminated zero exit record, and
+recomputes config, approval, ordered source fingerprints, Git/dirty state,
+scientific artifact hashes, focused logs, and deterministic-regeneration
+evidence before an atomic manifest/report update. Synthetic temporary-package
+coverage accepts one complete bundle and rejects log/exit/count/runtime,
+source/config/approval/Git/dirty, artifact, focused, deterministic,
+normalization, already-sealed, and inconsistent-pending corruptions.
+
+The canonical package is refreshed only as
+`pending_user_full_verification`/`unsealed`; a user-owned round-2 repository
+verification is still required. No full verifier, standard, qualification,
+C8/C9 adjudication, ledger, manuscript, or Figure 4 action occurred.
 
 ## 2026-08-12 — E04 authorized baseline standard execution
 

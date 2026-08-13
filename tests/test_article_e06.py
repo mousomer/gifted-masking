@@ -1,6 +1,8 @@
 import copy
 import csv
+import hashlib
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -12,6 +14,12 @@ from gifted_masking.experiments.e06 import (
     load_e06_config, loop_area, nondecreasing_pava, run_e06_experiment, replay_segment_parity,
     paired_student_t_effect, derive_bootstrap_seed, bootstrap_paired_transition_width,
     validate_e06_raw, validate_e06_derived,
+)
+from gifted_masking.experiments.e06 import _expected_raw_rows, _read_e06_csv
+from gifted_masking.experiments.e06 import (
+    EXPECTED_FOCUSED_COMMANDS, EXPECTED_USER_FULL_COMMAND, FOCUSED_EVIDENCE_ORDER,
+    SCIENTIFIC_OUTPUT_NAMES, build_e06_full_verification_evidence,
+    record_e06_preverification, seal_e06_verification,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,6 +95,170 @@ class E06Tests(unittest.TestCase):
             self.assertEqual(len(json.loads(inherited["mask_rate_json"])), 10)
             cold = next(row for row in rows if row["path_type"] == "cold_start")
             self.assertEqual(len(json.loads(cold["mask_rate_json"])), 5)
+
+    def test_raw_validator_rejects_complete_frozen_contract_in_memory_and_csv(self):
+        """Named review mutations must fail at both supported raw boundaries."""
+        material = _expected_raw_rows(self.config)
+
+        def changed(field, value, row_index=0):
+            result = copy.deepcopy(material)
+            result[row_index][field] = value
+            return result
+
+        inherited = next(i for i,row in enumerate(material) if row["path_type"] == "inherited_loop")
+        disabled = next(i for i,row in enumerate(material) if row["path_type"] == "km_disabled_reversal_only")
+        seed_map = json.loads(material[0]["policy_environment_seed_map_json"])
+        nested_seed_map = copy.deepcopy(seed_map); nested_seed_map[0]["seed"] += 1
+        cases = [
+            ("scenario_role", changed("scenario_role", "foreign")),
+            ("matched_family_id", changed("matched_family_id", "foreign")),
+            ("seed_map", changed("policy_environment_seed_map_json", "[]")),
+            ("seed_map_member", changed("policy_environment_seed_map_json", json.dumps(nested_seed_map, separators=(",", ":")))),
+            ("child_seed", changed("child_seed", "foreign")), ("rng_unit", changed("rng_unit", "foreign")),
+            ("declared_n", changed("n", 63)), ("window_start", changed("final_window_start", 95)), ("window_end", changed("final_window_end", 118)),
+            ("ka", changed("ka", 0.11)), ("km_mode", changed("km_mode", "disabled")),
+            ("nominal_grid", changed("nominal_km_values_json", "[0.0,0.001,0.002,0.003,0.005]")), ("alpha", changed("alpha", 0.2)),
+            ("traversal_direction", changed("traversal_direction_json", "[\"down\",\"up\",\"up\",\"up\",\"up\",\"down\",\"down\",\"down\",\"down\",\"down\"]", inherited)),
+            ("traversal_nominal", changed("traversal_nominal_km_json", "[0.004,0.001,0.002,0.003,0.004,0.004,0.003,0.002,0.001,0.0]", inherited)),
+            ("traversal_actual", changed("traversal_actual_km_json", "[0.001,0.001,0.002,0.003,0.004,0.004,0.003,0.002,0.001,0.0]", inherited)),
+            ("inherited_auth_q", changed("q_auth_start_json", "[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]", inherited)),
+            ("inherited_mask_q", changed("q_mask_start_json", "[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]", inherited)),
+            ("disabled_reversal_p", changed("p_start_json", "[0.5,0.45,0.45,0.45,0.45,0.45,0.45,0.45,0.45,0.45]", disabled)),
+            ("disabled_reversal_q_mask", changed("q_mask_start_json", "[0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]", disabled)),
+            ("disabled_reversal_q_auth", changed("q_auth_start_json", "[0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]", disabled)),
+            ("wrong_array_length", changed("mask_rate_json", "[0.0]")), ("wrong_json_type", changed("mask_count_json", "{\"count\":1}")),
+            ("duplicate_json_key", changed("policy_environment_seed_map_json", "[{\"direction\":\"up\",\"direction\":\"down\"}]")), ("nan", changed("final_p", float("nan"))), ("infinity", changed("final_p", float("inf"))),
+        ]
+        cases.extend([
+            ("missing_row", material[:-1]), ("duplicate_row", material + [copy.deepcopy(material[0])]),
+            ("reordered_row", [material[1], material[0], *material[2:]]),
+            ("foreign_row", changed("scenario_id", "foreign")),
+        ])
+        for name, bad in cases:
+            with self.subTest(boundary="materialized", mutation=name):
+                with self.assertRaises(ValueError):
+                    validate_e06_raw(bad, self.config)
+            with self.subTest(boundary="parsed_csv", mutation=name):
+                with tempfile.TemporaryDirectory() as tmp:
+                    path = Path(tmp) / "raw.csv"
+                    with path.open("w", newline="") as handle:
+                        writer = csv.DictWriter(handle, fieldnames=RAW_FIELDS)
+                        writer.writeheader(); writer.writerows(bad)
+                    with self.assertRaises(ValueError):
+                        validate_e06_raw(_read_e06_csv(path, RAW_FIELDS), self.config)
+
+    def test_derived_boundary_rejects_raw_identity_seed_parameter_traversal_reset_and_both_q(self):
+        raw = _expected_raw_rows(self.config)
+        tables = derive_tables(raw, self.config)
+        corruptions = {
+            "identity": ("matched_family_id", "foreign", 0), "seed": ("policy_environment_seed_map_json", "[]", 0),
+            "parameter": ("alpha", 0.2, 0), "traversal": ("traversal_direction_json", "[\"cold\"]", 0),
+            "reset": ("p_start_json", "[0.5,0.45,0.45,0.45,0.45,0.45,0.45,0.45,0.45,0.45]", next(i for i,r in enumerate(raw) if r["path_type"] == "km_disabled_reversal_only")),
+            "mask_q": ("q_mask_start_json", "[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]", next(i for i,r in enumerate(raw) if r["path_type"] == "inherited_loop")),
+            "auth_q": ("q_auth_start_json", "[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]", next(i for i,r in enumerate(raw) if r["path_type"] == "inherited_loop")),
+        }
+        for name,(field,value,index) in corruptions.items():
+            bad = copy.deepcopy(raw); bad[index][field] = value
+            with self.subTest(name=name):
+                with self.assertRaises(ValueError):
+                    validate_e06_derived(bad, *tables, self.config)
+
+    def test_external_seal_reconstructs_evidence_and_rejects_all_required_corruption(self):
+        """Synthetic only: every acceptance/rejection case seals a temporary package."""
+        def digest(path):
+            return hashlib.sha256(path.read_bytes()).hexdigest()
+
+        def full_log():
+            return (
+                "Verification Python: /Users/omer/workspace/venvs/venv314/bin/python\n"
+                "Ran 113 tests in 128.937s\n\nOK\n"
+                "Ran 1 test in 1.937s\n\nOK\n"
+                "Ran 1 test in 1.956s\n\nOK\n"
+                "Ran 2 tests in 3.861s\n\nOK\n"
+            )
+
+        def focused_evidence(root):
+            records=[]
+            for index,name in enumerate(FOCUSED_EVIDENCE_ORDER, start=1):
+                path=root/f"focused_{name}.log"; command=EXPECTED_FOCUSED_COMMANDS[name]
+                path.write_text(f"command={command}\nRan {index} tests in {index}.250s\n\nOK\nexit_code=0\n")
+                records.append({"name":name,"command":command,"log_path":str(path),"log_sha256":digest(path),"exit_code":0,"test_count":index,"runtime_seconds":float(f"{index}.250"),"passed":True})
+            return {"status":"passed","records":records}
+
+        def deterministic_evidence(first, second):
+            def run_record(out):
+                manifest=json.loads(out["manifest"].read_text())
+                return {"manifest_path":str(out["manifest"]),"report_path":str(out["report"]),"scientific_artifacts":{name:manifest["scientific_artifacts"][name] for name in SCIENTIFIC_OUTPUT_NAMES}}
+            return {"status":"passed","runs":[run_record(first),run_record(second)],"scientific_byte_comparison":"passed","normalized_manifest_report":"passed","normalization_rules":["manifest.timing", "manifest.timestamps", "manifest.git", "manifest.standard_projection", "manifest.qualification_projection", "manifest.command output-root only", "manifest.outputs.*.path output-root only", "manifest.outputs.report bytes/sha256", "manifest.output_hashes.report", "report item 9 runtime/projection", "report item 10 qualification projection"]}
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            # These three fresh roots are intentionally independent of the canonical package.
+            first=run_e06_experiment(SMOKE,root/"fresh_a")
+            second=run_e06_experiment(SMOKE,root/"fresh_b")
+            out=run_e06_experiment(SMOKE,root/"package")
+            focused=focused_evidence(root); deterministic=deterministic_evidence(first,second)
+            record_e06_preverification(out,focused,deterministic)
+            log=root/"verify.log"; exit_record=root/"verify.exit"
+            log.write_text(full_log()); exit_record.write_text("verification_exit_code=0\n")
+            evidence=build_e06_full_verification_evidence(log,exit_record)
+            pending_manifest=out["manifest"].read_bytes(); pending_report=out["report"].read_bytes()
+            pending_raw=out["raw"].read_bytes()
+            pending_focused={Path(record["log_path"]):Path(record["log_path"]).read_bytes() for record in focused["records"]}
+
+            seal_e06_verification(out,evidence)
+            sealed=json.loads(out["manifest"].read_text())
+            self.assertEqual(sealed["verification"]["status"],"passed")
+            self.assertIn("external-seal status `passed`",out["report"].read_text())
+            with self.assertRaises(ValueError):
+                seal_e06_verification(out,evidence)
+
+            def restore():
+                out["manifest"].write_bytes(pending_manifest); out["report"].write_bytes(pending_report)
+                out["raw"].write_bytes(pending_raw)
+                for path,payload in pending_focused.items(): path.write_bytes(payload)
+                log.write_text(full_log()); exit_record.write_text("verification_exit_code=0\n")
+
+            def rejected(name, mutate):
+                with self.subTest(corruption=name):
+                    restore(); altered=copy.deepcopy(evidence); mutate(altered)
+                    with self.assertRaises(ValueError):
+                        seal_e06_verification(out,altered)
+
+            rejected("altered_verification_log",lambda _: log.write_text(full_log()+"foreign evidence\n"))
+            rejected("altered_exit_record",lambda value: (exit_record.write_text("verification_exit_code=00\n"),value.__setitem__("exit_sha256",digest(exit_record))))
+            rejected("wrong_command",lambda value: value.__setitem__("command","./scripts/verify.sh"))
+            for deceptive in ("verification_exit_code=1\n","verification_exit_code=01\n","verification_exit_code=00\n","verification_exit_code=0\nforeign\n"):
+                rejected(f"deceptive_exit_{deceptive!r}",lambda value,text=deceptive: (exit_record.write_text(text),value.__setitem__("exit_sha256",digest(exit_record))))
+            rejected("caller_count_mismatch",lambda value: value.__setitem__("test_count",118))
+            rejected("caller_runtime_mismatch",lambda value: value.__setitem__("runtime_seconds",1.0))
+            rejected("incomplete_suite_log",lambda value: (log.write_text(full_log().rsplit("Ran 2 tests",1)[0]),value.__setitem__("log_sha256",digest(log))))
+            rejected("failed_suite_log",lambda value: (log.write_text(full_log()+"FAILED (failures=1)\n"),value.__setitem__("log_sha256",digest(log))))
+
+            def stale_source(_):
+                source=ROOT/"src/gifted_masking/experiments/e06.py"; original=source.stat().st_mtime
+                os.utime(source,(original,log.stat().st_mtime+60))
+                self.addCleanup(lambda: os.utime(source,(original,original)))
+            rejected("stale_source_evidence",stale_source)
+            os.utime(ROOT/"src/gifted_masking/experiments/e06.py",None)
+            # Recreate evidence after the freshness test because the source timestamp is now newer.
+            log.write_text(full_log()); exit_record.write_text("verification_exit_code=0\n"); evidence=build_e06_full_verification_evidence(log,exit_record)
+            pending_manifest=out["manifest"].read_bytes(); pending_report=out["report"].read_bytes()
+
+            def manifest_mutation(field, value):
+                manifest=json.loads(out["manifest"].read_text()); manifest[field]=value; out["manifest"].write_text(json.dumps(manifest,indent=2)+"\n")
+            rejected("source_fingerprint_drift",lambda _: manifest_mutation("source_fingerprint_sha256","0"*64))
+            rejected("config_drift",lambda _: manifest_mutation("config_sha256","0"*64))
+            rejected("approval_drift",lambda _: (lambda m: (m["authorization"].__setitem__("approval_sha256","0"*64),out["manifest"].write_text(json.dumps(m,indent=2)+"\n")))(json.loads(out["manifest"].read_text())))
+            for key in ("head","branch","porcelain_sha256"):
+                rejected(f"git_{key}_drift",lambda _,key=key: (lambda m: (m["git"].__setitem__(key,"foreign"),out["manifest"].write_text(json.dumps(m,indent=2)+"\n")))(json.loads(out["manifest"].read_text())))
+            rejected("dirty_state_hash_drift",lambda _: (lambda m: (m["git"].__setitem__("dirty",not m["git"]["dirty"]),out["manifest"].write_text(json.dumps(m,indent=2)+"\n")))(json.loads(out["manifest"].read_text())))
+            rejected("changed_scientific_artifact",lambda _: out["raw"].write_bytes(out["raw"].read_bytes()+b"drift\n"))
+            rejected("missing_focused_evidence",lambda _: manifest_mutation("focused_verification",{"status":"pending_external_focused_logs"}))
+            rejected("altered_focused_log",lambda _: Path(focused["records"][0]["log_path"]).write_text("altered\n"))
+            rejected("missing_deterministic_evidence",lambda _: manifest_mutation("deterministic_regeneration",{"status":"pending_external_fresh_runs"}))
+            rejected("normalized_scientific_mismatch",lambda _: (lambda m: (m["deterministic_regeneration"]["runs"][1]["scientific_artifacts"]["raw"].__setitem__("sha256","0"*64),out["manifest"].write_text(json.dumps(m,indent=2)+"\n")))(json.loads(out["manifest"].read_text())))
+            rejected("inconsistent_pending_state",lambda _: (lambda m: (m["verification"].__setitem__("seal_state","external_evidence_verified"),out["manifest"].write_text(json.dumps(m,indent=2)+"\n")))(json.loads(out["manifest"].read_text())))
 
     def test_derived_validation_rejects_all_named_adversarial_mutations(self):
         """Every emitted E06 derived table is raw-grounded and fail-closed."""

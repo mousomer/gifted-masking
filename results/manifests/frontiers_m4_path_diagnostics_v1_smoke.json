@@ -5,7 +5,111 @@
   "config_path": "configs/frontiers_article/e06_m4_paths_smoke.json",
   "normalized_config": "{\"bootstrap_replicates\":0,\"bootstrap_seed\":2026081697,\"bounds\":{\"p_max\":0.95,\"p_min\":0.05},\"experiment_id\":\"E06\",\"final_window_fraction\":0.2,\"km_values\":[0.0,0.001,0.002,0.003,0.004],\"learner\":{\"alpha\":0.1,\"lambda\":1.0,\"q0\":0.0,\"tau\":0.25},\"master_seed\":2026081699,\"model\":\"M4\",\"n\":64,\"payoffs\":{\"a\":0.6,\"b\":1.0,\"c\":0.25,\"r\":2.0},\"run_id\":\"frontiers_m4_path_diagnostics_v1_smoke\",\"scenarios\":[{\"actual_km_mode\":\"active\",\"id\":\"S00\",\"ka\":0.12,\"kr\":0.04,\"p0\":0.45,\"path_types\":[\"inherited_loop\",\"reversal_only\",\"cold_start\",\"km_disabled_inherited_loop\",\"km_disabled_reversal_only\"],\"role\":\"baseline\"}],\"segment_horizon\":120,\"tier\":\"smoke\",\"workers\":1}",
   "config_sha256": "475a8630acc73ab21520fd90024f85712b0002aec52d39d18e74e96cb8e4c40b",
-  "source_fingerprint_sha256": "8b404d6cb3493d48c2469881e798772ff93bd415caaeec64b0e41beec734e4a6",
+  "source_fingerprint_paths": [
+    "src/gifted_masking/experiments/e06.py",
+    "src/gifted_masking/cli.py",
+    "src/gifted_masking/core.py",
+    "src/gifted_masking/models/m4.py",
+    "src/gifted_masking/repro.py",
+    "configs/frontiers_article/e06_m4_paths_smoke.json",
+    "configs/frontiers_article/e06_m4_paths_standard.json",
+    "configs/frontiers_article/e06_m4_hysteresis_qualification.json",
+    "tests/test_article_e06.py",
+    "projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md",
+    "projects/frontiers_article/E06_SECOND_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md",
+    "projects/frontiers_article/E06_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md",
+    "projects/frontiers_article/E06_CODEX_INSTRUCTION_SET.md",
+    "projects/frontiers_article/runbooks/E06_OPERATIONAL_INSTRUCTIONS.md",
+    "projects/frontiers_article/checkpoints/E06_SOL_SMOKE_REVIEW.md",
+    "projects/frontiers_article/RDS.md",
+    "projects/frontiers_article/STAGE2_EXPERIMENT_SPECIFICATIONS.md",
+    "ARCHITECTURE.md",
+    "pyproject.toml",
+    "scripts/verify.sh"
+  ],
+  "source_fingerprints": [
+    {
+      "path": "src/gifted_masking/experiments/e06.py",
+      "sha256": "693c67b22d4b5a899a4bb362fde29759ea9047462ea291fdb6f7503da75461f0"
+    },
+    {
+      "path": "src/gifted_masking/cli.py",
+      "sha256": "d8b5d845195896edc38ec92ef1c8c128309b4bc33317d48a42abee0c732a8703"
+    },
+    {
+      "path": "src/gifted_masking/core.py",
+      "sha256": "5d1fb660f602246b39663e081bacbd6a40d024e4dfed2ccd963fc0971be623c9"
+    },
+    {
+      "path": "src/gifted_masking/models/m4.py",
+      "sha256": "f3a9e662d7514275aa480790b2ece27effab9854bf4d44542446dccd7afc485f"
+    },
+    {
+      "path": "src/gifted_masking/repro.py",
+      "sha256": "83510e3aa695c71c4a072643b889ada9efcad833d1a91c921cb7ca985100add4"
+    },
+    {
+      "path": "configs/frontiers_article/e06_m4_paths_smoke.json",
+      "sha256": "0319c203ec9317536742498cb30db9f914a3f277faae4a0693820abb34717e81"
+    },
+    {
+      "path": "configs/frontiers_article/e06_m4_paths_standard.json",
+      "sha256": "bc2c04d333273547aa06d1be90867ea457e739f5887df41ff09302e05719d297"
+    },
+    {
+      "path": "configs/frontiers_article/e06_m4_hysteresis_qualification.json",
+      "sha256": "9dfb55f1928d5f372dd0890da8069b728d114f98ebce8e863742a05c67617cbe"
+    },
+    {
+      "path": "tests/test_article_e06.py",
+      "sha256": "a5ae3b07fd3ecc0898f25fe50d01ee667de1ac9c1e9ce15ab206a754ad38916d"
+    },
+    {
+      "path": "projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md",
+      "sha256": "9fc0434c86da23815afc3327f79c0e9824918417839aadda39dc1ba061cb76f7"
+    },
+    {
+      "path": "projects/frontiers_article/E06_SECOND_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md",
+      "sha256": "fbc23d758da6dd6eb00d46f05106006f917574cac0313c63b6304789c205a2ca"
+    },
+    {
+      "path": "projects/frontiers_article/E06_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md",
+      "sha256": "919e8fe969355a269b6c36e8e9b72ca1cb8f8a96de706ba50ddaff820d09df4a"
+    },
+    {
+      "path": "projects/frontiers_article/E06_CODEX_INSTRUCTION_SET.md",
+      "sha256": "e36627db5bef064ba76f93f364f9ea10d7933cb634035cfc564df2e130d71f4f"
+    },
+    {
+      "path": "projects/frontiers_article/runbooks/E06_OPERATIONAL_INSTRUCTIONS.md",
+      "sha256": "181ae2f1a5e1fb2b7ffe6d053f94f3f20cd71635defec9c25a2b3f5cd47d446b"
+    },
+    {
+      "path": "projects/frontiers_article/checkpoints/E06_SOL_SMOKE_REVIEW.md",
+      "sha256": "a0e8c9993aa28d4ef6efbfbe926889c9419c8c63db2b6688975cfc2a550f3882"
+    },
+    {
+      "path": "projects/frontiers_article/RDS.md",
+      "sha256": "c6a719e3e934ffa2dd9e23b4dcdae68d9192da44ff42acbb2d6c46aca310a96c"
+    },
+    {
+      "path": "projects/frontiers_article/STAGE2_EXPERIMENT_SPECIFICATIONS.md",
+      "sha256": "dbc8f0d48d9236a6d45c18a27c7ff31de0dfb2e21387897ecc5c1f04dd087b5b"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "sha256": "d6103268ed5a6267c51e9931bce3a3ec8cf9c9ac44acf0d36695930d238d52cd"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "957ef2ba419aa6aa8b44a81b7eab26623767c6ca7f359a787d1bbbe4f627ddc1"
+    },
+    {
+      "path": "scripts/verify.sh",
+      "sha256": "15cc42f9b2c9a4809cb7a64e74ede6be9b580da18f4c007e8cd52ab280412357"
+    }
+  ],
+  "source_fingerprint_sha256": "ad053db7cd51846c2e2c2418d4bc9679d2e617045c712969e4c6bf11a6547d8d",
   "authorization": {
     "approval_path": "/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md",
     "approval_sha256": "9fc0434c86da23815afc3327f79c0e9824918417839aadda39dc1ba061cb76f7",
@@ -73,12 +177,296 @@
     "matplotlib": "3.10.8"
   },
   "git": {
+    "head": "9b2550248540152ad0d76758ee786bf228592880",
+    "branch": "codex/frontiers-stage2-e06",
     "dirty": true,
-    "porcelain_sha256": "4b7bb22b7e49f8d00db6ae1fc6a5d72a9f48d150c14a0d9a18e6647086bce859"
+    "porcelain_sha256": "5fe733cc7c6f7d9155cd965032ea3716ff83a9c95653c21271cae239429f7316"
   },
   "seed_hierarchy": {
     "segment_derivation": "SHA-256 semantic ID -> SeedSequence([master,6,*little_endian_words]).spawn(1)",
-    "bootstrap_derivation": "SHA-256 scenario/response/target ID -> SeedSequence([bootstrap_seed,60,*little_endian_words]).spawn(1)"
+    "bootstrap_derivation": "SHA-256 scenario/response/target ID -> SeedSequence([bootstrap_seed,60,*little_endian_words]).spawn(1)",
+    "complete_segment_seed_maps": {
+      "S00|inherited_loop": [
+        {
+          "direction": "up",
+          "km": "0.0000",
+          "position": 0,
+          "seed": 16915719435201336590
+        },
+        {
+          "direction": "up",
+          "km": "0.0010",
+          "position": 1,
+          "seed": 10854654512232817837
+        },
+        {
+          "direction": "up",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 8173653241377154948
+        },
+        {
+          "direction": "up",
+          "km": "0.0030",
+          "position": 3,
+          "seed": 10387609565973273105
+        },
+        {
+          "direction": "up",
+          "km": "0.0040",
+          "position": 4,
+          "seed": 4227861500167260747
+        },
+        {
+          "direction": "down",
+          "km": "0.0040",
+          "position": 0,
+          "seed": 9878543151809534318
+        },
+        {
+          "direction": "down",
+          "km": "0.0030",
+          "position": 1,
+          "seed": 8716388817569135654
+        },
+        {
+          "direction": "down",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 10783157368365215613
+        },
+        {
+          "direction": "down",
+          "km": "0.0010",
+          "position": 3,
+          "seed": 10690248050334602933
+        },
+        {
+          "direction": "down",
+          "km": "0.0000",
+          "position": 4,
+          "seed": 12711091638787062742
+        }
+      ],
+      "S00|reversal_only": [
+        {
+          "direction": "up",
+          "km": "0.0000",
+          "position": 0,
+          "seed": 16915719435201336590
+        },
+        {
+          "direction": "up",
+          "km": "0.0010",
+          "position": 1,
+          "seed": 10854654512232817837
+        },
+        {
+          "direction": "up",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 8173653241377154948
+        },
+        {
+          "direction": "up",
+          "km": "0.0030",
+          "position": 3,
+          "seed": 10387609565973273105
+        },
+        {
+          "direction": "up",
+          "km": "0.0040",
+          "position": 4,
+          "seed": 4227861500167260747
+        },
+        {
+          "direction": "down",
+          "km": "0.0040",
+          "position": 0,
+          "seed": 9878543151809534318
+        },
+        {
+          "direction": "down",
+          "km": "0.0030",
+          "position": 1,
+          "seed": 8716388817569135654
+        },
+        {
+          "direction": "down",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 10783157368365215613
+        },
+        {
+          "direction": "down",
+          "km": "0.0010",
+          "position": 3,
+          "seed": 10690248050334602933
+        },
+        {
+          "direction": "down",
+          "km": "0.0000",
+          "position": 4,
+          "seed": 12711091638787062742
+        }
+      ],
+      "S00|cold_start": [
+        {
+          "direction": "cold",
+          "km": "0.0000",
+          "position": 0,
+          "seed": 10214196000082874286
+        },
+        {
+          "direction": "cold",
+          "km": "0.0010",
+          "position": 1,
+          "seed": 2961381159717586560
+        },
+        {
+          "direction": "cold",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 10496314544703144017
+        },
+        {
+          "direction": "cold",
+          "km": "0.0030",
+          "position": 3,
+          "seed": 4763656367215317180
+        },
+        {
+          "direction": "cold",
+          "km": "0.0040",
+          "position": 4,
+          "seed": 1777103475693499165
+        }
+      ],
+      "S00|km_disabled_inherited_loop": [
+        {
+          "direction": "up",
+          "km": "0.0000",
+          "position": 0,
+          "seed": 16915719435201336590
+        },
+        {
+          "direction": "up",
+          "km": "0.0010",
+          "position": 1,
+          "seed": 10854654512232817837
+        },
+        {
+          "direction": "up",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 8173653241377154948
+        },
+        {
+          "direction": "up",
+          "km": "0.0030",
+          "position": 3,
+          "seed": 10387609565973273105
+        },
+        {
+          "direction": "up",
+          "km": "0.0040",
+          "position": 4,
+          "seed": 4227861500167260747
+        },
+        {
+          "direction": "down",
+          "km": "0.0040",
+          "position": 0,
+          "seed": 9878543151809534318
+        },
+        {
+          "direction": "down",
+          "km": "0.0030",
+          "position": 1,
+          "seed": 8716388817569135654
+        },
+        {
+          "direction": "down",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 10783157368365215613
+        },
+        {
+          "direction": "down",
+          "km": "0.0010",
+          "position": 3,
+          "seed": 10690248050334602933
+        },
+        {
+          "direction": "down",
+          "km": "0.0000",
+          "position": 4,
+          "seed": 12711091638787062742
+        }
+      ],
+      "S00|km_disabled_reversal_only": [
+        {
+          "direction": "up",
+          "km": "0.0000",
+          "position": 0,
+          "seed": 16915719435201336590
+        },
+        {
+          "direction": "up",
+          "km": "0.0010",
+          "position": 1,
+          "seed": 10854654512232817837
+        },
+        {
+          "direction": "up",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 8173653241377154948
+        },
+        {
+          "direction": "up",
+          "km": "0.0030",
+          "position": 3,
+          "seed": 10387609565973273105
+        },
+        {
+          "direction": "up",
+          "km": "0.0040",
+          "position": 4,
+          "seed": 4227861500167260747
+        },
+        {
+          "direction": "down",
+          "km": "0.0040",
+          "position": 0,
+          "seed": 9878543151809534318
+        },
+        {
+          "direction": "down",
+          "km": "0.0030",
+          "position": 1,
+          "seed": 8716388817569135654
+        },
+        {
+          "direction": "down",
+          "km": "0.0020",
+          "position": 2,
+          "seed": 10783157368365215613
+        },
+        {
+          "direction": "down",
+          "km": "0.0010",
+          "position": 3,
+          "seed": 10690248050334602933
+        },
+        {
+          "direction": "down",
+          "km": "0.0000",
+          "position": 4,
+          "seed": 12711091638787062742
+        }
+      ]
+    }
   },
   "schemas": {
     "raw": [
@@ -241,45 +629,109 @@
     "streaming_reason": "projected raw and peak RSS remain within frozen limits; no streaming writer exists"
   },
   "outputs": {
-    "manifest": {
-      "path": "results/manifests/frontiers_m4_path_diagnostics_v1_smoke.json",
-      "rows": null
-    },
     "raw": {
       "path": "results/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv",
-      "rows": 320
+      "rows": 320,
+      "bytes": 817314,
+      "sha256": "bbfa5b54034c96df825234f616e32480dfa3a1fdc3c82c6a76a9484a3d59e327"
     },
     "cells": {
       "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv",
-      "rows": 45
+      "rows": 45,
+      "bytes": 10596,
+      "sha256": "0a22befa4021e997b980da84f0d3520df418f7ec9834533e5c67b1cf7b0c8bdc"
     },
     "paths": {
       "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv",
-      "rows": 20
+      "rows": 20,
+      "bytes": 4340,
+      "sha256": "498f26914e7dfa30fe0f5c2cd782654c00bdee64bfa6122450997df22c7f4558"
     },
     "loops": {
       "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv",
-      "rows": 8
+      "rows": 8,
+      "bytes": 1833,
+      "sha256": "fb72f0eab5b0d54658f4193ed18bbbe439da39edcb19795317f9ebfc51cf9364"
     },
     "transitions": {
       "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv",
-      "rows": 8
+      "rows": 8,
+      "bytes": 1488,
+      "sha256": "94c41e2ed3736213b2da08be271ef1fb911f7b166b8715b708ba22c52dca0a3e"
     },
     "effects": {
       "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv",
-      "rows": 6
+      "rows": 6,
+      "bytes": 1198,
+      "sha256": "a95778cd4dc5f09a3c0c9af134c3bf9cbb76a32fa043e8a3f2ef8cb44e6497e8"
     },
     "figure": {
       "path": "results/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png",
-      "rows": null
+      "rows": null,
+      "bytes": 71971,
+      "sha256": "29448d540101f75e2ac4c32b050b5d5733b47c525bea21a2388976bac2e0661e"
     },
     "report": {
       "path": "results/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md",
-      "rows": null
+      "rows": null,
+      "bytes": 3401,
+      "sha256": "45a2809bc4cc25b792badfcb2fbc7ad42384ca0b894015c2e3fbb573785bf36e"
     },
     "warnings": {
       "path": "results/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
-      "rows": null
+      "rows": null,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "scientific_artifacts": {
+    "raw": {
+      "path": "results/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv",
+      "rows": 320,
+      "bytes": 817314,
+      "sha256": "bbfa5b54034c96df825234f616e32480dfa3a1fdc3c82c6a76a9484a3d59e327"
+    },
+    "cells": {
+      "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv",
+      "rows": 45,
+      "bytes": 10596,
+      "sha256": "0a22befa4021e997b980da84f0d3520df418f7ec9834533e5c67b1cf7b0c8bdc"
+    },
+    "paths": {
+      "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv",
+      "rows": 20,
+      "bytes": 4340,
+      "sha256": "498f26914e7dfa30fe0f5c2cd782654c00bdee64bfa6122450997df22c7f4558"
+    },
+    "loops": {
+      "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv",
+      "rows": 8,
+      "bytes": 1833,
+      "sha256": "fb72f0eab5b0d54658f4193ed18bbbe439da39edcb19795317f9ebfc51cf9364"
+    },
+    "transitions": {
+      "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv",
+      "rows": 8,
+      "bytes": 1488,
+      "sha256": "94c41e2ed3736213b2da08be271ef1fb911f7b166b8715b708ba22c52dca0a3e"
+    },
+    "effects": {
+      "path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv",
+      "rows": 6,
+      "bytes": 1198,
+      "sha256": "a95778cd4dc5f09a3c0c9af134c3bf9cbb76a32fa043e8a3f2ef8cb44e6497e8"
+    },
+    "figure": {
+      "path": "results/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png",
+      "rows": null,
+      "bytes": 71971,
+      "sha256": "29448d540101f75e2ac4c32b050b5d5733b47c525bea21a2388976bac2e0661e"
+    },
+    "warnings": {
+      "path": "results/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
+      "rows": null,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   },
   "output_hashes": {
@@ -312,8 +764,8 @@
       "bytes": 71971
     },
     "report": {
-      "sha256": "0ba27d984405bab43b2781fa5e19f68d9c3f075c951adb624aa8c67d91dab4ce",
-      "bytes": 1790
+      "sha256": "45a2809bc4cc25b792badfcb2fbc7ad42384ca0b894015c2e3fbb573785bf36e",
+      "bytes": 3401
     },
     "warnings": {
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -321,14 +773,14 @@
     }
   },
   "timing": {
-    "wall_seconds": 0.9316528339986689,
-    "peak_rss_mib": 80.0625,
+    "wall_seconds": 1.4755585829843767,
+    "peak_rss_mib": 81.21875,
     "raw_bytes": 817314,
     "phase_seconds": {
-      "simulation": 0.30118508398300037,
-      "serialization": 0.03532829199684784,
-      "derived": 0.06253095902502537,
-      "figure": 0.5326056249905378,
+      "simulation": 0.3151876659831032,
+      "serialization": 0.33310650003841147,
+      "derived": 0.1589721660129726,
+      "figure": 0.6682898750295863,
       "startup": 0.0
     }
   },
@@ -337,10 +789,10 @@
     "learner_steps": 913000000,
     "method": "phase_separated_vectorized_n400_segment_benchmark_v1",
     "smoke_phase_seconds": {
-      "simulation": 0.30118508398300037,
-      "serialization": 0.03532829199684784,
-      "derived": 0.06253095902502537,
-      "figure": 0.5326056249905378,
+      "simulation": 0.3151876659831032,
+      "serialization": 0.33310650003841147,
+      "derived": 0.1589721660129726,
+      "figure": 0.6682898750295863,
       "startup": 0.0
     },
     "segment_counts": {
@@ -348,20 +800,20 @@
       "1000": 2145
     },
     "n400_probe_seconds": {
-      "500": 0.038067542016506195,
-      "1000": 0.07654045801609755
+      "500": 0.037971791985910386,
+      "1000": 0.07592979102628306
     },
     "projected_components_seconds": {
-      "simulation": 174.64785649906844,
-      "serialization": 5.740847449487774,
-      "derived": 0.6253095902502537,
-      "figure": 0.5326056249905378,
+      "simulation": 173.3116445475025,
+      "serialization": 54.129806256241864,
+      "derived": 1.589721660129726,
+      "figure": 0.6682898750295863,
       "startup": 0.0
     },
-    "seconds": 181.546619163797,
+    "seconds": 229.6994623389037,
     "raw_mib": 126.6608476638794,
     "total_mib": 140.82932472229004,
-    "peak_rss_mib": 119.625,
+    "peak_rss_mib": 121.828125,
     "limits": {
       "seconds": 600,
       "raw_mib": 400,
@@ -374,19 +826,225 @@
     "rows": 30000,
     "learner_steps": 660000000,
     "method": "separate_non_authorizing_projection",
-    "seconds": 579.3996666380473,
+    "seconds": 634.7717471479958,
     "raw_mib": 73.07356595993042,
     "total_mib": 81.24768733978271,
-    "peak_rss_mib": 119.7890625,
+    "peak_rss_mib": 121.828125,
     "refused": true
+  },
+  "focused_verification": {
+    "status": "passed",
+    "records": [
+      {
+        "name": "E06",
+        "command": "MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_article_e06.py -v",
+        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_second_fix_preverification_logs/test_e06.log",
+        "log_sha256": "cdb49a66a45309d56efe4c204f7a1ff8d9fd955c46d9cce3f083ec13e35a0670",
+        "exit_code": 0,
+        "test_count": 10,
+        "runtime_seconds": 12.473,
+        "passed": true
+      },
+      {
+        "name": "M4",
+        "command": "MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_m4.py -v",
+        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_second_fix_preverification_logs/test_m4.log",
+        "log_sha256": "06f0fa81fa6ae111cdf97d8813524ba6acd4ee7c1d2b528f6a24733d9aaf70db",
+        "exit_code": 0,
+        "test_count": 4,
+        "runtime_seconds": 0.24,
+        "passed": true
+      },
+      {
+        "name": "core_and_determinism",
+        "command": "MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_core.py tests/test_determinism.py -v",
+        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_second_fix_preverification_logs/test_core_determinism.log",
+        "log_sha256": "ce1576bfc0c02909422934eaae71b3780cd3d2789a31c396f51e420f4b65b364",
+        "exit_code": 0,
+        "test_count": 7,
+        "runtime_seconds": 0.203,
+        "passed": true
+      },
+      {
+        "name": "post_artifact",
+        "command": "MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_manifest_completeness.py tests/test_primary_raw_schema.py tests/test_summary_matches_raw.py -v",
+        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_second_fix_preverification_logs/test_post_artifact.log",
+        "log_sha256": "ab6149118d788c97b61ad1b5f6901b686b034bb73dc3bff7b5a338809e6104c9",
+        "exit_code": 0,
+        "test_count": 4,
+        "runtime_seconds": 7.804,
+        "passed": true
+      }
+    ]
+  },
+  "deterministic_regeneration": {
+    "status": "passed",
+    "runs": [
+      {
+        "manifest_path": "/private/tmp/e06_second_fix_run_a/manifests/frontiers_m4_path_diagnostics_v1_smoke.json",
+        "report_path": "/private/tmp/e06_second_fix_run_a/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md",
+        "scientific_artifacts": {
+          "raw": {
+            "path": "/private/tmp/e06_second_fix_run_a/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv",
+            "rows": 320,
+            "bytes": 817314,
+            "sha256": "bbfa5b54034c96df825234f616e32480dfa3a1fdc3c82c6a76a9484a3d59e327"
+          },
+          "cells": {
+            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv",
+            "rows": 45,
+            "bytes": 10596,
+            "sha256": "0a22befa4021e997b980da84f0d3520df418f7ec9834533e5c67b1cf7b0c8bdc"
+          },
+          "paths": {
+            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv",
+            "rows": 20,
+            "bytes": 4340,
+            "sha256": "498f26914e7dfa30fe0f5c2cd782654c00bdee64bfa6122450997df22c7f4558"
+          },
+          "loops": {
+            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv",
+            "rows": 8,
+            "bytes": 1833,
+            "sha256": "fb72f0eab5b0d54658f4193ed18bbbe439da39edcb19795317f9ebfc51cf9364"
+          },
+          "transitions": {
+            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv",
+            "rows": 8,
+            "bytes": 1488,
+            "sha256": "94c41e2ed3736213b2da08be271ef1fb911f7b166b8715b708ba22c52dca0a3e"
+          },
+          "effects": {
+            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv",
+            "rows": 6,
+            "bytes": 1198,
+            "sha256": "a95778cd4dc5f09a3c0c9af134c3bf9cbb76a32fa043e8a3f2ef8cb44e6497e8"
+          },
+          "figure": {
+            "path": "/private/tmp/e06_second_fix_run_a/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png",
+            "rows": null,
+            "bytes": 71971,
+            "sha256": "29448d540101f75e2ac4c32b050b5d5733b47c525bea21a2388976bac2e0661e"
+          },
+          "warnings": {
+            "path": "/private/tmp/e06_second_fix_run_a/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
+            "rows": null,
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "manifest_path": "/private/tmp/e06_second_fix_run_b/manifests/frontiers_m4_path_diagnostics_v1_smoke.json",
+        "report_path": "/private/tmp/e06_second_fix_run_b/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md",
+        "scientific_artifacts": {
+          "raw": {
+            "path": "/private/tmp/e06_second_fix_run_b/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv",
+            "rows": 320,
+            "bytes": 817314,
+            "sha256": "bbfa5b54034c96df825234f616e32480dfa3a1fdc3c82c6a76a9484a3d59e327"
+          },
+          "cells": {
+            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv",
+            "rows": 45,
+            "bytes": 10596,
+            "sha256": "0a22befa4021e997b980da84f0d3520df418f7ec9834533e5c67b1cf7b0c8bdc"
+          },
+          "paths": {
+            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv",
+            "rows": 20,
+            "bytes": 4340,
+            "sha256": "498f26914e7dfa30fe0f5c2cd782654c00bdee64bfa6122450997df22c7f4558"
+          },
+          "loops": {
+            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv",
+            "rows": 8,
+            "bytes": 1833,
+            "sha256": "fb72f0eab5b0d54658f4193ed18bbbe439da39edcb19795317f9ebfc51cf9364"
+          },
+          "transitions": {
+            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv",
+            "rows": 8,
+            "bytes": 1488,
+            "sha256": "94c41e2ed3736213b2da08be271ef1fb911f7b166b8715b708ba22c52dca0a3e"
+          },
+          "effects": {
+            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv",
+            "rows": 6,
+            "bytes": 1198,
+            "sha256": "a95778cd4dc5f09a3c0c9af134c3bf9cbb76a32fa043e8a3f2ef8cb44e6497e8"
+          },
+          "figure": {
+            "path": "/private/tmp/e06_second_fix_run_b/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png",
+            "rows": null,
+            "bytes": 71971,
+            "sha256": "29448d540101f75e2ac4c32b050b5d5733b47c525bea21a2388976bac2e0661e"
+          },
+          "warnings": {
+            "path": "/private/tmp/e06_second_fix_run_b/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
+            "rows": null,
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      }
+    ],
+    "scientific_byte_comparison": "passed",
+    "normalized_manifest_report": "passed",
+    "normalization_rules": [
+      "manifest.timing",
+      "manifest.timestamps",
+      "manifest.git",
+      "manifest.standard_projection",
+      "manifest.qualification_projection",
+      "manifest.command output-root only",
+      "manifest.outputs.*.path output-root only",
+      "manifest.outputs.report bytes/sha256",
+      "manifest.output_hashes.report",
+      "report item 9 runtime/projection",
+      "report item 10 qualification projection"
+    ]
   },
   "warnings": [],
   "verification": {
-    "status": "pending_user_full_verification",
-    "full_verification_command": "MPLCONFIGDIR=/private/tmp/e06_user_verify ./scripts/verify.sh"
+    "status": "passed",
+    "seal_state": "external_evidence_verified",
+    "command": "MPLCONFIGDIR=/private/tmp/e06_user_verify_round2 ./scripts/verify.sh",
+    "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_round2_user_verification/user_full_repository_verification_round2.log",
+    "log_sha256": "73a5922e137972d87f8a7baf2cfc1fb600cb16eb2e324ae3af8208a6ec029de9",
+    "exit_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_round2_user_verification/user_full_repository_verification_round2_exit.txt",
+    "exit_sha256": "e0eb8bd605bbfaa0c7eac5a1e11fd892eb29a2831a8b8f3601c2e5d01f410063",
+    "suites": [
+      {
+        "name": "repository_discovery",
+        "test_count": 116,
+        "runtime_seconds": 128.321,
+        "passed": true
+      },
+      {
+        "name": "manifest_completeness",
+        "test_count": 1,
+        "runtime_seconds": 1.694,
+        "passed": true
+      },
+      {
+        "name": "primary_raw_schema",
+        "test_count": 1,
+        "runtime_seconds": 1.679,
+        "passed": true
+      },
+      {
+        "name": "summary_matches_raw",
+        "test_count": 2,
+        "runtime_seconds": 3.24,
+        "passed": true
+      }
+    ],
+    "test_count": 120,
+    "runtime_seconds": 134.934
   },
   "timestamps": {
-    "start_utc": "2026-08-13T11:01:00.263736+00:00",
-    "end_utc": "2026-08-13T11:01:01.608362+00:00"
+    "start_utc": "2026-08-13T13:14:23.837368+00:00",
+    "end_utc": "2026-08-13T13:14:25.769374+00:00"
   }
 }
