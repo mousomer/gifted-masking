@@ -1,0 +1,9 @@
+run_id,experiment_id,tier,scenario_id,path_type,master_seed,response,signed_area,absolute_area,mean_vertical_separation,maximum_abs_separation,control_excess_area,direction,decision_eligible
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,inherited_loop,2026081699,mask,-0.00029134114583333323,0.00032519531249999996,-0.0728352864583333,0.2851562500000001,-0.00021842447916666644,positive,False
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,inherited_loop,2026081699,receptivity,-0.00030545186295394093,0.00030545186295394093,-0.07636296573848524,0.10140953347334014,-0.0003463229638142404,negative,False
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,km_disabled_inherited_loop,2026081699,mask,-0.0008011067708333334,0.0008011067708333334,-0.20027669270833334,0.4824218750000001,-0.0007216796875,positive,False
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,km_disabled_inherited_loop,2026081699,receptivity,0.00034036035525208025,0.00034036035525208025,0.08509008881302006,0.221300851076068,0.00031049568096781267,negative,False
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,km_disabled_reversal_only,2026081699,mask,-7.942708333333337e-05,7.942708333333337e-05,-0.019856770833333343,0.04166666666666663,,positive,False
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,km_disabled_reversal_only,2026081699,receptivity,2.9864674284267585e-05,6.1031680961868896e-05,0.0074661685710668965,0.027773728442978873,,negative,False
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,reversal_only,2026081699,mask,-7.29166666666668e-05,0.00010937500000000007,-0.0182291666666667,0.046875,,positive,False
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,reversal_only,2026081699,receptivity,4.087110086029949e-05,7.70232308153222e-05,0.010217775215074873,0.028429938997865056,,negative,False

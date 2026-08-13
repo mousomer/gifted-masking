@@ -1,0 +1,14 @@
+test_softmax_rejects_nonpositive_temperature (tests.test_core.CoreTests.test_softmax_rejects_nonpositive_temperature) ... ok
+test_subjective_value_only_scales_negative_rewards (tests.test_core.CoreTests.test_subjective_value_only_scales_negative_rewards) ... ok
+test_m0_seed_is_deterministic (tests.test_determinism.DeterminismTests.test_m0_seed_is_deterministic) ... ok
+test_m1_seed_is_deterministic (tests.test_determinism.DeterminismTests.test_m1_seed_is_deterministic) ... ok
+test_m2_seed_is_deterministic (tests.test_determinism.DeterminismTests.test_m2_seed_is_deterministic) ... ok
+test_m3_seed_is_deterministic (tests.test_determinism.DeterminismTests.test_m3_seed_is_deterministic) ... ok
+test_m4_seed_is_deterministic (tests.test_determinism.DeterminismTests.test_m4_seed_is_deterministic) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.216s
+
+OK
+exit_code=0
+elapsed_seconds=0

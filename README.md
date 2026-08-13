@@ -29,22 +29,35 @@ The current source of truth for model semantics is:
 The new package is intended to reproduce the legacy behavior while making the
 models testable and easier to perturb.
 
+Article development is governed separately by
+`projects/frontiers_article/RDS.md`. That RDS controls manuscript scope,
+claim/evidence gates, figures, and submission delivery, but it does not override
+the model-semantics sources above.
+
 ## Local Setup
 
-Create the local environment:
+The required shared workspace environment is
+`/Users/omer/workspace/venvs/venv314`. Confirm it is available with:
 
 ```bash
-./scripts/bootstrap_venv.sh
+/Users/omer/workspace/venvs/venv314/bin/python --version
 ```
 
-This repository expects all normal Python work to run from the repo-local
-`.venv`. Using system Python directly is unsupported except to bootstrap that
+This repository expects all normal Python work to run from the shared workspace
+environment. Using system Python directly is unsupported except to repair that
 environment.
+
+If the repository package needs to be installed or refreshed in that
+environment, use:
+
+```bash
+/Users/omer/workspace/venvs/venv314/bin/python -m pip install -e .
+```
 
 Activate it:
 
 ```bash
-source .venv/bin/activate
+source /Users/omer/workspace/venvs/venv314/bin/activate
 ```
 
 Install optional plotting support if needed:
@@ -94,4 +107,5 @@ src/gifted_masking/
 tests/
 scripts/
 results/
+projects/frontiers_article/
 ```

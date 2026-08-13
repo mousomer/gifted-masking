@@ -38,6 +38,52 @@ so the scientific claims can be tested directly.
 - `src/gifted_masking/experiments/robustness.py`
   - perturbation suites, M3 ablation summaries, M4 hysteresis-path summaries,
     manifests, report generation
+- `src/gifted_masking/experiments/article.py`
+  - config-driven, experiment-only Frontiers analyses that call maintained
+    model kernels without changing baseline model paths
+- `configs/frontiers_article/`
+  - explicit smoke and standard article-experiment configurations; standard
+    execution remains gated by reviewed smoke checkpoints
+  - E01 currently uses a canonical semantic cell ID and a two-component
+    `SeedSequence` hierarchy, producing sorted primary rows, summaries,
+    diagnostics, and a self-excluding output-hash manifest
+  - E02 uses a separate canonical matched-pair seed hierarchy for binary and
+    independent graded-disclosure learners.  Its smoke runner forces only the
+    initial full-disclosure action after consuming the policy/acceptance draws,
+    records paired raw diagnostics, validates exact JSON types and values,
+    computes stable-full-policy diagnostics with a linear suffix scan, and
+    refuses standard execution without an E02-specific approval record.
+  - standard E01 configuration is staged but execution is refused by the
+    smoke-only runner until a separate authorized path is added
+  - E05 uses an isolated M3 BFLPE crossover kernel with frozen accepted-good-
+    authentic-only comparison-cost semantics, architecture-specific matched
+    streams across `bf`, strict artifact validation, phase-scaled readiness
+    accounting that does not multiply one-time plotting startup by learner
+    work, and fail-closed external-verification sealing. Its staged standard
+    configuration remains refused pending an E05-specific review
+  - E06 uses an isolated M4 continuation-path diagnostic kernel. It delegates
+    segment evolution to maintained `simulate_from_state`, packs child-level
+    segment arrays, validates continuity/reset/bounds/count invariants, and
+    refuses staged standard and qualification configurations until their own
+    future approval records exist.
+  - E06's local recorder additionally retains final-window action, authentic
+    acceptance/rejection, objective-reward, and p/Q boundary diagnostics while
+    replaying maintained M4 draw/update order. Its strict raw boundary and
+    phase-separated capacity probe are experiment-local and do not alter M4.
+    `validate_e06_derived` is the shared fail-closed boundary for materialized
+    and parsed emitted tables: it requires validated packed raw rows and the
+    exact frozen config, reconstructs ordered cells/paths/loops/transitions/
+    effects, and rejects altered identities, ordering, cardinalities,
+    unavailable smoke inference, or nonfinite/numerically inconsistent values.
+    E06 uses materialized packed rows; no streaming writer exists, and that
+    non-applicability is recorded with the frozen raw/RSS capacity rationale.
+    The 2026-08-13 independent smoke review found that the current packed-raw
+    validator does not yet enforce every frozen identity, seed-map, parameter,
+    traversal, reset, and two-Q continuity field. Derived validation is exact
+    for accepted raw rows but inherits that gap. Standard dispatch therefore
+    remains refused until the complete expected row is reconstructed from the
+    config and semantic seed contract and the canonical 13-item report and
+    provenance seal are complete.
 - `src/gifted_masking/plotting/legacy_figures.py`
   - figure generation only, with lazy `matplotlib` imports
 - `src/gifted_masking/repro.py`
@@ -54,9 +100,25 @@ so the scientific claims can be tested directly.
   - M4 hysteresis experiment coverage,
   - artifact-generation smoke coverage
 - `scripts/verify.sh`
-  - standard repo verification command
-- `.venv/`
-  - required local execution environment for Python commands and installs
+  - standard repo verification command, pinned to the required shared
+    workspace Python rather than a repository-local environment
+- `/Users/omer/workspace/venvs/venv314/`
+  - required shared workspace environment for Python commands, installs, verification, and experiment runs
+
+### Publication Artifacts
+
+- `doc-reviews/frontiers_submission/`
+  - official-template Original Research manuscript for Frontiers in Psychology
+  - results-led assertive revision that foregrounds learned suboptimal masking,
+    hot-stove persistence, and search burden before later limitations
+  - separate 300-dpi RGB figure files
+  - manuscript-specific independent-bootstrap estimates
+  - author-facing submission and placeholder checklist
+- `projects/frontiers_article/`
+  - article-development sub-project governed by a Research Design Specification
+  - source of truth for claim/evidence gates, the nine-stage delivery workflow,
+    manuscript integration, figure planning, and submission readiness
+  - does not supersede repository-level authority for model semantics
 
 ## Dependency Policy
 
@@ -89,6 +151,8 @@ Avoided for now:
   artifacts under `results/`.
 - The maintained suite includes M3 action-space ablations and an explicit M4
   ramp-up/ramp-down path experiment.
-- A local `.venv` workflow exists and the repo has a single documented
+- The shared workspace venv workflow exists and the repo has a single documented
   verification command.
-- `AGENTS.md` explicitly requires using the repo-local `.venv`.
+- `AGENTS.md` explicitly requires using `/Users/omer/workspace/venvs/venv314`.
+- The Frontiers article sub-project has an explicit RDS, claim ledger, stage
+  gates, and completion criteria without changing model semantics.

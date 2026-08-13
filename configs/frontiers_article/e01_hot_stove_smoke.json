@@ -1,0 +1,26 @@
+{
+  "experiment_id": "E01",
+  "run_id": "frontiers_hot_stove_v1_smoke",
+  "tier": "smoke",
+  "model": "M0",
+  "n": 96,
+  "T": 300,
+  "final_window_fraction": 0.2,
+  "master_seed": 2026081199,
+  "bootstrap_seed": 2026081201,
+  "workers": 1,
+  "payoffs": {"b": 1.0, "a": 0.6, "c": 0.25, "r": 2.0},
+  "learner": {"alpha": 0.1, "tau": 0.25, "q0": 0.0},
+  "cells": [
+    {"p": 0.75, "lambda": 1.0, "condition": "controlled_baseline"},
+    {"p": 0.75, "lambda": 1.0, "condition": "forced_authentic_0.05"},
+    {"p": 0.75, "lambda": 1.0, "condition": "counterfactual_authentic_feedback"},
+    {"p": 0.85, "lambda": 1.0, "condition": "controlled_baseline"},
+    {"p": 0.85, "lambda": 1.0, "condition": "forced_authentic_0.05"},
+    {"p": 0.85, "lambda": 1.0, "condition": "counterfactual_authentic_feedback"},
+    {"p": 0.75, "lambda": 0.5, "condition": "controlled_baseline"},
+    {"p": 0.75, "lambda": 2.5, "condition": "controlled_baseline"},
+    {"p": 0.65, "lambda": 0.5, "condition": "maintained_baseline"},
+    {"p": 0.65, "lambda": 2.5, "condition": "maintained_baseline"}
+  ]
+}

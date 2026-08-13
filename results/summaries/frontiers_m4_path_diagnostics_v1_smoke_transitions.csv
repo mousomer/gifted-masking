@@ -1,0 +1,9 @@
+run_id,experiment_id,tier,scenario_id,path_type,master_seed,target,ascending_km,descending_km,width,status,decision_eligible,bootstrap_replicates,bootstrap_valid_fraction,ci_low,ci_high
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,inherited_loop,2026081699,0.5,,,,ascending:no_crossing_above;descending:no_crossing_above,False,0,,,
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,inherited_loop,2026081699,0.75,,,,ascending:no_crossing_below;descending:no_crossing_below,False,0,,,
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,reversal_only,2026081699,0.5,,,,ascending:no_crossing_above;descending:no_crossing_above,False,0,,,
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,reversal_only,2026081699,0.75,0.0021882352941176436,0.0034583333333333324,-0.0012700980392156887,valid,False,0,,,
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,km_disabled_inherited_loop,2026081699,0.5,,,,ascending:no_crossing_above;descending:no_crossing_below,False,0,,,
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,km_disabled_inherited_loop,2026081699,0.75,,,,ascending:no_crossing_below;descending:no_crossing_below,False,0,,,
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,km_disabled_reversal_only,2026081699,0.5,,,,ascending:no_crossing_above;descending:no_crossing_above,False,0,,,
+frontiers_m4_path_diagnostics_v1_smoke,E06,smoke,S00,km_disabled_reversal_only,2026081699,0.75,,,,ascending:no_crossing_below;descending:no_crossing_below,False,0,,,

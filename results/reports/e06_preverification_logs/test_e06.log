@@ -1,0 +1,15 @@
+test_derived_validation_rejects_all_named_adversarial_mutations (tests.test_article_e06.E06Tests.test_derived_validation_rejects_all_named_adversarial_mutations)
+Every emitted E06 derived table is raw-grounded and fail-closed. ... ok
+test_frozen_configs_and_dispatch_refusal (tests.test_article_e06.E06Tests.test_frozen_configs_and_dispatch_refusal) ... ok
+test_local_replay_matches_maintained_m4_for_stochastic_cases (tests.test_article_e06.E06Tests.test_local_replay_matches_maintained_m4_for_stochastic_cases) ... ok
+test_loop_area_and_pava_transition_boundaries (tests.test_article_e06.E06Tests.test_loop_area_and_pava_transition_boundaries) ... ok
+test_seed_pairing_and_directional_isolation (tests.test_article_e06.E06Tests.test_seed_pairing_and_directional_isolation) ... ok
+test_smoke_packed_rows_reconstruct_and_reject_corruption (tests.test_article_e06.E06Tests.test_smoke_packed_rows_reconstruct_and_reject_corruption) ... ok
+test_standard_only_inference_helpers_are_synthetic_and_seed_isolated (tests.test_article_e06.E06Tests.test_standard_only_inference_helpers_are_synthetic_and_seed_isolated) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.313s
+
+OK
+exit_code=0
+elapsed_seconds=3

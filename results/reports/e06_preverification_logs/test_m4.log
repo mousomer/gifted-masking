@@ -1,0 +1,11 @@
+test_higher_entrenchment_increases_mask_rate (tests.test_m4.M4Tests.test_higher_entrenchment_increases_mask_rate) ... ok
+test_hysteresis_experiment_returns_matched_paths (tests.test_m4.M4Tests.test_hysteresis_experiment_returns_matched_paths) ... ok
+test_simulation_clips_initial_receptivity (tests.test_m4.M4Tests.test_simulation_clips_initial_receptivity) ... ok
+test_update_receptivity_respects_bounds (tests.test_m4.M4Tests.test_update_receptivity_respects_bounds) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.259s
+
+OK
+exit_code=0
+elapsed_seconds=0

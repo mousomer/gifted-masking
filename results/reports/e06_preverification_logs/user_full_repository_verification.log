@@ -1,0 +1,168 @@
+Verification Python: /Users/omer/workspace/venvs/venv314/bin/python
+test_baseline_cell_matches_m0_exactly (test_article_e01.ArticleE01Tests.test_baseline_cell_matches_m0_exactly) ... ok
+test_cell_reordering_preserves_machine_readable_results (test_article_e01.ArticleE01Tests.test_cell_reordering_preserves_machine_readable_results) ... Matplotlib is building the font cache; this may take a moment.
+ok
+test_config_is_frozen_smoke_contract (test_article_e01.ArticleE01Tests.test_config_is_frozen_smoke_contract) ... ok
+test_forced_initial_and_interventions_preserve_objective_semantics (test_article_e01.ArticleE01Tests.test_forced_initial_and_interventions_preserve_objective_semantics) ... ok
+test_global_numpy_rng_is_not_used_and_final_window_uses_ceiling (test_article_e01.ArticleE01Tests.test_global_numpy_rng_is_not_used_and_final_window_uses_ceiling) ... ok
+test_normalized_reruns_match_and_manifest_is_complete (test_article_e01.ArticleE01Tests.test_normalized_reruns_match_and_manifest_is_complete) ... ok
+test_pooled_effects_and_nonblank_figure (test_article_e01.ArticleE01Tests.test_pooled_effects_and_nonblank_figure) ... /Users/omer/workspace/personal/repos/gifted-masking/tests/test_article_e01.py:159: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/yh/v0tbc9hs47sftfrrj5_q3_cr0000gn/T/tmpzyyujouc/results/summaries/frontiers_hot_stove_v1_smoke_effects.csv' mode='r' encoding='UTF-8'>
+  effects = list(csv.DictReader(outputs["effects"].open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_raw_schema_and_recomputed_summaries (test_article_e01.ArticleE01Tests.test_raw_schema_and_recomputed_summaries) ... ok
+test_report_wording_is_tier_aware (test_article_e01.ArticleE01Tests.test_report_wording_is_tier_aware) ... ok
+test_seed_derivation_is_canonical_and_cell_order_independent (test_article_e01.ArticleE01Tests.test_seed_derivation_is_canonical_and_cell_order_independent) ... ok
+test_standard_config_is_not_executable (test_article_e01.ArticleE01Tests.test_standard_config_is_not_executable) ... ok
+test_analytic_endpoint_and_intermediate_equations (test_article_e02.ArticleE02Tests.test_analytic_endpoint_and_intermediate_equations) ... ok
+test_e02_standard_authorization_is_canonical_and_tier_report_is_correct (test_article_e02.ArticleE02Tests.test_e02_standard_authorization_is_canonical_and_tier_report_is_correct) ... ok
+test_forced_draw_order_and_matched_initial_potential_outcomes (test_article_e02.ArticleE02Tests.test_forced_draw_order_and_matched_initial_potential_outcomes) ... ok
+test_forced_selected_arm_only_update_and_noninteger_window (test_article_e02.ArticleE02Tests.test_forced_selected_arm_only_update_and_noninteger_window) ... ok
+test_frozen_config_and_standard_refusal (test_article_e02.ArticleE02Tests.test_frozen_config_and_standard_refusal) ... ok
+test_full_stream_common_potential_outcomes_and_shared_endpoint_actions (test_article_e02.ArticleE02Tests.test_full_stream_common_potential_outcomes_and_shared_endpoint_actions) ... ok
+test_provenance_hashes_report_and_fingerprint_are_independently_recomputable (test_article_e02.ArticleE02Tests.test_provenance_hashes_report_and_fingerprint_are_independently_recomputable) ... ok
+test_raw_summary_effect_recomputation_and_artifact_counts (test_article_e02.ArticleE02Tests.test_raw_summary_effect_recomputation_and_artifact_counts) ... ok
+test_rng_order_global_rng_and_cell_order_independence (test_article_e02.ArticleE02Tests.test_rng_order_global_rng_and_cell_order_independence) ... ok
+test_selected_arm_update_counts_payoff_and_regret_reconcile (test_article_e02.ArticleE02Tests.test_selected_arm_update_counts_payoff_and_regret_reconcile) ... ok
+test_strict_json_types_and_recursive_contract_reject_mutations (test_article_e02.ArticleE02Tests.test_strict_json_types_and_recursive_contract_reject_mutations) ... ok
+test_synthetic_five_seed_student_t_interval (test_article_e02.ArticleE02Tests.test_synthetic_five_seed_student_t_interval) ... ok
+test_synthetic_modal_tie_intermediate_and_stable_boundary_cases (test_article_e02.ArticleE02Tests.test_synthetic_modal_tie_intermediate_and_stable_boundary_cases) ... ok
+test_unforced_replay_matches_maintained_m0_and_m1 (test_article_e02.ArticleE02Tests.test_unforced_replay_matches_maintained_m0_and_m1) ... ok
+test_window_ties_censoring_and_intermediate_non_discovery_fields (test_article_e02.ArticleE02Tests.test_window_ties_censoring_and_intermediate_non_discovery_fields) ... ok
+test_component_and_sensitivity_aware_parameter_ids_do_not_collide (test_article_e03.ArticleE03Tests.test_component_and_sensitivity_aware_parameter_ids_do_not_collide) ... ok
+test_e01_e02_config_non_regression (test_article_e03.ArticleE03Tests.test_e01_e02_config_non_regression) ... ok
+test_e03_semantic_parity_uses_maintained_reward_first_m2_kernel (test_article_e03.ArticleE03Tests.test_e03_semantic_parity_uses_maintained_reward_first_m2_kernel) ... ok
+test_frozen_configs_and_standard_refusal (test_article_e03.ArticleE03Tests.test_frozen_configs_and_standard_refusal) ... ok
+test_frozen_legacy_mean_uses_fsum_or_one_ulp_only (test_article_e03.ArticleE03Tests.test_frozen_legacy_mean_uses_fsum_or_one_ulp_only) ... ok
+test_genuine_standard_t_window_prefix_family_and_independent_cases (test_article_e03.ArticleE03Tests.test_genuine_standard_t_window_prefix_family_and_independent_cases) ... ok
+test_global_rng_isolation_and_raw_count_window_reward_reconciliation (test_article_e03.ArticleE03Tests.test_global_rng_isolation_and_raw_count_window_reward_reconciliation) ... ok
+test_recursive_contract_rejects_nested_mutations (test_article_e03.ArticleE03Tests.test_recursive_contract_rejects_nested_mutations) ... ok
+test_semantic_seed_and_prefix_pairing_contract (test_article_e03.ArticleE03Tests.test_semantic_seed_and_prefix_pairing_contract) ... ok
+test_standard_dispatch_plan_has_only_authorized_factor_cells (test_article_e03.ArticleE03Tests.test_standard_dispatch_plan_has_only_authorized_factor_cells) ... ok
+test_standard_helpers_intervals_stability_threshold_refinement_and_harsh_cells (test_article_e03.ArticleE03Tests.test_standard_helpers_intervals_stability_threshold_refinement_and_harsh_cells) ... ok
+test_standard_summary_fails_closed_for_cardinality_seed_and_component_errors (test_article_e03.ArticleE03Tests.test_standard_summary_fails_closed_for_cardinality_seed_and_component_errors) ... ok
+test_streaming_writer_matches_in_memory_recomputation_and_capacity_plan (test_article_e03.ArticleE03Tests.test_streaming_writer_matches_in_memory_recomputation_and_capacity_plan) ... ok
+test_tie_and_p1_missing_stigma_contract (test_article_e03.ArticleE03Tests.test_tie_and_p1_missing_stigma_contract) ... ok
+test_action_shapes_identity_and_regret_sentinels (test_article_e04.ArticleE04Tests.test_action_shapes_identity_and_regret_sentinels) ... ok
+test_adversarial_raw_curve_effect_and_normalized_manifest_rejection (test_article_e04.ArticleE04Tests.test_adversarial_raw_curve_effect_and_normalized_manifest_rejection) ... ok
+test_canonicalization_has_exact_55_and_120_rows (test_article_e04.ArticleE04Tests.test_canonicalization_has_exact_55_and_120_rows) ... ok
+test_duplicate_json_types_and_matched_family_are_fail_closed (test_article_e04.ArticleE04Tests.test_duplicate_json_types_and_matched_family_are_fail_closed) ... ok
+test_fixed_identity_replays_all_maintained_architecture_kernels (test_article_e04.ArticleE04Tests.test_fixed_identity_replays_all_maintained_architecture_kernels) ... ok
+test_frozen_config_and_e04_standard_refusal (test_article_e04.ArticleE04Tests.test_frozen_config_and_e04_standard_refusal) ... ok
+test_rng_separation_schema_entropy_and_raw_reconciliation (test_article_e04.ArticleE04Tests.test_rng_separation_schema_entropy_and_raw_reconciliation) ... ok
+test_smoke_effects_are_noninferential (test_article_e04.ArticleE04Tests.test_smoke_effects_are_noninferential) ... ok
+test_standard_cost_projection_stays_inside_review_targets (test_article_e04.ArticleE04Tests.test_standard_cost_projection_stays_inside_review_targets) ... ok
+test_bf_only_changes_accepted_good_auth_reward (test_article_e05.ArticleE05Tests.test_bf_only_changes_accepted_good_auth_reward) ... ok
+test_exact_analytic_anchor_and_maintained_rewards (test_article_e05.ArticleE05Tests.test_exact_analytic_anchor_and_maintained_rewards) ... ok
+test_family_pairing_order_and_small_raw_reconciliation (test_article_e05.ArticleE05Tests.test_family_pairing_order_and_small_raw_reconciliation) ... ok
+test_frozen_configs_and_standard_refusal (test_article_e05.ArticleE05Tests.test_frozen_configs_and_standard_refusal) ... ok
+test_full_row_boundary_rejects_named_corruptions_in_memory_and_stream (test_article_e05.ArticleE05Tests.test_full_row_boundary_rejects_named_corruptions_in_memory_and_stream) ... ok
+test_pava_and_transition_boundaries (test_article_e05.ArticleE05Tests.test_pava_and_transition_boundaries) ... ok
+test_phase_scaled_readiness_does_not_multiply_plot_startup (test_article_e05.ArticleE05Tests.test_phase_scaled_readiness_does_not_multiply_plot_startup) ... ok
+test_smoke_shape_reconstructs (test_article_e05.ArticleE05Tests.test_smoke_shape_reconstructs) ... ok
+test_standard_synthetic_bootstrap_is_architecture_isolated (test_article_e05.ArticleE05Tests.test_standard_synthetic_bootstrap_is_architecture_isolated) ... ok
+test_verification_seal_requires_passed_deterministic_evidence (test_article_e05.ArticleE05Tests.test_verification_seal_requires_passed_deterministic_evidence) ... ok
+test_derived_validation_rejects_all_named_adversarial_mutations (test_article_e06.E06Tests.test_derived_validation_rejects_all_named_adversarial_mutations)
+Every emitted E06 derived table is raw-grounded and fail-closed. ... ok
+test_frozen_configs_and_dispatch_refusal (test_article_e06.E06Tests.test_frozen_configs_and_dispatch_refusal) ... ok
+test_local_replay_matches_maintained_m4_for_stochastic_cases (test_article_e06.E06Tests.test_local_replay_matches_maintained_m4_for_stochastic_cases) ... ok
+test_loop_area_and_pava_transition_boundaries (test_article_e06.E06Tests.test_loop_area_and_pava_transition_boundaries) ... ok
+test_seed_pairing_and_directional_isolation (test_article_e06.E06Tests.test_seed_pairing_and_directional_isolation) ... ok
+test_smoke_packed_rows_reconstruct_and_reject_corruption (test_article_e06.E06Tests.test_smoke_packed_rows_reconstruct_and_reject_corruption) ... ok
+test_standard_only_inference_helpers_are_synthetic_and_seed_isolated (test_article_e06.E06Tests.test_standard_only_inference_helpers_are_synthetic_and_seed_isolated) ... ok
+test_softmax_rejects_nonpositive_temperature (test_core.CoreTests.test_softmax_rejects_nonpositive_temperature) ... ok
+test_subjective_value_only_scales_negative_rewards (test_core.CoreTests.test_subjective_value_only_scales_negative_rewards) ... ok
+test_m0_seed_is_deterministic (test_determinism.DeterminismTests.test_m0_seed_is_deterministic) ... ok
+test_m1_seed_is_deterministic (test_determinism.DeterminismTests.test_m1_seed_is_deterministic) ... ok
+test_m2_seed_is_deterministic (test_determinism.DeterminismTests.test_m2_seed_is_deterministic) ... ok
+test_m3_seed_is_deterministic (test_determinism.DeterminismTests.test_m3_seed_is_deterministic) ... ok
+test_m4_seed_is_deterministic (test_determinism.DeterminismTests.test_m4_seed_is_deterministic) ... ok
+test_expected_rewards_match_reference_values (test_m0.M0Tests.test_expected_rewards_match_reference_values) ... ok
+test_higher_loss_aversion_increases_mask_rate_near_boundary (test_m0.M0Tests.test_higher_loss_aversion_increases_mask_rate_near_boundary) ... ok
+test_higher_receptivity_reduces_mean_mask_rate (test_m0.M0Tests.test_higher_receptivity_reduces_mean_mask_rate) ... ok
+test_lambda_one_matches_baseline_subjective_curve (test_m0.M0Tests.test_lambda_one_matches_baseline_subjective_curve) ... ok
+test_objective_gap_zero_at_reference_threshold (test_m0.M0Tests.test_objective_gap_zero_at_reference_threshold) ... ok
+test_disclosure_grid_includes_endpoints (test_m1.M1Tests.test_disclosure_grid_includes_endpoints) ... ok
+test_expected_reward_matches_authenticity_at_full_disclosure (test_m1.M1Tests.test_expected_reward_matches_authenticity_at_full_disclosure) ... ok
+test_expected_reward_matches_masking_at_zero_disclosure (test_m1.M1Tests.test_expected_reward_matches_masking_at_zero_disclosure) ... ok
+test_higher_receptivity_increases_mean_disclosure (test_m1.M1Tests.test_higher_receptivity_increases_mean_disclosure) ... ok
+test_higher_escape_rate_reduces_mean_mask_rate (test_m2.M2Tests.test_higher_escape_rate_reduces_mean_mask_rate) ... ok
+test_neutral_authentic_acceptance_transitions_to_accepted (test_m2.M2Tests.test_neutral_authentic_acceptance_transitions_to_accepted) ... ok
+test_stigmatized_masking_keeps_state_without_escape (test_m2.M2Tests.test_stigmatized_masking_keeps_state_without_escape) ... ok
+test_benchmark_output_is_deterministic (test_m2_optimal_policy.M2OptimalPolicyTests.test_benchmark_output_is_deterministic) ... ok
+test_classification_marks_learned_suboptimal_lock_in_for_reference_cell (test_m2_optimal_policy.M2OptimalPolicyTests.test_classification_marks_learned_suboptimal_lock_in_for_reference_cell) ... ok
+test_environment_sensitivity_finds_possible_optimal_policy_lock_in (test_m2_optimal_policy.M2OptimalPolicyTests.test_environment_sensitivity_finds_possible_optimal_policy_lock_in) ... ok
+test_lock_in_map_output_is_deterministic (test_m2_optimal_policy.M2OptimalPolicyTests.test_lock_in_map_output_is_deterministic) ... ok
+test_m2_headline_effect_does_not_drift (test_m2_optimal_policy.M2OptimalPolicyTests.test_m2_headline_effect_does_not_drift) ... ok
+test_refined_thresholds_show_dynamic_authenticity_before_static_under_defaults (test_m2_optimal_policy.M2OptimalPolicyTests.test_refined_thresholds_show_dynamic_authenticity_before_static_under_defaults) ... ok
+test_static_comparator_sanity (test_m2_optimal_policy.M2OptimalPolicyTests.test_static_comparator_sanity) ... ok
+test_transition_table_shape_and_validity (test_m2_optimal_policy.M2OptimalPolicyTests.test_transition_table_shape_and_validity) ... ok
+test_value_iteration_converges (test_m2_optimal_policy.M2OptimalPolicyTests.test_value_iteration_converges) ... ok
+test_action_decoding_matches_flattened_layout (test_m3.M3Tests.test_action_decoding_matches_flattened_layout) ... ok
+test_expected_reward_uses_bflpe_only_for_good_pond_acceptance (test_m3.M3Tests.test_expected_reward_uses_bflpe_only_for_good_pond_acceptance) ... ok
+test_fixed_good_pond_runs (test_m3.M3Tests.test_fixed_good_pond_runs) ... ok
+test_global_mask_formulation_runs (test_m3.M3Tests.test_global_mask_formulation_runs) ... ok
+test_hierarchical_formulation_runs_and_prefers_k1_over_k8 (test_m3.M3Tests.test_hierarchical_formulation_runs_and_prefers_k1_over_k8) ... ok
+test_more_groups_reduce_good_pond_settling_in_smoke_case (test_m3.M3Tests.test_more_groups_reduce_good_pond_settling_in_smoke_case) ... ok
+test_higher_entrenchment_increases_mask_rate (test_m4.M4Tests.test_higher_entrenchment_increases_mask_rate) ... ok
+test_hysteresis_experiment_returns_matched_paths (test_m4.M4Tests.test_hysteresis_experiment_returns_matched_paths) ... ok
+test_simulation_clips_initial_receptivity (test_m4.M4Tests.test_simulation_clips_initial_receptivity) ... ok
+test_update_receptivity_respects_bounds (test_m4.M4Tests.test_update_receptivity_respects_bounds) ... ok
+test_manifest_has_required_reproducibility_fields (test_manifest_completeness.ManifestCompletenessTests.test_manifest_has_required_reproducibility_fields) ... ok
+test_primary_raw_schema_and_granularity (test_primary_raw_schema.PrimaryRawSchemaTests.test_primary_raw_schema_and_granularity) ... ok
+test_full_suite_writes_artifacts (test_robustness.RobustnessTests.test_full_suite_writes_artifacts) ... ok
+test_m3_ablation_suite_runs (test_robustness.RobustnessTests.test_m3_ablation_suite_runs) ... ok
+test_m4_hysteresis_suite_runs (test_robustness.RobustnessTests.test_m4_hysteresis_suite_runs) ... ok
+test_smoke_suite_checks_pass (test_robustness.RobustnessTests.test_smoke_suite_checks_pass) ... ok
+test_smoke_suite_writes_artifacts (test_robustness.RobustnessTests.test_smoke_suite_writes_artifacts) ... ok
+test_summary_values_recompute_from_primary_raw_units (test_summary_matches_raw.SummaryMatchesRawTests.test_summary_values_recompute_from_primary_raw_units) ... ok
+test_uncertainty_file_is_computed_from_primary_raw_units (test_summary_matches_raw.SummaryMatchesRawTests.test_uncertainty_file_is_computed_from_primary_raw_units) ... ok
+
+----------------------------------------------------------------------
+Ran 113 tests in 128.937s
+
+OK
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_optimal_policy_benchmark.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_optimal_policy_benchmark.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_lock_in_region_map.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_lock_in_region_thresholds.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_lock_in_region_map.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_lock_in_region_thresholds.csv
+raw: /Users/omer/workspace/personal/repos/gifted-masking/results/raw/robustness_full.csv
+primary_raw: /Users/omer/workspace/personal/repos/gifted-masking/results/raw/robustness_full_units.csv
+summary: /Users/omer/workspace/personal/repos/gifted-masking/results/summaries/robustness_full_summary.csv
+report: /Users/omer/workspace/personal/repos/gifted-masking/results/reports/robustness_full_report.md
+manifest: /Users/omer/workspace/personal/repos/gifted-masking/results/manifests/robustness_full.json
+/Users/omer/workspace/personal/repos/gifted-masking/results/manifests/robustness_full.json
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/robustness_full_recomputed_effects.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/robustness_full_headline_uncertainty.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_optimal_policy_benchmark.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_lock_in_region_map.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_lock_in_region_thresholds.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_lock_in_region_map.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_lock_in_region_thresholds.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_regime_refined_thresholds.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_learner_parameter_sensitivity.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/m2_optimal_regime_sensitivity.csv
+/Users/omer/workspace/personal/repos/gifted-masking/results/figures/m2_lock_in_region_map.png
+/Users/omer/workspace/personal/repos/gifted-masking/results/figures/m2_regime_thresholds.png
+/Users/omer/workspace/personal/repos/gifted-masking/results/figures/m2_learner_sensitivity.png
+test_manifest_has_required_reproducibility_fields (test_manifest_completeness.ManifestCompletenessTests.test_manifest_has_required_reproducibility_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.937s
+
+OK
+test_primary_raw_schema_and_granularity (test_primary_raw_schema.PrimaryRawSchemaTests.test_primary_raw_schema_and_granularity) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.956s
+
+OK
+test_summary_values_recompute_from_primary_raw_units (test_summary_matches_raw.SummaryMatchesRawTests.test_summary_values_recompute_from_primary_raw_units) ... ok
+test_uncertainty_file_is_computed_from_primary_raw_units (test_summary_matches_raw.SummaryMatchesRawTests.test_uncertainty_file_is_computed_from_primary_raw_units) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.861s
+
+OK

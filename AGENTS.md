@@ -37,17 +37,16 @@ The scientific goal is to verify whether the simulated claims are mathematically
    - statistical robustness,
    - interpretation/claims.
 10. When uncertain, state the uncertainty and propose a test.
-11. Always use the repository-local virtual environment at `.venv` for Python
+11. Always use the workspace virtual environment at `/Users/omer/workspace/venvs/venv314` for Python
     commands, verification, installs, and experiment runs. Treat system Python
-    as bootstrap-only for creating `.venv`, not as the normal execution
-    environment.
+    as bootstrap-only only if the workspace venv itself must be repaired; do not
+    create repo-local virtual environments without explicit user approval.
 
 ## Environment rules
 
-- Create the repo-local environment with `./scripts/bootstrap_venv.sh`.
-- Run Python entrypoints via `.venv/bin/python` or after `source .venv/bin/activate`.
-- Run repository verification via `./scripts/verify.sh` from the repo root.
-- If `.venv` is missing, create it before running tests or experiments.
+- Use `/Users/omer/workspace/venvs/venv314/bin/python` and `/Users/omer/workspace/venvs/venv314/bin/python -m pip` for repo commands.
+- Run repository verification via `./scripts/verify.sh` from the repo root, ensuring it resolves Python through the workspace venv.
+- If required packages are missing, install them into `/Users/omer/workspace/venvs/venv314` or ask before using any other environment.
 
 ## Review posture
 

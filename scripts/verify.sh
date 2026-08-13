@@ -2,14 +2,15 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
+VENV_PYTHON="/Users/omer/workspace/venvs/venv314/bin/python"
 
 if [[ ! -x "$VENV_PYTHON" ]]; then
-  echo "Missing $VENV_PYTHON. Run ./scripts/bootstrap_venv.sh first." >&2
+  echo "Missing required workspace Python: $VENV_PYTHON" >&2
   exit 1
 fi
 
 export PYTHONPATH="$ROOT_DIR/src"
+echo "Verification Python: $VENV_PYTHON"
 
 "$VENV_PYTHON" -m unittest discover -s "$ROOT_DIR/tests" -v
 "$VENV_PYTHON" -m gifted_masking.cli robustness --suite full --output-dir "$ROOT_DIR/results"
@@ -24,8 +25,13 @@ export PYTHONPATH="$ROOT_DIR/src"
 "$VENV_PYTHON" "$ROOT_DIR/scripts/benchmark_m2_optimal_policy.py"
 "$VENV_PYTHON" "$ROOT_DIR/scripts/map_m2_lock_in_regions.py"
 "$VENV_PYTHON" "$ROOT_DIR/scripts/analyze_m2_regimes.py"
-"$VENV_PYTHON" -m unittest \
-  "$ROOT_DIR/tests/test_manifest_completeness.py" \
-  "$ROOT_DIR/tests/test_primary_raw_schema.py" \
-  "$ROOT_DIR/tests/test_summary_matches_raw.py" \
-  -v
+for test_file in \
+  test_manifest_completeness.py \
+  test_primary_raw_schema.py \
+  test_summary_matches_raw.py
+do
+  "$VENV_PYTHON" -m unittest discover \
+    -s "$ROOT_DIR/tests" \
+    -p "$test_file" \
+    -v
+done

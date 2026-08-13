@@ -1,0 +1,79 @@
+{
+  "status": "ready_for_user_full_verification",
+  "run_id": "frontiers_m4_path_diagnostics_v1_smoke",
+  "source_fingerprint_sha256": "8b404d6cb3493d48c2469881e798772ff93bd415caaeec64b0e41beec734e4a6",
+  "config_sha256": "475a8630acc73ab21520fd90024f85712b0002aec52d39d18e74e96cb8e4c40b",
+  "approval_sha256": "9fc0434c86da23815afc3327f79c0e9824918417839aadda39dc1ba061cb76f7",
+  "derived_validation": {
+    "status": "passed",
+    "interface": "validate_e06_derived(raw_rows,cells,paths,loops,transitions,effects,config)",
+    "raw_rows_required": true,
+    "frozen_config_required": true,
+    "materialized": "passed",
+    "post_artifact_parsed_csv": "passed",
+    "absolute_tolerance": 1e-12,
+    "adversarial_mutations_rejected": 18,
+    "streaming_validation": "not_applicable_materialized_packed_rows",
+    "streaming_reason": "No core streaming writer exists; frozen raw and RSS projections remain within the 400 MiB and 2 GiB limits."
+  },
+  "focused_verification": [
+    {
+      "name": "E06",
+      "command": "MPLCONFIGDIR=/private/tmp/e06_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_article_e06.py -v",
+      "tests": 7,
+      "result": "passed",
+      "log": "results/reports/e06_preverification_logs/test_e06.log"
+    },
+    {
+      "name": "M4",
+      "command": "MPLCONFIGDIR=/private/tmp/e06_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_m4.py -v",
+      "tests": 4,
+      "result": "passed",
+      "log": "results/reports/e06_preverification_logs/test_m4.log"
+    },
+    {
+      "name": "core_determinism",
+      "command": "MPLCONFIGDIR=/private/tmp/e06_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_core.py tests/test_determinism.py -v",
+      "tests": 7,
+      "result": "passed",
+      "log": "results/reports/e06_preverification_logs/test_core_determinism.log"
+    },
+    {
+      "name": "post_artifact_E06_contracts",
+      "command": "MPLCONFIGDIR=/private/tmp/e06_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_article_e06.py -v",
+      "tests": 7,
+      "result": "passed",
+      "log": "results/reports/e06_preverification_logs/post_artifact_repository_contracts.log"
+    }
+  ],
+  "deterministic_regeneration": {
+    "status": "passed",
+    "fresh_output_root": "/private/tmp/e06_regen_derived_final",
+    "byte_identical": ["raw", "cells", "paths", "loops", "transitions", "effects", "figure", "warnings"],
+    "normalized_manifest_report": "passed"
+  },
+  "artifacts": {
+    "raw": {"path": "results/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv", "row_count": 320, "bytes": 817314, "sha256": "bbfa5b54034c96df825234f616e32480dfa3a1fdc3c82c6a76a9484a3d59e327"},
+    "cells": {"path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv", "row_count": 45, "bytes": 10596, "sha256": "0a22befa4021e997b980da84f0d3520df418f7ec9834533e5c67b1cf7b0c8bdc"},
+    "paths": {"path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv", "row_count": 20, "bytes": 4340, "sha256": "498f26914e7dfa30fe0f5c2cd782654c00bdee64bfa6122450997df22c7f4558"},
+    "loops": {"path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv", "row_count": 8, "bytes": 1833, "sha256": "fb72f0eab5b0d54658f4193ed18bbbe439da39edcb19795317f9ebfc51cf9364"},
+    "transitions": {"path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv", "row_count": 8, "bytes": 1488, "sha256": "94c41e2ed3736213b2da08be271ef1fb911f7b166b8715b708ba22c52dca0a3e"},
+    "effects": {"path": "results/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv", "row_count": 6, "bytes": 1198, "sha256": "a95778cd4dc5f09a3c0c9af134c3bf9cbb76a32fa043e8a3f2ef8cb44e6497e8"},
+    "figure": {"path": "results/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png", "row_count": null, "bytes": 71971, "sha256": "29448d540101f75e2ac4c32b050b5d5733b47c525bea21a2388976bac2e0661e"},
+    "report": {"path": "results/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md", "row_count": null, "bytes": 1790, "sha256": "0ba27d984405bab43b2781fa5e19f68d9c3f075c951adb624aa8c67d91dab4ce"},
+    "warnings": {"path": "results/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log", "row_count": null, "bytes": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    "canonical_manifest": {"path": "results/manifests/frontiers_m4_path_diagnostics_v1_smoke.json", "row_count": null, "bytes": 11170, "sha256": "6d2534707b4472e7c747961fa4db985169c4c6a23043b5b2e1333d392d382512"},
+    "human_checkpoint": {"path": "projects/frontiers_article/checkpoints/E06_FIX_IMPLEMENTATION_PREVERIFY.md", "row_count": null, "bytes": 5281, "sha256": "67ce21449bbb0ead7413dfcbb8f9694f6c62e26995d9447a874e8d52c3f39cca"},
+    "user_verification_instructions": {"path": "results/reports/E06_USER_FULL_VERIFICATION_INSTRUCTIONS.md", "row_count": null, "bytes": 1078, "sha256": "3991b081b217ceec0c31e4daf4bce0dd19772ecf619f3b2364519a86bfc3dbc7"},
+    "log:test_e06.log": {"path": "results/reports/e06_preverification_logs/test_e06.log", "row_count": null, "bytes": 1244, "sha256": "0fc7f595d41e719c0b21d05edcd4561ce2c9150bc9d5de11f2bba335bc41a051"},
+    "log:test_m4.log": {"path": "results/reports/e06_preverification_logs/test_m4.log", "row_count": null, "bytes": 604, "sha256": "e4add7eb14c5f39046c2d077f9d075d3c50375ba737ec2a3eaa8dd117a82e23e"},
+    "log:test_core_determinism.log": {"path": "results/reports/e06_preverification_logs/test_core_determinism.log", "row_count": null, "bytes": 935, "sha256": "27b99d7831eb7b6a1dc14294f8d3baf047e863ae5e5541aa768779729d2f2add"},
+    "log:post_artifact_repository_contracts.log": {"path": "results/reports/e06_preverification_logs/post_artifact_repository_contracts.log", "row_count": null, "bytes": 1814, "sha256": "c77bd3aa7d595550cde96260ad6e61f2577846f1c17b917554fea5dac8144323"}
+  },
+  "core_projection": {"seconds": 181.546619163797, "raw_mib": 126.6608476638794, "total_mib": 140.82932472229004, "peak_rss_mib": 119.625, "within_limits": true, "limits": {"seconds": 600, "raw_mib": 400, "total_mib": 500, "rss_mib": 2048}},
+  "qualification_projection": {"seconds": 579.3996666380473, "raw_mib": 73.07356595993042, "total_mib": 81.24768733978271, "peak_rss_mib": 119.7890625, "refused": true},
+  "full_verification": {"status": "not_run_user_owned", "command": "MPLCONFIGDIR=/private/tmp/e06_user_verify ./scripts/verify.sh", "result_log": "/private/tmp/e06_user_full_verification.log"},
+  "standard_executed": false,
+  "qualification_executed": false,
+  "warnings": ["Full repository verification remains intentionally pending user ownership."]
+}
