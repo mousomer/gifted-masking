@@ -1,5 +1,25 @@
 # Paper Revision Notes
 
+## Assertive findings revision (2026-08-10)
+
+- Created `doc-reviews/frontiers_submission/gifted_masking_frontiers_original_research_assertive_revision.docx` while retaining the earlier manuscript as a comparison copy.
+- Exported the visually verified 14-page manuscript to `output/pdf/gifted_masking_frontiers_original_research_assertive_revision.pdf`.
+- Rebuilt the claim hierarchy so that the Abstract, Results headings, opening Discussion paragraphs, implications, and Conclusion lead with the study outcomes before presenting boundary conditions.
+- Elevated the central M2 result: `226/357` coarse-grid cells (`63.3%`) were classified as learned suboptimal masking, with mean learned neutral-state masking probability `0.950` across those cells.
+- Added explicit, results-led statements for hot-stove persistence, negative-outcome weighting, graded disclosure, sticky stigma, multidimensional context search, comparison cost, and endogenous receptivity.
+- Replaced the threshold-only M2 submission figure with a two-panel phase-map and optimal-threshold figure that makes the size of the suboptimal-masking regime visible.
+- Consolidated human-population, calibration, seed-replication, and hysteresis qualifications in the later `Boundary conditions and limitations` section.
+
+## Frontiers Original Research manuscript (2026-08-10)
+
+- Created `doc-reviews/frontiers_submission/gifted_masking_frontiers_original_research.docx` from the official Frontiers Word template.
+- Replaced the prior evidence-dump format with a full Original Research article organized as Abstract, Introduction, Materials and Methods, Results, and Discussion.
+- Limited conclusions to maintained evidence: M0/M1 directional checks, M2 learned-policy regret relative to value iteration, M3 search-burden ablations, and M4 schedule-specific path dependence.
+- Removed or rejected claims of generic context harm, default optimal-learner lock-in, robust hysteresis, human causality, and intervention efficacy.
+- Recomputed manuscript confidence intervals with independent within-condition bootstrap resampling because the source conditions use distinct RNG streams; the earlier child-index pairing was administrative rather than experimental.
+- Added four submission-ready figures, three editable tables, complete declarations, an AI-use disclosure, figure alt text, and a submission scope statement.
+- Kept explicit placeholders for author identity, affiliations, correspondence, archive DOI, funding, contributions, and conflict-of-interest confirmation.
+
 ## Abstract / Executive Summary
 
 Replace broad claims that "context multiplicity is harmful" and "true
