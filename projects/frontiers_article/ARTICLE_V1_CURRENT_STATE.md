@@ -11,7 +11,7 @@
 | V1-01 Authority + evidence audit | **COMPLETE** | Evidence bounded to E01-E05; protected artifact hashes and numerical reconstruction pass. |
 | Model-analysis consistency audit | **COMPLETE** | Maintained M0-M4 code matches analytic reference; one E05 interpretive error and several scope/provenance blockers identified. |
 | V1-02 Literature / construct / novelty audit | **ACTIVE, NOT FROZEN** | Generic-RL and gifted-construct work largely complete; four bounded novelty-critical searches remain. |
-| Provenance repair | **BLOCKING / NOT CLOSED** | Historical dirty generator source for E01-E05 is not yet reconstructible from Git alone. |
+| Provenance repair | **P2 PARTIAL / BLOCKING** | E04/E05 historical bundles are fingerprint-exact and archived; E01-E03 are not recoverable from bounded forensics and require P2B or an explicit owner acceptance. |
 | V1-03 Adversarial claim freeze | **NOT STARTED** | Must follow provenance disposition + V1-02 synthesis. |
 | Manuscript rebuild | **BLOCKED** | Existing Results/Discussion sources are stale and must not be patched as authoritative bases. |
 | Track B | **FROZEN** | M4/E06 not V1 evidence. |
@@ -148,12 +148,12 @@ Classify E05 as:
 
 ### B1 — provenance
 
-The exact dirty generator source that produced the historical E01-E05 frozen outputs is identified by hashes but its source bytes/patch are not presently recoverable from Git. Protected artifacts remain valid.
+P2 recovered and archived fingerprint-exact historical generator bundles for E04 and E05 from unreachable Git trees. The bounded Git/repository-linked search found no exact source state for E01, E02, or E03; those experiments are classified `ORIGINAL_GENERATOR_SOURCE_NOT_RECOVERABLE`. Protected artifacts remain valid and no scientific run or output changed. See `ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md`.
 
 Required disposition before submission:
 
-- recover and archive historical source bytes; **or**
-- explicitly record `ORIGINAL_GENERATOR_SOURCE_NOT_RECOVERABLE` and create a separately authorized clean deterministic reproduction anchor from maintained source/frozen configs/frozen seeds.
+- E04/E05: satisfied by archived historical bundles under `provenance/frozen_generator_sources/`;
+- E01-E03: create a separately authorized P2B clean deterministic reproduction anchor from maintained source/frozen configs/frozen seeds, or record explicit owner acceptance of the remaining limitation.
 
 ### B2 — stale manuscript
 
@@ -170,7 +170,7 @@ Do not patch these chapters into submission form before claim freeze. Rebuild fr
 
 ### B3 — authority adoption
 
-The revised hand-off files must be installed into the repository and older conflicting publication-state files marked historical/superseded.
+Complete. The revised hand-off files are installed and older conflicting publication-state files are marked historical/superseded.
 
 ### B4 — novelty
 

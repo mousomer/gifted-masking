@@ -6,13 +6,17 @@
   the active authority hierarchy, and apply the 2026-08-15
   model-analysis consistency corrections without changing scientific code,
   frozen artifacts, or evidence.
-- [ ] P2: conduct bounded historical-generator-source recovery/provenance
-  audit; begin with forensic recovery only and do not rerun stochastic
-  evidence.
+- [x] P2: conduct bounded historical-generator-source recovery/provenance
+  audit without rerunning stochastic evidence. E04/E05 recovered exactly;
+  E01–E03 not recoverable from bounded forensics.
+- [ ] P2B: after separate authorization, create clean deterministic
+  reproduction anchors for E01–E03, or record explicit owner acceptance of the
+  remaining provenance limitation.
 
 The active Article V1 sequence is governed by
-`ARTICLE_V1_NEXT_STAGE.md`: P2 provenance recovery, four bounded literature
-searches, V1-02 synthesis, V1-03 claim freeze, then manuscript reconstruction.
+`ARTICLE_V1_NEXT_STAGE.md`: P2B provenance anchors/owner disposition, four
+bounded literature searches, V1-02 synthesis, V1-03 claim freeze, then
+manuscript reconstruction.
 E06/Track B is not an immediate Article V1 backlog item.
 
 ## Active Article V1 gate — 2026-08-13

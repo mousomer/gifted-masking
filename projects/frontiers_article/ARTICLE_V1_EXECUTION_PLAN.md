@@ -95,9 +95,11 @@ reached submission freeze.
 
 ## Next authorized decision
 
-P2, bounded historical-generator-source recovery/provenance audit, is the next
-Article V1 task. It begins with forensic recovery only and does not authorize
-stochastic evidence reruns, literature work, manuscript drafting, figure
-regeneration, evidence generation, E06, or Track B. The later V1-02 literature
-work follows only after the P2 provenance disposition named in
-`ARTICLE_V1_NEXT_STAGE.md`.
+P2 bounded historical-generator-source forensics is complete: E04/E05 were
+recovered exactly and E01–E03 were not. P2B is the next Article V1 task and
+requires separate authorization because it will execute deterministic
+evidence-generating code to create clean reproduction anchors. It may not
+change model/config/seed semantics, extend evidence, draft the manuscript,
+regenerate publication figures, run E06, or start Track B. The later V1-02
+literature work follows P2B unless the owner explicitly accepts the remaining
+E01–E03 provenance limitation.

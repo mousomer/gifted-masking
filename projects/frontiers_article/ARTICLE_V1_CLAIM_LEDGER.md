@@ -57,7 +57,7 @@ This ledger governs publication wording. It does not replace the frozen evidence
 | TERM-01 | “Masking” is definitively the best technical term. | Terminology audit open. | **UNRESOLVED** | Prefer “concealment/visibility management” when technical precision matters. |
 | BFLPE-01 | `bf` is an empirically calibrated BFLPE measure. | Model comparison-cost parameter only. | **CUT** | “BFLPE-inspired/model comparison cost.” |
 | M4-01 | M4/E06 numerical results are V1 confirmatory evidence. | Active scope excludes them. | **CUT FROM V1** | Future/Track-B architecture only. |
-| PROV-01 | Frozen E01-E05 artifacts have complete historical source provenance. | Exact dirty generator source bytes not recoverable yet. | **CUT UNTIL RESOLVED** | “Artifacts are hash-valid; historical generator-source provenance is incomplete.” |
+| PROV-01 | Frozen E01-E05 artifacts have complete historical source provenance. | P2 recovered fingerprint-exact E04/E05 bundles; E01–E03 exact generator states were not recoverable from bounded forensics. | **CUT UNTIL RESOLVED** | “Artifacts are hash-valid; E04/E05 historical generator source is archived, while the E01–E03 historical-source gap remains open pending P2B or explicit owner acceptance.” |
 
 ## Current contribution candidates
 

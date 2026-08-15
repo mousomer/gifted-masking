@@ -231,6 +231,28 @@ wins. No manuscript was changed in this stage.
   **MISSING_LOCAL** and is a Stage V1-03 blocker. The files themselves were not
   modified or recreated.
 
+## Historical generator-source provenance disposition
+
+P2 independently rechecked all 33 protected artifact hashes and then searched
+reachable Git history, all refs/reflogs, stashes, worktrees, unreachable
+objects, and bounded repository-linked archives for the dirty generator states
+recorded by the E01–E05 manifests.
+
+- E04 and E05 are `HISTORICAL_SOURCE_RECOVERED`: their minimal source bundles
+  were recovered from unreachable Git trees, fingerprint-matched exactly, and
+  archived under `provenance/frozen_generator_sources/`.
+- E01, E02, and E03 are
+  `ORIGINAL_GENERATOR_SOURCE_NOT_RECOVERABLE`: no recovered candidate matched
+  their exact source fingerprints.
+- `ARTIFACT_PROVENANCE_GAP_OPEN` therefore remains for E01–E03. This does not
+  alter the frozen results, the protected artifact identities, or the prior
+  maintained-model semantics audit.
+
+The controlling record is
+`ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md`. The next gate is a separately
+authorized P2B deterministic reproduction anchor for E01–E03, unless the owner
+explicitly accepts the limitation for submission. No experiment was run in P2.
+
 ## Questions Stage V1-02 must resolve through literature work
 
 These are questions only; this audit did not answer them.
@@ -257,6 +279,9 @@ These are questions only; this audit did not answer them.
 
 ### Stage V1-02
 
+- Complete P2B for E01–E03, or record explicit owner acceptance of the
+  remaining historical-source limitation, before beginning the bounded
+  literature searches.
 - Resolve the eight literature questions without importing claims into the
   evidence matrix unless they are separately sourced and bounded.
 - Decide whether legacy within-model descriptive contrasts are omitted or

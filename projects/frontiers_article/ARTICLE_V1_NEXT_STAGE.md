@@ -7,6 +7,8 @@ This plan supersedes the earlier hand-off sequence that moved directly to litera
 
 # Stage H0 — Adopt the revised hand-off authorities
 
+**Status:** COMPLETE in P0/P1.
+
 ## Goal
 
 Make the repository, not chat history or detached DOCX files, the publication-state authority.
@@ -36,6 +38,11 @@ No code, config, artifact, figure, or stochastic run changes.
 A new agent can clone the repo, follow `HANDOFF.md`, and find all named authorities without chat context.
 
 # Stage H1 — Generator-source provenance recovery
+
+**Status:** P2 FORENSICS COMPLETE / PARTIAL RECOVERY. E04 and E05 are
+`HISTORICAL_SOURCE_RECOVERED`; E01–E03 are
+`ORIGINAL_GENERATOR_SOURCE_NOT_RECOVERABLE`. The exit gate remains open for
+E01–E03 pending P2B or explicit owner acceptance.
 
 ## Goal
 
@@ -311,6 +318,10 @@ Unless a later explicit gate authorizes it, do not:
 
 # Immediate next task
 
-**H0 repository adoption, then H1 provenance recovery.**
+**P2B — separately authorized clean deterministic reproduction anchors for
+E01–E03.**
 
-The remaining literature searches start only after the revised authorities are installed and the provenance-recovery task has at least produced a clear historical-source disposition.
+The revised authorities are installed and the historical-source disposition is
+recorded in `ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md`. The bounded
+literature searches begin only after P2B is completed, unless the project owner
+explicitly accepts the remaining E01–E03 provenance limitation for submission.

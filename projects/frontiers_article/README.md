@@ -66,10 +66,16 @@ canonical hand-off read order.
     of remaining work.
 12. [ARTICLE_V1_EXECUTION_PLAN.md](ARTICLE_V1_EXECUTION_PLAN.md) — evidence
     execution and release-plan record.
+13. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md) —
+    P2 historical-generator forensic record and disposition.
+14. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv) —
+    machine-readable E01–E05 provenance target/status index.
 
-The immediate Article V1 task after this adoption is P2, bounded
-historical-source recovery/provenance audit. It must not rerun stochastic
-evidence or start E06/Track B.
+P0/P1 adoption and P2 bounded historical-source forensics are complete. The
+immediate Article V1 task is a separately authorized P2B deterministic
+reproduction anchor for E01–E03, unless the owner explicitly accepts their
+historical-source limitation. P2B must not change model/config/seed semantics
+or start E06/Track B.
 
 ## Historical / non-authoritative material
 
@@ -100,10 +106,10 @@ be used as numerical authority.
   experiment rerun, new seed, new sensitivity sweep, or Track-B work by
   implication.
 - E01-E05 protected output hashes reconcile, and current model semantics,
-  validators, and reconstructions support the frozen evidence. The exact dirty
-  generator source tree for those historical frozen runs is not reconstructible
-  from Git plus manifests alone; manifests retain fingerprints, but not all
-  historical source bytes. This is an open
-  `ARTIFACT_PROVENANCE_GAP_OPEN`, not evidence corruption.
+  validators, and reconstructions support the frozen evidence. Fingerprint-
+  exact E04/E05 generator bundles are archived under
+  `provenance/frozen_generator_sources/`. Exact E01–E03 historical generators
+  were not recovered, so `ARTIFACT_PROVENANCE_GAP_OPEN` remains for those three
+  experiments; this is not evidence corruption.
 - M4/E06 numerical findings must not support any Article V1 Results,
   Discussion, or confirmatory conclusion.

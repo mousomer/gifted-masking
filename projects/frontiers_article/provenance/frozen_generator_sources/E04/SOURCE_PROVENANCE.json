@@ -1,0 +1,32 @@
+{
+  "experiment_id": "E04",
+  "run_id": "frontiers_m3_search_architectures_v1",
+  "original_recorded_commit": "e0e9a738986dd440180a228b024b0807336cd957",
+  "original_worktree_dirty": true,
+  "recovered_object_type": "unreachable_root_tree",
+  "recovered_object_sha1": "53f905a2902496bf129e8125c718d78d48695d29",
+  "equivalent_exact_match_root_trees": [
+    "124def3cdbe87732b4d9af62af84603458104f98",
+    "47ba6876b297af593d62b31b1c6f573a586bce00",
+    "485ed831ccdf080c099d8269288bb8925178804a",
+    "9b51556818bfedf4e5849399e5cb7228cd3b8179",
+    "cc3719c4bf0186fb586e33a79ad1195c0dd92bf3",
+    "d17d93d22fa3cca916df2641667b348ffb122c30"
+  ],
+  "expected_source_fingerprint_sha256": "8599406b776d23f9357d89664f456d84f45e3a3783df1c830c1772ceb86750ae",
+  "recovered_source_fingerprint_sha256": "8599406b776d23f9357d89664f456d84f45e3a3783df1c830c1772ceb86750ae",
+  "verification_result": "HISTORICAL_SOURCE_RECOVERED",
+  "fingerprint_algorithm": "SHA-256 over each fixed path in declaration order: UTF-8 repository-relative path bytes followed by raw file bytes, or ASCII MISSING when absent; no separator and no Git metadata",
+  "files": [
+    {"path":"src/gifted_masking/experiments/e04.py","bytes":95762,"sha256":"85d47f85a5aa219bcd913ff9d6631cba1b619b43f19e1c4b22d743b273e524be","git_blob_sha1":"bae2049904c8a88ad9b55411475cfc7fe8fdf3e4"},
+    {"path":"src/gifted_masking/cli.py","bytes":3286,"sha256":"9b70452de820c0c81bdcfcfc2e1a5b32208b667326a94faf72315b585927a6dd","git_blob_sha1":"c92c097fe71e2becd56e99c862fbd995cd097d16"},
+    {"path":"src/gifted_masking/core.py","bytes":2331,"sha256":"5d1fb660f602246b39663e081bacbd6a40d024e4dfed2ccd963fc0971be623c9","git_blob_sha1":"f25723fed941a4c6cd8338f076a1b2d97d67041f"},
+    {"path":"src/gifted_masking/models/m3.py","bytes":7553,"sha256":"091824551b7c6cc5d7ad1ca04d787c82ac5763345d5f09f4eb735dc2f6f381c1","git_blob_sha1":"d4b38cb0620460d096d7fd6f1b005b00a7c1949a"},
+    {"path":"src/gifted_masking/repro.py","bytes":4132,"sha256":"83510e3aa695c71c4a072643b889ada9efcad833d1a91c921cb7ca985100add4","git_blob_sha1":"b6bcfc9cfe8bf223779c872b9e380b1647abd365"},
+    {"path":"configs/frontiers_article/e04_m3_search_architectures_smoke.json","bytes":556,"sha256":"1fe98e73f6768a53f4d5c5efd89101915e5109ce84dbff9aab2986bffb307abe","git_blob_sha1":"96f7f1e033f41a1b23cc33bd9dfb588963eda5a4"},
+    {"path":"configs/frontiers_article/e04_m3_search_architectures_standard.json","bytes":653,"sha256":"e8b73dc7c9904b75378d49f0772f1a3ea59e70a1c56581b1e95c98952f769e53","git_blob_sha1":"2ed43134dba1ea4d8535ebf1a8a4e23e4066fddc"},
+    {"path":"tests/test_article_e04.py","bytes":18560,"sha256":"6e5147257c3575decc19c57717e029833e191bcaa89cd868f9d0fb0059cd2f80","git_blob_sha1":"a13d2829ee07b6b48b021fb8eceff60dbbaf6a76"},
+    {"path":"pyproject.toml","bytes":477,"sha256":"957ef2ba419aa6aa8b44a81b7eab26623767c6ca7f359a787d1bbbe4f627ddc1","git_blob_sha1":"d74e4f0d8632b82d24f64b0eb146dfc1c5207ba9"},
+    {"path":"scripts/verify.sh","bytes":1435,"sha256":"15cc42f9b2c9a4809cb7a64e74ede6be9b580da18f4c007e8cd52ab280412357","git_blob_sha1":"2a9ef5106f1a1abfeada14bf2787efb9aad7441d"}
+  ]
+}

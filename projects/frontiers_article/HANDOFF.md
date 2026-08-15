@@ -9,7 +9,7 @@
 
 Finish **Article V1** using the already-frozen E01-E05 evidence, while repairing the interpretation/provenance blockers identified by `ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md`, completing four bounded novelty-critical literature searches, freezing defensible claims, and only then rebuilding the manuscript.
 
-The audit found **no corruption of the maintained M0-M4 semantics or the frozen E01-E05 numerical outputs**. All protected artifact hashes reconciled and headline results were reconstructible. The current blockers are interpretation, scope, stale manuscript material, and incomplete historical generator-source provenance.
+The audit found **no corruption of the maintained M0-M4 semantics or the frozen E01-E05 numerical outputs**. All protected artifact hashes reconciled and headline results were reconstructible. P2 subsequently recovered fingerprint-exact historical generator bundles for E04 and E05, but not E01-E03. The current blockers are interpretation, scope, stale manuscript material, novelty adjudication, and the remaining E01-E03 generator-source provenance gap.
 
 ## 2. Scientific authority layers
 
@@ -43,7 +43,8 @@ Read the current authorities in this order:
 6. `ARTICLE_V1_CLAIM_LEDGER.md`
 7. `ARTICLE_V1_SOURCE_LEDGER.csv`
 8. `ARTICLE_V1_NEXT_STAGE.md`
-9. `HANDOFF_CONSISTENCY_AUDIT.md`
+9. `ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md`
+10. `HANDOFF_CONSISTENCY_AUDIT.md`
 
 Historical `projects/frontiers_article/CURRENT_STATE.md`, `CLAIM_LEDGER.md`, old manuscript chapters, E06 instructions, and old figures remain provenance/history unless an active authority explicitly incorporates them.
 
@@ -95,10 +96,9 @@ Track B only. Numerical M4/E06 results must be removed from current Article-V1 R
 
 ## 7. Publication blockers that remain
 
-1. **Generator-source provenance:** exact dirty source bytes/patches for the historical E01-E05 runs are not recoverable from current Git state yet, although artifacts are content-addressed and valid.
-2. **Repository adoption:** these revised hand-off authorities must be installed into the repository and older conflicting publication-state documents explicitly marked historical/superseded.
-3. **Legacy manuscript contamination:** stale one-seed/child-bootstrap numbers, `226/357`, obsolete E04 comparisons, old sample sizes/RNG descriptions, and M4 numerical claims must not survive into the rebuilt manuscript.
-4. **Novelty adjudication:** four bounded literature searches remain before V1-02 can close.
+1. **Generator-source provenance:** E04/E05 historical source is recovered and archived; E01-E03 remain `ORIGINAL_GENERATOR_SOURCE_NOT_RECOVERABLE`. Their artifacts are content-addressed and valid, but `ARTIFACT_PROVENANCE_GAP_OPEN` remains until an authorized P2B reproduction anchor is completed or the owner explicitly accepts the limitation.
+2. **Legacy manuscript contamination:** stale one-seed/child-bootstrap numbers, `226/357`, obsolete E04 comparisons, old sample sizes/RNG descriptions, and M4 numerical claims must not survive into the rebuilt manuscript.
+3. **Novelty adjudication:** four bounded literature searches remain before V1-02 can close.
 
 ## 8. Non-negotiable wording constraints
 
@@ -122,13 +122,12 @@ Do not write or imply:
 
 Follow `ARTICLE_V1_NEXT_STAGE.md`.
 
-The next work is:
+P0/P1 authority adoption and P2 historical-source forensics are complete. The next work is:
 
-1. adopt this revised authority pack into the repository;
-2. run a bounded historical generator-source recovery/provenance task;
-3. complete the four bounded literature searches;
-4. run final V1-02 novelty/construct synthesis;
-5. perform V1-03 adversarial claim freeze;
-6. rebuild the manuscript from frozen authorities rather than patching the stale Results/Discussion chapters.
+1. obtain separate authorization for P2B and create clean deterministic reproduction anchors for E01-E03, unless the owner formally accepts the provenance limitation;
+2. complete the four bounded literature searches;
+3. run final V1-02 novelty/construct synthesis;
+4. perform V1-03 adversarial claim freeze;
+5. rebuild the manuscript from frozen authorities rather than patching the stale Results/Discussion chapters.
 
 No new stochastic science is authorized by this sequence.
