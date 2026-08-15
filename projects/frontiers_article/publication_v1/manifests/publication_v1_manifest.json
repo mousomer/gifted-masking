@@ -1,0 +1,805 @@
+{
+  "manifest_version": "1.0",
+  "package": "ARTICLE_V1_STAGE1_PUBLICATION",
+  "description": "Deterministic Article-V1 publication build from frozen E01-E05 evidence. No experiment is rerun and no stochastic entry point is invoked.",
+  "scope": {
+    "included_experiments": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05"
+    ],
+    "included_run_ids": {
+      "E01": "frontiers_hot_stove_v1",
+      "E02": "frontiers_m1_binary_graded_v1",
+      "E03": "frontiers_m2_regime_replication_v1",
+      "E04": "frontiers_m3_search_architectures_v1",
+      "E05": "frontiers_m3_bflpe_crossover_v1"
+    },
+    "excluded": [
+      "E06",
+      "M4"
+    ],
+    "exclusion_note": "E06/M4 contribute no data, figure, result, claim, caption, table, or manuscript-facing artifact to Article V1."
+  },
+  "generation": {
+    "command": "python projects/frontiers_article/publication_v1/scripts/build_publication_v1.py",
+    "timestamp_utc": "2026-08-15T23:13:14+00:00",
+    "python": "3.14.6",
+    "git": {
+      "commit": "bc51d9fcc72ed82cec363ba82360ad60b738f9fa",
+      "branch": "codex/frontiers-stage2-e06",
+      "worktree_dirty": true,
+      "worktree_dirty_paths": [
+        "projects/frontiers_article/ARTICLE_V1_STAGE1_PUBLICATION_FREEZE.md",
+        "projects/frontiers_article/publication_v1/",
+        "rojects/frontiers_article/ARTICLE_V1_EVIDENCE_MATRIX.csv",
+        "tests/test_publication_v1.py"
+      ]
+    }
+  },
+  "frozen_evidence_verification": {
+    "experiments": {
+      "E01": {
+        "experiment": "E01",
+        "run_id": "frontiers_hot_stove_v1",
+        "manifest_path": "results/manifests/frontiers_hot_stove_v1.json",
+        "manifest_sha256": "3f48573a2df3c08c0b7e1c2310836ca740966ad2cae1cef12f6b8dddde514e34",
+        "protected_output_count": 5,
+        "protected_outputs_valid": 5,
+        "artifacts": {
+          "cells": {
+            "path": "results/summaries/frontiers_hot_stove_v1_cells.csv",
+            "sha256": "9d619166b5cdbc0525ea087a762a27ed767a4d039ae3fc280a9c5524825bdfd4",
+            "bytes": 48338
+          },
+          "effects": {
+            "path": "results/summaries/frontiers_hot_stove_v1_effects.csv",
+            "sha256": "4ce67da8b48e8d770388db9e2c6ebe240b868c0696ba90678cc9940de02684d8",
+            "bytes": 45950
+          },
+          "figure": {
+            "path": "results/figures/frontiers_hot_stove_v1_stratum_diagnostics.png",
+            "sha256": "85db4225be7162ad7771dc6bcc43544c75a319dbffb572834100b1b25461155b",
+            "bytes": 58917
+          },
+          "raw": {
+            "path": "results/raw/frontiers_hot_stove_v1_units.csv",
+            "sha256": "a4e78dcf4094e03ed36fbb0e3cfbebecdc427247810cc359d6a4b5bfa362dc01",
+            "bytes": 15588232
+          },
+          "report": {
+            "path": "results/reports/frontiers_hot_stove_v1_report.md",
+            "sha256": "4fab6b0ce576d12464256a9024edc1fda65c319fb9e09c28731091551ce1b57f",
+            "bytes": 2128
+          }
+        },
+        "status": "PASS"
+      },
+      "E02": {
+        "experiment": "E02",
+        "run_id": "frontiers_m1_binary_graded_v1",
+        "manifest_path": "results/manifests/frontiers_m1_binary_graded_v1.json",
+        "manifest_sha256": "be541067611990b0d9dc5388ee731152ea3eac27fd5a66fcceba45c4b13e834e",
+        "protected_output_count": 6,
+        "protected_outputs_valid": 6,
+        "artifacts": {
+          "arms": {
+            "path": "results/summaries/frontiers_m1_binary_graded_v1_arms.csv",
+            "sha256": "cc19fa67bd40f5c2d5ab59f1f2a7c909c524b80b082c3354c7ad4283694abaf4",
+            "bytes": 1724
+          },
+          "cells": {
+            "path": "results/summaries/frontiers_m1_binary_graded_v1_cells.csv",
+            "sha256": "741b5cca90b7412eba6d9e79c3ef71adf6810a50144ca9761c3e94a5df94f226",
+            "bytes": 56319
+          },
+          "effects": {
+            "path": "results/summaries/frontiers_m1_binary_graded_v1_effects.csv",
+            "sha256": "11d29c72508649a174b285957dfec3752edff76a099aa76de9f6fe3a4e515a8a",
+            "bytes": 133164
+          },
+          "figure": {
+            "path": "results/figures/frontiers_m1_binary_graded_v1_disclosure_diagnostics.png",
+            "sha256": "08062c09b307e2838285b08058447ed19eb9d8edf3a15b16b89009d61dcc5cca",
+            "bytes": 35966
+          },
+          "raw": {
+            "path": "results/raw/frontiers_m1_binary_graded_v1_units.csv",
+            "sha256": "3640b1a83605791916ec150be66ef578bc100cee08b6b61f909d2a7ff2220619",
+            "bytes": 16704685
+          },
+          "report": {
+            "path": "results/reports/frontiers_m1_binary_graded_v1_report.md",
+            "sha256": "c311720f6dc8e6c0ee196db9aff6e8a5c2172806b9536d2556ecef3dead892dd",
+            "bytes": 2819
+          }
+        },
+        "status": "PASS"
+      },
+      "E03": {
+        "experiment": "E03",
+        "run_id": "frontiers_m2_regime_replication_v1",
+        "manifest_path": "results/manifests/frontiers_m2_regime_replication_v1.json",
+        "manifest_sha256": "18aa7b6993af0c9f0df0d5cbc0e50b467959a13d17aaec156b1c8e5cb8242646",
+        "protected_output_count": 8,
+        "protected_outputs_valid": 8,
+        "artifacts": {
+          "cells": {
+            "path": "results/summaries/frontiers_m2_regime_replication_v1_cells.csv",
+            "sha256": "198cb7be9b2a93aa89569d9dd656326f521b7a2ec99543733fd6e779e0508851",
+            "bytes": 1599052
+          },
+          "effects": {
+            "path": "results/summaries/frontiers_m2_regime_replication_v1_effects.csv",
+            "sha256": "5a1ee392560e94695dfe0d04ff89caeafdb0b58fa2b70e6def365726d66ab3af",
+            "bytes": 1327
+          },
+          "figure": {
+            "path": "results/figures/frontiers_m2_regime_replication_v1_standard_regime_diagnostics.png",
+            "sha256": "4328d076730235580ca0bd387d303e9f0c43b217d6512126782f78ab8cd136fc",
+            "bytes": 40388
+          },
+          "legacy": {
+            "path": "results/summaries/frontiers_m2_regime_replication_v1_legacy_replay.csv",
+            "sha256": "bb220dddc16335e9fc901a2e8be53f6d7c1a90aed8198fae3b2fd56e46e3ef2b",
+            "bytes": 93788
+          },
+          "raw": {
+            "path": "results/raw/frontiers_m2_regime_replication_v1_units.csv",
+            "sha256": "9561ff20d91cd07cc57f61db9bdb60072ea8b381bcb43968825932c30da6d150",
+            "bytes": 391221606
+          },
+          "report": {
+            "path": "results/reports/frontiers_m2_regime_replication_v1_report.md",
+            "sha256": "7339dbe5d1140e58a7f1536fd14d42cba41bad7f6228ca8f83c87ef194ab1498",
+            "bytes": 2721
+          },
+          "stable": {
+            "path": "results/summaries/frontiers_m2_regime_replication_v1_stable_cells.csv",
+            "sha256": "91814ab4430f63bc5e46596c61718e1fec6705d355b6cab3d8c18d29c1dfaea7",
+            "bytes": 150195
+          },
+          "thresholds": {
+            "path": "results/summaries/frontiers_m2_regime_replication_v1_thresholds.csv",
+            "sha256": "0987aea9f6085f81bad791454eaca03127c6144f172a7cc9f41cdad6c316f9bf",
+            "bytes": 2564
+          }
+        },
+        "status": "PASS"
+      },
+      "E04": {
+        "experiment": "E04",
+        "run_id": "frontiers_m3_search_architectures_v1",
+        "manifest_path": "results/manifests/frontiers_m3_search_architectures_v1.json",
+        "manifest_sha256": "abf6fa747869ab1e2258d3321dcb0a888d06b5a61edd88e4661791a88c249d71",
+        "protected_output_count": 7,
+        "protected_outputs_valid": 7,
+        "artifacts": {
+          "canonical_cells": {
+            "path": "results/summaries/frontiers_m3_search_architectures_v1_canonical_cells.csv",
+            "sha256": "65cebddb4621be63e67f1dc525c64f6968b1f0a798bd2b52589889f7d89e5777",
+            "bytes": 4987
+          },
+          "curves": {
+            "path": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv",
+            "sha256": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4",
+            "bytes": 91588
+          },
+          "effects": {
+            "path": "results/summaries/frontiers_m3_search_architectures_v1_effects.csv",
+            "sha256": "dd426992f0a1a0ae05542756dc6dca918fbf56a589347676a93a309d08a41d44",
+            "bytes": 273123
+          },
+          "equivalences": {
+            "path": "results/summaries/frontiers_m3_search_architectures_v1_equivalences.csv",
+            "sha256": "9820053b3236a68817cb98c28eb3c7fc20dbaff78b646111a6d45bd5ad31aecb",
+            "bytes": 40185
+          },
+          "figure": {
+            "path": "results/figures/frontiers_m3_search_architectures_v1_k_curve_diagnostics.png",
+            "sha256": "0fe46d1165050817a4aa68398cea48bc6a3a420349e61120b14398ecfc9cec7b",
+            "bytes": 56557
+          },
+          "raw": {
+            "path": "results/raw/frontiers_m3_search_architectures_v1_units.csv",
+            "sha256": "621227ffeac600ffbfc85852ef2784d4e409880e329ff4b6d947553e2b4e419e",
+            "bytes": 174838110
+          },
+          "report": {
+            "path": "results/reports/frontiers_m3_search_architectures_v1_report.md",
+            "sha256": "553c5822fb9840abfbfb74f940785f89e76c7dda07b42d4913290cd958bb7503",
+            "bytes": 3074
+          }
+        },
+        "status": "PASS"
+      },
+      "E05": {
+        "experiment": "E05",
+        "run_id": "frontiers_m3_bflpe_crossover_v1",
+        "manifest_path": "results/manifests/frontiers_m3_bflpe_crossover_v1.json",
+        "manifest_sha256": "cc600fd4158ea447e6b08024c545489e5b02f64522a1b37314d22745fbe190d3",
+        "protected_output_count": 7,
+        "protected_outputs_valid": 7,
+        "artifacts": {
+          "analytic": {
+            "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_analytic.csv",
+            "sha256": "e1045d0593709561761ec8c9ba0684ef1a80e26d6b0b15f12f57434b74f22a42",
+            "bytes": 3547
+          },
+          "cells": {
+            "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv",
+            "sha256": "59d780f3feb3ed03e665de0a75eabd8975fb394d58cbd9c2193a03bb68d73ab7",
+            "bytes": 78148
+          },
+          "effects": {
+            "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_effects.csv",
+            "sha256": "33eb752c89d87ce79ef13bfe196623fb4d4f53c4fff63e03b84af413a68200d5",
+            "bytes": 455003
+          },
+          "figure": {
+            "path": "results/figures/frontiers_m3_bflpe_crossover_v1_bflpe_crossover_diagnostics.png",
+            "sha256": "0001f0ba2ef2c0fbf7cf65ae5535fa195d7ee223acaeac5d56043752dd473a9f",
+            "bytes": 97500
+          },
+          "raw": {
+            "path": "results/raw/frontiers_m3_bflpe_crossover_v1_units.csv",
+            "sha256": "9de41835a72986fc5ca7cbd591a16ed3781a3cfdd24f194d126b27012bafb947",
+            "bytes": 92801254
+          },
+          "report": {
+            "path": "results/reports/frontiers_m3_bflpe_crossover_v1_report.md",
+            "sha256": "f60e6bb634616e9e1e96b970a31264bec17fdff86554f47f415d56f7517652e7",
+            "bytes": 3836
+          },
+          "transitions": {
+            "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_transitions.csv",
+            "sha256": "96b8d8dc1cf27e3a226282e4d8755effde74e855d81b8f8bbc6db6515c607097",
+            "bytes": 4821
+          }
+        },
+        "status": "PASS"
+      }
+    },
+    "evidence_matrix": {
+      "matrix_path": "projects/frontiers_article/ARTICLE_V1_EVIDENCE_MATRIX.csv",
+      "matrix_sha256": "7befebf2f7a463f5256a73d72b7840a767cb407f1240c45b754e699920841056",
+      "referenced_file_count": 18,
+      "referenced_files_valid": 18,
+      "files": {
+        "configs/frontiers_article/e01_hot_stove_standard.json": "1d8ac3157a628c8115bdfe11a14ed46d794caeb2abb88c49b62bc2d2aa6b2f6a",
+        "configs/frontiers_article/e02_binary_graded_standard.json": "08aa809cbfdbf12f002a8b93e234923ef04e84d13a02c9e7ab12926ee84d431d",
+        "configs/frontiers_article/e03_m2_regime_standard.json": "52197a07751c03ca47872c2319aedd9705140eb38cb7048a091e48c40923e0e0",
+        "configs/frontiers_article/e04_m3_search_architectures_standard.json": "e8b73dc7c9904b75378d49f0772f1a3ea59e70a1c56581b1e95c98952f769e53",
+        "configs/frontiers_article/e05_m3_bflpe_crossover_standard.json": "571d3c93b46a97333839f81b53f8c21cc43a21a5427ec97c61cf38f0cd9d9e1f",
+        "results/summaries/frontiers_hot_stove_v1_effects.csv": "4ce67da8b48e8d770388db9e2c6ebe240b868c0696ba90678cc9940de02684d8",
+        "results/summaries/frontiers_m1_binary_graded_v1_arms.csv": "cc19fa67bd40f5c2d5ab59f1f2a7c909c524b80b082c3354c7ad4283694abaf4",
+        "results/summaries/frontiers_m1_binary_graded_v1_effects.csv": "11d29c72508649a174b285957dfec3752edff76a099aa76de9f6fe3a4e515a8a",
+        "results/summaries/frontiers_m2_regime_replication_v1_cells.csv": "198cb7be9b2a93aa89569d9dd656326f521b7a2ec99543733fd6e779e0508851",
+        "results/summaries/frontiers_m2_regime_replication_v1_effects.csv": "5a1ee392560e94695dfe0d04ff89caeafdb0b58fa2b70e6def365726d66ab3af",
+        "results/summaries/frontiers_m2_regime_replication_v1_stable_cells.csv": "91814ab4430f63bc5e46596c61718e1fec6705d355b6cab3d8c18d29c1dfaea7",
+        "results/summaries/frontiers_m2_regime_replication_v1_thresholds.csv": "0987aea9f6085f81bad791454eaca03127c6144f172a7cc9f41cdad6c316f9bf",
+        "results/summaries/frontiers_m3_bflpe_crossover_v1_analytic.csv": "e1045d0593709561761ec8c9ba0684ef1a80e26d6b0b15f12f57434b74f22a42",
+        "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv": "59d780f3feb3ed03e665de0a75eabd8975fb394d58cbd9c2193a03bb68d73ab7",
+        "results/summaries/frontiers_m3_bflpe_crossover_v1_effects.csv": "33eb752c89d87ce79ef13bfe196623fb4d4f53c4fff63e03b84af413a68200d5",
+        "results/summaries/frontiers_m3_bflpe_crossover_v1_transitions.csv": "96b8d8dc1cf27e3a226282e4d8755effde74e855d81b8f8bbc6db6515c607097",
+        "results/summaries/frontiers_m3_search_architectures_v1_curves.csv": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4",
+        "results/summaries/frontiers_m3_search_architectures_v1_effects.csv": "dd426992f0a1a0ae05542756dc6dca918fbf56a589347676a93a309d08a41d44"
+      },
+      "status": "PASS"
+    },
+    "protected_outputs_valid": 33,
+    "protected_outputs_total": 33
+  },
+  "article_v1_authorities": [
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md",
+      "sha256": "1862d6fc5f8a62b57bd8de24c176a32342e3b6a7868be4e993d36bbd463da62c"
+    },
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_EVIDENCE_MATRIX.csv",
+      "sha256": "7befebf2f7a463f5256a73d72b7840a767cb407f1240c45b754e699920841056"
+    },
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md",
+      "sha256": "d93adeec7def0c02b402519dfb3744c2f1f19da86c5aee76686617b5b96dfa6e"
+    },
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_ANALYTIC_RESULTS.md",
+      "sha256": "368ca73a86983d501243bcd0096801680a059f93d6c855fb9c7164af381aea5e"
+    },
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_E01_E02_INTERPRETATION.md",
+      "sha256": "4ac5d20f9560508d7e8162917b41265508f9d1d98d5778454deb3138c7062f9c"
+    },
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_E03_INTERPRETATION.md",
+      "sha256": "ca10fea29ff37a880be7c116d0ae06003c4ba184e8c3645d52214dc101f7190f"
+    },
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_E04_INTERPRETATION.md",
+      "sha256": "56bd98c1bf55d8acc71620ec5bc561a596c3248210d321d890b308f3f5027039"
+    },
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_E05_INTERPRETATION.md",
+      "sha256": "79f735b1ac4a727f845820ad2dfca4604b151aef1d49645296e90ee27678242d"
+    },
+    {
+      "path": "projects/frontiers_article/ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md",
+      "sha256": "bfa3afa9b8b952f9f3a91662fb78b0d70c72e1437de54882ba348138970dfa08"
+    },
+    {
+      "path": "projects/frontiers_article/HANDOFF.md",
+      "sha256": "cbf5db82130b2e54b796bc468fabebe6631cccf6aaa66665f262782e095ba37c"
+    }
+  ],
+  "generating_scripts": [
+    {
+      "path": "projects/frontiers_article/publication_v1/scripts/analytic.py",
+      "sha256": "ce64502f3cd20e2ef4c9a5c46f8fb83a44c4b83547080208d2ee891ac96e1df9",
+      "bytes": 12733
+    },
+    {
+      "path": "projects/frontiers_article/publication_v1/scripts/build_publication_v1.py",
+      "sha256": "ca947c93848d58168010a2c39796e0c8177118545d38a01a168009437ca7032a",
+      "bytes": 10683
+    },
+    {
+      "path": "projects/frontiers_article/publication_v1/scripts/captions.py",
+      "sha256": "7ffcde3579724ff3fed9a265f8375d878018861c74f4e0064e3ca25a23050308",
+      "bytes": 9683
+    },
+    {
+      "path": "projects/frontiers_article/publication_v1/scripts/extract.py",
+      "sha256": "67c6143da23a9b26b445c1790a457c6ca3bac8128d6ae6832d40a7a1edc0feea",
+      "bytes": 38172
+    },
+    {
+      "path": "projects/frontiers_article/publication_v1/scripts/figures.py",
+      "sha256": "75c790956893a224d825ef69ec8ad319c3e40688757648e5c4480963919eb69e",
+      "bytes": 25319
+    },
+    {
+      "path": "projects/frontiers_article/publication_v1/scripts/pubcommon.py",
+      "sha256": "ac46e62ae2617a6ecf08e80ea77fd0196f2ff316f4a2297339cc1b85453bc06a",
+      "bytes": 7958
+    }
+  ],
+  "publication_source_data": [
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv",
+      "output_sha256": "9b9227f43146b96ae7000f572d2249ae6bd4d39bf414715bdd780203afa38d36",
+      "source_experiment": "E01",
+      "sources": [
+        {
+          "path": "results/summaries/frontiers_hot_stove_v1_effects.csv",
+          "sha256": "4ce67da8b48e8d770388db9e2c6ebe240b868c0696ba90678cc9940de02684d8"
+        }
+      ],
+      "selector": {
+        "level": "across_master_seeds",
+        "p": "pooled_equal_weight_p_0.75_0.85",
+        "lambda": "",
+        "condition": "",
+        "stratum": ""
+      },
+      "fields": [
+        "effect_name",
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "ci_status"
+      ],
+      "transformation": [
+        "row_filter",
+        "column_projection"
+      ],
+      "notes": "Three primary E01 estimands at the pooled equal-weight p in {0.75, 0.85} across-master-seeds level. Roles encode freeze C.5: sampling is primary, regret is its unit translation, final-mask is a secondary null."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv",
+      "output_sha256": "fe37531296d986f0662ce74d6e3976680163e4f19da7240deef5f8e5d97f966f",
+      "source_experiment": "E02",
+      "sources": [
+        {
+          "path": "results/summaries/frontiers_m1_binary_graded_v1_effects.csv",
+          "sha256": "11d29c72508649a174b285957dfec3752edff76a099aa76de9f6fe3a4e515a8a"
+        }
+      ],
+      "selector": {
+        "level": "across_master_seeds",
+        "p": "pooled_equal_weight_p_0.75_0.85",
+        "stratum": "rejected"
+      },
+      "fields": [
+        "effect_name",
+        "stratum",
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "ci_status"
+      ],
+      "transformation": [
+        "row_filter",
+        "column_projection"
+      ],
+      "notes": "Four E02 estimands for the approved rejected initial-outcome stratum only. The exploration result may not be shown without the three adverse results."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv",
+      "output_sha256": "e58f0603e27a34ab7b94309f8576e96c67c4e8dc4c25e02b7312aed48c021fb9",
+      "source_experiment": "E02",
+      "sources": [
+        {
+          "path": "results/summaries/frontiers_m1_binary_graded_v1_arms.csv",
+          "sha256": "cc19fa67bd40f5c2d5ab59f1f2a7c909c524b80b082c3354c7ad4283694abaf4"
+        }
+      ],
+      "selector": {
+        "p": [
+          "0.75",
+          "0.85"
+        ]
+      },
+      "fields": [
+        "p",
+        "d",
+        "expected_reward",
+        "analytic_optimal_endpoint"
+      ],
+      "transformation": [
+        "row_filter",
+        "column_projection",
+        "closed_form_analytic"
+      ],
+      "notes": "M1 per-arm expected reward at the two controlled acceptance probabilities. Each frozen value is re-checked against E[R(d)] = b - c + d[a + c - (1-p)(b+r)], which is affine in d, so every strict static optimum is an endpoint."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+      "output_sha256": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab",
+      "source_experiment": "E03",
+      "sources": [
+        {
+          "path": "results/summaries/frontiers_m2_regime_replication_v1_cells.csv",
+          "sha256": "198cb7be9b2a93aa89569d9dd656326f521b7a2ec99543733fd6e779e0508851"
+        },
+        {
+          "path": "results/summaries/frontiers_m2_regime_replication_v1_stable_cells.csv",
+          "sha256": "91814ab4430f63bc5e46596c61718e1fec6705d355b6cab3d8c18d29c1dfaea7"
+        }
+      ],
+      "selector": {
+        "component": "exact_grid",
+        "sensitivity_name": "baseline"
+      },
+      "fields": [
+        "p",
+        "eta",
+        "parameter_cell_id",
+        "learned_neutral_action",
+        "objective_neutral_action",
+        "classification",
+        "stable",
+        "neutral_visit_adequate",
+        "objective_neutral_q_gap_auth_minus_mask"
+      ],
+      "transformation": [
+        "row_filter",
+        "column_projection",
+        "deterministic_join",
+        "count_aggregation"
+      ],
+      "notes": "One row per tested parameter-grid cell of the frozen 21 x 17 baseline exact grid (357 cells). Objective fields are deterministic and verified identical across the five master seeds; learned action and visit adequacy are aggregated by count. publication_category maps an unstable or unclassified cell to 'inconclusive' so that no tested cell is omitted from the map. Counts are tested-grid coverage, not prevalence."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e03_grid_summary.csv",
+      "output_sha256": "90aebefa0fe66c1f3092879d365c2ede798e71114a1f3b0bb74ee6df083f096a",
+      "source_experiment": "E03",
+      "sources": [
+        {
+          "path": "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+          "sha256": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab"
+        }
+      ],
+      "selector": {
+        "component": "exact_grid",
+        "sensitivity_name": "baseline"
+      },
+      "fields": [
+        "publication_category",
+        "cell_count"
+      ],
+      "transformation": [
+        "count_aggregation"
+      ],
+      "notes": "Tested-grid coverage counts. 243/357 means 243 of the 357 tested parameter-grid cells. It is not a prevalence, not a share of people or environments, not phase-space volume, and not a probability that masking occurs."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e04_k_response.csv",
+      "output_sha256": "c01c04359b30d425d518566190dcfb27b10f9003e4123d9a6f05ce44382c11b7",
+      "source_experiment": "E04",
+      "sources": [
+        {
+          "path": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv",
+          "sha256": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4"
+        }
+      ],
+      "selector": {
+        "canonical_identity_mode": "fixed",
+        "series": {
+          "one_good": "effective_good_count == 1",
+          "proportional_25": "effective_good_count == max(1, ceil(K/4))",
+          "known_good_reference": "architecture == fixed_known_good (structurally K-invariant)"
+        }
+      },
+      "fields": [
+        "architecture",
+        "K",
+        "effective_good_count",
+        "mean_settled_any_good_auth_argmax"
+      ],
+      "transformation": [
+        "row_filter",
+        "column_projection",
+        "equal_weight_master_mean",
+        "master_range"
+      ],
+      "notes": "K-response curves on the prespecified primary metric mean_settled_any_good_auth_argmax. master_min/master_max are the observed range across the five master seeds and are a descriptive spread, not a confidence interval; the inferential unit for E04 headline effects is the five master seeds, and those intervals are carried in e04_headline_effects.csv. The proportional_25 series uses the frozen regime definition m = max(1, ceil(K/4)), so it coincides with the one-good series at K = 1, 2, 4."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e04_headline_effects.csv",
+      "output_sha256": "ebcf58f06eef99fa890bbf9039b3c59293bb743417e3e279f35723f3ef501868",
+      "source_experiment": "E04",
+      "sources": [
+        {
+          "path": "results/summaries/frontiers_m3_search_architectures_v1_effects.csv",
+          "sha256": "dd426992f0a1a0ae05542756dc6dca918fbf56a589347676a93a309d08a41d44"
+        }
+      ],
+      "selector": {
+        "level": "across_master_seeds"
+      },
+      "fields": [
+        "effect_name",
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "ci_status"
+      ],
+      "transformation": [
+        "row_filter",
+        "column_projection"
+      ],
+      "notes": "Frozen K = 16 minus K = 1 contrasts on the primary metric for the two search architectures, plus the known-good, global-mask, and proportional-abundance controls that establish the effect is not a trivial K-only reward effect. Student-t across five master seeds (df = 4)."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv",
+      "output_sha256": "0d47aeae4dc4c15e08176c7ff44466740712f3a47000a68d2b7a1231d48a7e10",
+      "source_experiment": "E05",
+      "sources": [
+        {
+          "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv",
+          "sha256": "59d780f3feb3ed03e665de0a75eabd8975fb394d58cbd9c2193a03bb68d73ab7"
+        },
+        {
+          "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_transitions.csv",
+          "sha256": "96b8d8dc1cf27e3a226282e4d8755effde74e855d81b8f8bbc6db6515c607097"
+        }
+      ],
+      "selector": {
+        "response_metric": "modal_good_auth_argmax_fraction",
+        "dense_range": [
+          0.3,
+          0.65
+        ]
+      },
+      "fields": [
+        "architecture",
+        "bf",
+        "modal_good_auth_argmax_fraction",
+        "analytic_objective_advantage_good_auth_minus_mask"
+      ],
+      "transformation": [
+        "row_filter",
+        "column_projection",
+        "equal_weight_master_mean",
+        "master_range"
+      ],
+      "notes": "Across-child modal good-context authentic fraction against comparison cost bf. pooled_response is the equal-n mean over the five master-seed fractions, which is the pooling the frozen PAVA fit used; it is verified to reproduce the frozen raw_dense_start_response and raw_dense_end_response exactly. master_min/master_max are a descriptive range, not a confidence interval. No fit is recomputed here: the reported crossing and its bootstrap interval are read from the frozen transitions table."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e05_crossings.csv",
+      "output_sha256": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b",
+      "source_experiment": "E05",
+      "sources": [
+        {
+          "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_transitions.csv",
+          "sha256": "96b8d8dc1cf27e3a226282e4d8755effde74e855d81b8f8bbc6db6515c607097"
+        },
+        {
+          "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_analytic.csv",
+          "sha256": "e1045d0593709561761ec8c9ba0684ef1a80e26d6b0b15f12f57434b74f22a42"
+        }
+      ],
+      "selector": {
+        "level": "across_master_seeds",
+        "response_metric": "modal_good_auth_argmax_fraction",
+        "fit_method": "nonincreasing_pava_equal_n"
+      },
+      "fields": [
+        "architecture",
+        "transition_bf",
+        "ci_low",
+        "ci_high",
+        "analytic_threshold_bf",
+        "transition_status"
+      ],
+      "transformation": [
+        "row_filter",
+        "column_projection"
+      ],
+      "notes": "Frozen learned crossing and its master-seed bootstrap interval for flat_2k, the exact objective crossover 8/17, and the hierarchical left-censored status. The empirical crossing is reportable descriptively; the design does not isolate a mechanism, and fixed temperature and action-set normalization remain possible contributors."
+    },
+    {
+      "output_file": "projects/frontiers_article/publication_v1/data/e05_displacement.csv",
+      "output_sha256": "4357f2fc10a07d763e2ec140d30adb5732f71ce1933644e83230af5492098213",
+      "source_experiment": "E05",
+      "sources": [
+        {
+          "path": "projects/frontiers_article/publication_v1/data/e05_crossings.csv",
+          "sha256": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b"
+        }
+      ],
+      "selector": {
+        "architecture": "flat_2k"
+      },
+      "fields": [
+        "transition_bf",
+        "ci_low",
+        "ci_high",
+        "analytic_threshold_bf"
+      ],
+      "transformation": [
+        "closed_form_analytic",
+        "rounding_for_display"
+      ],
+      "notes": "Displacement between the learned behavioural crossing and the exact objective crossover, and the objective authenticity advantage still available at the learned crossing, both evaluated in closed form from the frozen crossing. Conditional on the point crossing; the advantage figure carries no separately tabulated uncertainty."
+    }
+  ],
+  "outputs": {
+    "data": [
+      {
+        "path": "projects/frontiers_article/publication_v1/data/PROVENANCE.json",
+        "sha256": "66a3db568544d0cd3270c1a27f1049ebf742bd5038e77f76bb139dc971488b83",
+        "bytes": 11739
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv",
+        "sha256": "9b9227f43146b96ae7000f572d2249ae6bd4d39bf414715bdd780203afa38d36",
+        "bytes": 1097
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv",
+        "sha256": "e58f0603e27a34ab7b94309f8576e96c67c4e8dc4c25e02b7312aed48c021fb9",
+        "bytes": 473
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv",
+        "sha256": "fe37531296d986f0662ce74d6e3976680163e4f19da7240deef5f8e5d97f966f",
+        "bytes": 1364
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+        "sha256": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab",
+        "bytes": 126767
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e03_grid_summary.csv",
+        "sha256": "90aebefa0fe66c1f3092879d365c2ede798e71114a1f3b0bb74ee6df083f096a",
+        "bytes": 272
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e04_headline_effects.csv",
+        "sha256": "ebcf58f06eef99fa890bbf9039b3c59293bb743417e3e279f35723f3ef501868",
+        "bytes": 1408
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e04_k_response.csv",
+        "sha256": "c01c04359b30d425d518566190dcfb27b10f9003e4123d9a6f05ce44382c11b7",
+        "bytes": 3289
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e05_crossings.csv",
+        "sha256": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b",
+        "bytes": 638
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e05_displacement.csv",
+        "sha256": "4357f2fc10a07d763e2ec140d30adb5732f71ce1933644e83230af5492098213",
+        "bytes": 632
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv",
+        "sha256": "0d47aeae4dc4c15e08176c7ff44466740712f3a47000a68d2b7a1231d48a7e10",
+        "bytes": 4867
+      }
+    ],
+    "tables": [
+      {
+        "path": "projects/frontiers_article/publication_v1/tables/analytic_results_v1.csv",
+        "sha256": "34b3f9d4f36db0147250d23978e5c64ee9e8064a4f158f6e150395245b9fb55c",
+        "bytes": 3775
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/tables/analytic_results_v1.md",
+        "sha256": "efd360fdd34c91e97f2a8f546fdbdc0b6e77abc76dd79e4f1d0120f7ad945512",
+        "bytes": 4867
+      }
+    ],
+    "figures": [
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/FIGURE_CAPTIONS.md",
+        "sha256": "15ebf612e564e80c49dc0a83c42a81c678885cc4800492f371049cd7b2616b0a",
+        "bytes": 7474
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/Figure_1_model_progression.pdf",
+        "sha256": "c81fb3ff5abb18da86ba45713484b881c419cde92355d4056976c3edb75ba1ac",
+        "bytes": 41700
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/Figure_1_model_progression.png",
+        "sha256": "8a017b71205f81b8b09a3f8548e10e5025c0671280f4130d1bf46e77351babeb",
+        "bytes": 307530
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/Figure_2_early_feedback_and_graded_disclosure.pdf",
+        "sha256": "5aa0f66ed9fb062e7ae902c885e9b1cadd2d15580bcf026888168261c434f73b",
+        "bytes": 38019
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/Figure_2_early_feedback_and_graded_disclosure.png",
+        "sha256": "2f0dd66506d708dcb12d25383f78ca2330f0271382509b406f827375605f8241",
+        "bytes": 258011
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/Figure_3_persistent_state_contrast_map.pdf",
+        "sha256": "1f4f244017bda60105558eb26047035933e6951439580aa2209693218916cb65",
+        "bytes": 45203
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/Figure_3_persistent_state_contrast_map.png",
+        "sha256": "6b06405ebc922c5ce4b2bd2ff9af2e08e097a4ff53cd88d4c3769208c16c871b",
+        "bytes": 219698
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/Figure_4_discovery_and_comparison_cost.pdf",
+        "sha256": "a441ecda19239344a978d10fbefacaf539098e8f3b5657ec8bca7d4ec5fcf103",
+        "bytes": 43565
+      },
+      {
+        "path": "projects/frontiers_article/publication_v1/figures/Figure_4_discovery_and_comparison_cost.png",
+        "sha256": "970dcff1c8f61715c990dbd4b287420c637ac644cc97a9bb2d084a5fa3b52569",
+        "bytes": 412968
+      }
+    ]
+  },
+  "determinism": {
+    "data_tables_captions": "byte-stable across rebuilds from identical frozen inputs",
+    "figures": "PDF CreationDate is suppressed and PNG Software metadata is cleared, so figure bytes are stable across rebuilds on the same Matplotlib version. The authoritative reproducibility layer is the source, script, and publication-data hash chain, which is independent of any renderer metadata."
+  },
+  "reproducibility_limitation": {
+    "artifact_identity": "INTACT \u2014 33/33 protected E01-E05 outputs hash-match their manifests",
+    "model_semantics_identity": "INTACT \u2014 maintained model blobs match the audited mathematical reference",
+    "generator_source_identity": {
+      "E01": "ORIGINAL_GENERATOR_SOURCE_NOT_RECOVERABLE",
+      "E02": "ORIGINAL_GENERATOR_SOURCE_NOT_RECOVERABLE",
+      "E03": "ORIGINAL_GENERATOR_SOURCE_NOT_RECOVERABLE",
+      "E04": "HISTORICAL_SOURCE_RECOVERED",
+      "E05": "HISTORICAL_SOURCE_RECOVERED"
+    },
+    "statement": "The frozen E01-E03 result artifacts and their manifests were preserved and independently validated, but the exact dirty-worktree generator source state used for those historical runs was not fully recoverable. E04-E05 retain fingerprint-exact historical generator-source bundles. Article-V1 figures and tables are generated deterministically from the preserved frozen artifacts rather than by rerunning the experiments."
+  },
+  "provenance_index": "projects/frontiers_article/publication_v1/data/PROVENANCE.json"
+}
