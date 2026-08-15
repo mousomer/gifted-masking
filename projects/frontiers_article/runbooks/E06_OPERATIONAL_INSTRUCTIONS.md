@@ -61,6 +61,17 @@ If any conflict remains after applying that authority order, stop with
 8. Do not use child-level resampling as independent inference.
 9. Do not call any diagnostic loop “hysteresis.”
 
+## Compression release-gate operation
+
+Do not create a standard output root until authorization has authenticated the
+canonical fixture record against the smoke-bound hash and independently
+regenerated the non-scientific fixture in `/private/tmp`. The standard path
+uses E06-local continuous resource stops; a crossed limit is an immediate
+failure, never a warning. A future canonical GO binding must include the exact
+Sol review checkpoint path and SHA-256 in addition to the sealed smoke hash.
+Post-seal Git drift is content-aware and permits only the explicitly bound
+manifest/report, review checkpoint, and GO records.
+
 ## Implementation order
 
 1. Record a concise plan and acceptance criteria in the execution log.

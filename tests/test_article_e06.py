@@ -6,16 +6,24 @@ import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import numpy as np
 
 from gifted_masking.experiments.e06 import (
-    RAW_FIELDS, derive_segment_seed, derive_tables, expected_rows, invert_transition,
+    RAW_FIELDS, STANDARD_CELL_FIELDS, STANDARD_LOOP_FIELDS, STANDARD_SEEDS,
+    GO_BINDING_FIELDS, STANDARD_COMMAND, STANDARD_CONFIG_RELATIVE, SEALED_SMOKE_MANIFEST_RELATIVE,
+    derive_segment_seed, derive_tables, derive_e06_standard_tables, expected_rows,
+    expected_learner_steps, iter_e06_family_specs, e06_seed_map_key, invert_transition,
     load_e06_config, loop_area, nondecreasing_pava, run_e06_experiment, replay_segment_parity,
     paired_student_t_effect, derive_bootstrap_seed, bootstrap_paired_transition_width,
-    validate_e06_raw, validate_e06_derived,
+    validate_e06_raw, validate_e06_derived, validate_e06_raw_csv_streaming,
+    validate_e06_standard_derived, validate_e06_standard_go_binding,
+    e06_standard_readiness_projection, validate_e06_gzip_member, GZIP_SETTINGS,
+    load_e06_standard_compression_fixture, authenticate_e06_standard_compression_fixture,
+    validate_e06_post_seal_git_drift, E06ResourceGuard, STANDARD_COMPRESSION_FIXTURE_RELATIVE,
 )
-from gifted_masking.experiments.e06 import _expected_raw_rows, _read_e06_csv
+from gifted_masking.experiments.e06 import _canon, _expected_raw_rows, _open_deterministic_gzip_csv, _parse_e06_go_binding, _read_e06_csv, _standard_cells_from_family, _standard_figure
 from gifted_masking.experiments.e06 import (
     EXPECTED_FOCUSED_COMMANDS, EXPECTED_USER_FULL_COMMAND, FOCUSED_EVIDENCE_ORDER,
     SCIENTIFIC_OUTPUT_NAMES, build_e06_full_verification_evidence,
@@ -45,6 +53,150 @@ class E06Tests(unittest.TestCase):
         duplicate.close()
         with self.assertRaises(ValueError): load_e06_config(Path(duplicate.name))
 
+    def test_standard_cardinality_order_seed_keys_and_readiness(self):
+        config = load_e06_config(STANDARD)
+        specs = list(iter_e06_family_specs(config))
+        self.assertEqual(expected_rows(config), 52000)
+        self.assertEqual(expected_learner_steps(config), 913000000)
+        self.assertEqual(len(specs), 130)
+        self.assertEqual((specs[0][0], specs[0][1]["id"], specs[0][2]), (STANDARD_SEEDS[0], "S00", "inherited_loop"))
+        self.assertEqual((specs[-1][0], specs[-1][1]["id"], specs[-1][2]), (STANDARD_SEEDS[-1], "S08", "km_disabled_reversal_only"))
+        keys = [e06_seed_map_key(master, scenario["id"], path) for master, scenario, path in specs]
+        self.assertEqual(len(keys), len(set(keys)))
+        projection = e06_standard_readiness_projection(ROOT / SEALED_SMOKE_MANIFEST_RELATIVE, ROOT)
+        self.assertTrue(projection["within_strict_review_limits"])
+        self.assertTrue(projection["within_formal_limits"])
+        self.assertLessEqual(projection["raw_mib"], projection["strict_review_limits"]["raw_mib"])
+        self.assertLessEqual(projection["raw_mib"], projection["formal_execution_limits"]["raw_mib"])
+        self.assertIn("streaming_replay", projection["components_seconds"])
+        self.assertEqual(projection["compression_fixture"]["rows"], 52000)
+        self.assertGreater(projection["logical_raw_size_bound"]["bound_mib"], projection["raw_mib"])
+
+    def test_compression_fixture_record_is_current_and_adversarially_bound(self):
+        config = load_e06_config(STANDARD); canonical = ROOT / STANDARD_COMPRESSION_FIXTURE_RELATIVE
+        record = load_e06_standard_compression_fixture(canonical, ROOT, config)
+        self.assertEqual(record["status"], "passed"); self.assertTrue(record["within_limits"])
+        mutations = {
+            "source": ("source_fingerprint_sha256", "0"*64),
+            "rows": ("rows", 51999),
+            "scientific": ("scientific", True),
+            "compressed_size": ("compressed_raw_mib", 1.0),
+            "logical_size": ("logical_raw_mib", 1.0),
+            "total_size": ("stored_total_bound_mib", 1.0),
+            "status": ("status", "failed"),
+            "within": ("within_limits", False),
+        }
+        for name,(field,value) in mutations.items():
+            altered=copy.deepcopy(record);altered[field]=value
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as tmp:
+                path=Path(tmp)/"fixture.json";path.write_text(json.dumps(altered))
+                self.assertFalse(load_e06_standard_compression_fixture(path,ROOT,config)["within_limits"])
+        altered=copy.deepcopy(record);altered["fingerprint"]["settings"]["mtime"]=1
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/"fixture.json";path.write_text(json.dumps(altered))
+            self.assertFalse(load_e06_standard_compression_fixture(path,ROOT,config)["within_limits"])
+
+    def test_standard_go_binding_is_exact_and_fails_closed(self):
+        smoke_path = ROOT / SEALED_SMOKE_MANIFEST_RELATIVE
+        smoke = json.loads(smoke_path.read_text())
+        config = load_e06_config(STANDARD)
+        source_fingerprint = smoke["source_fingerprint_sha256"]
+        binding = dict(zip(GO_BINDING_FIELDS, (
+            "GO_STANDARD", "E06", STANDARD_CONFIG_RELATIVE,
+            hashlib.sha256(_canon(config).encode()).hexdigest(), source_fingerprint,
+            SEALED_SMOKE_MANIFEST_RELATIVE, hashlib.sha256(smoke_path.read_bytes()).hexdigest(),
+            "projects/frontiers_article/checkpoints/E06_COMPRESSION_SOL_REVIEW.md",
+            hashlib.sha256((ROOT / "projects/frontiers_article/checkpoints/E06_COMPRESSION_SOL_REVIEW.md").read_bytes()).hexdigest(),
+            STANDARD_COMMAND, "REFUSED",
+        ), strict=True))
+        block = "```e06-go-binding\n" + json.dumps(binding, separators=(",", ":")) + "\n```"
+        self.assertEqual(_parse_e06_go_binding(block), binding)
+        report=ROOT / "results/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md"
+        synthetic_sealed={"verification":{"status":"passed","seal_state":"external_evidence_verified"},"source_fingerprint_sha256":source_fingerprint,"git":{"dirty_paths":[]},"outputs":{"report":{"path":str(report),"sha256":hashlib.sha256(report.read_bytes()).hexdigest()}}}
+        with mock.patch("gifted_masking.experiments.e06._source_fingerprint", return_value=source_fingerprint), mock.patch("gifted_masking.experiments.e06._strict_json", return_value=synthetic_sealed), mock.patch("gifted_masking.experiments.e06._git_porcelain_inventory", return_value={"dirty_paths":[]}):
+            validate_e06_standard_go_binding(binding, STANDARD, ROOT)
+            for field in GO_BINDING_FIELDS:
+                altered = dict(binding); altered[field] = "foreign"
+                with self.subTest(field=field):
+                    with self.assertRaises(PermissionError): validate_e06_standard_go_binding(altered, STANDARD, ROOT)
+        with self.assertRaises(PermissionError): _parse_e06_go_binding(block + "\n" + block)
+        with self.assertRaises(ValueError): _parse_e06_go_binding('```e06-go-binding\n{"decision":"GO_STANDARD","decision":"GO_STANDARD"}\n```')
+
+    def test_streaming_raw_replay_accepts_exact_smoke_and_rejects_corruption(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = run_e06_experiment(SMOKE, Path(tmp))
+            replay = validate_e06_raw_csv_streaming(out["raw"], self.config)
+            self.assertEqual((replay["rows"], replay["families"], replay["peak_retained_packed_rows"]), (320, 5, 64))
+            raw = _expected_raw_rows(self.config); standard_cells = []
+            for offset in range(0, len(raw), self.config["n"]):
+                standard_cells.extend(_standard_cells_from_family(raw[offset:offset + self.config["n"]], self.config))
+            cells_path = Path(tmp) / "standard_cells.csv"
+            with cells_path.open("w", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=STANDARD_CELL_FIELDS); writer.writeheader(); writer.writerows(standard_cells)
+            self.assertEqual(validate_e06_raw_csv_streaming(out["raw"], self.config, cells_path=cells_path)["families"], 5)
+            altered_cells = copy.deepcopy(standard_cells); altered_cells[0]["p_end_q50"] += .01
+            with cells_path.open("w", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=STANDARD_CELL_FIELDS); writer.writeheader(); writer.writerows(altered_cells)
+            with self.assertRaises(ValueError): validate_e06_raw_csv_streaming(out["raw"], self.config, cells_path=cells_path)
+            rows = _read_e06_csv(out["raw"], RAW_FIELDS); rows[0]["child_id"] = "1"
+            corrupt = Path(tmp) / "corrupt.csv"
+            with corrupt.open("w", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=RAW_FIELDS); writer.writeheader(); writer.writerows(rows)
+            with self.assertRaises(ValueError): validate_e06_raw_csv_streaming(corrupt, self.config)
+
+    def test_deterministic_gzip_is_canonical_and_streaming_rejects_container_corruption(self):
+        rows = _expected_raw_rows(self.config)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); paths = [root / "a.csv.gz", root / "b.csv.gz"]
+            logical = []
+            for path in paths:
+                raw_handle, gzip_handle, compressed, logical_writer = _open_deterministic_gzip_csv(path)
+                try:
+                    writer = csv.DictWriter(logical_writer, fieldnames=RAW_FIELDS); writer.writeheader(); writer.writerows(rows)
+                finally:
+                    gzip_handle.close(); raw_handle.close()
+                logical.append((logical_writer.bytes, logical_writer.hexdigest()))
+                fingerprint = validate_e06_gzip_member(path)
+                self.assertEqual(fingerprint["settings"], GZIP_SETTINGS)
+                self.assertEqual((fingerprint["logical_csv_bytes"], fingerprint["logical_csv_sha256"]), logical[-1])
+                self.assertEqual(validate_e06_raw_csv_streaming(path, self.config)["rows"], 320)
+            self.assertEqual(paths[0].read_bytes(), paths[1].read_bytes())
+            self.assertEqual(logical[0], logical[1])
+
+            malformed = root / "malformed.gz"; malformed.write_bytes(b"not gzip")
+            with self.assertRaises(ValueError): validate_e06_gzip_member(malformed)
+            trailing = root / "trailing.gz"; trailing.write_bytes(paths[0].read_bytes() + b"foreign")
+            with self.assertRaises(ValueError): validate_e06_gzip_member(trailing)
+            concatenated = root / "concatenated.gz"; concatenated.write_bytes(paths[0].read_bytes() + paths[1].read_bytes())
+            with self.assertRaises(ValueError): validate_e06_gzip_member(concatenated)
+            wrong_header = root / "wrong_header.gz"; payload = bytearray(paths[0].read_bytes()); payload[4] = 1; wrong_header.write_bytes(payload)
+            with self.assertRaises(ValueError): validate_e06_gzip_member(wrong_header)
+
+    def test_resource_guard_stops_before_over_limit_write_and_bootstrap_completion(self):
+        ticks = iter((0., 0., 2.))
+        guard = E06ResourceGuard(clock=lambda: next(ticks), rss_source=lambda: 1., limits={"seconds": 1.})
+        guard.check("synthetic setup")
+        with self.assertRaisesRegex(RuntimeError, "phase=synthetic phase: seconds"):
+            guard.check("synthetic phase")
+        byte_guard = E06ResourceGuard(clock=lambda: 0., rss_source=lambda: 1., limits={"logical_raw_mib": 0.})
+        with self.assertRaisesRegex(RuntimeError, "logical_raw_mib"):
+            byte_guard.check("logical synthetic", logical_bytes=1)
+        rss_guard = E06ResourceGuard(clock=lambda: 0., rss_source=lambda: 2., limits={"rss_mib": 1.})
+        with self.assertRaisesRegex(RuntimeError, "rss_mib"):
+            rss_guard.check("RSS synthetic")
+
+    def test_post_seal_git_drift_requires_content_match(self):
+        report = ROOT / "results/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md"
+        checkpoint = ROOT / "projects/frontiers_article/checkpoints/E06_COMPRESSION_SOL_REVIEW.md"
+        baseline = {"status":" M","path":"already-untracked.txt","bytes":3,"sha256":"a" * 64}
+        smoke = {"git":{"dirty_paths":[baseline]},"outputs":{"report":{"path":str(report),"sha256":hashlib.sha256(report.read_bytes()).hexdigest()}}}
+        binding = {"review_checkpoint_path":"projects/frontiers_article/checkpoints/E06_COMPRESSION_SOL_REVIEW.md","review_checkpoint_sha256":hashlib.sha256(checkpoint.read_bytes()).hexdigest()}
+        with mock.patch("gifted_masking.experiments.e06._git_porcelain_inventory", return_value={"dirty_paths":[dict(baseline)]}):
+            validate_e06_post_seal_git_drift(smoke, binding, ROOT)
+        changed = dict(baseline); changed["sha256"]="b" * 64
+        with mock.patch("gifted_masking.experiments.e06._git_porcelain_inventory", return_value={"dirty_paths":[changed]}):
+            with self.assertRaises(PermissionError): validate_e06_post_seal_git_drift(smoke, binding, ROOT)
+
     def test_seed_pairing_and_directional_isolation(self):
         up = derive_segment_seed(2026081699, "S00", "up", 2, .002)
         self.assertEqual(up, derive_segment_seed(2026081699, "S00", "up", 2, .002))
@@ -66,6 +218,43 @@ class E06Tests(unittest.TestCase):
         up = [[.1, .4, .6, .9] for _ in range(5)]; down = [[.1, .3, .5, .9] for _ in range(5)]
         boot = bootstrap_paired_transition_width(up, down, [0., .001, .002, .004], bootstrap_seed=3, scenario_id="S00", response="mask", target=.5)
         self.assertTrue(boot["estimable"]); self.assertEqual(boot["valid"], 10000)
+
+    def test_standard_derived_package_uses_master_inference_and_rejects_mutation(self):
+        config = load_e06_config(STANDARD)
+        cells = []; xs = [float(x) for x in config["km_values"]]
+        for master_index, master in enumerate(STANDARD_SEEDS):
+            jitter = master_index * .001
+            for scenario in config["scenarios"]:
+                for path in scenario["path_types"]:
+                    directions = ("cold",) if path == "cold_start" else ("up", "down")
+                    gap = {"inherited_loop":.08,"reversal_only":.02,"km_disabled_inherited_loop":.01,"km_disabled_reversal_only":.005}.get(path, 0.)
+                    for direction in directions:
+                        for km in xs:
+                            if direction == "cold": mask = .15 + 170*km + jitter; p_end = .8 - 60*km - jitter
+                            else:
+                                slope = 10 if path.startswith("km_disabled_") else 190
+                                mask = .12 + slope*km + jitter + (gap if direction == "down" else 0.)
+                                p_end = .86 - 90*km - jitter - (gap/2 if direction == "down" else 0.)
+                            mask = min(.99,max(.01,mask)); p_end = min(.94,max(.06,p_end)); n = int(config["n"])
+                            payload = [config["run_id"],"E06","standard",scenario["id"],path,direction,km,master,n,mask,.01,p_end,.01,.4,.5,100,100,70,30,0,p_end-.02,p_end,p_end+.02]
+                            cells.append(dict(zip(STANDARD_CELL_FIELDS,payload,strict=True)))
+        paths, loops, transitions, effects = derive_e06_standard_tables(cells, config)
+        validate_e06_standard_derived(cells, paths, loops, transitions, effects, config)
+        pooled_loops = [row for row in loops if row["master_seed"] == "pooled"]
+        self.assertTrue(pooled_loops)
+        self.assertTrue(all(row["n_master"] == 5 and row["ci_low"] != "" and row["ci_high"] != "" for row in pooled_loops))
+        pooled_transitions = [row for row in transitions if row["master_seed"] == "pooled"]
+        self.assertTrue(pooled_transitions)
+        self.assertTrue(all(row["bootstrap_replicates"] == 10000 for row in pooled_transitions))
+        self.assertTrue(any(row["decision_eligible"] == "True" for row in pooled_transitions))
+        self.assertTrue(any(row["decision_eligible"] == "False" and row["ci_low"] == "" and row["ci_high"] == "" for row in pooled_transitions))
+        summaries = [row for row in effects if row["level"] == "five_master_summary"]
+        self.assertTrue(summaries)
+        with tempfile.TemporaryDirectory() as tmp:
+            figure = Path(tmp) / "standard.png"; _standard_figure(figure, cells, paths, loops, transitions)
+            self.assertGreater(figure.stat().st_size, 0)
+        altered = copy.deepcopy(effects); altered[-1]["estimate"] = float(altered[-1]["estimate"]) + .01
+        with self.assertRaises(ValueError): validate_e06_standard_derived(cells, paths, loops, transitions, altered, config)
 
     def test_loop_area_and_pava_transition_boundaries(self):
         signed, absolute = loop_area([0, .002, .004], [0, .2, .4], [.1, .3, .5])

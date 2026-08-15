@@ -1,0 +1,38 @@
+{
+  "cold_rows": 16000,
+  "compressed_raw_mib": 90.61453437805176,
+  "config_path": "configs/frontiers_article/e06_m4_paths_standard.json",
+  "config_sha256": "58ebab7e6811369df90e14a697908eb0a106f6adcc1f897a4b201ca2a915cd7e",
+  "fingerprint": {
+    "compressed_bytes": 95016226,
+    "compressed_sha256": "9a7318b9f3d7609490ce8ce7e060bdbb25f44138611eaea40319e7988c602ffe",
+    "logical_csv_bytes": 311405905,
+    "logical_csv_sha256": "5a8e579d258b7be88923fd90f5b23896226eb27956f5d89de55fb6b439fa2a3a",
+    "settings": {
+      "algorithm": "gzip",
+      "compresslevel": 9,
+      "encoding": "utf-8",
+      "filename": "",
+      "members": 1,
+      "mtime": 0
+    }
+  },
+  "fixture_version": "exact_cardinality_high_entropy_splitmix64_v1",
+  "limits": {
+    "compressed_raw_mib": 150.0,
+    "logical_raw_mib": 400.0,
+    "rss_mib": 512.0,
+    "seconds": 600.0,
+    "stored_total_mib": 200.0
+  },
+  "logical_raw_mib": 296.97981357574463,
+  "loop_rows": 36000,
+  "peak_rss_mib": 134.375,
+  "rows": 52000,
+  "scientific": false,
+  "source_fingerprint_sha256": "6c7d722e317c2d633d0dd6b6a1515e576caa1c9f567367978d8a7934fb9e0a89",
+  "status": "passed",
+  "stored_total_bound_mib": 122.61453437805176,
+  "wall_seconds": 37.634895291994326,
+  "within_limits": true
+}

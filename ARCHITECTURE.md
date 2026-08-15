@@ -61,11 +61,12 @@ so the scientific claims can be tested directly.
     accounting that does not multiply one-time plotting startup by learner
     work, and fail-closed external-verification sealing. Its staged standard
     configuration remains refused pending an E05-specific review
-  - E06 uses an isolated M4 continuation-path diagnostic kernel. It delegates
-    segment evolution to maintained `simulate_from_state`, packs child-level
+  - E06 uses an isolated M4 continuation-path diagnostic recorder. It uses the
+    maintained learner/receptivity helpers in the maintained draw/update order,
+    parity-tests local traces against `simulate_from_state`, packs child-level
     segment arrays, validates continuity/reset/bounds/count invariants, and
-    refuses staged standard and qualification configurations until their own
-    future approval records exist.
+    refuses standard without an exact canonical GO; qualification is always
+    refused by the core-standard route.
   - E06's local recorder additionally retains final-window action, authentic
     acceptance/rejection, objective-reward, and p/Q boundary diagnostics while
     replaying maintained M4 draw/update order. Its strict raw boundary and
@@ -75,12 +76,25 @@ so the scientific claims can be tested directly.
     exact frozen config, reconstructs ordered cells/paths/loops/transitions/
     effects, and rejects altered identities, ordering, cardinalities,
     unavailable smoke inference, or nonfinite/numerically inconsistent values.
-    E06 uses materialized packed rows; no streaming writer exists, and that
-    non-applicability is recorded with the frozen raw/RSS capacity rationale.
+    Smoke uses materialized packed rows and retains byte-frozen smoke schemas.
     The second bounded corrective pass reconstructs every ordered raw field
-    from config and semantic seeds before derived validation. Standard dispatch
-    remains refused: the canonical package is intentionally unsealed pending a
-    new user-owned full verification and a fresh independent smoke review.
+    from config and semantic seeds before derived validation. The subsequent
+    standard-readiness design is family-streamed: generate, apply bounded
+    first-pass invariants, and append one 400-row path family at a time, retain
+    bounded aggregates, and perform an independent full raw-and-cell streaming
+    reconstruction before staged package publication with the manifest last.
+    Future standard dispatch is fail-closed on a canonical GO record binding
+    the exact config, source fingerprint, sealed smoke manifest, and authorized
+    command. Standard-only schemas add master-level inference, pooled
+    transition/bootstrap records, and master-qualified seed maps. Qualification
+    remains separate and unconditionally refused. A field-shaped standard CSV
+    size fixture bounds logical raw output at 344.136 MiB: inside the formal
+    400-MiB approval stop but outside the later 150-MiB stored-artifact gate.
+    The user-authorized standard-only compression amendment changes the future
+    primary path to deterministic `.csv.gz` while preserving the exact logical
+    55-column CSV. The manifest binds compressed and logical hashes/sizes, and
+    a high-entropy exact-cardinality fixture must pass the 150/200-MiB stored
+    limits before independent GO review. Smoke remains unchanged.
 - `src/gifted_masking/plotting/legacy_figures.py`
   - figure generation only, with lazy `matplotlib` imports
 - `src/gifted_masking/repro.py`
@@ -166,3 +180,16 @@ scientific hashes, focused evidence, and deterministic-regeneration evidence.
 It updates report item 12 and the manifest atomically only after validation;
 it never regenerates scientific artifacts. The canonical package remains
 unsealed until the user-owned round-2 verification supplies that evidence.
+
+## E06 compression release-gate boundary
+
+The E06 standard preflight authenticates the exact fixture-record hash bound
+by the smoke projection and regenerates the full non-scientific fixture in a
+unique `/private/tmp` directory before it creates a requested output root.
+An experiment-local resource guard checks runtime, RSS, logical CSV bytes,
+compressed bytes, and stored bytes throughout production phases. Streaming
+replay retains no more than one 400-row expected family. The release projection
+is a single componentwise-conservative object, including fixture
+authentication. Sealed Git evidence includes dirty-file status, bytes, and
+content hash; a future GO additionally binds the exact independent-review
+checkpoint path/hash. These are release controls only and do not change M4.

@@ -16,11 +16,14 @@
     "configs/frontiers_article/e06_m4_hysteresis_qualification.json",
     "tests/test_article_e06.py",
     "projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md",
+    "projects/frontiers_article/approvals/E06_STANDARD_COMPRESSION_AMENDMENT.md",
     "projects/frontiers_article/E06_SECOND_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md",
     "projects/frontiers_article/E06_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md",
     "projects/frontiers_article/E06_CODEX_INSTRUCTION_SET.md",
+    "projects/frontiers_article/E06_STANDARD_READINESS_IMPLEMENTATION.md",
     "projects/frontiers_article/runbooks/E06_OPERATIONAL_INSTRUCTIONS.md",
     "projects/frontiers_article/checkpoints/E06_SOL_SMOKE_REVIEW.md",
+    "projects/frontiers_article/checkpoints/E06_ROUND2_SOL_SMOKE_REVIEW.md",
     "projects/frontiers_article/RDS.md",
     "projects/frontiers_article/STAGE2_EXPERIMENT_SPECIFICATIONS.md",
     "ARCHITECTURE.md",
@@ -30,7 +33,7 @@
   "source_fingerprints": [
     {
       "path": "src/gifted_masking/experiments/e06.py",
-      "sha256": "693c67b22d4b5a899a4bb362fde29759ea9047462ea291fdb6f7503da75461f0"
+      "sha256": "1a8d0694f40b801ec317156b7a29a25301879ad3a5ca04335a6c2ef42d583161"
     },
     {
       "path": "src/gifted_masking/cli.py",
@@ -62,11 +65,15 @@
     },
     {
       "path": "tests/test_article_e06.py",
-      "sha256": "a5ae3b07fd3ecc0898f25fe50d01ee667de1ac9c1e9ce15ab206a754ad38916d"
+      "sha256": "b31aae88c470c4dc2e7e7e2b32c850c7b7f8c81e90bef973e9321fb9c7cd5e7a"
     },
     {
       "path": "projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md",
       "sha256": "9fc0434c86da23815afc3327f79c0e9824918417839aadda39dc1ba061cb76f7"
+    },
+    {
+      "path": "projects/frontiers_article/approvals/E06_STANDARD_COMPRESSION_AMENDMENT.md",
+      "sha256": "8e3be4063004f87b92f32acd70cac3adf70bf372a305d4d448c3cd6365c2b297"
     },
     {
       "path": "projects/frontiers_article/E06_SECOND_FIX_IMPLEMENTATION_CODEX_INSTRUCTIONS.md",
@@ -81,12 +88,20 @@
       "sha256": "e36627db5bef064ba76f93f364f9ea10d7933cb634035cfc564df2e130d71f4f"
     },
     {
+      "path": "projects/frontiers_article/E06_STANDARD_READINESS_IMPLEMENTATION.md",
+      "sha256": "420bba3872bb73e2b6e6312fcd4e107e104b59545daa34a489da8f3cde811bbb"
+    },
+    {
       "path": "projects/frontiers_article/runbooks/E06_OPERATIONAL_INSTRUCTIONS.md",
       "sha256": "181ae2f1a5e1fb2b7ffe6d053f94f3f20cd71635defec9c25a2b3f5cd47d446b"
     },
     {
       "path": "projects/frontiers_article/checkpoints/E06_SOL_SMOKE_REVIEW.md",
       "sha256": "a0e8c9993aa28d4ef6efbfbe926889c9419c8c63db2b6688975cfc2a550f3882"
+    },
+    {
+      "path": "projects/frontiers_article/checkpoints/E06_ROUND2_SOL_SMOKE_REVIEW.md",
+      "sha256": "72ef0d58de6b7562ab30145c64c8854b21b56760cbf1f105fd6c8e09342022c6"
     },
     {
       "path": "projects/frontiers_article/RDS.md",
@@ -98,7 +113,7 @@
     },
     {
       "path": "ARCHITECTURE.md",
-      "sha256": "d6103268ed5a6267c51e9931bce3a3ec8cf9c9ac44acf0d36695930d238d52cd"
+      "sha256": "bb8f64318761d072593994b914fa0d88b51d872d348eda34d950d8398c856c20"
     },
     {
       "path": "pyproject.toml",
@@ -109,7 +124,7 @@
       "sha256": "15cc42f9b2c9a4809cb7a64e74ede6be9b580da18f4c007e8cd52ab280412357"
     }
   ],
-  "source_fingerprint_sha256": "ad053db7cd51846c2e2c2418d4bc9679d2e617045c712969e4c6bf11a6547d8d",
+  "source_fingerprint_sha256": "01d70e593fe213616a0d9ca3883c5d98fb0e305c3677661e89a13105aefd0d44",
   "authorization": {
     "approval_path": "/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/approvals/E06_SMOKE_APPROVAL.md",
     "approval_sha256": "9fc0434c86da23815afc3327f79c0e9824918417839aadda39dc1ba061cb76f7",
@@ -177,10 +192,10 @@
     "matplotlib": "3.10.8"
   },
   "git": {
-    "head": "9b2550248540152ad0d76758ee786bf228592880",
+    "head": "441cfe44856d0cbc3da57089cbe91755b0cc4780",
     "branch": "codex/frontiers-stage2-e06",
     "dirty": true,
-    "porcelain_sha256": "5fe733cc7c6f7d9155cd965032ea3716ff83a9c95653c21271cae239429f7316"
+    "porcelain_sha256": "9fd1010d9b225db94628b507707ac6bd1aa8ccec64bce264faf675f18f6be0b5"
   },
   "seed_hierarchy": {
     "segment_derivation": "SHA-256 semantic ID -> SeedSequence([master,6,*little_endian_words]).spawn(1)",
@@ -613,10 +628,9 @@
       "notes"
     ],
     "sort_keys": [
-      "master_seed",
-      "scenario_id",
-      "path_type",
-      "child_id"
+      "scenario declaration order",
+      "path type declaration order within scenario",
+      "child_id ascending"
     ]
   },
   "derived_validation": {
@@ -626,7 +640,7 @@
     "post_artifact_parsed_csv": "passed",
     "tolerance": 1e-12,
     "streaming_validation": "not_applicable_materialized_packed_rows",
-    "streaming_reason": "projected raw and peak RSS remain within frozen limits; no streaming writer exists"
+    "streaming_reason": "smoke remains materialized; standard has independent family-streaming raw/cell replay validation"
   },
   "outputs": {
     "raw": {
@@ -674,8 +688,8 @@
     "report": {
       "path": "results/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md",
       "rows": null,
-      "bytes": 3401,
-      "sha256": "45a2809bc4cc25b792badfcb2fbc7ad42384ca0b894015c2e3fbb573785bf36e"
+      "bytes": 4923,
+      "sha256": "de83539a78033e40030301c6da44f2c11a8e5542927428ca69618bdb2d8ed56a"
     },
     "warnings": {
       "path": "results/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
@@ -764,8 +778,8 @@
       "bytes": 71971
     },
     "report": {
-      "sha256": "45a2809bc4cc25b792badfcb2fbc7ad42384ca0b894015c2e3fbb573785bf36e",
-      "bytes": 3401
+      "sha256": "de83539a78033e40030301c6da44f2c11a8e5542927428ca69618bdb2d8ed56a",
+      "bytes": 4923
     },
     "warnings": {
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -773,63 +787,109 @@
     }
   },
   "timing": {
-    "wall_seconds": 1.4755585829843767,
-    "peak_rss_mib": 81.21875,
+    "wall_seconds": 15.812391125014983,
+    "peak_rss_mib": 86.609375,
     "raw_bytes": 817314,
     "phase_seconds": {
-      "simulation": 0.3151876659831032,
-      "serialization": 0.33310650003841147,
-      "derived": 0.1589721660129726,
-      "figure": 0.6682898750295863,
+      "simulation": 0.3154235419933684,
+      "serialization": 0.2878666250035167,
+      "derived": 0.1356754579464905,
+      "figure": 15.073422999994364,
       "startup": 0.0
     }
   },
   "standard_projection": {
+    "method": "deterministic_gzip_family_streaming_two_full_replays_v3",
     "rows": 52000,
     "learner_steps": 913000000,
-    "method": "phase_separated_vectorized_n400_segment_benchmark_v1",
-    "smoke_phase_seconds": {
-      "simulation": 0.3151876659831032,
-      "serialization": 0.33310650003841147,
-      "derived": 0.1589721660129726,
-      "figure": 0.6682898750295863,
-      "startup": 0.0
+    "logical_raw_size_bound": {
+      "method": "worst_width_field_shaped_csv_fixture_v1",
+      "loop_rows": 36000,
+      "cold_rows": 16000,
+      "loop_row_bytes": 7965,
+      "cold_row_bytes": 4632,
+      "bound_bytes": 360852714,
+      "bound_mib": 344.13596534729004
     },
-    "segment_counts": {
-      "500": 275,
-      "1000": 2145
+    "compression_fixture_record": {
+      "path": "projects/frontiers_article/checkpoints/E06_STANDARD_COMPRESSION_FIXTURE.json",
+      "sha256": "5694a87b233cae7ebb75dac503c5e51e5792346be7c8b47468e7918454ed9445"
     },
-    "n400_probe_seconds": {
-      "500": 0.037971791985910386,
-      "1000": 0.07592979102628306
+    "compression_fixture": {
+      "cold_rows": 16000,
+      "compressed_raw_mib": 90.61453437805176,
+      "config_path": "configs/frontiers_article/e06_m4_paths_standard.json",
+      "config_sha256": "58ebab7e6811369df90e14a697908eb0a106f6adcc1f897a4b201ca2a915cd7e",
+      "fingerprint": {
+        "compressed_bytes": 95016226,
+        "compressed_sha256": "9a7318b9f3d7609490ce8ce7e060bdbb25f44138611eaea40319e7988c602ffe",
+        "logical_csv_bytes": 311405905,
+        "logical_csv_sha256": "5a8e579d258b7be88923fd90f5b23896226eb27956f5d89de55fb6b439fa2a3a",
+        "settings": {
+          "algorithm": "gzip",
+          "compresslevel": 9,
+          "encoding": "utf-8",
+          "filename": "",
+          "members": 1,
+          "mtime": 0
+        }
+      },
+      "fixture_version": "exact_cardinality_high_entropy_splitmix64_v1",
+      "limits": {
+        "compressed_raw_mib": 150.0,
+        "logical_raw_mib": 400.0,
+        "rss_mib": 512.0,
+        "seconds": 600.0,
+        "stored_total_mib": 200.0
+      },
+      "logical_raw_mib": 296.97981357574463,
+      "loop_rows": 36000,
+      "peak_rss_mib": 134.375,
+      "rows": 52000,
+      "scientific": false,
+      "source_fingerprint_sha256": "01d70e593fe213616a0d9ca3883c5d98fb0e305c3677661e89a13105aefd0d44",
+      "status": "passed",
+      "stored_total_bound_mib": 122.61453437805176,
+      "wall_seconds": 37.634895291994326,
+      "within_limits": true
     },
-    "projected_components_seconds": {
-      "simulation": 173.3116445475025,
-      "serialization": 54.129806256241864,
-      "derived": 1.589721660129726,
-      "figure": 0.6682898750295863,
-      "startup": 0.0
+    "compression_ratio": 0.30512018068507724,
+    "compressed_raw_worst_width_bound_mib": 105.00282792699862,
+    "components_seconds": {
+      "simulation": 146.92725211469224,
+      "streaming_replay_validation": 146.92725211469224,
+      "serialization": 46.77832656307146,
+      "derived": 20.0,
+      "bootstrap": 12.0,
+      "figure": 15.073422999994364
     },
-    "seconds": 229.6994623389037,
-    "raw_mib": 126.6608476638794,
-    "total_mib": 140.82932472229004,
-    "peak_rss_mib": 121.828125,
-    "limits": {
-      "seconds": 600,
-      "raw_mib": 400,
-      "total_mib": 500,
-      "rss_mib": 2048
+    "seconds": 387.7062537924503,
+    "raw_mib": 105.00282792699862,
+    "total_mib": 137.00282792699863,
+    "peak_rss_mib": 237.21875,
+    "strict_review_limits": {
+      "seconds": 600.0,
+      "raw_mib": 150.0,
+      "total_mib": 200.0,
+      "rss_mib": 512.0
     },
-    "within_limits": true
+    "formal_execution_limits": {
+      "seconds": 600.0,
+      "raw_mib": 400.0,
+      "total_mib": 500.0,
+      "rss_mib": 2048.0
+    },
+    "within_strict_review_limits": true,
+    "within_formal_limits": true
   },
   "qualification_projection": {
     "rows": 30000,
     "learner_steps": 660000000,
     "method": "separate_non_authorizing_projection",
-    "seconds": 634.7717471479958,
+    "seconds": 645.2463193985329,
     "raw_mib": 73.07356595993042,
     "total_mib": 81.24768733978271,
-    "peak_rss_mib": 121.828125,
+    "peak_rss_mib": 129.9140625,
     "refused": true
   },
   "focused_verification": {
@@ -838,41 +898,41 @@
       {
         "name": "E06",
         "command": "MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_article_e06.py -v",
-        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_second_fix_preverification_logs/test_e06.log",
-        "log_sha256": "cdb49a66a45309d56efe4c204f7a1ff8d9fd955c46d9cce3f083ec13e35a0670",
+        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_compression_preverification/e06.log",
+        "log_sha256": "dba201932a462952908f7d3b8c5301a29b6900bd7c9f7bcc18d740e0dd0e8cb8",
         "exit_code": 0,
-        "test_count": 10,
-        "runtime_seconds": 12.473,
+        "test_count": 16,
+        "runtime_seconds": 42.444,
         "passed": true
       },
       {
         "name": "M4",
         "command": "MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_m4.py -v",
-        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_second_fix_preverification_logs/test_m4.log",
-        "log_sha256": "06f0fa81fa6ae111cdf97d8813524ba6acd4ee7c1d2b528f6a24733d9aaf70db",
+        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_compression_preverification/m4.log",
+        "log_sha256": "f2ec5937f9c649074140123695629a3cc73a7c65ecb78aa2643b689c71c004e8",
         "exit_code": 0,
         "test_count": 4,
-        "runtime_seconds": 0.24,
+        "runtime_seconds": 0.209,
         "passed": true
       },
       {
         "name": "core_and_determinism",
         "command": "MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_core.py tests/test_determinism.py -v",
-        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_second_fix_preverification_logs/test_core_determinism.log",
-        "log_sha256": "ce1576bfc0c02909422934eaae71b3780cd3d2789a31c396f51e420f4b65b364",
+        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_compression_preverification/core_and_determinism.log",
+        "log_sha256": "94adf18c150fee3bdb67fd1799beeae57553b3874453646b9e5dae682f851f5a",
         "exit_code": 0,
         "test_count": 7,
-        "runtime_seconds": 0.203,
+        "runtime_seconds": 0.176,
         "passed": true
       },
       {
         "name": "post_artifact",
         "command": "MPLCONFIGDIR=/private/tmp/e06_second_fix_mpl PYTHONPATH=src /Users/omer/workspace/venvs/venv314/bin/python -m unittest tests/test_manifest_completeness.py tests/test_primary_raw_schema.py tests/test_summary_matches_raw.py -v",
-        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_second_fix_preverification_logs/test_post_artifact.log",
-        "log_sha256": "ab6149118d788c97b61ad1b5f6901b686b034bb73dc3bff7b5a338809e6104c9",
+        "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_compression_preverification/post_artifact.log",
+        "log_sha256": "294e303009382ebf8a65c8fff4685159c3b79b2830f455b3705c07398302c3bb",
         "exit_code": 0,
         "test_count": 4,
-        "runtime_seconds": 7.804,
+        "runtime_seconds": 6.581,
         "passed": true
       }
     ]
@@ -881,53 +941,53 @@
     "status": "passed",
     "runs": [
       {
-        "manifest_path": "/private/tmp/e06_second_fix_run_a/manifests/frontiers_m4_path_diagnostics_v1_smoke.json",
-        "report_path": "/private/tmp/e06_second_fix_run_a/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md",
+        "manifest_path": "/private/tmp/e06_compression_release_a.3yyuXH/manifests/frontiers_m4_path_diagnostics_v1_smoke.json",
+        "report_path": "/private/tmp/e06_compression_release_a.3yyuXH/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md",
         "scientific_artifacts": {
           "raw": {
-            "path": "/private/tmp/e06_second_fix_run_a/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv",
+            "path": "/private/tmp/e06_compression_release_a.3yyuXH/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv",
             "rows": 320,
             "bytes": 817314,
             "sha256": "bbfa5b54034c96df825234f616e32480dfa3a1fdc3c82c6a76a9484a3d59e327"
           },
           "cells": {
-            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv",
+            "path": "/private/tmp/e06_compression_release_a.3yyuXH/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv",
             "rows": 45,
             "bytes": 10596,
             "sha256": "0a22befa4021e997b980da84f0d3520df418f7ec9834533e5c67b1cf7b0c8bdc"
           },
           "paths": {
-            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv",
+            "path": "/private/tmp/e06_compression_release_a.3yyuXH/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv",
             "rows": 20,
             "bytes": 4340,
             "sha256": "498f26914e7dfa30fe0f5c2cd782654c00bdee64bfa6122450997df22c7f4558"
           },
           "loops": {
-            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv",
+            "path": "/private/tmp/e06_compression_release_a.3yyuXH/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv",
             "rows": 8,
             "bytes": 1833,
             "sha256": "fb72f0eab5b0d54658f4193ed18bbbe439da39edcb19795317f9ebfc51cf9364"
           },
           "transitions": {
-            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv",
+            "path": "/private/tmp/e06_compression_release_a.3yyuXH/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv",
             "rows": 8,
             "bytes": 1488,
             "sha256": "94c41e2ed3736213b2da08be271ef1fb911f7b166b8715b708ba22c52dca0a3e"
           },
           "effects": {
-            "path": "/private/tmp/e06_second_fix_run_a/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv",
+            "path": "/private/tmp/e06_compression_release_a.3yyuXH/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv",
             "rows": 6,
             "bytes": 1198,
             "sha256": "a95778cd4dc5f09a3c0c9af134c3bf9cbb76a32fa043e8a3f2ef8cb44e6497e8"
           },
           "figure": {
-            "path": "/private/tmp/e06_second_fix_run_a/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png",
+            "path": "/private/tmp/e06_compression_release_a.3yyuXH/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png",
             "rows": null,
             "bytes": 71971,
             "sha256": "29448d540101f75e2ac4c32b050b5d5733b47c525bea21a2388976bac2e0661e"
           },
           "warnings": {
-            "path": "/private/tmp/e06_second_fix_run_a/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
+            "path": "/private/tmp/e06_compression_release_a.3yyuXH/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
             "rows": null,
             "bytes": 0,
             "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -935,53 +995,53 @@
         }
       },
       {
-        "manifest_path": "/private/tmp/e06_second_fix_run_b/manifests/frontiers_m4_path_diagnostics_v1_smoke.json",
-        "report_path": "/private/tmp/e06_second_fix_run_b/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md",
+        "manifest_path": "/private/tmp/e06_compression_release_b.qQu2YJ/manifests/frontiers_m4_path_diagnostics_v1_smoke.json",
+        "report_path": "/private/tmp/e06_compression_release_b.qQu2YJ/reports/frontiers_m4_path_diagnostics_v1_smoke_report.md",
         "scientific_artifacts": {
           "raw": {
-            "path": "/private/tmp/e06_second_fix_run_b/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv",
+            "path": "/private/tmp/e06_compression_release_b.qQu2YJ/raw/frontiers_m4_path_diagnostics_v1_smoke_units.csv",
             "rows": 320,
             "bytes": 817314,
             "sha256": "bbfa5b54034c96df825234f616e32480dfa3a1fdc3c82c6a76a9484a3d59e327"
           },
           "cells": {
-            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv",
+            "path": "/private/tmp/e06_compression_release_b.qQu2YJ/summaries/frontiers_m4_path_diagnostics_v1_smoke_cells.csv",
             "rows": 45,
             "bytes": 10596,
             "sha256": "0a22befa4021e997b980da84f0d3520df418f7ec9834533e5c67b1cf7b0c8bdc"
           },
           "paths": {
-            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv",
+            "path": "/private/tmp/e06_compression_release_b.qQu2YJ/summaries/frontiers_m4_path_diagnostics_v1_smoke_paths.csv",
             "rows": 20,
             "bytes": 4340,
             "sha256": "498f26914e7dfa30fe0f5c2cd782654c00bdee64bfa6122450997df22c7f4558"
           },
           "loops": {
-            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv",
+            "path": "/private/tmp/e06_compression_release_b.qQu2YJ/summaries/frontiers_m4_path_diagnostics_v1_smoke_loops.csv",
             "rows": 8,
             "bytes": 1833,
             "sha256": "fb72f0eab5b0d54658f4193ed18bbbe439da39edcb19795317f9ebfc51cf9364"
           },
           "transitions": {
-            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv",
+            "path": "/private/tmp/e06_compression_release_b.qQu2YJ/summaries/frontiers_m4_path_diagnostics_v1_smoke_transitions.csv",
             "rows": 8,
             "bytes": 1488,
             "sha256": "94c41e2ed3736213b2da08be271ef1fb911f7b166b8715b708ba22c52dca0a3e"
           },
           "effects": {
-            "path": "/private/tmp/e06_second_fix_run_b/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv",
+            "path": "/private/tmp/e06_compression_release_b.qQu2YJ/summaries/frontiers_m4_path_diagnostics_v1_smoke_effects.csv",
             "rows": 6,
             "bytes": 1198,
             "sha256": "a95778cd4dc5f09a3c0c9af134c3bf9cbb76a32fa043e8a3f2ef8cb44e6497e8"
           },
           "figure": {
-            "path": "/private/tmp/e06_second_fix_run_b/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png",
+            "path": "/private/tmp/e06_compression_release_b.qQu2YJ/figures/frontiers_m4_path_diagnostics_v1_smoke_m4_path_diagnostics.png",
             "rows": null,
             "bytes": 71971,
             "sha256": "29448d540101f75e2ac4c32b050b5d5733b47c525bea21a2388976bac2e0661e"
           },
           "warnings": {
-            "path": "/private/tmp/e06_second_fix_run_b/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
+            "path": "/private/tmp/e06_compression_release_b.qQu2YJ/reports/frontiers_m4_path_diagnostics_v1_smoke_warnings.log",
             "rows": null,
             "bytes": 0,
             "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -1010,41 +1070,41 @@
     "status": "passed",
     "seal_state": "external_evidence_verified",
     "command": "MPLCONFIGDIR=/private/tmp/e06_user_verify_round2 ./scripts/verify.sh",
-    "log_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_round2_user_verification/user_full_repository_verification_round2.log",
-    "log_sha256": "73a5922e137972d87f8a7baf2cfc1fb600cb16eb2e324ae3af8208a6ec029de9",
-    "exit_path": "/Users/omer/workspace/personal/repos/gifted-masking/results/reports/e06_round2_user_verification/user_full_repository_verification_round2_exit.txt",
+    "log_path": "/private/tmp/e06_user_full_verification_round2.log",
+    "log_sha256": "0b516c8eac187da4459e2d81a28a52c817bad802b9a7f9ea94511b72dc7a6e7e",
+    "exit_path": "/private/tmp/e06_user_full_verification_round2_exit.txt",
     "exit_sha256": "e0eb8bd605bbfaa0c7eac5a1e11fd892eb29a2831a8b8f3601c2e5d01f410063",
     "suites": [
       {
         "name": "repository_discovery",
-        "test_count": 116,
-        "runtime_seconds": 128.321,
+        "test_count": 122,
+        "runtime_seconds": 138.444,
         "passed": true
       },
       {
         "name": "manifest_completeness",
         "test_count": 1,
-        "runtime_seconds": 1.694,
+        "runtime_seconds": 1.705,
         "passed": true
       },
       {
         "name": "primary_raw_schema",
         "test_count": 1,
-        "runtime_seconds": 1.679,
+        "runtime_seconds": 1.69,
         "passed": true
       },
       {
         "name": "summary_matches_raw",
         "test_count": 2,
-        "runtime_seconds": 3.24,
+        "runtime_seconds": 3.328,
         "passed": true
       }
     ],
-    "test_count": 120,
-    "runtime_seconds": 134.934
+    "test_count": 126,
+    "runtime_seconds": 145.167
   },
   "timestamps": {
-    "start_utc": "2026-08-13T13:14:23.837368+00:00",
-    "end_utc": "2026-08-13T13:14:25.769374+00:00"
+    "start_utc": "2026-08-13T16:20:43.444283+00:00",
+    "end_utc": "2026-08-13T16:20:59.682309+00:00"
   }
 }

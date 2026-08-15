@@ -1,5 +1,10 @@
 # Current State
 
+> **CURRENT EXECUTION OVERRIDE — 2026-08-13:** The active deliverable is Article
+> V1. Follow `projects/frontiers_article/ARTICLE_V1_EXECUTION_PLAN.md`; use only
+> adjudicated E01–E05 evidence for confirmatory Results. E06 and Track B are not
+> active. Older E06 priorities below are historical for current execution.
+
 ## Repository Status
 
 - Legacy simulation scripts are preserved as reference artifacts.

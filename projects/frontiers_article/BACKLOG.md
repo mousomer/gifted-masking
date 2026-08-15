@@ -1,5 +1,35 @@
 # Frontiers Article Sub-project — Backlog
 
+## Article V1 P0/P1 authority adoption — 2026-08-15
+
+- [x] P0/P1: install the revised Article V1 hand-off authorities, establish
+  the active authority hierarchy, and apply the 2026-08-15
+  model-analysis consistency corrections without changing scientific code,
+  frozen artifacts, or evidence.
+- [ ] P2: conduct bounded historical-generator-source recovery/provenance
+  audit; begin with forensic recovery only and do not rerun stochastic
+  evidence.
+
+The active Article V1 sequence is governed by
+`ARTICLE_V1_NEXT_STAGE.md`: P2 provenance recovery, four bounded literature
+searches, V1-02 synthesis, V1-03 claim freeze, then manuscript reconstruction.
+E06/Track B is not an immediate Article V1 backlog item.
+
+## Active Article V1 gate — 2026-08-13
+
+- [x] Establish `ARTICLE_V1_EXECUTION_PLAN.md` as the current execution
+  authority.
+- [x] Freeze Track B behind `RESEARCH_PROGRAMME.md` until Article V1 submission
+  freeze.
+- [x] Audit E01–E05 publication evidence, inferential replication, artifact
+  identity, manuscript reconciliation, and E05 seed-extension continuity.
+- [ ] Stage V1-02: resolve the audited literature questions and select only
+  `INCLUDE`/`NARROW` claims for manuscript integration.
+- [ ] Stage V1-03: update and verify the Article-V1 manuscript and publication
+  figures from content-addressed evidence.
+
+The E06 items below are preserved history/backlog, not active Article-V1 work.
+
 ## Stage 1 — Source Of Truth
 
 - [x] Create the article RDS.
@@ -214,3 +244,21 @@
   in `checkpoints/E06_ROUND2_SOL_SMOKE_REVIEW.md`, then obtain another user-owned
   verification, external seal, and fresh independent review. E06 standard and
   qualification remain refused.
+- [x] Freeze `E06_STANDARD_READINESS_IMPLEMENTATION.md`: canonical GO binding,
+  five-master family streaming, independent second-pass reconstruction,
+  standard master-level inference, actual order metadata, and stricter pre-GO
+  resource thresholds without executing standard.
+- [x] Implement the bounded standard runner, raw/cell replay, five-master
+      inference, contrasts, atomic package publication, and focused tests.
+- [x] Resolve the E06 artifact-limit conflict with the user-authorized,
+      standard-only deterministic `.csv.gz` amendment. The 52,000-row fixture
+      is 90.615 MiB; worst-width-adjusted raw/total bounds are 105.003/137.003
+      MiB, inside all review gates.
+- [x] Complete user-owned full verification and external sealing of the
+      compression-ready smoke package: 126 tests passed in 145.167 seconds;
+      canonical status is `passed` / `external_evidence_verified`.
+- [ ] Obtain a fresh independent Sol review. Standard and qualification remain
+      refused unless that review creates the exact canonical GO.
+- [x] Implement the bounded compression release-gate repairs: canonical fixture
+      authentication, continuous stops, one-family replay retention, one
+      conservative projection, and content-aware post-seal Git drift policy.

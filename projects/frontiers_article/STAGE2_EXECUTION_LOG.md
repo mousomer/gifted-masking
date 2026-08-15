@@ -1,5 +1,18 @@
 # Stage 2 Execution Log
 
+## 2026-08-13 — E06 standard-readiness implementation design
+
+Started the bounded post-Round-2 `FIX_IMPLEMENTATION` pass. The design in
+`E06_STANDARD_READINESS_IMPLEMENTATION.md` preserves the sealed diagnostic
+smoke and implements only future standard readiness: canonical GO binding,
+five-master/scenario/path deterministic ordering, 400-row family streaming,
+independent second-pass reconstruction, complete master-level inference, and
+collision-free seed-map provenance. The readiness fixture must include both
+simulation/replay passes and meet the stricter 600-second/150-MiB raw/200-MiB
+total/512-MiB RSS review thresholds while retaining the approval's formal
+execution stops. No standard, qualification, C8/C9, ledger, manuscript, or
+Figure 4 action is authorized in this pass.
+
 ## 2026-08-13 — E06 Round 2 external seal and independent smoke gate
 
 **Decision:** `FIX_IMPLEMENTATION`.
@@ -1127,6 +1140,66 @@ Primary selectors are `results/raw/frontiers_hot_stove_v1_units.csv` with
 
 No manuscript prose, sensitivity, or publication-tier run was changed or
 executed during adjudication.
+
+## 2026-08-13 — E06 compression release-gate repair
+
+- Implemented only the five Sol `FIX_IMPLEMENTATION` release controls:
+  fixture authentication, continuous resource stops, strict one-family replay,
+  a reconciled conservative projection, and content-aware post-seal Git drift.
+- No E06 standard/qualification execution, repository-wide verification,
+  C8/C9 adjudication, claim, manuscript, or Figure 4 action occurred.
+- The subsequent smoke refresh remains a pending/unsealed package and requires
+  fresh user-owned full verification before any external seal or review.
+
+## 2026-08-13 — E06 standard-readiness implementation
+
+- Implemented exact canonical GO binding, five-master family streaming,
+  independent 55-field raw and standard-cell replay, master-level inference,
+  frozen contrasts, a five-panel diagnostic, and manifest-last publication.
+- E06 focused tests passed 14/14 in 56.216 seconds. Maintained M4/core/
+  determinism passed 11/11 in 0.335 seconds; `py_compile` and
+  `git diff --check` passed.
+- Fresh smoke scientific artifacts remained byte-identical to the sealed
+  baseline. Standard, qualification, C8/C9 adjudication, ledger, manuscript,
+  and Figure 4 work were not run.
+- Correct standard array-length accounting replaced the invalid row-count-only
+  raw projection. The reproducible field-shaped bound is 344.136 MiB raw,
+  376.136 MiB total, 434.753 seconds, and 226.438 MiB RSS.
+- Status is `BLOCKED_BEFORE_FULL_VERIFICATION`: formal 400/500-MiB artifact
+  stops pass, but the Round 2 150/200-MiB review limits fail. Resolve that
+  contract/limit conflict independently before full verification or GO.
+
+### Deterministic-compression amendment
+
+The user explicitly authorized a standard-only `.csv.gz` implementation. The
+logical 55-column CSV, model/RNG semantics, smoke bytes, and qualification
+refusal remain unchanged. Canonical gzip uses level 9, `mtime=0`, an empty
+filename, and one member; compressed/logical fingerprints are separate and an
+independent decompression pass validates raw and cell rows.
+
+The exact 52,000-row high-entropy non-scientific fixture produced 296.980 MiB
+logical / 90.615 MiB stored in 36.985 seconds at 157.375 MiB RSS. Its compressed
+bytes reproduced three times. Applying its ratio to the 344.136-MiB worst-width
+logical bound yields 105.003 MiB raw and 137.003 MiB total; all strict/formal
+gates pass. E06 now has 16 focused tests covering gzip headers/members/trailing
+bytes, fixture binding, decompressed replay, GO, and inference. Standard and
+qualification were not run.
+
+### User verification and compression-ready external seal
+
+The user-owned command completed under the required workspace Python. The log
+reconstructed 122 discovery tests in 138.444 seconds plus post-artifact suites
+of 1/1/2 tests in 1.705/1.690/3.328 seconds: 126 passing tests in 145.167
+seconds. Log SHA-256 is `0b516c8e...a6e7e`; the exact zero exit record SHA-256
+is `e0eb8bd6...0063`.
+
+Evidence was archived under
+`results/reports/e06_compression_user_verification/`. The one-time production
+sealer passed all config/source/Git/artifact/focused/deterministic/full-log
+bindings and set the canonical smoke to `passed` /
+`external_evidence_verified` without changing any of the eight scientific
+hashes. Next status is `READY_FOR_INDEPENDENT_SOL_REVIEW`; standard and
+qualification remain refused.
 
 ## E06 second FIX_IMPLEMENTATION preverification
 

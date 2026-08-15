@@ -1,5 +1,11 @@
 # Frontiers Article Sub-project — Current State
 
+> **CURRENT EXECUTION OVERRIDE — 2026-08-13:** Article V1 is active under
+> `ARTICLE_V1_EXECUTION_PLAN.md`. E01–E05 are the current confirmatory evidence
+> pool. E06 is excluded from Article-V1 Results, and the old E06 “Immediate Next
+> Actions” below are historical and superseded for current execution. Track B
+> is not active.
+
 ## Status
 
 - Stage 1 — Establish the source of truth is complete.
@@ -100,6 +106,16 @@
   4 actions remain refused.
 - Model routing is established: Sol owns scientific judgment and release gates;
   Terra owns bounded implementation and production after requirements are fixed.
+- E06 standard-readiness plus the user-authorized deterministic-compression
+  amendment is implemented. The exact high-entropy fixture stored 52,000 rows
+  in 90.615 MiB; worst-width-adjusted raw/total bounds are 105.003/137.003 MiB,
+  with 434.753 seconds and 226.438 MiB RSS projected. All strict/formal gates
+  pass. The refreshed canonical smoke contains 16/4/7/4 focused evidence and
+  two current-source deterministic roots. User-owned full verification then
+  passed 126 tests in 145.167 seconds and the canonical smoke was externally
+  sealed as `passed` / `external_evidence_verified`. Status is
+  `READY_FOR_INDEPENDENT_SOL_REVIEW`; no GO, standard, or qualification run has
+  occurred.
 - `runbooks/STAGE2_EVIDENCE.md` now provides the complete smoke-first operating
   procedure, handoff decisions, stop conditions, reports, and launch prompts.
 - Stage 2 Step 0 passed on 11 August 2026 after `scripts/verify.sh` was corrected
@@ -166,6 +182,11 @@
    focused/deterministic evidence, user-owned full verification, external
    sealing, and fresh independent review afterward. Qualification, C8/C9
    adjudication, ledger changes, and manuscript changes remain refused.
+   The bounded implementation architecture is frozen in
+   `E06_STANDARD_READINESS_IMPLEMENTATION.md`: one 400-row family at a time,
+   immediate validation/serialization, bounded aggregation, independent
+   streaming replay validation, master-level inference, and fail-closed GO
+   binding. Smoke scientific bytes must remain unchanged.
 2. Preserve the paired E05 result in `E05_MAIN_RESULTS.md`: the flat learned
    crossing `bf=0.312852` occurred before the exact objective crossover
    `8/17=0.470588`; no hierarchical crossing was estimable in the approved
@@ -475,3 +496,11 @@ independent-master-seed uncertainty; and repository verification passes.
 - The paired analytic--simulation meaning and mandatory manuscript preservation
   rules are recorded in `E05_MAIN_RESULTS.md`. Article chapters now state the
   dense E05 result rather than the obsolete two-endpoint result.
+
+## 2026-08-13 — E06 compression release-gate repair
+
+The bounded implementation now uses deterministic fixture authentication,
+continuous E06-local resource stops, strict one-family replay instrumentation,
+one componentwise conservative projection, and content-aware sealed Git drift
+checks. No standard/qualification execution or C8/C9 adjudication occurred.
+The smoke package remains pending/unsealed pending user-owned full verification.
