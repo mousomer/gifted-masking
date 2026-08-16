@@ -177,10 +177,15 @@ The E06 items below are preserved history/backlog, not active Article-V1 work.
 
 ## Stage 3 — Article Architecture
 
-- [ ] Produce the paragraph-level final outline.
-- [ ] Assign and enforce section word budgets.
-- [ ] Remove repeated mechanism explanations.
-- [ ] Complete the citation coverage plan.
+- [x] Freeze the Article V1 research question, central contribution, M0–M3
+      progression, E01–E05 evidence hierarchy, evidence levels, logical spine,
+      belief target, non-claims, and four-figure architecture in
+      `ARTICLE_V1_ARGUMENT_ARCHITECTURE.md`.
+- [x] Freeze the ten-stage dependency order, chapter responsibilities, gates,
+      future-work boundary, and exact Stage 2 hand-off in
+      `ARTICLE_V1_MASTER_PLAN.md` and `ARTICLE_V1_NEXT_STAGE.md`.
+- [ ] Stage 2 manuscript work: create and freeze the Formal Model / Methods
+      authority; do not draft Results or a complete manuscript.
 
 ## Stage 4 — Materials And Methods
 

@@ -26,7 +26,11 @@ evidence/source ledgers
         ↓
 claim ledger
         ↓
-current-state and next-stage authorities
+methodological position
+        ↓
+argument architecture and master plan
+        ↓
+frozen chapter authorities
         ↓
 manuscript prose, figures, and abstract
 ```
@@ -42,40 +46,45 @@ and narrow the higher-layer claim.
 Read these in the order appropriate to the question; `HANDOFF.md` gives the
 canonical hand-off read order.
 
-1. [HANDOFF.md](HANDOFF.md) — current operating boundary, authority model, and
-   hand-off constraints.
-2. [ARTICLE_V1_CURRENT_STATE.md](ARTICLE_V1_CURRENT_STATE.md) — publication
-   state, evidence boundary, and open blockers.
-3. [ARTICLE_V1_ANALYTIC_RESULTS.md](ARTICLE_V1_ANALYTIC_RESULTS.md) — exact
+1. [ARTICLE_V1_ARGUMENT_ARCHITECTURE.md](ARTICLE_V1_ARGUMENT_ARCHITECTURE.md) —
+   controlling intellectual map for manuscript construction.
+2. [ARTICLE_V1_MASTER_PLAN.md](ARTICLE_V1_MASTER_PLAN.md) — dependency order,
+   chapter responsibilities, gates, and long-term writing roadmap.
+3. [ARTICLE_V1_METHODOLOGICAL_POSITION.md](ARTICLE_V1_METHODOLOGICAL_POSITION.md) —
+   evidence levels, parameter position, comparator meaning, and calibrated/non-calibrated boundary.
+4. [HANDOFF.md](HANDOFF.md) — concise operating boundary and read order.
+5. [ARTICLE_V1_CURRENT_STATE.md](ARTICLE_V1_CURRENT_STATE.md) — current
+   milestone, evidence boundary, and immediate work.
+6. [ARTICLE_V1_ANALYTIC_RESULTS.md](ARTICLE_V1_ANALYTIC_RESULTS.md) — exact
    reward, learner, and dynamic-programming results.
-4. [ARTICLE_V1_EVIDENCE_AUDIT.md](ARTICLE_V1_EVIDENCE_AUDIT.md) — frozen
+7. [ARTICLE_V1_EVIDENCE_AUDIT.md](ARTICLE_V1_EVIDENCE_AUDIT.md) — frozen
    evidence and artifact audit.
-5. [ARTICLE_V1_INFERENTIAL_AUDIT.md](ARTICLE_V1_INFERENTIAL_AUDIT.md) —
+8. [ARTICLE_V1_INFERENTIAL_AUDIT.md](ARTICLE_V1_INFERENTIAL_AUDIT.md) —
    inferential and replication audit.
-6. [ARTICLE_V1_LITERATURE_AUDIT.md](ARTICLE_V1_LITERATURE_AUDIT.md) —
+9. [ARTICLE_V1_LITERATURE_AUDIT.md](ARTICLE_V1_LITERATURE_AUDIT.md) —
    literature, construct, and novelty constraints.
-7. [ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md](ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md) —
+10. [ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md](ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md) —
    mathematical/implementation consistency corrections and gap register.
-8. [ARTICLE_V1_EVIDENCE_MATRIX.csv](ARTICLE_V1_EVIDENCE_MATRIX.csv) — frozen
+11. [ARTICLE_V1_EVIDENCE_MATRIX.csv](ARTICLE_V1_EVIDENCE_MATRIX.csv) — frozen
    evidence-to-claim mapping.
-9. [ARTICLE_V1_SOURCE_LEDGER.csv](ARTICLE_V1_SOURCE_LEDGER.csv) — source and
+12. [ARTICLE_V1_SOURCE_LEDGER.csv](ARTICLE_V1_SOURCE_LEDGER.csv) — source and
    provenance ledger.
-10. [ARTICLE_V1_CLAIM_LEDGER.md](ARTICLE_V1_CLAIM_LEDGER.md) — the
+13. [ARTICLE_V1_CLAIM_LEDGER.md](ARTICLE_V1_CLAIM_LEDGER.md) — the
     publication-facing decision ledger.
-11. [ARTICLE_V1_NEXT_STAGE.md](ARTICLE_V1_NEXT_STAGE.md) — authorized sequence
-    of remaining work.
-12. [ARTICLE_V1_EXECUTION_PLAN.md](ARTICLE_V1_EXECUTION_PLAN.md) — evidence
+14. [ARTICLE_V1_NEXT_STAGE.md](ARTICLE_V1_NEXT_STAGE.md) — concise Stage 2
+    Formal Model / Methods pointer and boundary.
+15. [ARTICLE_V1_EXECUTION_PLAN.md](ARTICLE_V1_EXECUTION_PLAN.md) — evidence
     execution and release-plan record.
-13. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md) —
+16. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md) —
     P2 historical-generator forensic record and disposition.
-14. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv) —
+17. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv) —
     machine-readable E01–E05 provenance target/status index.
 
-P0/P1 adoption and P2 bounded historical-source forensics are complete. The
-immediate Article V1 task is a separately authorized P2B deterministic
-reproduction anchor for E01–E03, unless the owner explicitly accepts their
-historical-source limitation. P2B must not change model/config/seed semantics
-or start E06/Track B.
+The Article V1 argument architecture is frozen. The immediate manuscript task
+is Stage 2 — Formal Model / Methods, governed by
+`ARTICLE_V1_NEXT_STAGE.md`. The unresolved E01–E03 historical-generator
+limitation remains a disclosure/provenance issue; this writing sequence does
+not authorize a reproduction run. M4/E06 remains outside V1 evidence.
 
 ## Historical / non-authoritative material
 
