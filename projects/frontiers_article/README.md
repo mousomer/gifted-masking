@@ -47,50 +47,53 @@ Read these in the order appropriate to the question; `HANDOFF.md` gives the
 canonical hand-off read order.
 
 1. [ARTICLE_V1_SHORT_ARTICLE_SKELETON.md](ARTICLE_V1_SHORT_ARTICLE_SKELETON.md) — fixed section architecture and word allocation.
-2. [ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md) — planned claim-to-authority and figure routing.
-3. [ARTICLE_V1_PROSE_REUSE_MAP.md](ARTICLE_V1_PROSE_REUSE_MAP.md) — extraction, correction, and literature routing.
-4. [ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md](ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md) — current and historical source inventory.
-5. [ARTICLE_V1_SHORT_ARTICLE_BRIEF.md](ARTICLE_V1_SHORT_ARTICLE_BRIEF.md) — compact routing authority for short-article construction.
-6. [ARTICLE_V1_MODEL_METHODS.md](ARTICLE_V1_MODEL_METHODS.md) — frozen Formal
+2. [ARTICLE_V1_MANUSCRIPT_DRAFT.md](ARTICLE_V1_MANUSCRIPT_DRAFT.md) — Stage 3 working manuscript pending scientific consistency audit.
+3. [ARTICLE_V1_STAGE3_EXTRACTION_PACKETS.md](ARTICLE_V1_STAGE3_EXTRACTION_PACKETS.md) — drafting traceability packets.
+4. [ARTICLE_V1_SUPPLEMENTARY_METHODS_PLAN.md](ARTICLE_V1_SUPPLEMENTARY_METHODS_PLAN.md) — Supplementary Methods ownership and routing.
+5. [ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md) — planned claim-to-authority and figure routing.
+6. [ARTICLE_V1_PROSE_REUSE_MAP.md](ARTICLE_V1_PROSE_REUSE_MAP.md) — extraction, correction, and literature routing.
+7. [ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md](ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md) — current and historical source inventory.
+8. [ARTICLE_V1_SHORT_ARTICLE_BRIEF.md](ARTICLE_V1_SHORT_ARTICLE_BRIEF.md) — compact routing authority for short-article construction.
+9. [ARTICLE_V1_MODEL_METHODS.md](ARTICLE_V1_MODEL_METHODS.md) — frozen Formal
    Model and Methods authority for equations, comparators, model semantics, and
    E01–E05 computational procedures.
-7. [ARTICLE_V1_ARGUMENT_ARCHITECTURE.md](ARTICLE_V1_ARGUMENT_ARCHITECTURE.md) —
+10. [ARTICLE_V1_ARGUMENT_ARCHITECTURE.md](ARTICLE_V1_ARGUMENT_ARCHITECTURE.md) —
    controlling intellectual map for manuscript construction.
-8. [ARTICLE_V1_MASTER_PLAN.md](ARTICLE_V1_MASTER_PLAN.md) — dependency order,
+11. [ARTICLE_V1_MASTER_PLAN.md](ARTICLE_V1_MASTER_PLAN.md) — dependency order,
    chapter responsibilities, gates, and long-term writing roadmap.
-9. [ARTICLE_V1_METHODOLOGICAL_POSITION.md](ARTICLE_V1_METHODOLOGICAL_POSITION.md) —
+12. [ARTICLE_V1_METHODOLOGICAL_POSITION.md](ARTICLE_V1_METHODOLOGICAL_POSITION.md) —
    evidence levels, parameter position, comparator meaning, and calibrated/non-calibrated boundary.
-10. [HANDOFF.md](HANDOFF.md) — concise operating boundary and read order.
-11. [ARTICLE_V1_CURRENT_STATE.md](ARTICLE_V1_CURRENT_STATE.md) — current
+13. [HANDOFF.md](HANDOFF.md) — concise operating boundary and read order.
+14. [ARTICLE_V1_CURRENT_STATE.md](ARTICLE_V1_CURRENT_STATE.md) — current
    milestone, evidence boundary, and immediate work.
-12. [ARTICLE_V1_ANALYTIC_RESULTS.md](ARTICLE_V1_ANALYTIC_RESULTS.md) — exact
+15. [ARTICLE_V1_ANALYTIC_RESULTS.md](ARTICLE_V1_ANALYTIC_RESULTS.md) — exact
    reward, learner, and dynamic-programming results.
-13. [ARTICLE_V1_EVIDENCE_AUDIT.md](ARTICLE_V1_EVIDENCE_AUDIT.md) — frozen
+16. [ARTICLE_V1_EVIDENCE_AUDIT.md](ARTICLE_V1_EVIDENCE_AUDIT.md) — frozen
    evidence and artifact audit.
-14. [ARTICLE_V1_INFERENTIAL_AUDIT.md](ARTICLE_V1_INFERENTIAL_AUDIT.md) —
+17. [ARTICLE_V1_INFERENTIAL_AUDIT.md](ARTICLE_V1_INFERENTIAL_AUDIT.md) —
    inferential and replication audit.
-15. [ARTICLE_V1_LITERATURE_AUDIT.md](ARTICLE_V1_LITERATURE_AUDIT.md) —
+18. [ARTICLE_V1_LITERATURE_AUDIT.md](ARTICLE_V1_LITERATURE_AUDIT.md) —
    literature, construct, and novelty constraints.
-16. [ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md](ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md) —
+19. [ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md](ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md) —
    mathematical/implementation consistency corrections and gap register.
-17. [ARTICLE_V1_EVIDENCE_MATRIX.csv](ARTICLE_V1_EVIDENCE_MATRIX.csv) — frozen
+20. [ARTICLE_V1_EVIDENCE_MATRIX.csv](ARTICLE_V1_EVIDENCE_MATRIX.csv) — frozen
    evidence-to-claim mapping.
-18. [ARTICLE_V1_SOURCE_LEDGER.csv](ARTICLE_V1_SOURCE_LEDGER.csv) — source and
+21. [ARTICLE_V1_SOURCE_LEDGER.csv](ARTICLE_V1_SOURCE_LEDGER.csv) — source and
    provenance ledger.
-19. [ARTICLE_V1_CLAIM_LEDGER.md](ARTICLE_V1_CLAIM_LEDGER.md) — the
+22. [ARTICLE_V1_CLAIM_LEDGER.md](ARTICLE_V1_CLAIM_LEDGER.md) — the
     publication-facing decision ledger.
-20. [ARTICLE_V1_NEXT_STAGE.md](ARTICLE_V1_NEXT_STAGE.md) — manuscript-extraction pointer and boundary.
-21. [ARTICLE_V1_EXECUTION_PLAN.md](ARTICLE_V1_EXECUTION_PLAN.md) — evidence
+23. [ARTICLE_V1_NEXT_STAGE.md](ARTICLE_V1_NEXT_STAGE.md) — scientific-consistency-audit pointer and boundary.
+24. [ARTICLE_V1_EXECUTION_PLAN.md](ARTICLE_V1_EXECUTION_PLAN.md) — evidence
     execution and release-plan record.
-22. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md) —
+25. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_AUDIT.md) —
     P2 historical-generator forensic record and disposition.
-23. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv) —
+26. [ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv](ARTICLE_V1_GENERATOR_SOURCE_PROVENANCE_INDEX.csv) —
     machine-readable E01–E05 provenance target/status index.
 
 The Article V1 argument architecture and Formal Model and Methods authority are
-preserved. The immediate manuscript task is authority-controlled extraction
-and compression into the fixed skeleton, governed by the four Stage 2 routing
-artifacts and `ARTICLE_V1_NEXT_STAGE.md`. The unresolved E01–E03 historical-generator
+preserved. The immediate task is scientific consistency audit of the Stage 3
+working manuscript, governed by the claim/evidence map and
+`ARTICLE_V1_NEXT_STAGE.md`. The unresolved E01–E03 historical-generator
 limitation remains a disclosure/provenance issue; this writing sequence does
 not authorize a reproduction run. M4/E06 remains outside V1 evidence.
 

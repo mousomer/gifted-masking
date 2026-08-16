@@ -1,5 +1,15 @@
 # Frontiers Article Sub-project — Backlog
 
+## Article V1 manuscript extraction — 2026-08-16
+
+- [x] Checkpoint the completed Stage 1–2 documentation state.
+- [x] Build source-traceable extraction packets and an owned Supplementary
+  Methods routing plan.
+- [x] Assemble the first complete authority-reconciled E01–E05 working
+  manuscript without modifying scientific assets.
+- [ ] Perform the next claim-by-claim scientific consistency audit before
+  figure-layout or submission-format work.
+
 ## Article V1 short-article architecture and routing — 2026-08-16
 
 - [x] Inventory all significant manuscript, Methods, literature, result,

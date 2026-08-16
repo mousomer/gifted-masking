@@ -2,8 +2,8 @@
 
 **Freeze date:** 16 August 2026
 **Document class:** authoritative long-term writing roadmap
-**Current milestone:** `READY_FOR_MANUSCRIPT_EXTRACTION`
-**Next milestone:** `MANUSCRIPT_EXTRACTION_AND_COMPRESSION`
+**Current milestone:** `MANUSCRIPT_DRAFT_COMPLETE`
+**Next milestone:** `PENDING_SCIENTIFIC_CONSISTENCY_AUDIT`
 **Scientific boundary:** maintained M0–M3 and frozen E01–E05 evidence
 
 This plan governs the dependency order, responsibilities, claim boundaries, and
@@ -22,10 +22,9 @@ The scientific evidence is not being rerun or reconsidered. Article V1 has four
 maintained model rungs, five evidence families, four main figures, exact
 objective comparators, and an explicit parameter position. The editorial scope
 is now a 6,000–8,000-word first article with E01–E05 only; E06/M4 is deferred.
-The section skeleton, claim/evidence/figure map, existing-content inventory,
-and prose-reuse map are complete. The next task is authority-controlled
-manuscript extraction and compression, followed only then by writing the
-remaining mapped gaps.
+The Stage 3 working manuscript, extraction packets, and Supplementary Methods
+routing plan are complete. The next task is a claim-by-claim scientific
+consistency audit before any figure-layout or submission-format work.
 
 ## 2. Article-V1 scientific identity
 

@@ -4,9 +4,9 @@
 **Target:** *Frontiers in Psychology*, Educational Psychology  
 **Article type:** Original Research  
 **Status:** Active  
-**Version:** 0.6
-**Current stage:** short-article architecture and evidence routing complete
-**Article V1 status:** `READY_FOR_MANUSCRIPT_EXTRACTION`
+**Version:** 0.7
+**Current stage:** authority-reconciled working manuscript complete
+**Article V1 status:** `MANUSCRIPT_DRAFT_COMPLETE` / `PENDING_SCIENTIFIC_CONSISTENCY_AUDIT`
 
 ## 1. Purpose
 

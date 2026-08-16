@@ -1,23 +1,22 @@
 # Article V1 — Next Stage
 
-**Current state:** `READY_FOR_MANUSCRIPT_EXTRACTION`
+**Current state:** `MANUSCRIPT_DRAFT_COMPLETE`
 
-**Next stage:** manuscript extraction and compression
+**Next stage:** scientific consistency audit
 
 ## Primary routing authority
 
-Start with [ARTICLE_V1_SHORT_ARTICLE_SKELETON.md](ARTICLE_V1_SHORT_ARTICLE_SKELETON.md),
-[ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md),
-and [ARTICLE_V1_PROSE_REUSE_MAP.md](ARTICLE_V1_PROSE_REUSE_MAP.md). The evidence
-freeze, evidence matrix, and model-analysis consistency audit remain the
-governing scientific authorities.
+Start with [ARTICLE_V1_MANUSCRIPT_DRAFT.md](ARTICLE_V1_MANUSCRIPT_DRAFT.md) and
+[ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md).
+The evidence freeze, evidence matrix, and model-analysis consistency audit
+remain the governing scientific authorities.
 
 ## Objective
 
-Extract a complete 6,000–8,000-word Article V1 manuscript text into the fixed
-7,200-word architecture. Work in this order: reuse scientifically current
-prose, compress it, correct it against authority, and write only the mapped
-gaps. Preserve E01–E05 order and the assigned section budgets.
+Perform a claim-by-claim scientific consistency audit of the working manuscript.
+Verify every number, classifier, comparator, scope statement, figure reference,
+and citation-level implication. Record corrections separately; do not reopen
+science or perform a general redraft.
 
 ## Boundary
 
@@ -30,9 +29,9 @@ redesign the submission package during extraction.
 
 Stop after producing and reconciling:
 
-1. a complete manuscript-text extraction following the fixed skeleton;
-2. main Methods compressed to approximately 1,450 words;
-3. quantitative sentences checked against the claim/evidence map;
-4. citations and source prose routed according to the reuse map.
+1. an auditable claim-by-claim manuscript consistency record;
+2. a corrected draft only where an authority requires correction;
+3. a final list of any publication-blocking claim, citation, figure, or scope
+   issue.
 
 Figure redesign and submission-format production remain later stages.

@@ -2,9 +2,9 @@
 
 **As of:** 16 August 2026
 
-**Current milestone:** `READY_FOR_MANUSCRIPT_EXTRACTION`
+**Current milestone:** `MANUSCRIPT_DRAFT_COMPLETE`
 
-**Next milestone:** `MANUSCRIPT_EXTRACTION_AND_COMPRESSION`
+**Next milestone:** `PENDING_SCIENTIFIC_CONSISTENCY_AUDIT`
 
 **Evidence boundary:** **PRIMARY ARTICLE V1 = E01–E05 ONLY**
 
@@ -28,7 +28,8 @@ Primary Article V1 = E01–E05.
 E06/M4 = deferred future work.
 
 TARGET END STATE:
-READY_FOR_MANUSCRIPT_EXTRACTION
+MANUSCRIPT_DRAFT_COMPLETE
+PENDING_SCIENTIFIC_CONSISTENCY_AUDIT
 ```
 
 ## 2. Frozen scientific identity
@@ -96,10 +97,7 @@ invalidates the frozen artifacts nor authorizes replacement runs.
 
 ## 6. Immediate work
 
-Use [ARTICLE_V1_SHORT_ARTICLE_SKELETON.md](ARTICLE_V1_SHORT_ARTICLE_SKELETON.md),
-[ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md),
-[ARTICLE_V1_PROSE_REUSE_MAP.md](ARTICLE_V1_PROSE_REUSE_MAP.md), and
-[ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md](ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md).
-Extract current prose into the fixed skeleton, compress it to the assigned word
-budgets, correct it against the evidence authorities, and write only the
-identified gaps. Do not alter evidence, models, configs, artifacts, or figures.
+Audit [ARTICLE_V1_MANUSCRIPT_DRAFT.md](ARTICLE_V1_MANUSCRIPT_DRAFT.md) claim by
+claim against the evidence freeze, matrix, consistency audit, analytic results,
+and claim/evidence map. The next stage is a scientific consistency audit, not a
+new drafting pass. Do not alter evidence, models, configs, artifacts, or figures.

@@ -2,20 +2,20 @@
 
 **Hand-off date:** 16 August 2026
 
-**Current state:** `READY_FOR_MANUSCRIPT_EXTRACTION`
+**Current state:** `MANUSCRIPT_DRAFT_COMPLETE` / `PENDING_SCIENTIFIC_CONSISTENCY_AUDIT`
 
 **Primary scope:** E01–E05 only
 
 **Deferred:** E06/M4 future work
 
-**Next task:** manuscript extraction and compression
+**Next task:** claim-by-claim scientific consistency audit
 
 ## Start here
 
-1. [ARTICLE_V1_SHORT_ARTICLE_SKELETON.md](ARTICLE_V1_SHORT_ARTICLE_SKELETON.md)
+1. [ARTICLE_V1_MANUSCRIPT_DRAFT.md](ARTICLE_V1_MANUSCRIPT_DRAFT.md)
 2. [ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md)
-3. [ARTICLE_V1_PROSE_REUSE_MAP.md](ARTICLE_V1_PROSE_REUSE_MAP.md)
-4. [ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md](ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md)
+3. [ARTICLE_V1_STAGE3_EXTRACTION_PACKETS.md](ARTICLE_V1_STAGE3_EXTRACTION_PACKETS.md)
+4. [ARTICLE_V1_SUPPLEMENTARY_METHODS_PLAN.md](ARTICLE_V1_SUPPLEMENTARY_METHODS_PLAN.md)
 5. [ARTICLE_V1_SHORT_ARTICLE_BRIEF.md](ARTICLE_V1_SHORT_ARTICLE_BRIEF.md)
 6. [ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md](ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md)
 7. [ARTICLE_V1_EVIDENCE_MATRIX.csv](ARTICLE_V1_EVIDENCE_MATRIX.csv)
@@ -54,8 +54,6 @@ is required or authorized.
   headline configurations use `lambda=1`.
 - Do not claim complete Git-level source reproducibility for E01–E03.
 
-The architecture stage is complete. In the next stage, follow the prose-reuse
-order exactly: reuse existing prose, compress, correct against current
-authority, then write only genuine gaps. Stop after a complete authority-
-reconciled manuscript-text extraction; do not redesign figures, rerun results,
-or expand scope.
+The first complete authority-reconciled working manuscript now exists. Audit it
+against every routed claim and numerical authority before figure-layout or
+submission-format work. Do not rerun results or expand scope.
