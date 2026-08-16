@@ -2,71 +2,104 @@
 
 **As of:** 16 August 2026
 
-**Current milestone:** `MODEL_METHODS_FROZEN`
+**Current milestone:** `READY_FOR_MANUSCRIPT_EXTRACTION`
 
-**Next milestone:** `RESULTS_FROZEN`
+**Next milestone:** `MANUSCRIPT_EXTRACTION_AND_COMPRESSION`
 
-**Evidence boundary:** maintained M0–M3 and frozen E01–E05 only
+**Evidence boundary:** **PRIMARY ARTICLE V1 = E01–E05 ONLY**
 
-## 1. Current state
+**Deferred:** **E06/M4 = future work, not primary Article V1 evidence**
 
-Stage 2 has frozen the Article V1 Formal Model and Methods authority:
+## 1. Task classification
 
-- [ARTICLE_V1_MODEL_METHODS.md](ARTICLE_V1_MODEL_METHODS.md)
+```text
+TASK TYPE:
+Documentation / manuscript governance / evidence-authority reconciliation.
 
-It defines the environmental, learner-processed, and full-information meanings
-of value; the shared learner; the M0–M3 equations and progression; the M2
-reward-first transition semantics and dynamic oracle; the M3 action
-representations and comparison-cost placement; the E01–E05 computational
-designs, estimands, inferential units, uncertainty procedures, seed namespaces,
-and provenance boundary; and the normalized-reference, non-calibrated scope of
-the parameters. It contains no stochastic Results.
+SCIENTIFIC STATUS:
+No new experiment.
+No new numerical inference.
+No model change.
+No result regeneration.
+No artifact modification.
 
-The governing upstream authorities remain:
+ARTICLE SCOPE:
+Primary Article V1 = E01–E05.
+E06/M4 = deferred future work.
 
-- [ARTICLE_V1_ARGUMENT_ARCHITECTURE.md](ARTICLE_V1_ARGUMENT_ARCHITECTURE.md)
-- [ARTICLE_V1_MASTER_PLAN.md](ARTICLE_V1_MASTER_PLAN.md)
-- [ARTICLE_V1_METHODOLOGICAL_POSITION.md](ARTICLE_V1_METHODOLOGICAL_POSITION.md)
+TARGET END STATE:
+READY_FOR_MANUSCRIPT_EXTRACTION
+```
 
 ## 2. Frozen scientific identity
 
-Article V1 is an existence-and-structure computational modelling paper. Its
-central claim is that learned concealment or reduced authenticity need not
-imply that concealment is objectively advantageous within the specified model.
-The progression is `M0 -> M1 -> M2 -> M3`; the models are controlled
-abstractions rather than calibrated representations of gifted children.
+Article V1 is a short existence-and-structure computational modelling paper.
+It evaluates behavioural findings against explicit analytic or
+dynamic-programming objective benchmarks so that learned–objective divergence
+is measured rather than inferred.
 
-The Model/Methods authority now fixes the M0 general objective boundary and
-reference `43/60` value, the M1 affine endpoint result, the M2
-full-information discounted comparator, the one-good-context M3 objective
-invariance, and the general comparison-cost crossover and reference `8/17`
-value. Baseline `lambda=1` is loss-neutral, and objective reward is not a claim
-about human welfare.
+The E01–E05 progression is:
 
-## 3. Binding evidence boundaries
+```text
+history
+-> endpoint discovery
+-> dynamic disagreement
+-> social discoverability
+-> boundary displacement
+```
 
-- The chapter does not report observed E01–E05 effects or classifications.
-- Every parameter is a normalized reference, structural, or tested coordinate;
-  none is empirically calibrated.
-- E01 conditional strata are not randomized human causal groups.
-- M1 intermediate disclosure is not a static interior optimum.
-- M2 learned behaviour is compared with a full-information dynamic oracle, not
-  an information-matched optimum.
-- E04 changes a coupled discovery problem and does not isolate context count.
-- The E05 0.5 crossing is an operational population-response summary, not a
-  binary-softmax theorem or psychological threshold.
-- Excluded future-work evidence remains outside Article V1.
+The bounded synthesis is:
 
-## 4. Reproducibility boundary
+```text
+immediate value
+!= dynamic value
+!= discoverability
+!= learned behavioural boundary
+```
 
-Frozen artifacts and manifests remain content-addressed. Fingerprint-exact
-historical source was recovered for E04/E05. Exact dirty-worktree generator
-bytes remain unavailable for E01–E03, so byte-exact historical regeneration is
-not currently possible; this does not authorize replacement runs during the
-manuscript sequence.
+## 3. Editorial constraints
 
-## 5. Immediate work
+- Main text: approximately 6,000–8,000 words.
+- Main Methods: approximately 1,200–1,600 words.
+- Main figures: approximately 4–5.
+- Conclusion: no more than two paragraphs.
+- E06/M4 is deferred because it materially expands the conceptual scope; it is
+  not invalidated or abandoned.
+- The long Formal Model and Methods authority remains preserved for later
+  separation into main Methods, Supplementary Methods, and repository
+  reproducibility/technical documentation. It is not the target main-text form.
+- No new E01–E05 research is required before manuscript construction.
 
-Follow [ARTICLE_V1_NEXT_STAGE.md](ARTICLE_V1_NEXT_STAGE.md). Stage 3 creates and
-freezes only the Results authority from frozen E01–E05 evidence. It may not
-redefine the Formal Model and Methods chapter or create a complete manuscript.
+## 4. Binding scientific boundaries
+
+- E01 sampling and normalized pseudo-regret are algebraically linked, not
+  independent findings.
+- E02 normalized regret is disclosure distance `1-d`, not an independent
+  welfare result.
+- E03 uses `243/357` tested cells under its exact aggregate Neutral-action and
+  visit-adequacy definition; it is not prevalence or an individual classifier.
+- E04 uses final-window argmax classification as authentic in a good context;
+  vague “settling” language requires that definition.
+- E05 demonstrates a learned/objective threshold displacement. Its quantitative
+  decomposition is unresolved; the binary-softmax/G2 exclusion is retired.
+- Headline E01–E05 configurations use `lambda=1`; non-unit lambda belongs only
+  to identified E01/E03 sensitivity cells.
+
+## 5. Reproducibility boundary
+
+Frozen standard result artifacts and recorded hashes remain preserved and pass
+their established deterministic validation. Exact historical generator-source
+reconstruction is available for E04 and E05. The precise uncommitted generator
+state used for E01–E03 was not fully retained, limiting exact source-level
+regeneration of those original runs from Git alone. This limitation neither
+invalidates the frozen artifacts nor authorizes replacement runs.
+
+## 6. Immediate work
+
+Use [ARTICLE_V1_SHORT_ARTICLE_SKELETON.md](ARTICLE_V1_SHORT_ARTICLE_SKELETON.md),
+[ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md),
+[ARTICLE_V1_PROSE_REUSE_MAP.md](ARTICLE_V1_PROSE_REUSE_MAP.md), and
+[ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md](ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md).
+Extract current prose into the fixed skeleton, compress it to the assigned word
+budgets, correct it against the evidence authorities, and write only the
+identified gaps. Do not alter evidence, models, configs, artifacts, or figures.

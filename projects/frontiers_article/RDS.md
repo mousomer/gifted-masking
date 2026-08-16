@@ -4,8 +4,9 @@
 **Target:** *Frontiers in Psychology*, Educational Psychology  
 **Article type:** Original Research  
 **Status:** Active  
-**Version:** 0.4  
-**Current stage:** Stage 2 — Close essential evidence gaps
+**Version:** 0.6
+**Current stage:** short-article architecture and evidence routing complete
+**Article V1 status:** `READY_FOR_MANUSCRIPT_EXTRACTION`
 
 ## 1. Purpose
 
@@ -13,11 +14,12 @@ This RDS governs the conversion of the maintained reinforcement-learning model
 ladder and existing article materials into a complete, reproducible, and
 submission-ready Original Research article.
 
-The article's central contribution is a computational account of persistent
-masking as a learned policy. The article will state its outcomes clearly before
-introducing qualifications. It will distinguish analytic results, simulation
-findings, model-specific mechanisms, and hypotheses about real educational
-settings.
+The article's central contribution is a progression of ability-concealment
+learning environments in which behavioural findings are evaluated against
+explicit analytic or dynamic-programming objective benchmarks. This makes
+distinct forms of learned-objective divergence measurable rather than inferred.
+The primary Article V1 evidence set is E01–E05. M4/E06 is deferred to future
+work and is not a primary result of this article.
 
 ## 2. Authority And Relationship To Repository Design
 
@@ -39,18 +41,18 @@ proposed and reviewed separately before this RDS is updated.
 
 ## 3. Research Objective
 
-The article will test and explain five linked propositions:
+The short Article V1 will present five linked evidential steps:
 
-1. Risky authenticity can produce persistent learned masking even when
+1. Early adverse feedback can suppress later authentic sampling even when
    authenticity has the higher objective value.
-2. Hot-stove persistence arises because early adverse outcomes reduce later
-   sampling and therefore restrict corrective information.
+2. Information-restoring interventions test whether reduced sampling restricts
+   corrective experience, without treating E01 final masking as a finding.
 3. Graded disclosure can reduce the exposure cost of exploration without being
    a generally optimal endpoint under the current linear reward model.
 4. Stigma persistence and multidimensional context search enlarge the
    conditions under which masking is learned or maintained.
-5. Endogenous receptivity makes behavior and social opportunity jointly
-   path-dependent.
+5. Comparison cost can displace a learned behavioural boundary from the exact
+   objective boundary.
 
 The models identify candidate mechanisms. They do not estimate prevalence in
 gifted children, establish clinical categories, or demonstrate educational
@@ -72,14 +74,11 @@ than an established human effect.
 
 ### 5.1 In scope
 
-- M0-M4 as currently specified and verified;
+- M0–M3 as represented by frozen E01–E05 evidence;
 - analytic reward and policy benchmarks;
-- maintained Monte Carlo experiments;
-- targeted new analyses needed to test central mechanisms directly;
-- independent-master-seed replication and uncertainty estimation;
-- action-space and mechanism ablations;
+- frozen E01–E05 Monte Carlo evidence and existing uncertainty estimates;
 - deterministic figure generation and source-data export;
-- consolidation of the four long-form chapters;
+- selective use of the preserved long-form chapters as source material;
 - a Frontiers-compliant DOCX, PDF, figures, tables, supplement, and archive.
 
 ### 5.2 Out of scope
@@ -91,6 +90,9 @@ than an established human effect.
 - fitting the models to human participant data;
 - large exploratory sweeps without a prespecified claim or decision rule;
 - decorative imagery that does not communicate theory or evidence.
+- M4/E06 as a primary Article V1 result;
+- new experiments, result regeneration, or model redesign during manuscript
+  construction.
 
 ## 6. Working Inputs And Output Authority
 
@@ -128,14 +130,17 @@ than an established human effect.
 | --- | ---: | --- |
 | Abstract | 220-250 | Problem, approach, strongest results, conclusion |
 | Introduction | 1,600-1,800 | Literature, persistence gap, questions, model logic |
-| Materials and Methods | 1,900-2,200 | Models, tested domain, measures, analysis, reproducibility |
-| Results | 2,000-2,300 | Outcomes, magnitude, benchmarks, uncertainty |
-| Discussion | 2,200-2,500 | Interpretation, contribution, predictions, limitations |
-| **Main text** | **approximately 8,000-9,000** | Leaves room below the journal ceiling |
+| Materials and Methods | 1,200-1,600 | Concise models, tested domain, measures, analysis, reproducibility |
+| Results | approximately 1,600-2,000 | Outcomes, benchmarks, and uncertainty |
+| Discussion | approximately 1,400-1,800 | Interpretation, contribution, and limitations |
+| Conclusion | no more than two paragraphs | Bounded synthesis only |
+| **Main text** | **approximately 6,000-8,000** | Short first research article |
 
-The literature review becomes the Introduction. The model-cascade chapter
-becomes the conceptual core of Methods. The Results and Discussion chapters are
-integrated rather than appended unchanged.
+The literature review and long-form chapters remain source material rather than
+current manuscript authority. The existing long Formal Model and Methods
+authority is preserved for later separation into concise main Methods,
+Supplementary Methods, and repository reproducibility/technical documentation;
+it is not the intended main-text Methods section.
 
 ### 7.2 Narrative contract
 
@@ -255,17 +260,20 @@ to those decision rules require an RDS and claim-ledger update before a run.
   hysteresis-qualification package. The latter requires a separate GO and may
   run only if the core result passes every prespecified eligibility gate.
 
+The preceding E06 programme design is preserved as historical future-work
+planning only. It is superseded for primary Article V1 scope by Section 5.1 and
+does not authorize E06 analysis or manuscript inclusion.
+
 ## 9. Figure And Table Program
 
 ### 9.1 Main figures
 
 | Figure | Purpose | Required status |
 | --- | --- | --- |
-| 1. Model cascade and learning loop | Show the information-restriction mechanism and what M0-M4 add | New vector figure; no new simulation |
-| 2. Hot-stove persistence and graded exploration | Directly test early-outcome persistence, information restoration, and graded actions | New targeted analyses required |
-| 3. M2 learned suboptimal-masking regime | Show the scale of the tested regime and the dynamic optimal threshold | Existing draft retained; seed-replicated rebuild required |
-| 4. Context search and comparison cost | Compare M3 architectures, K curves, and BFLPE crossover | Existing ablation plus new dense analyses |
-| 5. Endogenous receptivity and path dependence | Show continuation paths with seed and ramp-speed uncertainty | Existing draft upgraded after replication |
+| 1. Model cascade and learning loop | Show the information-restriction mechanism and what M0–M3 add | New vector figure; no new simulation |
+| 2. History and endpoint discovery | Present frozen E01 sampling/information-restoration and E02 graded-action results | Frozen E01–E02 evidence only |
+| 3. Dynamic policy disagreement | Present frozen E03 aggregate Neutral-action/DP disagreement with tested-grid boundaries | Frozen E03 evidence only |
+| 4. Context discovery and boundary displacement | Present frozen E04 architectures and E05 analytic/learned crossovers | Frozen E04–E05 evidence only |
 
 The current directional-contrast forest plot becomes supplementary. The
 standalone M2 threshold plot is redundant with the combined M2 figure.
@@ -372,7 +380,7 @@ interpreted once.
 
 **Work**
 
-- specify shared learner, M0-M4, analytic benchmarks, tested domain, outcome
+- specify shared learner, M0–M3, analytic benchmarks, tested domain, outcome
   measures, uncertainty, seed hierarchy, software, and reproducibility;
 - add model-cascade and tested-domain tables.
 
@@ -389,7 +397,7 @@ every result.
 
 **Work**
 
-- generate the five main figures and supplementary program;
+- generate approximately four to five E01–E05 main figures and the supplementary program;
 - export source data;
 - write captions and alt text;
 - visually inspect all figures at final size.

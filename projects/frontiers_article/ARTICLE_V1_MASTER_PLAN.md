@@ -2,8 +2,8 @@
 
 **Freeze date:** 16 August 2026
 **Document class:** authoritative long-term writing roadmap
-**Current milestone:** `ARTICLE_V1_ARGUMENT_ARCHITECTURE_FROZEN`
-**Next milestone:** `MODEL_METHODS_FROZEN`
+**Current milestone:** `READY_FOR_MANUSCRIPT_EXTRACTION`
+**Next milestone:** `MANUSCRIPT_EXTRACTION_AND_COMPRESSION`
 **Scientific boundary:** maintained M0–M3 and frozen E01–E05 evidence
 
 This plan governs the dependency order, responsibilities, claim boundaries, and
@@ -13,18 +13,19 @@ frozen findings. The shorter controlling intellectual map is
 
 ## 1. Current project state
 
-Stage 1 begins from repository branch `codex/frontiers-stage2-e06` at
-`d22febd83e7e2e5594faf3a2aa8c36aac42c6bfa`. The frozen E01–E05 evidence,
+The frozen E01–E05 evidence,
 analytic authority, four-figure publication layer, claim ledger, parameter
-audit, and methodological position are present. The parameter-audit and
-methodological-position files were untracked at the start of this stage and are
-prerequisites of this architecture freeze.
+audit, methodological position, argument architecture, and long-form Formal
+Model and Methods authority are present.
 
 The scientific evidence is not being rerun or reconsidered. Article V1 has four
 maintained model rungs, five evidence families, four main figures, exact
-objective comparators, and an explicit parameter position. The next task is to
-write and freeze the Formal Model/Methods authority from this architecture
-before any Results chapter is drafted.
+objective comparators, and an explicit parameter position. The editorial scope
+is now a 6,000–8,000-word first article with E01–E05 only; E06/M4 is deferred.
+The section skeleton, claim/evidence/figure map, existing-content inventory,
+and prose-reuse map are complete. The next task is authority-controlled
+manuscript extraction and compression, followed only then by writing the
+remaining mapped gaps.
 
 ## 2. Article-V1 scientific identity
 
@@ -487,15 +488,14 @@ authorized by this roadmap.
 
 ## 23. Exact next stage
 
-**Stage 2 — Formal Model / Methods.**
+**Short-article skeleton and claim/evidence/figure map.**
 
-Create a chapter authority—not yet a complete manuscript—that defines the
-formal M0–M3 progression, shared learner, exact objective comparators,
-experiment/inference methods, parameter interpretation, and reproducibility
-boundary listed in Section 16. Verify every equation against
-[ARTICLE_V1_ANALYTIC_RESULTS.md](ARTICLE_V1_ANALYTIC_RESULTS.md), every semantic
-claim against the maintained model and consistency audit, and every numeric
-method detail against frozen configs/manifests and the parameter register.
+Use [ARTICLE_V1_SHORT_ARTICLE_BRIEF.md](ARTICLE_V1_SHORT_ARTICLE_BRIEF.md) to
+build a section-level skeleton for a 6,000–8,000-word Article V1, allocate the
+word budget, connect every intended claim to frozen evidence and its wording
+ceiling, and assign approximately four to five main figures plus supplementary
+material.
 
-Stage 2 must stop at `MODEL_METHODS_FROZEN`. It must not draft Results,
-Discussion, Introduction, literature review, Abstract, or a complete manuscript.
+Stop before drafting manuscript prose, compressing the long Methods authority,
+creating final figures, rerunning evidence, or introducing E06/M4 as a primary
+result.

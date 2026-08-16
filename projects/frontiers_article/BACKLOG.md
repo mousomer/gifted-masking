@@ -1,5 +1,32 @@
 # Frontiers Article Sub-project — Backlog
 
+## Article V1 short-article architecture and routing — 2026-08-16
+
+- [x] Inventory all significant manuscript, Methods, literature, result,
+  figure, and source-data content without altering evidence.
+- [x] Fix a 7,200-word E01–E05 section skeleton with 1,450-word main Methods.
+- [x] Map planned claims to exact frozen authorities, artifacts, analytic
+  comparators, figures, and existing prose.
+- [x] Classify all current main figures as ready or redesign-needed and confirm
+  that no additional scientific main figure is missing.
+- [x] Route long Methods to main, supplement, and repository documentation.
+- [x] Map prose reuse and genuine writing gaps.
+- [x] Advance governance to `READY_FOR_MANUSCRIPT_EXTRACTION`.
+
+## Article V1 short-article authority freeze — 2026-08-16
+
+- [x] Classify the stage as documentation/manuscript-governance work with no
+  experiment, inference, model, result, or artifact change.
+- [x] Freeze primary Article V1 scope to E01–E05 and defer E06/M4 as future
+  work without invalidating it.
+- [x] Set the target to a 6,000–8,000-word short article with 1,200–1,600-word
+  main Methods, approximately four to five main figures, and a two-paragraph
+  maximum conclusion.
+- [x] Preserve long-form Methods for later main/supplementary/technical
+  separation and create `ARTICLE_V1_SHORT_ARTICLE_BRIEF.md`.
+- [x] Route the next stage to article skeleton and claim/evidence/figure map
+  before prose drafting.
+
 ## Article V1 P0/P1 authority adoption — 2026-08-15
 
 - [x] P0/P1: install the revised Article V1 hand-off authorities, establish

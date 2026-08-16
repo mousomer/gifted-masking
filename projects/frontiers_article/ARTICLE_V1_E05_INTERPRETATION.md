@@ -1,5 +1,16 @@
 # Article V1 — E05 Scientific Interpretation Note
 
+> **BINDING SUPERSESSION NOTICE — READ BEFORE USE**
+>
+> The E05 temperature/G2 exclusion in this document is superseded. E05 crosses
+> an across-child final-window modal-classification fraction, not a binary
+> softmax probability or Q-value equality. Do not carry “temperature alone is
+> ruled out,” or equivalent language, into Article V1. The threshold
+> displacement is demonstrated; its quantitative decomposition is unresolved.
+> `ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md` and
+> `ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md` govern wherever this note
+> differs.
+
 **Status:** Article-V1 supporting reference  
 **Date:** 15 August 2026  
 **Authority basis:** `ARTICLE_V1_CURRENT_STATE.md`, `ARTICLE_V1_ANALYTIC_RESULTS.md`, `ARTICLE_V1_LITERATURE_AUDIT.md`, `ARTICLE_V1_CLAIM_LEDGER.md`, `HANDOFF.md`

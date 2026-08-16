@@ -1,53 +1,38 @@
 # Article V1 — Next Stage
 
-**Current state:** `MODEL_METHODS_FROZEN`
+**Current state:** `READY_FOR_MANUSCRIPT_EXTRACTION`
 
-**Next stage:** Stage 3 — Results
+**Next stage:** manuscript extraction and compression
 
-## Primary authority
+## Primary routing authority
 
-1. [ARTICLE_V1_MODEL_METHODS.md](ARTICLE_V1_MODEL_METHODS.md)
-2. [ARTICLE_V1_ARGUMENT_ARCHITECTURE.md](ARTICLE_V1_ARGUMENT_ARCHITECTURE.md)
-3. [ARTICLE_V1_MASTER_PLAN.md](ARTICLE_V1_MASTER_PLAN.md)
-4. [ARTICLE_V1_METHODOLOGICAL_POSITION.md](ARTICLE_V1_METHODOLOGICAL_POSITION.md)
+Start with [ARTICLE_V1_SHORT_ARTICLE_SKELETON.md](ARTICLE_V1_SHORT_ARTICLE_SKELETON.md),
+[ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md),
+and [ARTICLE_V1_PROSE_REUSE_MAP.md](ARTICLE_V1_PROSE_REUSE_MAP.md). The evidence
+freeze, evidence matrix, and model-analysis consistency audit remain the
+governing scientific authorities.
 
-Frozen evidence, analytic, claim, parameter, interpretation, and consistency
-authorities remain binding beneath these documents. If Results prose conflicts
-with frozen evidence, the prose must change. Results must consume, not redefine,
-the models, comparators, outcomes, or inferential units frozen in the Formal
-Model and Methods authority.
+## Objective
 
-## Stage 3 objective
+Extract a complete 6,000–8,000-word Article V1 manuscript text into the fixed
+7,200-word architecture. Work in this order: reuse scientifically current
+prose, compress it, correct it against authority, and write only the mapped
+gaps. Preserve E01–E05 order and the assigned section budgets.
 
-Create and freeze the Article V1 Results authority from the preserved E01–E05
-artifacts. Present findings in scientific order:
+## Boundary
 
-- E01 and E02 as supporting finite-feedback and action-representation results;
-- E03 as the central persistent-state learned-versus-objective comparison;
-- E04 as the context-discovery and representation comparison;
-- E05 as the comparison-cost response and descriptive learned/objective
-  crossing separation.
-
-Every numerical statement must map to a frozen artifact and claim-ledger entry.
-Report the prespecified uncertainty unit and interval, distinguish reference
-results from tested-axis and structural statements, and preserve the exact
-wording ceilings in the interpretation notes and manuscript evidence freeze.
-
-## Stage 3 boundary
-
-Do not change equations, model semantics, parameters, RNG behaviour, outcome
-definitions, or comparators. Do not run E01–E05, run excluded experiments,
-introduce excluded evidence, draft Discussion or Introduction, conduct a
-literature search, or assemble a complete manuscript. Do not present grid
-coverage as prevalence, E04 as a pure effect of context count, or E05 as
-mechanism identification.
+Do not create or regenerate figures, rerun an experiment, introduce a new
+number, change model semantics/configuration/artifacts, or use E06/M4 as a
+primary result. Do not promote historical chapters into authority. Do not
+redesign the submission package during extraction.
 
 ## Exit gate
 
-Stop when every Results statement has passed artifact, claim-ceiling,
-uncertainty, comparator, and evidence-level reconciliation and is explicitly
-marked:
+Stop after producing and reconciling:
 
-```text
-RESULTS_FROZEN
-```
+1. a complete manuscript-text extraction following the fixed skeleton;
+2. main Methods compressed to approximately 1,450 words;
+3. quantitative sentences checked against the claim/evidence map;
+4. citations and source prose routed according to the reuse map.
+
+Figure redesign and submission-format production remain later stages.

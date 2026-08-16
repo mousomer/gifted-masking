@@ -2,49 +2,60 @@
 
 **Hand-off date:** 16 August 2026
 
-**Current state:** `MODEL_METHODS_FROZEN`
+**Current state:** `READY_FOR_MANUSCRIPT_EXTRACTION`
 
-**Next task:** Stage 3 — Results
+**Primary scope:** E01–E05 only
+
+**Deferred:** E06/M4 future work
+
+**Next task:** manuscript extraction and compression
 
 ## Start here
 
-1. [ARTICLE_V1_MODEL_METHODS.md](ARTICLE_V1_MODEL_METHODS.md)
-2. [ARTICLE_V1_ARGUMENT_ARCHITECTURE.md](ARTICLE_V1_ARGUMENT_ARCHITECTURE.md)
-3. [ARTICLE_V1_MASTER_PLAN.md](ARTICLE_V1_MASTER_PLAN.md)
-4. [ARTICLE_V1_METHODOLOGICAL_POSITION.md](ARTICLE_V1_METHODOLOGICAL_POSITION.md)
-5. [ARTICLE_V1_NEXT_STAGE.md](ARTICLE_V1_NEXT_STAGE.md)
-6. [ARTICLE_V1_CURRENT_STATE.md](ARTICLE_V1_CURRENT_STATE.md)
+1. [ARTICLE_V1_SHORT_ARTICLE_SKELETON.md](ARTICLE_V1_SHORT_ARTICLE_SKELETON.md)
+2. [ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md](ARTICLE_V1_CLAIM_EVIDENCE_FIGURE_MAP.md)
+3. [ARTICLE_V1_PROSE_REUSE_MAP.md](ARTICLE_V1_PROSE_REUSE_MAP.md)
+4. [ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md](ARTICLE_V1_EXISTING_CONTENT_INVENTORY.md)
+5. [ARTICLE_V1_SHORT_ARTICLE_BRIEF.md](ARTICLE_V1_SHORT_ARTICLE_BRIEF.md)
+6. [ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md](ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md)
+7. [ARTICLE_V1_EVIDENCE_MATRIX.csv](ARTICLE_V1_EVIDENCE_MATRIX.csv)
+8. [ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md](ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md)
+9. [ARTICLE_V1_MODEL_METHODS.md](ARTICLE_V1_MODEL_METHODS.md)
 
-For evidence, claims, parameters, interpretation ceilings, and artifact detail,
-follow the authority index in [README.md](README.md). Frozen evidence and
-artifacts remain superior to every prose authority.
+For exact analysis, literature, claims, and interpretation boundaries, follow
+the authority pointers in the short-article brief. Frozen evidence and the
+consistency audit prevail over every prose source.
 
-## Scientific hand-off
+## Editorial hand-off
 
-The 7,000-word Formal Model and Methods authority is frozen. It reconstructs
-the M0–M3 cascade from maintained code, configs, analytic authorities, and
-frozen manifests without changing semantics or reporting stochastic findings.
-It establishes the three meanings of value, exact equations and comparators,
-reward-first M2 transition order, M3 representations, E01–E05 operational
-methods, master-seed inference, and the non-calibrated parameter position.
+Article V1 is now a 6,000–8,000-word first research article, not a comprehensive
+programme report. Main Methods should be approximately 1,200–1,600 words, the
+main figure set approximately four to five figures, and the conclusion no more
+than two paragraphs. The existing long Formal Model and Methods authority is
+preserved as source material for later separation into main Methods,
+Supplementary Methods, and repository technical documentation; do not compress
+it during the scope-freeze stage.
 
-Stage 3 should report the frozen findings in the order and evidence hierarchy
-specified by the architecture. Each number needs an artifact source, an
-approved claim ceiling, and the uncertainty procedure already defined in
-Model/Methods.
+E06/M4 remains legitimate future work but is outside the primary Article V1
+evidence set. No E01–E05 rerun, new inference, model change, or artifact change
+is required or authorized.
 
-## Hard boundary
+## Hard scientific boundaries
 
-Do not:
+- Use `243/357` only with the tested-grid aggregate-action definition; never as
+  prevalence or individual-child frequency. Never use legacy `226/357` as the
+  Article V1 result.
+- Do not present E01 or E02 regret translations as independent findings.
+- Define E04 “settling” as final-window argmax classification as authentic in a
+  good context, or use that preferred wording directly.
+- Do not use the E05 binary-softmax/G2 argument to exclude temperature. The
+  displacement is demonstrated; its decomposition is unresolved.
+- Do not explain headline E01–E05 results through non-unit `lambda`; their
+  headline configurations use `lambda=1`.
+- Do not claim complete Git-level source reproducibility for E01–E03.
 
-- run an experiment or introduce new evidence;
-- change models, parameters, defaults, RNG semantics, methods, or comparators;
-- rewrite analytic values or procedural definitions in Results;
-- treat grid coverage as prevalence or natural parameter-space volume;
-- present E04 as a pure context-count effect or E05 as mechanism-identified;
-- use excluded future-work numerical evidence;
-- draft Discussion, Introduction, or a complete manuscript during Stage 3.
-
-Create and freeze only the Results authority, then stop at `RESULTS_FROZEN`.
-Exact responsibilities are in
-[ARTICLE_V1_NEXT_STAGE.md](ARTICLE_V1_NEXT_STAGE.md).
+The architecture stage is complete. In the next stage, follow the prose-reuse
+order exactly: reuse existing prose, compress, correct against current
+authority, then write only genuine gaps. Stop after a complete authority-
+reconciled manuscript-text extraction; do not redesign figures, rerun results,
+or expand scope.

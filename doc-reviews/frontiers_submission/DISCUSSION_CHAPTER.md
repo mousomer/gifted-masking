@@ -1,3 +1,11 @@
+# STALE — DO NOT USE AS ARTICLE V1 AUTHORITY
+
+This document is retained as historical/source material only. Article V1
+claims and numbers are governed by
+`projects/frontiers_article/ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md`,
+`projects/frontiers_article/ARTICLE_V1_EVIDENCE_MATRIX.csv`, and
+`ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md`.
+
 # Discussion: How Risk, Search, and Feedback Make Masking Persist
 
 The central finding is that persistent masking can be learned even when authenticity is the objectively superior policy. This was not a narrow boundary effect. Across the maintained M2 grid, 226 of 357 tested receptivity-by-escape cells (63.3%) were classified as learned suboptimal masking, and the mean learned neutral-state masking probability within those cells was 0.950. The learner repeatedly selected the safe action in large portions of an environment where value iteration favored authenticity. The result establishes a mechanism-level possibility that is absent from trait accounts of concealment: a learner can become persistently hidden from opportunities that are already worth taking because earlier adverse experience restricts access to later corrective evidence.

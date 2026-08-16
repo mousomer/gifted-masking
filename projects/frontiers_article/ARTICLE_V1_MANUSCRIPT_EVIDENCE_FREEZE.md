@@ -2,9 +2,10 @@
 
 **Freeze date:** 15 August 2026
 **Repository:** `gifted-masking`, branch `codex/frontiers-stage2-e06`, HEAD `ea46c9d9bbd39c1bfcd84a9b818d7bd16e30bf32`
-**Scope:** frozen E01–E05 standard evidence only; M0–M3 semantics; Article-V1 manuscript-facing wording
-**Excluded:** M4/E06 numerical results, stochastic reruns, new seeds, new model variants, Track B
+**Scope:** **PRIMARY ARTICLE V1 = E01–E05 ONLY**; M0–M3 semantics; Article-V1 manuscript-facing wording
+**Deferred:** **E06/M4 is deferred from the primary Article V1 manuscript and retained as future work.**
 **Document class:** documentation only. This freeze changes no code, config, artifact, figure, or scientific claim. It fixes the exact evidence, estimand definitions, and maximum defensible wording from which Article-V1 prose may be written.
+**Completion state:** `READY_FOR_SHORT_ARTICLE`
 
 ---
 
@@ -21,6 +22,48 @@ Authority order, highest first:
 5. Frozen artifacts under `results/summaries/`, manifests under `results/manifests/`, configs under `configs/frontiers_article/`, approvals under `projects/frontiers_article/approvals/`.
 
 **Not authorities.** `doc-reviews/frontiers_submission/RESULTS_BY_FINDING_CHAPTER.md`, `doc-reviews/frontiers_submission/DISCUSSION_CHAPTER.md`, and `PAPER_REVISION_NOTES.md` are stale drafting sources. They are retained only as the inventory of claims to be removed or replaced (Section G). No sentence may be carried from them into V1 without re-derivation against this freeze.
+
+### A.1 Editorial scope and next artifact
+
+**PRIMARY ARTICLE V1: E01–E05 ONLY.** E06/M4 is deferred from the primary
+manuscript and retained as future work. This is an editorial scope decision,
+not a finding that E06 is invalid, failed, disproven, unusable, or abandoned.
+E01–E05 already form a complete progression; E06 adds endogenous
+environment–behaviour feedback and would materially expand a concise first
+article into a broader programme report.
+
+The next artifact is a normal short research article of approximately
+6,000–8,000 main-text words, with approximately 1,200–1,600 words of main
+Methods, approximately four to five main figures, and a conclusion of no more
+than two paragraphs. The long Formal Model and Methods authority is preserved
+for later separation into main Methods, Supplementary Methods, and repository
+reproducibility/technical documentation. It is not the intended main-text
+Methods section, and no compression is authorized in this freeze stage.
+
+No new E01–E05 research, numerical inference, result regeneration, or model
+change is required before manuscript construction. The next stage is an
+article skeleton followed by a claim/evidence/figure map; prose drafting does
+not begin in this stage.
+
+### A.2 Scientific spine
+
+Article V1 constructs a progression of ability-concealment learning
+environments in which behavioural findings are evaluated against explicit
+analytic or dynamic-programming objective benchmarks. This makes several
+distinct forms of learned–objective divergence measurable rather than inferred.
+
+| Experiment | Article function |
+|---|---|
+| E01 | adverse-history sampling-trajectory effect |
+| E02 | endpoint-discovery divergence |
+| E03 | dynamic policy-disagreement region |
+| E04 | receptive-context discovery gap |
+| E05 | behavioural/objective threshold displacement |
+
+The conceptual progression is `history -> endpoint discovery -> dynamic
+disagreement -> social discoverability -> boundary displacement`. The bounded
+synthesis is `immediate value != dynamic value != discoverability != learned
+behavioural boundary`.
 
 ---
 
@@ -312,12 +355,17 @@ No Article-V1 sentence may assert any of the following.
 | Frozen E01–E05 numerical evidence | **FROZEN AND VERIFIED** — 10/10 summary artifacts hash-match at freeze time |
 | Estimand and inferential-unit definitions | **FIXED** (Section C) |
 | Maximum defensible wording | **FIXED** (Section D) |
-| E05 G2 / temperature exclusion | **BLOCKER OPEN** — descriptive reporting only (Section E) |
-| M4/E06 scope leakage | **REMOVAL REQUIRED** (Section G) |
-| Stale manuscript sources | **REMOVAL/REWRITE REQUIRED** (Section G) |
+| E05 G2 / temperature exclusion | **RETIRED AS AN ARTICLE-V1 INFERENCE** — descriptive reporting only (Section E) |
+| M4/E06 scope leakage | **RESOLVED BY EDITORIAL SCOPE** — deferred future work only |
+| Stale manuscript sources | **EXPLICITLY RETIRED AS AUTHORITIES**; rewrite later from frozen evidence (Section G) |
 | E01–E03 generator-source provenance | **LIMITATION DOCUMENTED, NOT RESOLVED** (Section F) |
 | E04–E05 generator-source provenance | **RECOVERED** |
 | Interpretation notes | **RECOVERED AND ACTIVE** — G-05 closed; two carve-outs (Section H) |
 | Named Article-V1 authorities | **COMPLETE** — none missing |
 
-Manuscript drafting may proceed **from this document only**, subject to Sections E, G, and I. Any new number entering the manuscript that is not in Section D requires a new adjudicated matrix row; it may not be introduced from prose, memory, or a legacy chapter.
+Article skeleton construction may proceed from this freeze and its subordinate
+authorities. Any later manuscript number not in Section D requires a new
+adjudicated matrix row; it may not be introduced from prose, memory, or a
+legacy chapter.
+
+**Final status:** `READY_FOR_SHORT_ARTICLE`.

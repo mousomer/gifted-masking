@@ -1,3 +1,11 @@
+# STALE — DO NOT USE AS ARTICLE V1 AUTHORITY
+
+This document is retained as historical/source material only. Article V1
+claims and numbers are governed by
+`projects/frontiers_article/ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md`,
+`projects/frontiers_article/ARTICLE_V1_EVIDENCE_MATRIX.csv`, and
+`ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md`.
+
 # Results by Finding: When Optimal Authenticity Remains Unlearned
 
 The simulations produced a clear central result: risky authenticity can generate persistent learned masking even when authenticity is the objectively better policy. This was not a marginal anomaly confined to an indifference boundary. In the maintained M2 phase grid, learned suboptimal masking occupied 226 of 357 tested cells (63.3%), and the mean learned probability of masking in those cells was 0.950. The model ladder then identified mechanisms that enlarged, reduced, or redirected this regime. Negative outcomes discouraged later sampling; heavier weighting of those outcomes amplified avoidance; sticky stigma prolonged their consequences; graded disclosure provided lower-exposure routes for continued exploration; multidimensional context search made receptive settings harder to discover; sufficiently large comparison costs eliminated the advantage of an otherwise welcoming context; and behavior-dependent receptivity made masking self-reinforcing and path-dependent. The analytic results establish where authenticity was objectively preferable. The simulations establish that the tested learners frequently failed to discover or maintain that policy. They do not establish the prevalence of these mechanisms in human students.

@@ -1,3 +1,11 @@
+# STALE — DO NOT USE AS ARTICLE V1 AUTHORITY
+
+This document is retained as historical/source material only. Article V1
+claims and numbers are governed by
+`projects/frontiers_article/ARTICLE_V1_MANUSCRIPT_EVIDENCE_FREEZE.md`,
+`projects/frontiers_article/ARTICLE_V1_EVIDENCE_MATRIX.csv`, and
+`ARTICLE_V1_MODEL_ANALYSIS_CONSISTENCY_AUDIT.md`.
+
 # Paper Revision Notes
 
 ## Assertive findings revision (2026-08-10)
