@@ -184,8 +184,10 @@ The E06 items below are preserved history/backlog, not active Article-V1 work.
 - [x] Freeze the ten-stage dependency order, chapter responsibilities, gates,
       future-work boundary, and exact Stage 2 hand-off in
       `ARTICLE_V1_MASTER_PLAN.md` and `ARTICLE_V1_NEXT_STAGE.md`.
-- [ ] Stage 2 manuscript work: create and freeze the Formal Model / Methods
-      authority; do not draft Results or a complete manuscript.
+- [x] Stage 2 manuscript work: create and freeze the Formal Model / Methods
+      authority without drafting Results or a complete manuscript.
+- [ ] Stage 3 manuscript work: create and freeze the Results authority from
+      frozen E01–E05 artifacts without redefining model or method semantics.
 
 ## Stage 4 — Materials And Methods
 
