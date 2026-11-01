@@ -10,6 +10,8 @@
   results remain the authority for hosted execution status.
 - [x] Classify hosted failures with bounded source-test identifiers without
   publishing raw logs, exception messages, paths or assertion values.
+- [x] Run the hosted shell verifier on Ubuntu with zsh and fixed guard-reason
+  diagnostics; preserve every scientific stop limit and verifier obligation.
 
 ## Software verification isolation
 

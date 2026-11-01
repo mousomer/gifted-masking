@@ -1,4 +1,4 @@
-> Hosted verification is configured for macOS/Python 3.14.8 using the same full
+> Hosted verification is configured for Ubuntu 24.04/zsh/Python 3.14.8 using the same full
 > software verifier and exact dependency pins. It keeps generated results and
 > raw verifier logs on the disposable runner, with no upload/cache/secret input.
 > A hosted run remains unobserved until the workflow is published and executed.

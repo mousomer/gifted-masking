@@ -183,7 +183,7 @@ assignments; the shared installer owns only its marker-delimited dispatcher.
 ## Hosted offline software verification
 
 The GitHub Actions workflow runs the existing `scripts/verify.sh` obligations on
-macOS with Python 3.14.8. `GOVERNANCE_PYTHON` selects that hosted interpreter for
+Ubuntu 24.04 with zsh and Python 3.14.8. `GOVERNANCE_PYTHON` selects that hosted interpreter for
 both governance and product verification; local execution retains its existing
 shared-interpreter default. The selected interpreter must be executable, and a
 failed governance hook stops product execution.
@@ -199,6 +199,8 @@ holds the full raw log until it is discarded.
 Failure reporting emits only a fixed category and test identifiers independently
 read from the published test source. Exception messages, paths, assertion values
 and arbitrary log text are never copied into the Actions step log.
+Known guard messages map to fixed reason codes for diagnosis. Hosted runner
+selection does not alter scientific stop limits or skip verifier obligations.
 
 Acceptance requires the same complete verifier to pass locally, rejection of an
 unavailable interpreter or failed governance hook, and source-only review of the

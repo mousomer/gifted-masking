@@ -25,3 +25,17 @@ class CIFailureSummaryTests(unittest.TestCase):
                     "ValueError: invented runtime value\n")
             self.assertEqual(summarize(text, Path(temporary)),
                              ["CI failure category: verifier-command"])
+
+    def test_known_guard_reason_never_echoes_measured_values(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            tests = Path(temporary)
+            (tests / "test_example.py").write_text(
+                "class ExampleTests:\n    def test_example(self): pass\n")
+            text = ("ERROR: test_example (test_example.ExampleTests.test_example)\n"
+                    "RuntimeError: linear standard runtime projection exceeded 10 minutes; "
+                    "invented measured value\n")
+            self.assertEqual(summarize(text, tests), [
+                "CI failure category: unit-test",
+                "failed-test: test_example.ExampleTests.test_example [RuntimeError]",
+                "guard-reason: runtime-projection-limit",
+            ])

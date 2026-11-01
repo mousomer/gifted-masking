@@ -8,6 +8,14 @@ import sys
 LIMIT = 2 * 1024 * 1024
 ERROR_TYPES = {"AssertionError", "CalledProcessError", "FileNotFoundError", "ImportError",
                "ModuleNotFoundError", "PermissionError", "RuntimeError", "TypeError", "ValueError"}
+GUARD_REASONS = {
+    "linear standard runtime projection exceeded 10 minutes": "runtime-projection-limit",
+    "smoke runtime exceeded 60 seconds": "smoke-runtime-limit",
+    "smoke raw output exceeded 20 MiB": "smoke-size-limit",
+    "E04 canonicalization cardinality violation": "canonicalization-cardinality",
+    "E04 equivalence table must name exactly 55 canonical requests": "equivalence-cardinality",
+    "E04 tier cardinality mismatch": "tier-cardinality",
+}
 
 
 def summarize(text, tests):
@@ -29,6 +37,8 @@ def summarize(text, tests):
             if candidate in ERROR_TYPES:
                 category = candidate
         failures.append(f"failed-test: {match[1]} [{category}]")
+        failures.extend("guard-reason: " + code for message, code in GUARD_REASONS.items()
+                        if message in section)
     return ["CI failure category: " + ("unit-test" if failures else "verifier-command"),
             *failures[:20]]
 
