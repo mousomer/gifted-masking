@@ -1,0 +1,52 @@
+name: Offline software verification
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - codex/frontiers-stage2-e06
+      - codex/harness-pack-software-only
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-verification-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Select Python
+        id: python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.8'
+      - name: Install pinned verification dependencies
+        run: |
+          python -m pip install --disable-pip-version-check --no-cache-dir --only-binary=:all: --no-deps -r requirements-ci.txt
+          python -m pip check
+      - name: Run existing offline verifier
+        env:
+          GOVERNANCE_PYTHON: ${{ steps.python.outputs.python-path }}
+          MPLBACKEND: Agg
+          MPLCONFIGDIR: ${{ runner.temp }}/gifted-matplotlib
+        run: |
+          log_path="$RUNNER_TEMP/gifted-verification.log"
+          set +e
+          ./scripts/verify.sh > "$log_path" 2>&1
+          verification_status=$?
+          set -e
+          if [ "$verification_status" -ne 0 ]; then
+            echo "Offline software verification failed (exit $verification_status). Raw logs remain on the disposable runner."
+            exit "$verification_status"
+          fi
+          echo "Offline software verification passed."

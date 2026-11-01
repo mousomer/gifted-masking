@@ -1,3 +1,8 @@
+> Hosted verification is configured for macOS/Python 3.14.8 using the same full
+> software verifier and exact dependency pins. It keeps generated results and
+> raw verifier logs on the disposable runner, with no upload/cache/secret input.
+> A hosted run remains unobserved until the workflow is published and executed.
+
 > Software-only governance adoption: distribution 1.4.0/runtime 0.7.0 uses the
 > published source baseline and retains every original verifier obligation.
 > Unit output/source fixtures are isolated. Later local research history,

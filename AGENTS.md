@@ -41,6 +41,9 @@ The scientific goal is to verify whether the simulated claims are mathematically
     commands, verification, installs, and experiment runs. Treat system Python
     as bootstrap-only only if the workspace venv itself must be repaired; do not
     create repo-local virtual environments without explicit user approval.
+    The checked-in GitHub Actions workflow is the hosted-CI exception: it uses
+    its pinned setup-python interpreter through `GOVERNANCE_PYTHON`. This does
+    not change the required shared interpreter for local work.
 
 ## Environment rules
 

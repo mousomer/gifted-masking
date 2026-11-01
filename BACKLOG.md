@@ -1,5 +1,14 @@
 # Backlog
 
+## Hosted software verification
+
+- [x] Add a pinned, read-only GitHub Actions workflow for the existing offline
+  software verifier, with ephemeral outputs and no artifact publication.
+- [x] Allow the explicitly selected hosted interpreter without changing local
+  shared-environment policy or any original verifier obligation.
+- [x] Expose the existing offline verifier as a pull-request check; Actions run
+  results remain the authority for hosted execution status.
+
 ## Software verification isolation
 
 - E06 mechanism tests isolate source/Git fixtures and source-freshness mutations.

@@ -6,10 +6,10 @@ GOVERNANCE_REPO_ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-VENV_PYTHON="/Users/omer/workspace/venvs/venv314/bin/python"
+VENV_PYTHON="${GOVERNANCE_PYTHON:-${HOME}/workspace/venvs/venv314/bin/python}"
 
 if [[ ! -x "$VENV_PYTHON" ]]; then
-  echo "Missing required workspace Python: $VENV_PYTHON" >&2
+  echo "Selected verification Python is unavailable" >&2
   exit 1
 fi
 

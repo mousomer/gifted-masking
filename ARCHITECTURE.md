@@ -179,3 +179,25 @@ their existing owners.
 
 AGENTS.md owns its historical-example fence boundaries. Examples are not active
 assignments; the shared installer owns only its marker-delimited dispatcher.
+
+## Hosted offline software verification
+
+The GitHub Actions workflow runs the existing `scripts/verify.sh` obligations on
+macOS with Python 3.14.8. `GOVERNANCE_PYTHON` selects that hosted interpreter for
+both governance and product verification; local execution retains its existing
+shared-interpreter default. The selected interpreter must be executable, and a
+failed governance hook stops product execution.
+
+The workflow installs only the exact verification dependency pins from
+`requirements-ci.txt`, then runs tests and the existing generated robustness
+checks. It does not collect private inputs, run model downloads, seal scientific
+evidence, or execute separately gated standard/qualification configurations.
+`results/` and the full verification log stay on the disposable runner. No cache,
+artifact upload, credentials, or secret inputs are configured. The Actions step
+log contains only bounded verification status; the disposable hosted runner
+holds the full raw log until it is discarded.
+
+Acceptance requires the same complete verifier to pass locally, rejection of an
+unavailable interpreter or failed governance hook, and source-only review of the
+workflow and dependency pins. A hosted result is additional software evidence;
+it does not adjudicate scientific claims or refresh a scientific package.
