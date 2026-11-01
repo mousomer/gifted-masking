@@ -47,6 +47,7 @@ jobs:
           set -e
           if [ "$verification_status" -ne 0 ]; then
             echo "Offline software verification failed (exit $verification_status). Raw logs remain on the disposable runner."
+            python scripts/ci_failure_summary.py "$log_path"
             exit "$verification_status"
           fi
           echo "Offline software verification passed."

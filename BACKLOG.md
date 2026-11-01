@@ -8,6 +8,8 @@
   shared-environment policy or any original verifier obligation.
 - [x] Expose the existing offline verifier as a pull-request check; Actions run
   results remain the authority for hosted execution status.
+- [x] Classify hosted failures with bounded source-test identifiers without
+  publishing raw logs, exception messages, paths or assertion values.
 
 ## Software verification isolation
 

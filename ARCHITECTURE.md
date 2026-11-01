@@ -196,6 +196,9 @@ evidence, or execute separately gated standard/qualification configurations.
 artifact upload, credentials, or secret inputs are configured. The Actions step
 log contains only bounded verification status; the disposable hosted runner
 holds the full raw log until it is discarded.
+Failure reporting emits only a fixed category and test identifiers independently
+read from the published test source. Exception messages, paths, assertion values
+and arbitrary log text are never copied into the Actions step log.
 
 Acceptance requires the same complete verifier to pass locally, rejection of an
 unavailable interpreter or failed governance hook, and source-only review of the
