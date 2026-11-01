@@ -12,6 +12,8 @@
   publishing raw logs, exception messages, paths or assertion values.
 - [x] Run the hosted shell verifier on Ubuntu with zsh and fixed guard-reason
   diagnostics; preserve every scientific stop limit and verifier obligation.
+- [x] Validate feature branches through the full PR job and published branches
+  through push jobs, avoiding duplicate feature push/PR executions.
 
 ## Software verification isolation
 

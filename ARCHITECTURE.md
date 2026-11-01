@@ -201,6 +201,10 @@ read from the published test source. Exception messages, paths, assertion values
 and arbitrary log text are never copied into the Actions step log.
 Known guard messages map to fixed reason codes for diagnosis. Hosted runner
 selection does not alter scientific stop limits or skip verifier obligations.
+Feature branches run the full verifier through pull requests. Pushes to `main`
+and the published source branch also run it. The feature branch does not launch
+a duplicate push job alongside its PR job; timing-sensitive admission guards
+remain enforced in every selected run.
 
 Acceptance requires the same complete verifier to pass locally, rejection of an
 unavailable interpreter or failed governance hook, and source-only review of the

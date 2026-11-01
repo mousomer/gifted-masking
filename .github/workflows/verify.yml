@@ -6,7 +6,6 @@ on:
     branches:
       - main
       - codex/frontiers-stage2-e06
-      - codex/harness-pack-software-only
 
 permissions:
   contents: read
