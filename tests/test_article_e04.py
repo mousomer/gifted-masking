@@ -4,6 +4,8 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest import mock
 
 import numpy as np
 
@@ -30,6 +32,7 @@ from gifted_masking.experiments.e04 import (
     validate_e04_effects,
 )
 from gifted_masking.models import m3
+from gifted_masking.experiments import e04
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,6 +48,19 @@ class ArticleE04Tests(unittest.TestCase):
         config = copy.deepcopy(self.config)
         config["n"], config["T"] = 8, 30
         return config
+
+    def _timed_fixture(self, output, elapsed):
+        # Replace only this module's clock, leaving real process timing intact.
+        # Fixture timings prove guard logic, never actual machine qualification.
+        clock = SimpleNamespace(perf_counter=mock.Mock(side_effect=[0.0, elapsed]))
+        with mock.patch.object(e04, "time", clock):
+            return run_e04_experiment(SMOKE, output)
+
+    def test_runtime_projection_guard_rejects_controlled_over_budget_fixture(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            with self.assertRaisesRegex(RuntimeError,
+                                        "linear standard runtime projection exceeded 10 minutes"):
+                self._timed_fixture(Path(temporary), elapsed=5.0)
 
     def test_frozen_config_and_e04_standard_refusal(self):
         self.assertEqual(self.config["run_id"], "frontiers_m3_search_architectures_v1_smoke")
@@ -192,8 +208,8 @@ class ArticleE04Tests(unittest.TestCase):
 
     def test_adversarial_raw_curve_effect_and_normalized_manifest_rejection(self):
         with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
-            first_outputs = run_e04_experiment(SMOKE, Path(first))
-            second_outputs = run_e04_experiment(SMOKE, Path(second))
+            first_outputs = self._timed_fixture(Path(first), elapsed=1.0)
+            second_outputs = self._timed_fixture(Path(second), elapsed=1.0)
             self.assertEqual(normalize_e04_machine_artifacts(first_outputs), normalize_e04_machine_artifacts(second_outputs))
             self.assertLessEqual(float(json.loads(first_outputs["manifest"].read_text())["standard_readiness"]["projected_runtime_minutes"]), 10.0)
             with first_outputs["raw"].open() as handle: raw = list(csv.DictReader(handle))

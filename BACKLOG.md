@@ -14,6 +14,8 @@
   diagnostics; preserve every scientific stop limit and verifier obligation.
 - [x] Validate feature branches through the full PR job and published branches
   through push jobs, avoiding duplicate feature push/PR executions.
+- [x] Isolate E04 adversarial fixtures from wall-clock noise and explicitly
+  verify over-budget refusal without changing production timing or limits.
 
 ## Software verification isolation
 

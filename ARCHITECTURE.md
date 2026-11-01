@@ -206,6 +206,13 @@ and the published source branch also run it. The feature branch does not launch
 a duplicate push job alongside its PR job; timing-sensitive admission guards
 remain enforced in every selected run.
 
+E04's adversarial data-validation fixture uses a controlled module-local clock.
+Its purpose is to validate raw/derived artifacts and normalized provenance, not
+to qualify a shared runner's physical speed. A separate controlled over-budget
+case proves the existing runtime-projection refusal. Production clock reads,
+configurations, stop limits and scientific execution approvals are unchanged;
+software CI does not establish real-machine capacity or scientific qualification.
+
 Acceptance requires the same complete verifier to pass locally, rejection of an
 unavailable interpreter or failed governance hook, and source-only review of the
 workflow and dependency pins. A hosted result is additional software evidence;
