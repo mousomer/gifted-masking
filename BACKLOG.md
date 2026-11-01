@@ -1,5 +1,14 @@
 # Backlog
 
+## Software verification isolation
+
+- E06 mechanism tests isolate source/Git fixtures and source-freshness mutations.
+- M2 determinism tests isolate generated outputs from canonical results.
+- Governance adoption certifies declared software checks only. Scientific
+  package sealing, standard/qualification execution, and claim acceptance keep
+  their existing separate gates; this update imports no later local research
+  history, derived artifacts, or real scientific records.
+
 ## Completed In This Restructure
 
 - [x] Preserve legacy scripts instead of deleting them.

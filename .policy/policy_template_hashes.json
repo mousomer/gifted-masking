@@ -1,0 +1,10 @@
+{
+  "excluded_custom_scripts": [],
+  "hash_algorithm": "sha256",
+  "policy_version": "1.1.3",
+  "templates": {
+    "scripts/check_git_sanitation.sh": "8ca954fda1c9fa04565e9eece747d83f0d0257d8cdda90b18bd14471a04bd7af",
+    "scripts/check_policy_compliance.sh": "9ca9725f88a31253d556c2e2a557264f66ddb45870e4cd5dcc87efd3ea9b7484",
+    "scripts/check_policy_template_drift.sh": "2cf3d14d7ffdfa710aff8b68c7e515f5a94f1c446095a1183d3a138018710a4f"
+  }
+}

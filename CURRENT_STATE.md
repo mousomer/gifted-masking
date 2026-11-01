@@ -1,3 +1,9 @@
+> Software-only governance adoption: distribution 1.4.0/runtime 0.7.0 uses the
+> published source baseline and retains every original verifier obligation.
+> Unit output/source fixtures are isolated. Later local research history,
+> scientific records and derived artifacts are outside this update; existing
+> scientific execution, sealing and review gates remain unchanged.
+
 # Current State
 
 ## Repository Status

@@ -3,11 +3,16 @@ import csv
 import hashlib
 import json
 import os
+import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import numpy as np
+from gifted_masking.experiments import e06
 
 from gifted_masking.experiments.e06 import (
     RAW_FIELDS, derive_segment_seed, derive_tables, expected_rows, invert_transition,
@@ -30,6 +35,34 @@ QUALIFICATION = ROOT / "configs/frontiers_article/e06_m4_hysteresis_qualificatio
 
 class E06Tests(unittest.TestCase):
     def setUp(self):
+        # A fixture is a software test input, never a replacement scientific
+        # package, approval, or record. Only published source inputs are copied.
+        original_root = ROOT
+        root = Path(self.enterContext(tempfile.TemporaryDirectory(prefix="e06_unit_")))
+        originals = {}
+        for relative in e06.SOURCE_FINGERPRINT_PATHS:
+            source = original_root / relative
+            originals[relative] = (hashlib.sha256(source.read_bytes()).hexdigest(), source.stat().st_mtime_ns)
+            target = root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+        def originals_unchanged():
+            for relative, expected in originals.items():
+                source = original_root / relative
+                self.assertEqual((hashlib.sha256(source.read_bytes()).hexdigest(), source.stat().st_mtime_ns),
+                                 expected, f"source input changed: {relative}")
+        self.addCleanup(originals_unchanged)
+        git = ["git", "-c", "core.hooksPath=/dev/null", "-C", str(root)]
+        subprocess.run([*git, "init", "--quiet"], check=True, capture_output=True)
+        subprocess.run([*git, "add", "."], check=True, capture_output=True)
+        subprocess.run([*git, "-c", "user.name=E06 test fixture",
+                        "-c", "user.email=e06-test@example.invalid", "commit", "--quiet", "-m", "Fixture inputs"],
+                       check=True, capture_output=True)
+        self.enterContext(mock.patch.object(e06, "__file__", str(root / "src/gifted_masking/experiments/e06.py")))
+        self.enterContext(mock.patch.multiple(sys.modules[__name__], ROOT=root,
+            SMOKE=root / "configs/frontiers_article/e06_m4_paths_smoke.json",
+            STANDARD=root / "configs/frontiers_article/e06_m4_paths_standard.json",
+            QUALIFICATION=root / "configs/frontiers_article/e06_m4_hysteresis_qualification.json"))
         self.config = load_e06_config(SMOKE)
 
     def test_frozen_configs_and_dispatch_refusal(self):
@@ -40,6 +73,7 @@ class E06Tests(unittest.TestCase):
             run_e06_experiment(STANDARD, ROOT / "results")
         with self.assertRaises(PermissionError):
             run_e06_experiment(QUALIFICATION, ROOT / "results")
+        self.assertFalse((ROOT / "results").exists())
         duplicate = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False)
         duplicate.write('{"experiment_id":"E06","experiment_id":"E06"}')
         duplicate.close()

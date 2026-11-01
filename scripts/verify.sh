@@ -1,4 +1,8 @@
 #!/bin/zsh
+# BEGIN workspace-governance managed verification
+GOVERNANCE_REPO_ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+"$GOVERNANCE_REPO_ROOT/scripts/verify-governance.sh" || exit "$?"
+# END workspace-governance managed verification
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"

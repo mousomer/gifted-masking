@@ -10,3 +10,15 @@ zips/
 results/
 .codex_write_probe
 .codex_patch_probe
+
+# Workspace governance local state and sanitation baseline
+.vscode/
+.idea/
+Thumbs.db
+*.log
+tmp/
+temp/
+node_modules/
+dist/
+build/
+.governance/workspace.local.json

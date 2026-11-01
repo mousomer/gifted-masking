@@ -1,0 +1,172 @@
+{
+  "artifact_roles": {
+    "ARCHITECTURE.md": "product_authority",
+    "README.md": "product_authority",
+    "docs/workspace_governance_adoption.md": "generated"
+  },
+  "authorities": [
+    {
+      "authority_id": "workspace-baseline",
+      "authority_type": "human",
+      "canonical_governance": true,
+      "exclusive": true,
+      "scope": "workspace-governance-baseline",
+      "source": "tools/workspace_governance/policies/workspace_baseline.md",
+      "source_type": "file"
+    },
+    {
+      "authority_id": "project-source-1",
+      "authority_type": "human",
+      "canonical_governance": false,
+      "exclusive": false,
+      "scope": "project-source-1",
+      "source": "ARCHITECTURE.md",
+      "source_type": "file"
+    },
+    {
+      "authority_id": "project-source-2",
+      "authority_type": "human",
+      "canonical_governance": false,
+      "exclusive": false,
+      "scope": "project-source-2",
+      "source": "README.md",
+      "source_type": "file"
+    }
+  ],
+  "canonical_owner_set": {
+    "owners": {
+      "workspace-baseline": "tools/workspace_governance/policies/workspace_baseline.md"
+    }
+  },
+  "environment": {
+    "interpreter_override": "GOVERNANCE_PYTHON",
+    "preferred": ".governance/python",
+    "profile": "tools",
+    "route_tools": {}
+  },
+  "execution": {
+    "default_mode": "FEATURE",
+    "profiles": {
+      "FEATURE": {
+        "exploration": [
+          "Inspect the owner, neighbouring contracts and bounded design surface."
+        ],
+        "final_evidence_rule": "Use the declared project verifier and evidence required by actual impact.",
+        "routes": [
+          "development"
+        ]
+      },
+      "LOCAL_FIX": {
+        "exploration": [
+          "Inspect the minimum owning path and direct tests; expand from evidence."
+        ],
+        "final_evidence_rule": "Use the declared project verifier and evidence required by actual impact.",
+        "routes": [
+          "development"
+        ]
+      },
+      "STRUCTURAL_CHANGE": {
+        "exploration": [
+          "Inspect authorities, migration, routing and affected consumers."
+        ],
+        "final_evidence_rule": "Use the declared project verifier and evidence required by actual impact.",
+        "routes": [
+          "governance"
+        ]
+      }
+    },
+    "representative_scenarios": []
+  },
+  "generated_surfaces": [],
+  "project": {
+    "id": "gifted-masking",
+    "name": "gifted-masking"
+  },
+  "required_authorities": [
+    "workspace-baseline",
+    "project-source-1",
+    "project-source-2"
+  ],
+  "role_bootstrap": {
+    "instruction_roots": [
+      "AGENTS.md",
+      "CLAUDE.md"
+    ]
+  },
+  "routes": {
+    "development": {
+      "authority_refs": [
+        "workspace-baseline",
+        "project-source-1",
+        "project-source-2"
+      ],
+      "dispatch_paths": [
+        "AGENTS.md"
+      ],
+      "typical_verification_requirements": [
+        "governance_structure",
+        "project_checks"
+      ]
+    },
+    "governance": {
+      "authority_refs": [
+        "workspace-baseline",
+        "project-source-1",
+        "project-source-2"
+      ],
+      "dispatch_paths": [
+        "AGENTS.md"
+      ],
+      "typical_verification_requirements": [
+        "governance_structure",
+        "project_checks"
+      ]
+    }
+  },
+  "sanitation": {
+    "bounded_diagnostics": 25,
+    "repository_check": "scripts/check_git_sanitation.sh",
+    "secret_scanner": "tools/workspace_governance/sanitation.py"
+  },
+  "schema_version": 1,
+  "skill_adapters": [
+    {
+      "name": "governance-context",
+      "path": ".agents/skills/governance-context/SKILL.md",
+      "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+      "sha256": "013a4a955f5272545c9d000b0514fa10458dc1a31314ab4d3dfd1f6f2bfea9f9",
+      "target": "tools/workspace_governance/skills/governance-context/SKILL.md"
+    },
+    {
+      "name": "governance-context",
+      "path": ".claude/skills/governance-context/SKILL.md",
+      "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+      "sha256": "013a4a955f5272545c9d000b0514fa10458dc1a31314ab4d3dfd1f6f2bfea9f9",
+      "target": "tools/workspace_governance/skills/governance-context/SKILL.md"
+    },
+    {
+      "name": "governance-maintenance",
+      "path": ".agents/skills/governance-maintenance/SKILL.md",
+      "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+      "sha256": "fd416bb129ee2a2c758537a238adf09a0615694c951d4ced029fa5bab76af10b",
+      "target": "tools/workspace_governance/skills/governance-maintenance/SKILL.md"
+    },
+    {
+      "name": "governance-maintenance",
+      "path": ".claude/skills/governance-maintenance/SKILL.md",
+      "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+      "sha256": "fd416bb129ee2a2c758537a238adf09a0615694c951d4ced029fa5bab76af10b",
+      "target": "tools/workspace_governance/skills/governance-maintenance/SKILL.md"
+    }
+  ],
+  "verification": {
+    "canonical": {
+      "command": "./scripts/verify.sh"
+    },
+    "full": {
+      "command": "./scripts/verify.sh"
+    },
+    "rule": "Compose declared route, task, diff, claim, contract and risk evidence. Existing stronger verification and human/platform acceptance continue to apply.",
+    "targeted": "./scripts/verify.sh"
+  }
+}

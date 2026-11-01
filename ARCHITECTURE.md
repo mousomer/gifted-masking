@@ -166,3 +166,16 @@ scientific hashes, focused evidence, and deterministic-regeneration evidence.
 It updates report item 12 and the manifest atomically only after validation;
 it never regenerates scientific artifacts. The canonical package remains
 unsealed until the user-owned round-2 verification supplies that evidence.
+
+## Verification and instruction isolation
+
+E06 mechanism tests use disposable copies of the published source/configuration
+inputs and Git state. Freshness mutations stay inside those fixtures. These unit
+fixtures never refresh, authorize, or seal repository scientific packages; the
+existing standard and qualification refusals remain unchanged. M2 deterministic
+output tests use temporary result roots and protect canonical output bytes and
+timestamps. Production model, reward, RNG, parameter, and evidence rules retain
+their existing owners.
+
+AGENTS.md owns its historical-example fence boundaries. Examples are not active
+assignments; the shared installer owns only its marker-delimited dispatcher.
