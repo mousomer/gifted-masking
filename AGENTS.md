@@ -41,6 +41,9 @@ The scientific goal is to verify whether the simulated claims are mathematically
     commands, verification, installs, and experiment runs. Treat system Python
     as bootstrap-only only if the workspace venv itself must be repaired; do not
     create repo-local virtual environments without explicit user approval.
+    The checked-in GitHub Actions workflow is the hosted-CI exception: it uses
+    its pinned setup-python interpreter through `GOVERNANCE_PYTHON`. This does
+    not change the required shared interpreter for local work.
 
 ## Environment rules
 
@@ -403,11 +406,16 @@ risk if ignored.
 
 ---
 
+## Historical task templates (examples, not current assignments)
+
+The following prompts are retained examples. They do not authorize execution or
+restrict a later explicit task. Active shared dispatch resumes after them.
+
 # 2. One-off Codex task prompt
 
 Paste this as the actual Codex task after the repo has the three files available.
 
-```markdown
+````markdown
 Review the simulation code in this repository and produce a robust simulation plan.
 
 There are three simulation-related files. If their names are obvious from the repo tree, identify them yourself. If more than three candidates exist, inspect the repo and select the three files that implement the model logic, experiment/sweep logic, and plotting/output logic. State which three files you selected and why.
@@ -643,6 +651,7 @@ results/
   summaries/
   figures/
   reports/
+```
 
 Each run should produce:
 
@@ -679,6 +688,7 @@ tests/test_reproducibility.py
 
 Do not refactor the simulation code yet. End with a concise summary of the top five blockers and the exact next Codex task that should be run after this review.
 
+````
 
 ---
 
@@ -686,7 +696,7 @@ Do not refactor the simulation code yet. End with a concise summary of the top f
 
 Use this after you inspect `CODE_REVIEW.md`.
 
-```markdown
+````markdown
 Now implement only the low-risk robustness infrastructure from the review.
 
 Scope allowed:
@@ -713,3 +723,11 @@ After changes:
 - show the diff,
 - summarize any behavior changes,
 - state whether deterministic reruns match exactly.
+````
+
+<!-- BEGIN workspace-governance managed dispatch -->
+Use `./gov check` before work and `./gov resolve` for governed context.
+The adopted pack is pinned in `.governance/fleet.json`. Existing local
+instructions and stronger verification duties continue to apply.
+Run the declared project verifier; its managed hook checks the pack first.
+<!-- END workspace-governance managed dispatch -->

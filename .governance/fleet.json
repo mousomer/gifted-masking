@@ -1,0 +1,62 @@
+{
+  "authorities": [
+    "ARCHITECTURE.md",
+    "README.md"
+  ],
+  "execution_environment_binding": {
+    "sha256": "4cdfc1c2bcd6d47f395a18942b17052971e5af57d314ed23fb6c7570f8c66827",
+    "source": "private-registry",
+    "version": "workspace-governance-execution-v2"
+  },
+  "instruction_aliases": {},
+  "integration_mode": "direct",
+  "profile": "tools",
+  "release": {
+    "name": "workspace/policy-kit",
+    "revision": "v0.7-harness-repair-1",
+    "version": "1.4.0"
+  },
+  "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+  "schema_version": 1,
+  "skill_adapters": [
+    {
+      "name": "governance-context",
+      "path": ".agents/skills/governance-context/SKILL.md",
+      "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+      "sha256": "013a4a955f5272545c9d000b0514fa10458dc1a31314ab4d3dfd1f6f2bfea9f9",
+      "target": "tools/workspace_governance/skills/governance-context/SKILL.md"
+    },
+    {
+      "name": "governance-context",
+      "path": ".claude/skills/governance-context/SKILL.md",
+      "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+      "sha256": "013a4a955f5272545c9d000b0514fa10458dc1a31314ab4d3dfd1f6f2bfea9f9",
+      "target": "tools/workspace_governance/skills/governance-context/SKILL.md"
+    },
+    {
+      "name": "governance-maintenance",
+      "path": ".agents/skills/governance-maintenance/SKILL.md",
+      "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+      "sha256": "fd416bb129ee2a2c758537a238adf09a0615694c951d4ced029fa5bab76af10b",
+      "target": "tools/workspace_governance/skills/governance-maintenance/SKILL.md"
+    },
+    {
+      "name": "governance-maintenance",
+      "path": ".claude/skills/governance-maintenance/SKILL.md",
+      "release_manifest_sha256": "f4500302c2cee58966055cfc906f146b51f841d3807c5a293870322b615a9373",
+      "sha256": "fd416bb129ee2a2c758537a238adf09a0615694c951d4ced029fa5bab76af10b",
+      "target": "tools/workspace_governance/skills/governance-maintenance/SKILL.md"
+    }
+  ],
+  "verification": {
+    "argv": [
+      "./scripts/verify.sh"
+    ],
+    "runner": {
+      "governance_runner": "scripts/verify-governance.sh",
+      "kind": "shell",
+      "path": "scripts/verify.sh"
+    },
+    "source": "scripts/verify.sh (existing canonical runner; body preserved)"
+  }
+}

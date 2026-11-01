@@ -166,3 +166,54 @@ scientific hashes, focused evidence, and deterministic-regeneration evidence.
 It updates report item 12 and the manifest atomically only after validation;
 it never regenerates scientific artifacts. The canonical package remains
 unsealed until the user-owned round-2 verification supplies that evidence.
+
+## Verification and instruction isolation
+
+E06 mechanism tests use disposable copies of the published source/configuration
+inputs and Git state. Freshness mutations stay inside those fixtures. These unit
+fixtures never refresh, authorize, or seal repository scientific packages; the
+existing standard and qualification refusals remain unchanged. M2 deterministic
+output tests use temporary result roots and protect canonical output bytes and
+timestamps. Production model, reward, RNG, parameter, and evidence rules retain
+their existing owners.
+
+AGENTS.md owns its historical-example fence boundaries. Examples are not active
+assignments; the shared installer owns only its marker-delimited dispatcher.
+
+## Hosted offline software verification
+
+The GitHub Actions workflow runs the existing `scripts/verify.sh` obligations on
+Ubuntu 24.04 with zsh and Python 3.14.8. `GOVERNANCE_PYTHON` selects that hosted interpreter for
+both governance and product verification; local execution retains its existing
+shared-interpreter default. The selected interpreter must be executable, and a
+failed governance hook stops product execution.
+
+The workflow installs only the exact verification dependency pins from
+`requirements-ci.txt`, then runs tests and the existing generated robustness
+checks. It does not collect private inputs, run model downloads, seal scientific
+evidence, or execute separately gated standard/qualification configurations.
+`results/` and the full verification log stay on the disposable runner. No cache,
+artifact upload, credentials, or secret inputs are configured. The Actions step
+log contains only bounded verification status; the disposable hosted runner
+holds the full raw log until it is discarded.
+Failure reporting emits only a fixed category and test identifiers independently
+read from the published test source. Exception messages, paths, assertion values
+and arbitrary log text are never copied into the Actions step log.
+Known guard messages map to fixed reason codes for diagnosis. Hosted runner
+selection does not alter scientific stop limits or skip verifier obligations.
+Feature branches run the full verifier through pull requests. Pushes to `main`
+and the published source branch also run it. The feature branch does not launch
+a duplicate push job alongside its PR job; timing-sensitive admission guards
+remain enforced in every selected run.
+
+E04's adversarial data-validation fixture uses a controlled module-local clock.
+Its purpose is to validate raw/derived artifacts and normalized provenance, not
+to qualify a shared runner's physical speed. A separate controlled over-budget
+case proves the existing runtime-projection refusal. Production clock reads,
+configurations, stop limits and scientific execution approvals are unchanged;
+software CI does not establish real-machine capacity or scientific qualification.
+
+Acceptance requires the same complete verifier to pass locally, rejection of an
+unavailable interpreter or failed governance hook, and source-only review of the
+workflow and dependency pins. A hosted result is additional software evidence;
+it does not adjudicate scientific claims or refresh a scientific package.

@@ -1,5 +1,31 @@
 # Backlog
 
+## Hosted software verification
+
+- [x] Add a pinned, read-only GitHub Actions workflow for the existing offline
+  software verifier, with ephemeral outputs and no artifact publication.
+- [x] Allow the explicitly selected hosted interpreter without changing local
+  shared-environment policy or any original verifier obligation.
+- [x] Expose the existing offline verifier as a pull-request check; Actions run
+  results remain the authority for hosted execution status.
+- [x] Classify hosted failures with bounded source-test identifiers without
+  publishing raw logs, exception messages, paths or assertion values.
+- [x] Run the hosted shell verifier on Ubuntu with zsh and fixed guard-reason
+  diagnostics; preserve every scientific stop limit and verifier obligation.
+- [x] Validate feature branches through the full PR job and published branches
+  through push jobs, avoiding duplicate feature push/PR executions.
+- [x] Isolate E04 adversarial fixtures from wall-clock noise and explicitly
+  verify over-budget refusal without changing production timing or limits.
+
+## Software verification isolation
+
+- E06 mechanism tests isolate source/Git fixtures and source-freshness mutations.
+- M2 determinism tests isolate generated outputs from canonical results.
+- Governance adoption certifies declared software checks only. Scientific
+  package sealing, standard/qualification execution, and claim acceptance keep
+  their existing separate gates; this update imports no later local research
+  history, derived artifacts, or real scientific records.
+
 ## Completed In This Restructure
 
 - [x] Preserve legacy scripts instead of deleting them.

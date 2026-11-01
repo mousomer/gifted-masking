@@ -1,6 +1,8 @@
 import csv
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import numpy as np
 
@@ -17,6 +19,10 @@ from gifted_masking.models import m2
 from scripts import benchmark_m2_optimal_policy
 from scripts import analyze_m2_regimes
 from scripts import map_m2_lock_in_regions
+
+
+def canonical_state(path):
+    return (path.read_bytes(), path.stat().st_mtime_ns) if path.exists() else None
 
 
 class M2OptimalPolicyTests(unittest.TestCase):
@@ -44,14 +50,18 @@ class M2OptimalPolicyTests(unittest.TestCase):
         self.assertAlmostEqual(high["auth_advantage"], 0.4)
 
     def test_benchmark_output_is_deterministic(self):
-        benchmark_m2_optimal_policy.main()
-        output = Path("results/summaries/m2_optimal_policy_benchmark.csv")
-        first = output.read_text()
-        benchmark_m2_optimal_policy.main()
-        second = output.read_text()
-        self.assertEqual(first, second)
-        with output.open(newline="") as handle:
-            rows = list(csv.DictReader(handle))
+        canonical = benchmark_m2_optimal_policy.ROOT / "results/summaries/m2_optimal_policy_benchmark.csv"
+        before = canonical_state(canonical)
+        with tempfile.TemporaryDirectory(prefix="m2_benchmark_test_") as temporary:
+            with mock.patch.object(benchmark_m2_optimal_policy, "ROOT", Path(temporary)):
+                benchmark_m2_optimal_policy.main()
+                output = Path(temporary) / "results/summaries/m2_optimal_policy_benchmark.csv"
+                first = output.read_text()
+                benchmark_m2_optimal_policy.main()
+                self.assertEqual(first, output.read_text())
+                with output.open(newline="") as handle:
+                    rows = list(csv.DictReader(handle))
+        self.assertEqual(canonical_state(canonical), before)
         self.assertGreaterEqual(len(rows), 7)
         self.assertTrue(all(row["converged"] == "True" for row in rows))
         self.assertIn("regret_neutral", rows[0])
@@ -72,16 +82,22 @@ class M2OptimalPolicyTests(unittest.TestCase):
         self.assertGreater(classified["regret_neutral"], 0.0)
 
     def test_lock_in_map_output_is_deterministic(self):
-        map_m2_lock_in_regions.main()
-        output = Path("results/summaries/m2_lock_in_region_map.csv")
-        thresholds = Path("results/summaries/m2_lock_in_region_thresholds.csv")
-        first_map = output.read_text()
-        first_thresholds = thresholds.read_text()
-        map_m2_lock_in_regions.main()
-        self.assertEqual(first_map, output.read_text())
-        self.assertEqual(first_thresholds, thresholds.read_text())
-        with output.open(newline="") as handle:
-            rows = list(csv.DictReader(handle))
+        names = ("m2_lock_in_region_map.csv", "m2_lock_in_region_thresholds.csv")
+        canonical = [map_m2_lock_in_regions.ROOT / "results/summaries" / name for name in names]
+        before = [canonical_state(path) for path in canonical]
+        with tempfile.TemporaryDirectory(prefix="m2_map_test_") as temporary:
+            with mock.patch.object(map_m2_lock_in_regions, "ROOT", Path(temporary)):
+                map_m2_lock_in_regions.main()
+                output = Path(temporary) / "results/summaries" / names[0]
+                thresholds = Path(temporary) / "results/summaries" / names[1]
+                first_map = output.read_text()
+                first_thresholds = thresholds.read_text()
+                map_m2_lock_in_regions.main()
+                self.assertEqual(first_map, output.read_text())
+                self.assertEqual(first_thresholds, thresholds.read_text())
+                with output.open(newline="") as handle:
+                    rows = list(csv.DictReader(handle))
+        self.assertEqual([canonical_state(path) for path in canonical], before)
         self.assertEqual(len(rows), len(map_m2_lock_in_regions.P_VALUES) * len(map_m2_lock_in_regions.ETA_VALUES))
         self.assertTrue(all(row["converged"] == "True" for row in rows))
         self.assertTrue(any(row["region"] == "learned_suboptimal_lock_in" for row in rows))
