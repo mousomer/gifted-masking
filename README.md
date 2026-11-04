@@ -94,6 +94,24 @@ If `matplotlib` is not installed, the command will fail fast with a clear
 message. Core simulations do not import plotting dependencies at module import
 time.
 
+## Review And Research Notebook
+
+`notebooks/review_and_research.ipynb` brings review of every test, model rung
+(M0-M4), article experiment (E01-E06), robustness check and manifest together in
+one place, with a small simulation sandbox. It is read-only with respect to the
+repository: it never writes to `results/` and never changes model semantics.
+Open it with the `venv314` kernel:
+
+```bash
+/Users/omer/workspace/venvs/venv314/bin/python -m jupyter lab notebooks/review_and_research.ipynb
+```
+
+The notebook needs `pandas`, `matplotlib` and `jupyterlab`, which are
+notebook-only dependencies already present in the workspace venv. Its helpers
+live in `notebooks/review_lib.py` (stdlib and numpy only) and are covered by
+`tests/test_review_notebook.py`. The default run takes about two minutes. The
+committed notebook has no outputs.
+
 ## Repository Layout
 
 ```text
@@ -106,6 +124,7 @@ src/gifted_masking/
   plotting/
 tests/
 scripts/
+notebooks/
 results/
 projects/frontiers_article/
 ```
