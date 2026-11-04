@@ -1,0 +1,3538 @@
+{
+  "schema_version": 1,
+  "prepared_date": "2026-10-05",
+  "repository_root": "/Users/omer/workspace/personal/repos/gifted-masking",
+  "repository_head_at_preparation": "501fc5a10be081f7da3ad02a9055d1d2c8cc0422",
+  "working_tree_note": "Dirty working tree at preparation, including pre-existing article and governance work. Per-file hashes identify the inspected content; HEAD alone does not.",
+  "evidence_boundary": "Archived E01\u2013E05 plus exact mathematics and current implementation explanations. E06 smoke is diagnostic; standard and qualification deferred.",
+  "historical_source_limit": "Exact historical generator states recovered for E04/E05; E01\u2013E03 reconstruction remains incomplete.",
+  "sources": {
+    "ARTICLE": {
+      "path": "projects/frontiers_article/integrated_article_20261004/ARTICLE.md",
+      "sha256": "76d6d94463a94f5ee16c58d272035ba1efbd4f7b6c48135c17121332f7f36f4f",
+      "bytes": 89689,
+      "selection_and_interpretation": "Current integrated scientific account: Methods 2.1\u20132.7, Results 3.1\u20133.6, Appendix A. Its E01\u2013E05 evidence boundary governs findings."
+    },
+    "CORE": {
+      "path": "src/gifted_masking/core.py",
+      "sha256": "5d1fb660f602246b39663e081bacbd6a40d024e4dfed2ccd963fc0971be623c9",
+      "bytes": 2331,
+      "top_level_definitions": [
+        {
+          "name": "make_rng",
+          "line": 9
+        },
+        {
+          "name": "final_window_size",
+          "line": 13
+        },
+        {
+          "name": "subjective_value",
+          "line": 21
+        },
+        {
+          "name": "softmax_probabilities",
+          "line": 27
+        },
+        {
+          "name": "softmax_sample",
+          "line": 37
+        },
+        {
+          "name": "standard_error",
+          "line": 43
+        },
+        {
+          "name": "bootstrap_ci",
+          "line": 49
+        },
+        {
+          "name": "EstimateSummary",
+          "line": 64
+        },
+        {
+          "name": "summarize_mean",
+          "line": 71
+        }
+      ]
+    },
+    "CURRENT_STATE": {
+      "path": "projects/frontiers_article/CURRENT_STATE.md",
+      "sha256": "44142b8c1f6dafc5a0da4c47b16b2ae15136c570057d1e98bad224410198de8d",
+      "bytes": 34051
+    },
+    "E01_CODE": {
+      "path": "src/gifted_masking/experiments/article.py",
+      "sha256": "a5be5f4d9d6a4fbdbad2600834239c96f9a77c266537ef3ec9c0ad19216daba7",
+      "bytes": 35349,
+      "top_level_definitions": [
+        {
+          "name": "_as_float",
+          "line": 59
+        },
+        {
+          "name": "_canonical_json",
+          "line": 63
+        },
+        {
+          "name": "load_article_config",
+          "line": 67
+        },
+        {
+          "name": "canonical_e01_cell_id",
+          "line": 120
+        },
+        {
+          "name": "derive_e01_component_seeds",
+          "line": 130
+        },
+        {
+          "name": "_format_value",
+          "line": 141
+        },
+        {
+          "name": "simulate_e01_cell",
+          "line": 151
+        },
+        {
+          "name": "_mean",
+          "line": 268
+        },
+        {
+          "name": "recompute_e01_summaries",
+          "line": 272
+        },
+        {
+          "name": "_summary_index",
+          "line": 307
+        },
+        {
+          "name": "_effect_row",
+          "line": 311
+        },
+        {
+          "name": "_e01_effects",
+          "line": 315
+        },
+        {
+          "name": "_sha256_path",
+          "line": 352
+        },
+        {
+          "name": "_git_hash",
+          "line": 356
+        },
+        {
+          "name": "_git_bytes",
+          "line": 363
+        },
+        {
+          "name": "_matplotlib_version",
+          "line": 371
+        },
+        {
+          "name": "_source_fingerprint",
+          "line": 379
+        },
+        {
+          "name": "_write_diagnostic_figure",
+          "line": 390
+        },
+        {
+          "name": "_checkpoint_report",
+          "line": 412
+        },
+        {
+          "name": "run_article_experiment",
+          "line": 436
+        },
+        {
+          "name": "record_e01_verification",
+          "line": 494
+        },
+        {
+          "name": "normalize_machine_artifacts",
+          "line": 506
+        }
+      ]
+    },
+    "E01_CONFIG": {
+      "path": "configs/frontiers_article/e01_hot_stove_standard.json",
+      "sha256": "1d8ac3157a628c8115bdfe11a14ed46d794caeb2abb88c49b62bc2d2aa6b2f6a",
+      "bytes": 1146,
+      "exact_configuration": {
+        "experiment_id": "E01",
+        "run_id": "frontiers_hot_stove_v1",
+        "tier": "standard",
+        "model": "M0",
+        "n": 500,
+        "T": 2000,
+        "final_window_fraction": 0.2,
+        "master_seed": 2026081101,
+        "master_seeds": [
+          2026081101,
+          2026081102,
+          2026081103,
+          2026081104,
+          2026081105
+        ],
+        "bootstrap_seed": 2026081201,
+        "workers": 1,
+        "approved_standard": false,
+        "payoffs": {
+          "b": 1.0,
+          "a": 0.6,
+          "c": 0.25,
+          "r": 2.0
+        },
+        "learner": {
+          "alpha": 0.1,
+          "tau": 0.25,
+          "q0": 0.0
+        },
+        "cells": [
+          {
+            "p": 0.75,
+            "lambda": 1.0,
+            "condition": "controlled_baseline"
+          },
+          {
+            "p": 0.75,
+            "lambda": 1.0,
+            "condition": "forced_authentic_0.05"
+          },
+          {
+            "p": 0.75,
+            "lambda": 1.0,
+            "condition": "counterfactual_authentic_feedback"
+          },
+          {
+            "p": 0.85,
+            "lambda": 1.0,
+            "condition": "controlled_baseline"
+          },
+          {
+            "p": 0.85,
+            "lambda": 1.0,
+            "condition": "forced_authentic_0.05"
+          },
+          {
+            "p": 0.85,
+            "lambda": 1.0,
+            "condition": "counterfactual_authentic_feedback"
+          },
+          {
+            "p": 0.75,
+            "lambda": 0.5,
+            "condition": "controlled_baseline"
+          },
+          {
+            "p": 0.75,
+            "lambda": 2.5,
+            "condition": "controlled_baseline"
+          },
+          {
+            "p": 0.65,
+            "lambda": 0.5,
+            "condition": "maintained_baseline"
+          },
+          {
+            "p": 0.65,
+            "lambda": 2.5,
+            "condition": "maintained_baseline"
+          }
+        ]
+      }
+    },
+    "E01_INTERVENTIONS": {
+      "path": "projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv",
+      "sha256": "12a1f4befa1ade1a9065a3782fc40a20d9bbed2f91d31a1d3d4dd5771d55a42b",
+      "bytes": 1077,
+      "selection_and_interpretation": "Source sign is baseline minus intervention. Reverse estimate and interval order if presenting intervention minus baseline. Multiply proportions by 100 for percentage points.",
+      "columns": [
+        "claim_id",
+        "condition",
+        "condition_label",
+        "metric",
+        "metric_label",
+        "effect_name",
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "ci_status"
+      ],
+      "row_count": 4,
+      "archived_rows": [
+        {
+          "claim_id": "E01-C2-FORCED-MASK",
+          "condition": "forced_authentic_0.05",
+          "condition_label": "5% forced authentic exploration",
+          "metric": "mask",
+          "metric_label": "final-window mask rate",
+          "effect_name": "baseline_minus_intervention_final_mask_rate_after_rejection",
+          "estimate": "0.0465902271980715",
+          "ci_low": "0.03322952688143788",
+          "ci_high": "0.05995092751470512",
+          "ci_status": "student_t_95"
+        },
+        {
+          "claim_id": "E01-C2-FORCED-REGRET",
+          "condition": "forced_authentic_0.05",
+          "condition_label": "5% forced authentic exploration",
+          "metric": "regret",
+          "metric_label": "normalized objective regret",
+          "effect_name": "baseline_minus_intervention_normalized_regret_after_rejection",
+          "estimate": "0.057953521694166274",
+          "ci_low": "0.045613861990490334",
+          "ci_high": "0.07029318139784221",
+          "ci_status": "student_t_95"
+        },
+        {
+          "claim_id": "E01-C2-CF-MASK",
+          "condition": "counterfactual_authentic_feedback",
+          "condition_label": "counterfactual authentic feedback",
+          "metric": "mask",
+          "metric_label": "final-window mask rate",
+          "effect_name": "baseline_minus_intervention_final_mask_rate_after_rejection",
+          "estimate": "0.11813508467965528",
+          "ci_low": "0.10968319910642255",
+          "ci_high": "0.126586970252888",
+          "ci_status": "student_t_95"
+        },
+        {
+          "claim_id": "E01-C2-CF-REGRET",
+          "condition": "counterfactual_authentic_feedback",
+          "condition_label": "counterfactual authentic feedback",
+          "metric": "regret",
+          "metric_label": "normalized objective regret",
+          "effect_name": "baseline_minus_intervention_normalized_regret_after_rejection",
+          "estimate": "0.14131821456252255",
+          "ci_low": "0.13236915377111952",
+          "ci_high": "0.1502672753539256",
+          "ci_status": "student_t_95"
+        }
+      ]
+    },
+    "E01_MANIFEST": {
+      "path": "results/manifests/frontiers_hot_stove_v1.json",
+      "sha256": "3f48573a2df3c08c0b7e1c2310836ca740966ad2cae1cef12f6b8dddde514e34",
+      "bytes": 21661
+    },
+    "E01_PRIMARY": {
+      "path": "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv",
+      "sha256": "9b9227f43146b96ae7000f572d2249ae6bd4d39bf414715bdd780203afa38d36",
+      "bytes": 1097,
+      "selection_and_interpretation": "Use published rows. Signs are rejected minus accepted. History final-window interval includes zero.",
+      "columns": [
+        "claim_id",
+        "effect_name",
+        "level",
+        "p_selector",
+        "role",
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "ci_status",
+        "interval_spans_zero",
+        "definition"
+      ],
+      "row_count": 3,
+      "archived_rows": [
+        {
+          "claim_id": "E01-C2-SAMPLING",
+          "effect_name": "rejected_minus_accepted_post_initial_authentic_rate",
+          "level": "across_master_seeds",
+          "p_selector": "pooled_equal_weight_p_0.75_0.85",
+          "role": "primary",
+          "estimate": "-0.02583704230615776",
+          "ci_low": "-0.03575251604903057",
+          "ci_high": "-0.01592156856328495",
+          "ci_status": "student_t_95",
+          "interval_spans_zero": "False",
+          "definition": "Post-initial authentic action rate, rejected minus accepted."
+        },
+        {
+          "claim_id": "E01-C2-REGRET",
+          "effect_name": "rejected_minus_accepted_normalized_regret",
+          "level": "across_master_seeds",
+          "p_selector": "pooled_equal_weight_p_0.75_0.85",
+          "role": "linked_unit_translation",
+          "estimate": "0.025824123785003948",
+          "ci_low": "0.015913607779002897",
+          "ci_high": "0.035734639791004996",
+          "ci_status": "student_t_95",
+          "interval_spans_zero": "False",
+          "definition": "The same action-frequency information in normalized objective-loss units. Exact identity: regret contrast = -(T-1)/T x sampling contrast (freeze C.5). Not an independent confirmation."
+        },
+        {
+          "claim_id": "E01-C2-FINAL-MASK",
+          "effect_name": "rejected_minus_accepted_final_mask_rate",
+          "level": "across_master_seeds",
+          "p_selector": "pooled_equal_weight_p_0.75_0.85",
+          "role": "secondary_null",
+          "estimate": "-0.0003432658754774054",
+          "ci_low": "-0.011604676797786873",
+          "ci_high": "0.010918145046832063",
+          "ci_status": "student_t_95",
+          "interval_spans_zero": "True",
+          "definition": "Final-window mask rate contrast. Interval spans zero: a failure to detect, not an established equivalence."
+        }
+      ]
+    },
+    "E01_WEIGHTING": {
+      "path": "projects/frontiers_article/publication_v1/data/e01_lambda_response.csv",
+      "sha256": "df70c4f9b15d4c90b16fe1cff1d99a451464331ee1b01d3489c3b7442e3d8ae3",
+      "bytes": 746,
+      "selection_and_interpretation": "p=.65, maintained baseline, lambda=2.5 versus .5. Masking is objectively optimal in this cell.",
+      "columns": [
+        "lambda",
+        "p",
+        "master_count",
+        "mean_final_window_mask_rate",
+        "master_min_final_window_mask_rate",
+        "master_max_final_window_mask_rate",
+        "mean_q_auth_final",
+        "learned_q_mask_final",
+        "analytic_subjective_authentic_mean",
+        "analytic_subjective_boundary_p",
+        "analytic_objective_authentic_mean",
+        "analytic_objective_boundary_p",
+        "subjective_favours_authenticity",
+        "objective_favours_authenticity"
+      ],
+      "row_count": 3,
+      "archived_rows": [
+        {
+          "lambda": "0.5",
+          "p": "0.65",
+          "master_count": "5",
+          "mean_final_window_mask_rate": "0.588935",
+          "master_min_final_window_mask_rate": "0.58439",
+          "master_max_final_window_mask_rate": "0.599165",
+          "mean_q_auth_final": "0.629788924192589",
+          "learned_q_mask_final": "0.7499999999999998",
+          "analytic_subjective_authentic_mean": "0.795",
+          "analytic_subjective_boundary_p": "0.6304347826086957",
+          "analytic_objective_authentic_mean": "0.55",
+          "analytic_objective_boundary_p": "0.7166666666666667",
+          "subjective_favours_authenticity": "True",
+          "objective_favours_authenticity": "False"
+        },
+        {
+          "lambda": "2.5",
+          "p": "0.65",
+          "master_count": "5",
+          "mean_final_window_mask_rate": "0.991925",
+          "master_min_final_window_mask_rate": "0.9908899999999999",
+          "master_max_final_window_mask_rate": "0.9927",
+          "mean_q_auth_final": "-0.7616483965595999",
+          "learned_q_mask_final": "0.7499999999999998",
+          "analytic_subjective_authentic_mean": "-0.185",
+          "analytic_subjective_boundary_p": "0.8333333333333334",
+          "analytic_objective_authentic_mean": "0.55",
+          "analytic_objective_boundary_p": "0.7166666666666667",
+          "subjective_favours_authenticity": "False",
+          "objective_favours_authenticity": "False"
+        },
+        {
+          "lambda": "2.5_minus_0.5",
+          "p": "0.65",
+          "master_count": "5",
+          "mean_final_window_mask_rate": "0.40299000000000007",
+          "master_min_final_window_mask_rate": "0.39536587087194863",
+          "master_max_final_window_mask_rate": "0.4106141291280515",
+          "mean_q_auth_final": "",
+          "learned_q_mask_final": "",
+          "analytic_subjective_authentic_mean": "",
+          "analytic_subjective_boundary_p": "",
+          "analytic_objective_authentic_mean": "0.55",
+          "analytic_objective_boundary_p": "0.7166666666666667",
+          "subjective_favours_authenticity": "",
+          "objective_favours_authenticity": "False"
+        }
+      ]
+    },
+    "E02_CODE": {
+      "path": "src/gifted_masking/experiments/e02.py",
+      "sha256": "5bdeba5bb0e744544b8d82813a9e9949c6a4131f3dbb55f4690a09bbab2fe3d0",
+      "bytes": 47685,
+      "top_level_definitions": [
+        {
+          "name": "_canonical_json",
+          "line": 57
+        },
+        {
+          "name": "_format",
+          "line": 61
+        },
+        {
+          "name": "canonical_e02_pair_id",
+          "line": 71
+        },
+        {
+          "name": "canonical_e02_cell_id",
+          "line": 81
+        },
+        {
+          "name": "derive_e02_policy_environment_seed",
+          "line": 85
+        },
+        {
+          "name": "_require_exact_int",
+          "line": 91
+        },
+        {
+          "name": "_require_exact_float",
+          "line": 97
+        },
+        {
+          "name": "_require_exact_mapping",
+          "line": 103
+        },
+        {
+          "name": "load_e02_config",
+          "line": 110
+        },
+        {
+          "name": "analytic_arms",
+          "line": 157
+        },
+        {
+          "name": "_event_reward",
+          "line": 171
+        },
+        {
+          "name": "_unique_modal_index",
+          "line": 176
+        },
+        {
+          "name": "_stable_full_auth_times",
+          "line": 180
+        },
+        {
+          "name": "_stable_full_auth_times_quadratic_reference",
+          "line": 196
+        },
+        {
+          "name": "simulate_e02_cell",
+          "line": 210
+        },
+        {
+          "name": "_mean",
+          "line": 313
+        },
+        {
+          "name": "recompute_e02_summaries",
+          "line": 324
+        },
+        {
+          "name": "_effect_metric",
+          "line": 347
+        },
+        {
+          "name": "_e02_effects",
+          "line": 371
+        },
+        {
+          "name": "_arm_rows",
+          "line": 401
+        },
+        {
+          "name": "_sha",
+          "line": 411
+        },
+        {
+          "name": "_git",
+          "line": 415
+        },
+        {
+          "name": "_git_bytes",
+          "line": 422
+        },
+        {
+          "name": "_matplotlib_version",
+          "line": 429
+        },
+        {
+          "name": "_source_fingerprint",
+          "line": 451
+        },
+        {
+          "name": "_figure",
+          "line": 460
+        },
+        {
+          "name": "_memory_bytes",
+          "line": 475
+        },
+        {
+          "name": "_validate_e02_standard_approval",
+          "line": 480
+        },
+        {
+          "name": "_report",
+          "line": 499
+        },
+        {
+          "name": "run_e02_experiment",
+          "line": 556
+        },
+        {
+          "name": "record_e02_verification",
+          "line": 599
+        },
+        {
+          "name": "normalize_e02_machine_artifacts",
+          "line": 610
+        }
+      ]
+    },
+    "E02_CONFIG": {
+      "path": "configs/frontiers_article/e02_binary_graded_standard.json",
+      "sha256": "08aa809cbfdbf12f002a8b93e234923ef04e84d13a02c9e7ab12926ee84d431d",
+      "bytes": 767,
+      "exact_configuration": {
+        "experiment_id": "E02",
+        "run_id": "frontiers_m1_binary_graded_v1",
+        "tier": "standard",
+        "model": "M0_M1",
+        "n": 500,
+        "T": 2000,
+        "final_window_fraction": 0.2,
+        "master_seed": 2026081201,
+        "master_seeds": [
+          2026081201,
+          2026081202,
+          2026081203,
+          2026081204,
+          2026081205
+        ],
+        "bootstrap_seed": 2026081297,
+        "workers": 1,
+        "approved_standard": false,
+        "payoffs": {
+          "b": 1.0,
+          "a": 0.6,
+          "c": 0.25,
+          "r": 2.0
+        },
+        "learner": {
+          "alpha": 0.1,
+          "tau": 0.25,
+          "lambda": 1.0,
+          "q0": 0.0
+        },
+        "cells": [
+          {
+            "p": 0.65,
+            "architecture": "binary_endpoints",
+            "levels": 2
+          },
+          {
+            "p": 0.65,
+            "architecture": "graded_independent_5",
+            "levels": 5
+          },
+          {
+            "p": 0.75,
+            "architecture": "binary_endpoints",
+            "levels": 2
+          },
+          {
+            "p": 0.75,
+            "architecture": "graded_independent_5",
+            "levels": 5
+          },
+          {
+            "p": 0.85,
+            "architecture": "binary_endpoints",
+            "levels": 2
+          },
+          {
+            "p": 0.85,
+            "architecture": "graded_independent_5",
+            "levels": 5
+          }
+        ]
+      }
+    },
+    "E02_EFFECTS": {
+      "path": "results/summaries/frontiers_m1_binary_graded_v1_effects.csv",
+      "sha256": "11d29c72508649a174b285957dfec3752edff76a099aa76de9f6fe3a4e515a8a",
+      "bytes": 133164,
+      "selection_and_interpretation": "For the main-talk intensity row select effect_name=graded_minus_binary_final_window_mean_disclosure, level=across_master_seeds, p=pooled_equal_weight_p_0.75_0.85, stratum=rejected.",
+      "columns": [
+        "run_id",
+        "experiment_id",
+        "tier",
+        "effect_name",
+        "level",
+        "master_seed",
+        "p",
+        "stratum",
+        "estimate",
+        "ci_status",
+        "ci_low",
+        "ci_high",
+        "notes"
+      ],
+      "row_count": 576,
+      "selected_archived_rows": [
+        {
+          "run_id": "frontiers_m1_binary_graded_v1",
+          "experiment_id": "E02",
+          "tier": "standard",
+          "effect_name": "graded_minus_binary_final_window_mean_disclosure",
+          "level": "across_master_seeds",
+          "master_seed": "",
+          "p": "0.65",
+          "stratum": "rejected",
+          "estimate": "0.13818994021135897",
+          "ci_status": "student_t_95",
+          "ci_low": "0.1299050098942982",
+          "ci_high": "0.14647487052841973",
+          "notes": "independent master-seed Student-t interval"
+        },
+        {
+          "run_id": "frontiers_m1_binary_graded_v1",
+          "experiment_id": "E02",
+          "tier": "standard",
+          "effect_name": "graded_minus_binary_final_window_mean_disclosure",
+          "level": "across_master_seeds",
+          "master_seed": "",
+          "p": "0.75",
+          "stratum": "rejected",
+          "estimate": "0.04651148064938776",
+          "ci_status": "student_t_95",
+          "ci_low": "0.037040759563377205",
+          "ci_high": "0.055982201735398314",
+          "notes": "independent master-seed Student-t interval"
+        },
+        {
+          "run_id": "frontiers_m1_binary_graded_v1",
+          "experiment_id": "E02",
+          "tier": "standard",
+          "effect_name": "graded_minus_binary_final_window_mean_disclosure",
+          "level": "across_master_seeds",
+          "master_seed": "",
+          "p": "0.85",
+          "stratum": "rejected",
+          "estimate": "-0.11068766419113114",
+          "ci_status": "student_t_95",
+          "ci_low": "-0.11857347004249993",
+          "ci_high": "-0.10280185833976235",
+          "notes": "independent master-seed Student-t interval"
+        },
+        {
+          "run_id": "frontiers_m1_binary_graded_v1",
+          "experiment_id": "E02",
+          "tier": "standard",
+          "effect_name": "graded_minus_binary_final_window_mean_disclosure",
+          "level": "across_master_seeds",
+          "master_seed": "",
+          "p": "pooled_equal_weight_p_0.75_0.85",
+          "stratum": "rejected",
+          "estimate": "-0.03208809177087169",
+          "ci_status": "student_t_95",
+          "ci_low": "-0.038940512700168156",
+          "ci_high": "-0.025235670841575224",
+          "notes": "independent master-seed Student-t interval"
+        }
+      ]
+    },
+    "E02_MANIFEST": {
+      "path": "results/manifests/frontiers_m1_binary_graded_v1.json",
+      "sha256": "be541067611990b0d9dc5388ee731152ea3eac27fd5a66fcceba45c4b13e834e",
+      "bytes": 14589
+    },
+    "E02_PRIMARY": {
+      "path": "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv",
+      "sha256": "fe37531296d986f0662ce74d6e3976680163e4f19da7240deef5f8e5d97f966f",
+      "bytes": 1364,
+      "selection_and_interpretation": "Use pooled equal-weight p=.75/.85 and rejected stratum. The regret row is binary minus graded; reverse sign and limits to express graded minus binary.",
+      "columns": [
+        "claim_id",
+        "effect_name",
+        "level",
+        "p_selector",
+        "stratum",
+        "role",
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "ci_status",
+        "definition"
+      ],
+      "row_count": 4,
+      "archived_rows": [
+        {
+          "claim_id": "E02-C4-EXPLORATION",
+          "effect_name": "graded_any_minus_binary_full_post_initial_rate",
+          "level": "across_master_seeds",
+          "p_selector": "pooled_equal_weight_p_0.75_0.85",
+          "stratum": "rejected",
+          "role": "primary",
+          "estimate": "0.25504040052777677",
+          "ci_low": "0.2530035109870409",
+          "ci_high": "0.25707729006851265",
+          "ci_status": "student_t_95",
+          "definition": "Graded nonzero-disclosure post-initial rate minus binary full-authentic post-initial rate."
+        },
+        {
+          "claim_id": "E02-C4-FULL-ENDPOINT",
+          "effect_name": "graded_minus_binary_full_final_window_rate",
+          "level": "across_master_seeds",
+          "p_selector": "pooled_equal_weight_p_0.75_0.85",
+          "stratum": "rejected",
+          "role": "adverse",
+          "estimate": "-0.3286922325725828",
+          "ci_low": "-0.3420366913177394",
+          "ci_high": "-0.3153477738274262",
+          "ci_status": "student_t_95",
+          "definition": "Graded minus binary full-authentic final-window selection rate."
+        },
+        {
+          "claim_id": "E02-C4-MODAL",
+          "effect_name": "graded_minus_binary_optimal_endpoint_modal_probability",
+          "level": "across_master_seeds",
+          "p_selector": "pooled_equal_weight_p_0.75_0.85",
+          "stratum": "rejected",
+          "role": "adverse",
+          "estimate": "-0.22173959296185813",
+          "ci_low": "-0.2887553011957132",
+          "ci_high": "-0.15472388472800308",
+          "ci_status": "student_t_95",
+          "definition": "Graded minus binary probability that the unique final-window modal arm is the objective endpoint d = 1."
+        },
+        {
+          "claim_id": "E02-C4-REGRET",
+          "effect_name": "binary_minus_graded_normalized_regret",
+          "level": "across_master_seeds",
+          "p_selector": "pooled_equal_weight_p_0.75_0.85",
+          "stratum": "rejected",
+          "role": "adverse_linked",
+          "estimate": "-0.029761004211474734",
+          "ci_low": "-0.033873679431221757",
+          "ci_high": "-0.02564832899172771",
+          "ci_status": "student_t_95",
+          "definition": "Binary minus graded normalized regret. In the affine cells per-step normalized regret is exactly 1 - d, so this is a horizon-average disclosure-distance contrast (freeze C.6)."
+        }
+      ]
+    },
+    "E03_CELLS": {
+      "path": "results/summaries/frontiers_m2_regime_replication_v1_cells.csv",
+      "sha256": "198cb7be9b2a93aa89569d9dd656326f521b7a2ec99543733fd6e779e0508851",
+      "bytes": 1599052,
+      "selection_and_interpretation": "Figure 8 provenance and its generator identify all fifteen setting rows and five disagreement sentinels. Do not include the .35/0 control in the 25-denominator matrix.",
+      "columns": [
+        "run_id",
+        "experiment_id",
+        "tier",
+        "component",
+        "sensitivity_name",
+        "master_seed",
+        "parameter_cell_id",
+        "cell_seed",
+        "p",
+        "eta",
+        "b",
+        "a",
+        "c",
+        "r",
+        "b2",
+        "r2",
+        "delta",
+        "alpha",
+        "tau",
+        "lambda",
+        "q0",
+        "gamma",
+        "n",
+        "T",
+        "final_window_fraction",
+        "vi_converged",
+        "vi_iterations",
+        "vi_residual",
+        "static_neutral_action",
+        "objective_neutral_action",
+        "objective_neutral_q_gap_auth_minus_mask",
+        "objective_regime",
+        "neutral_mask_probability",
+        "learned_neutral_action",
+        "learner_status",
+        "neutral_visits_total",
+        "neutral_visiting_children",
+        "neutral_visit_adequate",
+        "accepted_visits_total",
+        "stigmatized_visits_total",
+        "full_policy_value_neutral",
+        "full_policy_regret_neutral",
+        "full_policy_status",
+        "neutral_decision_regret",
+        "mean_final_window_mask_rate",
+        "mean_final_window_objective_reward",
+        "legacy_region",
+        "classification"
+      ],
+      "row_count": 2250
+    },
+    "E03_CODE": {
+      "path": "src/gifted_masking/experiments/e03.py",
+      "sha256": "eecd54802f33ed876e7aab0ad20ffc4cad97db2c3bc85453e212d815ca0ff6a7",
+      "bytes": 81628,
+      "top_level_definitions": [
+        {
+          "name": "_canonical_json",
+          "line": 78
+        },
+        {
+          "name": "_format",
+          "line": 82
+        },
+        {
+          "name": "_require_exact_keys",
+          "line": 92
+        },
+        {
+          "name": "_require_numbers",
+          "line": 98
+        },
+        {
+          "name": "_smoke_expected_config",
+          "line": 105
+        },
+        {
+          "name": "_standard_expected_config",
+          "line": 114
+        },
+        {
+          "name": "load_e03_config",
+          "line": 127
+        },
+        {
+          "name": "canonical_e03_cell_id",
+          "line": 163
+        },
+        {
+          "name": "canonical_e03_trajectory_prefix_id",
+          "line": 186
+        },
+        {
+          "name": "e03_rng_family_id",
+          "line": 205
+        },
+        {
+          "name": "derive_e03_cell_seed",
+          "line": 237
+        },
+        {
+          "name": "_within_one_ulp",
+          "line": 243
+        },
+        {
+          "name": "_params",
+          "line": 250
+        },
+        {
+          "name": "_visit_adequacy",
+          "line": 254
+        },
+        {
+          "name": "_reachable_states",
+          "line": 265
+        },
+        {
+          "name": "_validate_state_action_visit_counts",
+          "line": 280
+        },
+        {
+          "name": "classify_e03_cell",
+          "line": 287
+        },
+        {
+          "name": "simulate_e03_sentinel",
+          "line": 368
+        },
+        {
+          "name": "_legacy_replay_rows",
+          "line": 405
+        },
+        {
+          "name": "_cell_rows",
+          "line": 434
+        },
+        {
+          "name": "recompute_e03_summaries",
+          "line": 455
+        },
+        {
+          "name": "student_t_95_interval",
+          "line": 482
+        },
+        {
+          "name": "canonical_e03_exact_grid",
+          "line": 492
+        },
+        {
+          "name": "_validate_exact_grid_row",
+          "line": 520
+        },
+        {
+          "name": "summarize_e03_standard_classifications",
+          "line": 536
+        },
+        {
+          "name": "objective_threshold_bisection",
+          "line": 591
+        },
+        {
+          "name": "refine_learned_threshold",
+          "line": 618
+        },
+        {
+          "name": "standard_harsh_cases",
+          "line": 651
+        },
+        {
+          "name": "E03StreamingAggregator",
+          "line": 657
+        },
+        {
+          "name": "stream_e03_raw_rows",
+          "line": 672
+        },
+        {
+          "name": "standard_streaming_cost_plan",
+          "line": 684
+        },
+        {
+          "name": "_threshold_rows",
+          "line": 689
+        },
+        {
+          "name": "_sha",
+          "line": 697
+        },
+        {
+          "name": "_git",
+          "line": 701
+        },
+        {
+          "name": "_source_fingerprint",
+          "line": 715
+        },
+        {
+          "name": "_validate_e03_standard_approval",
+          "line": 724
+        },
+        {
+          "name": "_standard_spec",
+          "line": 738
+        },
+        {
+          "name": "_standard_specs",
+          "line": 753
+        },
+        {
+          "name": "_simulate_standard_spec",
+          "line": 777
+        },
+        {
+          "name": "_standard_cell_row",
+          "line": 801
+        },
+        {
+          "name": "_figure",
+          "line": 811
+        },
+        {
+          "name": "_report",
+          "line": 827
+        },
+        {
+          "name": "_standard_figure",
+          "line": 850
+        },
+        {
+          "name": "_standard_report",
+          "line": 873
+        },
+        {
+          "name": "_write_standard_raw_batch",
+          "line": 894
+        },
+        {
+          "name": "_standard_outputs",
+          "line": 902
+        },
+        {
+          "name": "run_e03_standard_experiment",
+          "line": 910
+        },
+        {
+          "name": "run_e03_experiment",
+          "line": 1034
+        },
+        {
+          "name": "record_e03_verification",
+          "line": 1095
+        },
+        {
+          "name": "normalize_e03_machine_artifacts",
+          "line": 1099
+        }
+      ]
+    },
+    "E03_CONFIG": {
+      "path": "configs/frontiers_article/e03_m2_regime_standard.json",
+      "sha256": "52197a07751c03ca47872c2319aedd9705140eb38cb7048a091e48c40923e0e0",
+      "bytes": 1168,
+      "exact_configuration": {
+        "experiment_id": "E03",
+        "run_id": "frontiers_m2_regime_replication_v1",
+        "tier": "standard",
+        "model": "M2",
+        "master_seed": 2026081301,
+        "master_seeds": [
+          2026081301,
+          2026081302,
+          2026081303,
+          2026081304,
+          2026081305
+        ],
+        "bootstrap_seed": 2026081397,
+        "workers": 1,
+        "approved_standard": false,
+        "environment": {
+          "b": 1.0,
+          "a": 0.6,
+          "c": 0.25,
+          "r": 2.0,
+          "b2": 0.5,
+          "r2": 2.5,
+          "delta": 0.02
+        },
+        "learner": {
+          "alpha": 0.1,
+          "tau": 0.25,
+          "lambda": 1.0,
+          "q0": 0.0,
+          "gamma": 0.9
+        },
+        "exact_grid": {
+          "p_start": 0.0,
+          "p_stop": 1.0,
+          "p_step": 0.05,
+          "eta_start": 0.0,
+          "eta_stop": 0.8,
+          "eta_step": 0.05,
+          "n": 160,
+          "T": 1000,
+          "final_window_fraction": 0.2,
+          "seed_base": 9100
+        },
+        "sentinels": [
+          {
+            "p": 0.35,
+            "eta": 0.0
+          },
+          {
+            "p": 0.4,
+            "eta": 0.0
+          },
+          {
+            "p": 0.55,
+            "eta": 0.0
+          },
+          {
+            "p": 0.55,
+            "eta": 0.2
+          },
+          {
+            "p": 0.75,
+            "eta": 0.0
+          },
+          {
+            "p": 0.9,
+            "eta": 0.2
+          }
+        ],
+        "one_at_a_time": {
+          "n": [
+            320
+          ],
+          "T": [
+            2000,
+            5000
+          ],
+          "final_window_fraction": [
+            0.1,
+            0.4
+          ],
+          "alpha": [
+            0.03,
+            0.3
+          ],
+          "tau": [
+            0.1,
+            0.6
+          ],
+          "lambda": [
+            0.5,
+            2.5
+          ],
+          "q0": [
+            0.75
+          ],
+          "gamma": [
+            0.5,
+            0.99
+          ]
+        },
+        "harsh_sentinel": {
+          "p": [
+            0.7,
+            0.75,
+            0.8
+          ],
+          "eta": 0.0,
+          "b2": 0.0,
+          "r2": 8.0,
+          "delta": 0.3,
+          "gamma": 0.9
+        },
+        "threshold_refinement": {
+          "etas": [
+            0.0,
+            0.2,
+            0.8
+          ],
+          "objective_bracket_tolerance": 0.0001,
+          "learned_max_added_p_per_eta": 8,
+          "learned_target_width": 0.0125,
+          "learned_method": "five_seed_dyadic_adjacent_boundary"
+        }
+      }
+    },
+    "E03_GRID": {
+      "path": "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+      "sha256": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab",
+      "bytes": 126767,
+      "selection_and_interpretation": "Use publication_category and all 357 (p,eta) cells. Preserve inconclusive cells. Counts describe parameter space.",
+      "columns": [
+        "parameter_cell_id",
+        "p",
+        "eta",
+        "learned_neutral_action",
+        "objective_neutral_action",
+        "objective_neutral_q_gap_auth_minus_mask",
+        "classification",
+        "stable",
+        "neutral_visit_adequate",
+        "neutral_visit_adequate_master_count",
+        "publication_category"
+      ],
+      "row_count": 357
+    },
+    "E03_MANIFEST": {
+      "path": "results/manifests/frontiers_m2_regime_replication_v1.json",
+      "sha256": "18aa7b6993af0c9f0df0d5cbc0e50b467959a13d17aaec156b1c8e5cb8242646",
+      "bytes": 1683911
+    },
+    "E03_THRESHOLDS": {
+      "path": "projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv",
+      "sha256": "a43d066f98987a7fd0e326c70929fe442b70134b1ee7ba1b8dbee779cfb91ce5",
+      "bytes": 560,
+      "selection_and_interpretation": "Numerical brackets and midpoint thresholds are objective solver precision, not Monte Carlo confidence intervals.",
+      "columns": [
+        "eta",
+        "threshold_kind",
+        "lower_p",
+        "upper_p",
+        "midpoint_p",
+        "bracket_width",
+        "static_m0_boundary_p",
+        "relocation_below_static",
+        "status"
+      ],
+      "row_count": 3,
+      "archived_rows": [
+        {
+          "eta": "0.0",
+          "threshold_kind": "objective_dynamic_authenticity",
+          "lower_p": "0.3839111328125",
+          "upper_p": "0.38397216796875",
+          "midpoint_p": "0.383941650390625",
+          "bracket_width": "6.103515625e-05",
+          "static_m0_boundary_p": "0.7166666666666667",
+          "relocation_below_static": "0.3327250162760417",
+          "status": "bracketed"
+        },
+        {
+          "eta": "0.2",
+          "threshold_kind": "objective_dynamic_authenticity",
+          "lower_p": "0.3387451171875",
+          "upper_p": "0.33880615234375",
+          "midpoint_p": "0.338775634765625",
+          "bracket_width": "6.103515625e-05",
+          "static_m0_boundary_p": "0.7166666666666667",
+          "relocation_below_static": "0.3778910319010417",
+          "status": "bracketed"
+        },
+        {
+          "eta": "0.8",
+          "threshold_kind": "objective_dynamic_authenticity",
+          "lower_p": "0.26898193359375",
+          "upper_p": "0.26904296875",
+          "midpoint_p": "0.269012451171875",
+          "bracket_width": "6.103515625e-05",
+          "static_m0_boundary_p": "0.7166666666666667",
+          "relocation_below_static": "0.4476542154947917",
+          "status": "bracketed"
+        }
+      ]
+    },
+    "E04_CODE": {
+      "path": "src/gifted_masking/experiments/e04.py",
+      "sha256": "85d47f85a5aa219bcd913ff9d6631cba1b619b43f19e1c4b22d743b273e524be",
+      "bytes": 95762,
+      "top_level_definitions": [
+        {
+          "name": "_canonical_json",
+          "line": 54
+        },
+        {
+          "name": "_json_no_duplicates",
+          "line": 58
+        },
+        {
+          "name": "_f",
+          "line": 69
+        },
+        {
+          "name": "_require_mapping",
+          "line": 79
+        },
+        {
+          "name": "load_e04_config",
+          "line": 87
+        },
+        {
+          "name": "effective_good_count",
+          "line": 128
+        },
+        {
+          "name": "_canonical_regime",
+          "line": 132
+        },
+        {
+          "name": "canonical_e04_cells",
+          "line": 140
+        },
+        {
+          "name": "_seed",
+          "line": 179
+        },
+        {
+          "name": "e04_matched_family_id",
+          "line": 185
+        },
+        {
+          "name": "derive_e04_policy_environment_seed",
+          "line": 189
+        },
+        {
+          "name": "derive_e04_identity_seed",
+          "line": 193
+        },
+        {
+          "name": "_good_sets",
+          "line": 198
+        },
+        {
+          "name": "_entropy",
+          "line": 214
+        },
+        {
+          "name": "_expected_rewards",
+          "line": 225
+        },
+        {
+          "name": "objective_best_actions",
+          "line": 231
+        },
+        {
+          "name": "simulate_e04_cell",
+          "line": 241
+        },
+        {
+          "name": "recompute_e04_summaries",
+          "line": 308
+        },
+        {
+          "name": "_expected_master_seeds",
+          "line": 329
+        },
+        {
+          "name": "_validate_e04_row_shared",
+          "line": 333
+        },
+        {
+          "name": "validate_e04_raw_rows",
+          "line": 434
+        },
+        {
+          "name": "validate_e04_raw_csv",
+          "line": 545
+        },
+        {
+          "name": "recompute_e04_summaries_csv",
+          "line": 566
+        },
+        {
+          "name": "validate_e04_curves",
+          "line": 582
+        },
+        {
+          "name": "validate_e04_effects",
+          "line": 604
+        },
+        {
+          "name": "_slope",
+          "line": 635
+        },
+        {
+          "name": "e04_effects",
+          "line": 641
+        },
+        {
+          "name": "_figure",
+          "line": 702
+        },
+        {
+          "name": "_sha",
+          "line": 715
+        },
+        {
+          "name": "_git",
+          "line": 719
+        },
+        {
+          "name": "_matplotlib_version",
+          "line": 727
+        },
+        {
+          "name": "_source_fingerprint",
+          "line": 735
+        },
+        {
+          "name": "_approval_fingerprint",
+          "line": 744
+        },
+        {
+          "name": "_validate_e04_standard_approval",
+          "line": 750
+        },
+        {
+          "name": "_peak_rss_mib",
+          "line": 762
+        },
+        {
+          "name": "_report",
+          "line": 767
+        },
+        {
+          "name": "standard_cost_projection",
+          "line": 798
+        },
+        {
+          "name": "stream_e04_raw_rows",
+          "line": 811
+        },
+        {
+          "name": "run_e04_experiment",
+          "line": 839
+        },
+        {
+          "name": "normalize_e04_machine_artifacts",
+          "line": 898
+        },
+        {
+          "name": "finalize_e04_standard_artifacts",
+          "line": 904
+        },
+        {
+          "name": "append_e04_standard_cell_block",
+          "line": 950
+        },
+        {
+          "name": "materialize_e04_standard_from_raw",
+          "line": 977
+        },
+        {
+          "name": "record_e04_verification",
+          "line": 993
+        }
+      ]
+    },
+    "E04_CONFIG": {
+      "path": "configs/frontiers_article/e04_m3_search_architectures_standard.json",
+      "sha256": "e8b73dc7c9904b75378d49f0772f1a3ea59e70a1c56581b1e95c98952f769e53",
+      "bytes": 653,
+      "exact_configuration": {
+        "experiment_id": "E04",
+        "run_id": "frontiers_m3_search_architectures_v1",
+        "tier": "standard",
+        "model": "M3",
+        "n": 500,
+        "T": 2000,
+        "final_window_fraction": 0.2,
+        "master_seed": 2026081401,
+        "master_seeds": [
+          2026081401,
+          2026081402,
+          2026081403,
+          2026081404,
+          2026081405
+        ],
+        "bootstrap_seed": 2026081497,
+        "workers": 1,
+        "approved_standard": false,
+        "payoffs": {
+          "b": 1.0,
+          "a": 0.6,
+          "c": 0.25,
+          "r": 2.0
+        },
+        "learner": {
+          "alpha": 0.1,
+          "tau": 0.25,
+          "lambda": 1.0,
+          "q0": 0.0
+        },
+        "design": {
+          "architectures": [
+            "flat_2k",
+            "hierarchical",
+            "global_mask",
+            "fixed_known_good"
+          ],
+          "K": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "identity_modes": [
+            "fixed",
+            "random_per_child"
+          ],
+          "good_context_regimes": [
+            "one",
+            "two",
+            "proportional_25"
+          ],
+          "p_good": 0.85,
+          "p_bad": 0.2,
+          "bf": 0.0
+        }
+      }
+    },
+    "E04_CURVES": {
+      "path": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv",
+      "sha256": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4",
+      "bytes": 91588,
+      "selection_and_interpretation": "For context-count plots select fixed identity, one-good regime, requested/effective K=1,2,4,8,16 within architecture, and equal-weight masters. Resolve exact field names from the header and frozen Figure 9 provenance. Abundance endpoint panel selects K=16 and one versus four good contexts.",
+      "columns": [
+        "run_id",
+        "experiment_id",
+        "tier",
+        "master_seed",
+        "parameter_cell_id",
+        "architecture",
+        "K",
+        "canonical_identity_mode",
+        "effective_good_count",
+        "n",
+        "mean_settled_any_good_auth_argmax",
+        "mean_settled_any_good_auth_unique",
+        "mean_ever_accepted_good_auth",
+        "mean_time_to_first_accepted_good_auth_capped",
+        "mean_distinct_contexts_sampled_authentically",
+        "mean_realized_objective_reward",
+        "mean_expected_static_regret",
+        "mean_final_window_mask_rate",
+        "mean_final_window_good_auth_rate",
+        "mean_final_window_good_auth_allocation_fraction",
+        "allocation_defined_n",
+        "allocation_status",
+        "mean_final_window_auth_context_entropy",
+        "entropy_defined_n",
+        "entropy_status",
+        "mean_final_window_auth_context_entropy_normalized",
+        "normalized_entropy_defined_n",
+        "normalized_entropy_status"
+      ],
+      "row_count": 275
+    },
+    "E04_EFFECTS": {
+      "path": "results/summaries/frontiers_m3_search_architectures_v1_effects.csv",
+      "sha256": "dd426992f0a1a0ae05542756dc6dca918fbf56a589347676a93a309d08a41d44",
+      "bytes": 273123,
+      "selection_and_interpretation": "Select level=across_master_seeds and the exact metric/architecture/contrast in effect_name. Final mask frequency, encounter, regret and modal classification are distinct fields.",
+      "columns": [
+        "run_id",
+        "experiment_id",
+        "tier",
+        "effect_name",
+        "level",
+        "master_seed",
+        "estimate",
+        "ci_status",
+        "ci_low",
+        "ci_high",
+        "notes"
+      ],
+      "row_count": 1182
+    },
+    "E04_HEADLINE": {
+      "path": "projects/frontiers_article/publication_v1/data/e04_headline_effects.csv",
+      "sha256": "ebcf58f06eef99fa890bbf9039b3c59293bb743417e3e279f35723f3ef501868",
+      "bytes": 1408,
+      "selection_and_interpretation": "These are primarily modal and abundance-slope effects. Do not use them as confidence intervals on descriptive total-masking endpoints.",
+      "columns": [
+        "claim_id",
+        "effect_name",
+        "level",
+        "role",
+        "response_metric",
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "ci_status"
+      ],
+      "row_count": 6,
+      "archived_rows": [
+        {
+          "claim_id": "E04-C6-FLAT",
+          "effect_name": "flat_2k_mean_settled_any_good_auth_argmax_S16_minus_S1_fixed_one",
+          "level": "across_master_seeds",
+          "role": "primary",
+          "response_metric": "mean_settled_any_good_auth_argmax",
+          "estimate": "-0.23399999999999999",
+          "ci_low": "-0.24641663998203767",
+          "ci_high": "-0.2215833600179623",
+          "ci_status": "student_t_95"
+        },
+        {
+          "claim_id": "E04-C6-HIER",
+          "effect_name": "hierarchical_mean_settled_any_good_auth_argmax_S16_minus_S1_fixed_one",
+          "level": "across_master_seeds",
+          "role": "primary",
+          "response_metric": "mean_settled_any_good_auth_argmax",
+          "estimate": "-0.47040000000000004",
+          "ci_low": "-0.5110310710163218",
+          "ci_high": "-0.42976892898367824",
+          "ci_status": "student_t_95"
+        },
+        {
+          "claim_id": "E04-C6-CONTROL-GLOBALMASK",
+          "effect_name": "global_mask_mean_settled_any_good_auth_argmax_S16_minus_S1_fixed_one",
+          "level": "across_master_seeds",
+          "role": "control",
+          "response_metric": "mean_settled_any_good_auth_argmax",
+          "estimate": "0.008800000000000007",
+          "ci_low": "0.0020904172301466784",
+          "ci_high": "0.015509582769853337",
+          "ci_status": "student_t_95"
+        },
+        {
+          "claim_id": "E04-C6-CONTROL-KNOWNGOOD",
+          "effect_name": "fixed_known_good_mean_settled_any_good_auth_argmax_structural_K_effect",
+          "level": "across_master_seeds",
+          "role": "control",
+          "response_metric": "mean_settled_any_good_auth_argmax",
+          "estimate": "0.0",
+          "ci_low": "0.0",
+          "ci_high": "0.0",
+          "ci_status": "student_t_95"
+        },
+        {
+          "claim_id": "E04-C6-CONTROL-PROP25-FLAT",
+          "effect_name": "flat_2k_mean_settled_any_good_auth_argmax_proportional25_minus_one_slope",
+          "level": "across_master_seeds",
+          "role": "control",
+          "response_metric": "mean_settled_any_good_auth_argmax",
+          "estimate": "0.060439999999999994",
+          "ci_low": "0.05504368769417347",
+          "ci_high": "0.06583631230582652",
+          "ci_status": "student_t_95"
+        },
+        {
+          "claim_id": "E04-C6-CONTROL-PROP25-HIER",
+          "effect_name": "hierarchical_mean_settled_any_good_auth_argmax_proportional25_minus_one_slope",
+          "level": "across_master_seeds",
+          "role": "control",
+          "response_metric": "mean_settled_any_good_auth_argmax",
+          "estimate": "0.11224000000000003",
+          "ci_low": "0.10478711935791023",
+          "ci_high": "0.11969288064208984",
+          "ci_status": "student_t_95"
+        }
+      ]
+    },
+    "E04_MANIFEST": {
+      "path": "results/manifests/frontiers_m3_search_architectures_v1.json",
+      "sha256": "abf6fa747869ab1e2258d3321dcb0a888d06b5a61edd88e4661791a88c249d71",
+      "bytes": 107093
+    },
+    "E05_CELLS": {
+      "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv",
+      "sha256": "59d780f3feb3ed03e665de0a75eabd8975fb394d58cbd9c2193a03bb68d73ab7",
+      "bytes": 78148,
+      "selection_and_interpretation": "For actual masking/modal comparisons select bf=0,.30,.325,8/17 and flat_2k, averaging the five master rows equally. Use the distinct masking and modal fields.",
+      "columns": [
+        "run_id",
+        "experiment_id",
+        "tier",
+        "architecture",
+        "architecture_role",
+        "master_seed",
+        "matched_family_id",
+        "parameter_cell_id",
+        "bf",
+        "bf_label",
+        "is_analytic_threshold_anchor",
+        "n",
+        "T",
+        "final_window_fraction",
+        "final_window_start",
+        "final_window_end",
+        "modal_good_auth_argmax_n",
+        "modal_good_auth_argmax_fraction",
+        "modal_good_auth_unique_n",
+        "modal_good_auth_unique_fraction",
+        "unique_modal_n",
+        "modal_tie_n",
+        "mean_final_window_good_auth_rate",
+        "mean_final_window_auth_given_good_context_rate",
+        "conditional_good_context_defined_n",
+        "mean_final_window_authentic_rate",
+        "mean_final_window_mask_rate",
+        "mean_realized_objective_reward",
+        "mean_expected_static_regret",
+        "mean_realized_pseudo_regret",
+        "analytic_objective_advantage_good_auth_minus_mask",
+        "objective_comparator"
+      ],
+      "row_count": 180
+    },
+    "E05_CODE": {
+      "path": "src/gifted_masking/experiments/e05.py",
+      "sha256": "5696a4ac08fd1f4bc15fdd78d9be5ccdf894ce9c35a1214190efcaa456b5011a",
+      "bytes": 77617,
+      "top_level_definitions": [
+        {
+          "name": "_json_no_duplicates",
+          "line": 52
+        },
+        {
+          "name": "_canonical_json",
+          "line": 63
+        },
+        {
+          "name": "bf_label",
+          "line": 67
+        },
+        {
+          "name": "_exact_mapping",
+          "line": 71
+        },
+        {
+          "name": "load_e05_config",
+          "line": 79
+        },
+        {
+          "name": "analytic_values",
+          "line": 121
+        },
+        {
+          "name": "e05_parameter_cell_id",
+          "line": 134
+        },
+        {
+          "name": "e05_matched_family_id",
+          "line": 138
+        },
+        {
+          "name": "derive_e05_policy_environment_seed",
+          "line": 142
+        },
+        {
+          "name": "_as_json",
+          "line": 149
+        },
+        {
+          "name": "_scalar",
+          "line": 150
+        },
+        {
+          "name": "simulate_e05_cell",
+          "line": 157
+        },
+        {
+          "name": "_bool",
+          "line": 210
+        },
+        {
+          "name": "expected_e05_cells",
+          "line": 216
+        },
+        {
+          "name": "_finite",
+          "line": 221
+        },
+        {
+          "name": "_validate_e05_row_semantics",
+          "line": 228
+        },
+        {
+          "name": "validate_e05_raw_rows",
+          "line": 282
+        },
+        {
+          "name": "stream_e05_raw_rows",
+          "line": 318
+        },
+        {
+          "name": "standard_cost_projection",
+          "line": 335
+        },
+        {
+          "name": "recompute_e05_cells",
+          "line": 343
+        },
+        {
+          "name": "nonincreasing_pava",
+          "line": 359
+        },
+        {
+          "name": "invert_transition",
+          "line": 372
+        },
+        {
+          "name": "_transition_rows",
+          "line": 390
+        },
+        {
+          "name": "_paired_lower",
+          "line": 413
+        },
+        {
+          "name": "_transition_record",
+          "line": 418
+        },
+        {
+          "name": "recompute_e05_effects",
+          "line": 424
+        },
+        {
+          "name": "_validate_e05_standard_cells",
+          "line": 452
+        },
+        {
+          "name": "e05_bootstrap_transition",
+          "line": 464
+        },
+        {
+          "name": "_effect",
+          "line": 488
+        },
+        {
+          "name": "validate_e05_derived",
+          "line": 492
+        },
+        {
+          "name": "_analytic_rows",
+          "line": 505
+        },
+        {
+          "name": "_figure",
+          "line": 512
+        },
+        {
+          "name": "_sha",
+          "line": 526
+        },
+        {
+          "name": "_source_fingerprint",
+          "line": 527
+        },
+        {
+          "name": "_peak_rss_mib",
+          "line": 532
+        },
+        {
+          "name": "e05_standard_readiness_projection",
+          "line": 538
+        },
+        {
+          "name": "_report",
+          "line": 573
+        },
+        {
+          "name": "run_e05_experiment",
+          "line": 578
+        },
+        {
+          "name": "normalize_e05_machine_artifacts",
+          "line": 631
+        },
+        {
+          "name": "record_e05_verification",
+          "line": 637
+        },
+        {
+          "name": "recover_e05_standard_artifacts",
+          "line": 663
+        },
+        {
+          "name": "append_e05_standard_block",
+          "line": 697
+        }
+      ]
+    },
+    "E05_CONFIG": {
+      "path": "configs/frontiers_article/e05_m3_bflpe_crossover_standard.json",
+      "sha256": "571d3c93b46a97333839f81b53f8c21cc43a21a5427ec97c61cf38f0cd9d9e1f",
+      "bytes": 806,
+      "exact_configuration": {
+        "experiment_id": "E05",
+        "run_id": "frontiers_m3_bflpe_crossover_v1",
+        "tier": "standard",
+        "model": "M3",
+        "n": 500,
+        "T": 2000,
+        "final_window_fraction": 0.2,
+        "master_seed": 2026081501,
+        "master_seeds": [
+          2026081501,
+          2026081502,
+          2026081503,
+          2026081504,
+          2026081505
+        ],
+        "bootstrap_seed": 2026081597,
+        "bootstrap_replicates": 10000,
+        "workers": 1,
+        "approved_standard": false,
+        "payoffs": {
+          "b": 1.0,
+          "a": 0.6,
+          "c": 0.25,
+          "r": 2.0
+        },
+        "learner": {
+          "alpha": 0.1,
+          "tau": 0.25,
+          "lambda": 1.0,
+          "q0": 0.0
+        },
+        "design": {
+          "architectures": [
+            "flat_2k",
+            "hierarchical"
+          ],
+          "K": 4,
+          "good_context_id": 0,
+          "p_good": 0.85,
+          "p_bad": 0.2,
+          "bf_values": [
+            0.0,
+            0.3,
+            0.325,
+            0.35,
+            0.375,
+            0.4,
+            0.425,
+            0.45,
+            0.47058823529411764,
+            0.475,
+            0.5,
+            0.525,
+            0.55,
+            0.575,
+            0.6,
+            0.625,
+            0.65,
+            0.8
+          ],
+          "analytic_threshold_exact": "8/17",
+          "analytic_threshold_bf": 0.47058823529411764,
+          "dense_bf_min": 0.3,
+          "dense_bf_max": 0.65,
+          "transition_response": 0.5
+        }
+      }
+    },
+    "E05_CROSSINGS": {
+      "path": "projects/frontiers_article/publication_v1/data/e05_crossings.csv",
+      "sha256": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b",
+      "bytes": 638,
+      "selection_and_interpretation": "Use the flat_2k archived point and CI. Hierarchical is left-censored below .30 and has no numeric in-range crossing.",
+      "columns": [
+        "architecture",
+        "architecture_role",
+        "transition_status",
+        "transition_bf",
+        "ci_low",
+        "ci_high",
+        "ci_method",
+        "bootstrap_replicates",
+        "bootstrap_valid_crossings",
+        "analytic_threshold_bf",
+        "learned_minus_analytic_threshold",
+        "dense_bf_min",
+        "dense_bf_max",
+        "decision_eligible",
+        "censoring_note"
+      ],
+      "row_count": 2,
+      "archived_rows": [
+        {
+          "architecture": "flat_2k",
+          "architecture_role": "primary",
+          "transition_status": "valid",
+          "transition_bf": "0.31285211267605634",
+          "ci_low": "0.3078358208955224",
+          "ci_high": "0.3169178027050235",
+          "ci_method": "bootstrap_master_seed",
+          "bootstrap_replicates": "10000",
+          "bootstrap_valid_crossings": "10000",
+          "analytic_threshold_bf": "0.47058823529411764",
+          "learned_minus_analytic_threshold": "-0.1577361226180613",
+          "dense_bf_min": "0.3",
+          "dense_bf_max": "0.65",
+          "decision_eligible": "True",
+          "censoring_note": ""
+        },
+        {
+          "architecture": "hierarchical",
+          "architecture_role": "secondary",
+          "transition_status": "no_crossing_below",
+          "transition_bf": "",
+          "ci_low": "",
+          "ci_high": "",
+          "ci_method": "bootstrap_master_seed",
+          "bootstrap_replicates": "10000",
+          "bootstrap_valid_crossings": "0",
+          "analytic_threshold_bf": "0.47058823529411764",
+          "learned_minus_analytic_threshold": "",
+          "dense_bf_min": "0.3",
+          "dense_bf_max": "0.65",
+          "decision_eligible": "False",
+          "censoring_note": "Left-censored below the observed dense range; no in-range crossing is estimable and none may be extrapolated."
+        }
+      ]
+    },
+    "E05_MANIFEST": {
+      "path": "results/manifests/frontiers_m3_bflpe_crossover_v1.json",
+      "sha256": "cc600fd4158ea447e6b08024c545489e5b02f64522a1b37314d22745fbe190d3",
+      "bytes": 12818
+    },
+    "E05_RESPONSE": {
+      "path": "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv",
+      "sha256": "0d47aeae4dc4c15e08176c7ff44466740712f3a47000a68d2b7a1231d48a7e10",
+      "bytes": 4867,
+      "selection_and_interpretation": "Observed pooled response points. Do not refit or rerun the bootstrap. Resolve target response as modal_good_auth_argmax_fraction.",
+      "columns": [
+        "architecture",
+        "architecture_role",
+        "bf",
+        "bf_label",
+        "in_dense_range",
+        "is_analytic_threshold_anchor",
+        "response_metric",
+        "n_master_seeds",
+        "n_per_cell",
+        "pooled_response",
+        "master_min",
+        "master_max",
+        "analytic_objective_advantage_good_auth_minus_mask",
+        "objective_comparator"
+      ],
+      "row_count": 36
+    },
+    "E06_CODE": {
+      "path": "src/gifted_masking/experiments/e06.py",
+      "sha256": "f14a70582229918cc5fdf458515bcf15ff6091806d018ceb5195c2feeb81bc3d",
+      "bytes": 137900,
+      "selection_and_interpretation": "_family resets p and Q at every segment for reversal_only and cold_start. Inspect actual state handling, not the path name alone.",
+      "top_level_definitions": [
+        {
+          "name": "E06ResourceGuard",
+          "line": 58
+        },
+        {
+          "name": "_no_duplicates",
+          "line": 81
+        },
+        {
+          "name": "_canon",
+          "line": 89
+        },
+        {
+          "name": "_label",
+          "line": 92
+        },
+        {
+          "name": "_sha",
+          "line": 93
+        },
+        {
+          "name": "_HashingSink",
+          "line": 95
+        },
+        {
+          "name": "_LogicalCsvWriter",
+          "line": 109
+        },
+        {
+          "name": "_open_deterministic_gzip_csv",
+          "line": 121
+        },
+        {
+          "name": "validate_e06_gzip_member",
+          "line": 127
+        },
+        {
+          "name": "_source_fingerprint",
+          "line": 145
+        },
+        {
+          "name": "_finite",
+          "line": 149
+        },
+        {
+          "name": "_strict_json",
+          "line": 154
+        },
+        {
+          "name": "_duplicate_free_object",
+          "line": 164
+        },
+        {
+          "name": "_strict_int",
+          "line": 172
+        },
+        {
+          "name": "_strict_float",
+          "line": 181
+        },
+        {
+          "name": "_semantic_equal",
+          "line": 195
+        },
+        {
+          "name": "load_e06_config",
+          "line": 209
+        },
+        {
+          "name": "segment_id",
+          "line": 234
+        },
+        {
+          "name": "derive_segment_seed",
+          "line": 236
+        },
+        {
+          "name": "loop_area",
+          "line": 240
+        },
+        {
+          "name": "nondecreasing_pava",
+          "line": 244
+        },
+        {
+          "name": "invert_transition",
+          "line": 253
+        },
+        {
+          "name": "paired_student_t_effect",
+          "line": 269
+        },
+        {
+          "name": "derive_bootstrap_seed",
+          "line": 275
+        },
+        {
+          "name": "linear_percentile",
+          "line": 281
+        },
+        {
+          "name": "bootstrap_paired_transition_width",
+          "line": 287
+        },
+        {
+          "name": "phase_separated_core_projection",
+          "line": 300
+        },
+        {
+          "name": "_run_segment",
+          "line": 332
+        },
+        {
+          "name": "replay_segment_parity",
+          "line": 362
+        },
+        {
+          "name": "_family",
+          "line": 371
+        },
+        {
+          "name": "expected_rows",
+          "line": 393
+        },
+        {
+          "name": "expected_learner_steps",
+          "line": 396
+        },
+        {
+          "name": "iter_e06_family_specs",
+          "line": 407
+        },
+        {
+          "name": "e06_seed_map_key",
+          "line": 415
+        },
+        {
+          "name": "_expected_raw_rows",
+          "line": 430
+        },
+        {
+          "name": "_canonical_candidate_raw_value",
+          "line": 451
+        },
+        {
+          "name": "_compare_e06_raw_row",
+          "line": 466
+        },
+        {
+          "name": "_compare_e06_raw_rows",
+          "line": 475
+        },
+        {
+          "name": "validate_e06_raw",
+          "line": 482
+        },
+        {
+          "name": "validate_e06_raw_csv_streaming",
+          "line": 487
+        },
+        {
+          "name": "_derive_tables_from_validated_raw",
+          "line": 540
+        },
+        {
+          "name": "_standard_cells_from_family",
+          "line": 576
+        },
+        {
+          "name": "_validate_generated_e06_family",
+          "line": 591
+        },
+        {
+          "name": "_standard_effect_row",
+          "line": 605
+        },
+        {
+          "name": "_append_paired_summary",
+          "line": 608
+        },
+        {
+          "name": "derive_e06_standard_tables",
+          "line": 613
+        },
+        {
+          "name": "validate_e06_standard_derived",
+          "line": 698
+        },
+        {
+          "name": "derive_tables",
+          "line": 704
+        },
+        {
+          "name": "_validate_frozen_e06_config",
+          "line": 709
+        },
+        {
+          "name": "_compare_derived_table",
+          "line": 715
+        },
+        {
+          "name": "validate_e06_derived",
+          "line": 731
+        },
+        {
+          "name": "_figure",
+          "line": 751
+        },
+        {
+          "name": "_standard_figure",
+          "line": 758
+        },
+        {
+          "name": "_rss",
+          "line": 796
+        },
+        {
+          "name": "_read_e06_csv",
+          "line": 799
+        },
+        {
+          "name": "_parse_e06_go_binding",
+          "line": 808
+        },
+        {
+          "name": "_git_porcelain_inventory",
+          "line": 816
+        },
+        {
+          "name": "validate_e06_post_seal_git_drift",
+          "line": 833
+        },
+        {
+          "name": "validate_e06_standard_go_binding",
+          "line": 862
+        },
+        {
+          "name": "validate_e06_standard_authorization",
+          "line": 884
+        },
+        {
+          "name": "_run_e06_smoke",
+          "line": 892
+        },
+        {
+          "name": "_standard_output_paths",
+          "line": 944
+        },
+        {
+          "name": "_enforce_e06_standard_stops",
+          "line": 948
+        },
+        {
+          "name": "e06_standard_raw_size_bound",
+          "line": 951
+        },
+        {
+          "name": "_compression_fixture_row",
+          "line": 973
+        },
+        {
+          "name": "write_e06_standard_compression_fixture",
+          "line": 997
+        },
+        {
+          "name": "load_e06_standard_compression_fixture",
+          "line": 1018
+        },
+        {
+          "name": "authenticate_e06_standard_compression_fixture",
+          "line": 1033
+        },
+        {
+          "name": "e06_standard_readiness_projection",
+          "line": 1063
+        },
+        {
+          "name": "_run_e06_standard",
+          "line": 1106
+        },
+        {
+          "name": "run_e06_experiment",
+          "line": 1180
+        },
+        {
+          "name": "normalize_e06_machine_artifacts",
+          "line": 1189
+        },
+        {
+          "name": "normalize_e06_report",
+          "line": 1196
+        },
+        {
+          "name": "_sha_bytes",
+          "line": 1222
+        },
+        {
+          "name": "_parse_exit_record",
+          "line": 1225
+        },
+        {
+          "name": "_parse_full_verification_log",
+          "line": 1235
+        },
+        {
+          "name": "_parse_focused_log",
+          "line": 1257
+        },
+        {
+          "name": "_source_records",
+          "line": 1273
+        },
+        {
+          "name": "_source_fingerprint_from_records",
+          "line": 1276
+        },
+        {
+          "name": "_package_root",
+          "line": 1282
+        },
+        {
+          "name": "_require_exact_pending_binding",
+          "line": 1288
+        },
+        {
+          "name": "_validate_focused_evidence",
+          "line": 1337
+        },
+        {
+          "name": "_normalize_manifest_for_deterministic_comparison",
+          "line": 1355
+        },
+        {
+          "name": "_validate_deterministic_evidence",
+          "line": 1384
+        },
+        {
+          "name": "_atomic_package_write",
+          "line": 1407
+        },
+        {
+          "name": "_replace_report_item_12",
+          "line": 1426
+        },
+        {
+          "name": "_update_report_hash",
+          "line": 1432
+        },
+        {
+          "name": "record_e06_preverification",
+          "line": 1440
+        },
+        {
+          "name": "build_e06_full_verification_evidence",
+          "line": 1453
+        },
+        {
+          "name": "seal_e06_verification",
+          "line": 1458
+        }
+      ]
+    },
+    "E06_DESIGN": {
+      "path": "projects/frontiers_article/E06_STANDARD_READINESS_IMPLEMENTATION.md",
+      "sha256": "0a64c3b4df2f2154b8f2580c9f3e624909c0910dddcfd5db87bb67b4affd2c24",
+      "bytes": 9473
+    },
+    "E06_QUALIFICATION": {
+      "path": "configs/frontiers_article/e06_m4_hysteresis_qualification.json",
+      "sha256": "9dfb55f1928d5f372dd0890da8069b728d114f98ebce8e863742a05c67617cbe",
+      "bytes": 1433,
+      "selection_and_interpretation": "Staged deferred design. approved_qualification is false.",
+      "exact_configuration": {
+        "experiment_id": "E06",
+        "run_id": "frontiers_m4_hysteresis_qualification_v1",
+        "tier": "qualification",
+        "model": "M4",
+        "n": 400,
+        "segment_horizon": 1000,
+        "final_window_fraction": 0.2,
+        "master_seed": 2026081601,
+        "master_seeds": [
+          2026081601,
+          2026081602,
+          2026081603,
+          2026081604,
+          2026081605
+        ],
+        "bootstrap_seed": 2026081697,
+        "bootstrap_replicates": 10000,
+        "workers": 1,
+        "approved_qualification": false,
+        "payoffs": {
+          "b": 1.0,
+          "a": 0.6,
+          "c": 0.25,
+          "r": 2.0
+        },
+        "learner": {
+          "alpha": 0.1,
+          "tau": 0.25,
+          "lambda": 1.0,
+          "q0": 0.0
+        },
+        "bounds": {
+          "p_min": 0.05,
+          "p_max": 0.95
+        },
+        "km_values": [
+          0.0,
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002,
+          0.0024,
+          0.0028,
+          0.0032,
+          0.0036,
+          0.004
+        ],
+        "scenarios": [
+          {
+            "id": "Q00",
+            "role": "long_horizon_sentinel",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "segment_horizon": 2000,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "Q01",
+            "role": "low_lambda",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "lambda": 0.5,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "Q02",
+            "role": "high_lambda",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "lambda": 2.5,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "Q03",
+            "role": "low_tau",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "tau": 0.1,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "Q04",
+            "role": "high_tau",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "tau": 0.6,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          }
+        ]
+      }
+    },
+    "E06_SMOKE": {
+      "path": "configs/frontiers_article/e06_m4_paths_smoke.json",
+      "sha256": "0319c203ec9317536742498cb30db9f914a3f277faae4a0693820abb34717e81",
+      "bytes": 649,
+      "exact_configuration": {
+        "experiment_id": "E06",
+        "run_id": "frontiers_m4_path_diagnostics_v1_smoke",
+        "tier": "smoke",
+        "model": "M4",
+        "n": 64,
+        "segment_horizon": 120,
+        "final_window_fraction": 0.2,
+        "master_seed": 2026081699,
+        "bootstrap_seed": 2026081697,
+        "bootstrap_replicates": 0,
+        "workers": 1,
+        "payoffs": {
+          "b": 1.0,
+          "a": 0.6,
+          "c": 0.25,
+          "r": 2.0
+        },
+        "learner": {
+          "alpha": 0.1,
+          "tau": 0.25,
+          "lambda": 1.0,
+          "q0": 0.0
+        },
+        "bounds": {
+          "p_min": 0.05,
+          "p_max": 0.95
+        },
+        "km_values": [
+          0.0,
+          0.001,
+          0.002,
+          0.003,
+          0.004
+        ],
+        "scenarios": [
+          {
+            "id": "S00",
+            "role": "baseline",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start",
+              "km_disabled_inherited_loop",
+              "km_disabled_reversal_only"
+            ]
+          }
+        ]
+      }
+    },
+    "E06_SMOKE_MANIFEST": {
+      "path": "results/manifests/frontiers_m4_path_diagnostics_v1_smoke.json",
+      "sha256": "9658d7c7710266f0ba13e06a6c7c0ada89b868f5f1cc1a077f0469063ffa65ca",
+      "bytes": 37028
+    },
+    "E06_STANDARD": {
+      "path": "configs/frontiers_article/e06_m4_paths_standard.json",
+      "sha256": "bc2c04d333273547aa06d1be90867ea457e739f5887df41ff09302e05719d297",
+      "bytes": 2021,
+      "selection_and_interpretation": "Staged design, not executed standard evidence. approved_standard is false; separate canonical GO is absent.",
+      "exact_configuration": {
+        "experiment_id": "E06",
+        "run_id": "frontiers_m4_path_diagnostics_v1",
+        "tier": "standard",
+        "model": "M4",
+        "n": 400,
+        "segment_horizon": 1000,
+        "final_window_fraction": 0.2,
+        "master_seed": 2026081601,
+        "master_seeds": [
+          2026081601,
+          2026081602,
+          2026081603,
+          2026081604,
+          2026081605
+        ],
+        "bootstrap_seed": 2026081697,
+        "bootstrap_replicates": 10000,
+        "workers": 1,
+        "approved_standard": false,
+        "payoffs": {
+          "b": 1.0,
+          "a": 0.6,
+          "c": 0.25,
+          "r": 2.0
+        },
+        "learner": {
+          "alpha": 0.1,
+          "tau": 0.25,
+          "lambda": 1.0,
+          "q0": 0.0
+        },
+        "bounds": {
+          "p_min": 0.05,
+          "p_max": 0.95
+        },
+        "km_values": [
+          0.0,
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002,
+          0.0024,
+          0.0028,
+          0.0032,
+          0.0036,
+          0.004
+        ],
+        "scenarios": [
+          {
+            "id": "S00",
+            "role": "primary_fast",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "segment_horizon": 500,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "S01",
+            "role": "primary_slow",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "segment_horizon": 1000,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "S02",
+            "role": "low_p0",
+            "p0": 0.1,
+            "ka": 0.12,
+            "kr": 0.04,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "S03",
+            "role": "high_p0",
+            "p0": 0.9,
+            "ka": 0.12,
+            "kr": 0.04,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "S04",
+            "role": "ka_less_than_kr",
+            "p0": 0.45,
+            "ka": 0.04,
+            "kr": 0.12,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "S05",
+            "role": "ka_equals_kr",
+            "p0": 0.45,
+            "ka": 0.08,
+            "kr": 0.08,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "S06",
+            "role": "no_acceptance_gain",
+            "p0": 0.45,
+            "ka": 0.0,
+            "kr": 0.04,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "S07",
+            "role": "no_rejection_loss",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.0,
+            "actual_km_mode": "active",
+            "path_types": [
+              "inherited_loop",
+              "reversal_only",
+              "cold_start"
+            ]
+          },
+          {
+            "id": "S08",
+            "role": "km_disabled_placebo",
+            "p0": 0.45,
+            "ka": 0.12,
+            "kr": 0.04,
+            "actual_km_mode": "disabled",
+            "path_types": [
+              "km_disabled_inherited_loop",
+              "km_disabled_reversal_only"
+            ]
+          }
+        ]
+      }
+    },
+    "FIG1": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_01_overview.png",
+      "sha256": "28ab84132ed5b78a8befb9d9e6f3a5dd1038c0ea916e44581a1fc36d16db27f2",
+      "bytes": 156288,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_01_overview.svg",
+        "sha256": "cf0f3d4878cbe1b3979689e231918f4eed24d700b308bd038b7c8ff7f63d8dc6"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "1A-1B": {
+          "note": "No quantitative values; arrows organize model mechanisms, not estimated causal effects in children.",
+          "selector": "conceptual synthesis C01-C23",
+          "source": []
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG10": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_10_learned_boundary_actual_masking.png",
+      "sha256": "0670c085748552c07a55373b859638f61705d6dc18c262c37b395d83825291e3",
+      "bytes": 148706,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_10_learned_boundary_actual_masking.svg",
+        "sha256": "e24d3586dd5a461b9bf3ae310485a58bb829ca5411d08fee70a3c3b7441ed57a"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "10A": {
+          "note": "No isotonic refit or bootstrap. Lines connect observed pooled points only; shaded strip is the archived crossing CI.",
+          "selector": "dense-range archived pooled responses by architecture; frozen crossing and CI",
+          "source": [
+            "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv",
+            "projects/frontiers_article/publication_v1/data/e05_crossings.csv"
+          ]
+        },
+        "10B": {
+          "note": "Descriptive master means; masking has action denominator, modal classification has learner denominator.",
+          "selector": "architecture=flat_2k;bf in {0,.30,.325,8/17};five masters per cell",
+          "source": "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv"
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG2": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_02_state_kernel.png",
+      "sha256": "594333d30ad7cc62948984e8f9eddf3f9cff50816a30f17ef1b2bc957d26e809",
+      "bytes": 145446,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_02_state_kernel.svg",
+        "sha256": "89e9a5af78bfaa7ef07a7f20e242bfddadeefee6cb1430dae20eb723fdc84f4f"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "2": {
+          "note": "Specification diagram. Turnover is restricted to current Accepted; escape to non-redeemed Stigmatized paths.",
+          "selector": "transition_step; supplementary S4.1",
+          "source": [
+            "src/gifted_masking/models/m2.py",
+            "projects/frontiers_article/revision_20260929/SUPPLEMENTARY_METHODS.md"
+          ]
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG3": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_03_architectures.png",
+      "sha256": "717c13a67a28f2c06e173d7a99de1be3ed919100a0c23e46786c22cece2f862c",
+      "bytes": 237788,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_03_architectures.svg",
+        "sha256": "da1871df269cce5625e48101376c15575d0d05e7f2d2f48ccbeb9f532c1df543"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "3A-3D": {
+          "note": "Schematic only. K=3 is illustrative, not an additional simulated condition.",
+          "selector": "simulate;simulate_hierarchical;simulate_global_mask;simulate_fixed_good_pond; supplementary S5.2",
+          "source": [
+            "src/gifted_masking/models/m3.py",
+            "projects/frontiers_article/revision_20260929/SUPPLEMENTARY_METHODS.md"
+          ]
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG4": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_04_weighting_history_information.png",
+      "sha256": "5c97f94eb5499da9f6f863c224089004b9c2e9caad83ec3f8235afdb6b9ab0a4",
+      "bytes": 190978,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_04_weighting_history_information.svg",
+        "sha256": "e9e6d84a3cdd6e4d7eec9bf8870d19ffc20d41a3ac0e15f5dde1934e77b32752"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "4A": {
+          "note": "",
+          "selector": "lambda in {0.5,2.5}; p=.65; equal-weight means of five masters",
+          "source": "projects/frontiers_article/publication_v1/data/e01_lambda_response.csv"
+        },
+        "4B": {
+          "note": "Exact formula (.75+1.4*lambda)/(1.6+1.4*lambda).",
+          "selector": "reference payoff algebra",
+          "source": "projects/frontiers_article/publication_v1/data/e01_lambda_response.csv"
+        },
+        "4C": {
+          "note": "",
+          "selector": "claim_id E01-C2-SAMPLING and E01-C2-FINAL-MASK",
+          "source": "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv"
+        },
+        "4D": {
+          "note": "",
+          "selector": "claim_id E01-C2-FORCED-MASK and E01-C2-CF-MASK",
+          "source": "projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv"
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG5": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_05_graded_engagement_intensity.png",
+      "sha256": "b400258384b78b17b2ca59ddea0f7256fdbef5b18febe3b85d6ab2dc0feca683",
+      "bytes": 177115,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_05_graded_engagement_intensity.svg",
+        "sha256": "6d0160a3a61118d68ba28d98b8bf054196b8c3adf43dee60e42e85cef8dae534"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "5A": {
+          "note": "",
+          "selector": "p in {.75,.85}; all five disclosure levels",
+          "source": "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv"
+        },
+        "5B": {
+          "note": "Var(R)=9(1-p)d[1-(1-p)d]; does not establish a learner variance preference.",
+          "selector": "exact reward variance at plotted disclosure levels",
+          "source": "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv"
+        },
+        "5C": {
+          "note": "Archived REGRET is binary-minus-graded normalized regret, exactly graded-minus-binary mean disclosure. Units multiply the unit-scale quantities by 100; time windows differ by outcome.",
+          "selector": "all four claims, with REGRET re-expressed as mean-disclosure difference",
+          "source": "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv"
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG6": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_06_dynamic_thresholds_persistence.png",
+      "sha256": "03b42592aaa08d2e95642496357210f3e86d4dbbd0a444f82af39c80ac481618",
+      "bytes": 110208,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_06_dynamic_thresholds_persistence.svg",
+        "sha256": "c35e86aa50e9f5f31b2051fbdfdd986e0ecd85dd1ff9f85fcf7dd8ea220d22f2"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "6A": {
+          "note": "Bars use midpoint; numerical brackets have width 0.00006103515625, not statistical confidence intervals.",
+          "selector": "all three bracketed thresholds plus exact static boundary",
+          "source": "projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv"
+        },
+        "6B": {
+          "note": "Bars equal-weight master means; dots show individual archived master values.",
+          "selector": "component=sentinels;sensitivity_name=T;T=5000;five listed (p,eta) pairs;five masters each",
+          "source": "results/summaries/frontiers_m2_regime_replication_v1_cells.csv"
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG7": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_07_dynamic_grid.png",
+      "sha256": "8db2ce550b31a551aa5effd5b390f3b0e7a4b8ada46102ee15df6b70c95acecf",
+      "bytes": 94520,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_07_dynamic_grid.svg",
+        "sha256": "fce595cb086eed7d1937daf03d83c024b0f1710b0672cc07ca0ec3335c1ac260"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "7": {
+          "note": "Each square is a tested parameter cell. Inconclusive cells retained; no smoothing or inferred boundary.",
+          "selector": "all 357 frozen publication_category rows; p21\u00d7eta17; no reclassification",
+          "source": [
+            "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+            "projects/frontiers_article/publication_v1/data/e03_grid_summary.csv"
+          ]
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG8": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_08_sensitivity_matrix.png",
+      "sha256": "2fd0cb36bc8e87d3ed0161e11d0ede7474c7bb5597a84b816ba55590420b804e",
+      "bytes": 242862,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_08_sensitivity_matrix.svg",
+        "sha256": "4bad519935f0499662310fac7ed25688e894fea54b800d7986ac1f2395a2a2f5"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "8": {
+          "note": "375 archived classifications; integer count display, not an uncertainty estimate. Gamma also changes the objective.",
+          "selector": "component=sentinels; five explicit disagreement sentinels; 15 separate settings; five masters each",
+          "source": "results/summaries/frontiers_m2_regime_replication_v1_cells.csv"
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIG9": {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_09_context_encounter_sustained_use.png",
+      "sha256": "117bab65488f8a6588a5af30c0d24c02ed9efd39db4e10aa9fedc9d4912ddc7c",
+      "bytes": 334914,
+      "svg_reference": {
+        "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_09_context_encounter_sustained_use.svg",
+        "sha256": "8d56681a857210896f5ce544cd6022c5321dff04ab5a38cfd1576ee7a40da55d"
+      },
+      "editable_status": "Scientific reference image/vector. Rebuild requested editable chart/table from archived data; SVG alone is not a native PowerPoint chart.",
+      "panels": {
+        "9A-9C,9E-9F": {
+          "note": "Equal-weight descriptive master means; connected lines guide the eye and do not imply intermediate K values. First success is zero-based and capped at T=2000 for non-events.",
+          "selector": "canonical_identity_mode=fixed;effective_good_count=1;K in {1,2,4,8,16};flat_2k,hierarchical,global_mask;five masters per cell",
+          "source": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv"
+        },
+        "9D": {
+          "note": "",
+          "selector": "canonical_identity_mode=fixed;K=16;effective_good_count in {1,4};flat_2k,hierarchical;five masters per cell",
+          "source": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv"
+        }
+      },
+      "full_panel_values_source": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json"
+    },
+    "FIGURE_CAPTIONS": {
+      "path": "projects/frontiers_article/integrated_article_20261004/FIGURE_CAPTIONS.md",
+      "sha256": "6cf9faa6eea664c6d67a94fbfcaec6c0b94569e29fd14c86cc9dc8562e839e54",
+      "bytes": 12769
+    },
+    "FIGURE_PROVENANCE": {
+      "path": "projects/frontiers_article/integrated_article_20261004/FIGURE_PROVENANCE.json",
+      "sha256": "f85607024ff6033e951ef7d70c749b0fc9f85244adc7bd360a7a55b9159d376e",
+      "bytes": 85409
+    },
+    "M0": {
+      "path": "src/gifted_masking/models/m0.py",
+      "sha256": "a2b30aed1b4e8c4f933f773be98c1033cd3dc9262b3d18e1631bf59c600861a7",
+      "bytes": 1840,
+      "top_level_definitions": [
+        {
+          "name": "expected_rewards",
+          "line": 8
+        },
+        {
+          "name": "expected_gap",
+          "line": 14
+        },
+        {
+          "name": "objective_indifference_r",
+          "line": 19
+        },
+        {
+          "name": "subjective_indifference_r",
+          "line": 23
+        },
+        {
+          "name": "simulate",
+          "line": 33
+        }
+      ]
+    },
+    "M1": {
+      "path": "src/gifted_masking/models/m1.py",
+      "sha256": "59287a423a4fed9bdbedc6c78d36351c28dd062235c11edcd571fa6b90968d15",
+      "bytes": 2068,
+      "top_level_definitions": [
+        {
+          "name": "disclosure_levels",
+          "line": 8
+        },
+        {
+          "name": "acceptance_probability",
+          "line": 17
+        },
+        {
+          "name": "expected_reward",
+          "line": 24
+        },
+        {
+          "name": "simulate",
+          "line": 29
+        }
+      ]
+    },
+    "M2": {
+      "path": "src/gifted_masking/models/m2.py",
+      "sha256": "42b39f1bcf8aac96f830acd5747a215bac24c36a2a2be773294022c019170c5e",
+      "bytes": 5604,
+      "top_level_definitions": [
+        {
+          "name": "transition_step",
+          "line": 13
+        },
+        {
+          "name": "simulate",
+          "line": 61
+        },
+        {
+          "name": "simulate_with_diagnostics",
+          "line": 115
+        }
+      ]
+    },
+    "M2_ORACLE": {
+      "path": "src/gifted_masking/analysis/m2_optimal.py",
+      "sha256": "0ccfb624fa0d8e9ead31cbe561d13e039f0052afe4e6208839f5db192bc84dae",
+      "bytes": 12139,
+      "top_level_definitions": [
+        {
+          "name": "M2Params",
+          "line": 18
+        },
+        {
+          "name": "_reward",
+          "line": 32
+        },
+        {
+          "name": "build_m2_transition_table",
+          "line": 40
+        },
+        {
+          "name": "transition_arrays",
+          "line": 80
+        },
+        {
+          "name": "q_from_v",
+          "line": 93
+        },
+        {
+          "name": "solve_m2_value_iteration",
+          "line": 97
+        },
+        {
+          "name": "evaluate_policy_value",
+          "line": 147
+        },
+        {
+          "name": "static_m0_comparator",
+          "line": 162
+        },
+        {
+          "name": "policy_from_mask_probabilities",
+          "line": 179
+        },
+        {
+          "name": "aggregate_learned_policy_from_diagnostics",
+          "line": 188
+        },
+        {
+          "name": "classify_m2_cell",
+          "line": 214
+        },
+        {
+          "name": "dynamic_authenticity_threshold",
+          "line": 263
+        }
+      ]
+    },
+    "M3": {
+      "path": "src/gifted_masking/models/m3.py",
+      "sha256": "091824551b7c6cc5d7ad1ca04d787c82ac5763345d5f09f4eb735dc2f6f381c1",
+      "bytes": 7553,
+      "selection_and_interpretation": "The baseline returned good-authentic modal indicator is not general objective optimality at all comparison costs.",
+      "top_level_definitions": [
+        {
+          "name": "group_probabilities",
+          "line": 8
+        },
+        {
+          "name": "decode_action",
+          "line": 18
+        },
+        {
+          "name": "expected_reward_for_action",
+          "line": 25
+        },
+        {
+          "name": "simulate",
+          "line": 48
+        },
+        {
+          "name": "simulate_hierarchical",
+          "line": 94
+        },
+        {
+          "name": "simulate_global_mask",
+          "line": 147
+        },
+        {
+          "name": "simulate_fixed_good_pond",
+          "line": 194
+        }
+      ]
+    },
+    "M4": {
+      "path": "src/gifted_masking/models/m4.py",
+      "sha256": "f3a9e662d7514275aa480790b2ece27effab9854bf4d44542446dccd7afc485f",
+      "bytes": 5944,
+      "top_level_definitions": [
+        {
+          "name": "update_receptivity",
+          "line": 8
+        },
+        {
+          "name": "simulate",
+          "line": 26
+        },
+        {
+          "name": "simulate_from_state",
+          "line": 79
+        },
+        {
+          "name": "hysteresis_experiment",
+          "line": 131
+        }
+      ]
+    },
+    "PARAMS": {
+      "path": "src/gifted_masking/params.py",
+      "sha256": "5a10bfec3f54e126aaf48c60890a58e4982e91f6b503a49da44e75d7bd81d3c8",
+      "bytes": 1376,
+      "top_level_definitions": [
+        {
+          "name": "AgentParams",
+          "line": 15
+        },
+        {
+          "name": "RunParams",
+          "line": 35
+        }
+      ]
+    },
+    "RDS": {
+      "path": "projects/frontiers_article/RDS.md",
+      "sha256": "f33f146f9eb6a34176fba3ae549f61b247cad5fe96fd23c8824400314e17e891",
+      "bytes": 43419
+    },
+    "OPENING_LITERATURE": {
+      "path": "projects/frontiers_article/presentation_prep_20261005/SLIDE_01_SOURCES.md",
+      "sha256": "c19a88a428dda2b6e4d6a944e4c5a75d058041c3586859a7b1e519c7085e3008",
+      "bytes": 3318,
+      "external_primary_sources": [
+        {
+          "citation": "Swiatek (1995)",
+          "url": "https://doi.org/10.1177/001698629503900305"
+        },
+        {
+          "citation": "Chan (2005)",
+          "url": "https://files.eric.ed.gov/fulltext/EJ746277.pdf"
+        },
+        {
+          "citation": "Foust, Rudasill, and Callahan (2006)",
+          "url": "https://files.eric.ed.gov/fulltext/EJ753971.pdf"
+        }
+      ]
+    },
+    "LITERATURE_AUDIT": {
+      "path": "projects/frontiers_article/ARTICLE_V1_LITERATURE_AUDIT.md",
+      "sha256": "7bd889f0ee9a3390cbf7ada41d7dd2889e4e84628f71c3c1c6b4f74d3c2fbfc5",
+      "bytes": 51541
+    },
+    "OPENING_M0_PLAN": {
+      "path": "projects/frontiers_article/presentation_prep_20261005/OPENING_AND_M0_PLAN.md",
+      "sha256": "37c4c34977f92bcfe83a63e31dd42065c74009ddfe6520bc4b0e872235cfa762",
+      "bytes": 15269,
+      "selection_and_interpretation": "Current author-directed S01\u2013S04 plan. Film illustrates explicit social instruction; M0 separately states analytic expectations and archived E01 findings.",
+      "external_sources": [
+        {
+          "title": "The Incredibles (2004), Pixar official film page",
+          "url": "https://www.pixar.com/the-incredibles"
+        },
+        {
+          "title": "Dash school-race clip transcript",
+          "url": "https://clip.cafe/the-incredibles-2004/do-we-have-to-have-cheerleaders-at-the-track-meet/"
+        }
+      ]
+    }
+  },
+  "slide_source_map": {
+    "S01": [
+      "OPENING_LITERATURE",
+      "LITERATURE_AUDIT",
+      "ARTICLE",
+      "RDS",
+      "OPENING_M0_PLAN"
+    ],
+    "S02": [
+      "OPENING_M0_PLAN"
+    ],
+    "S03": [
+      "CORE",
+      "PARAMS",
+      "ARTICLE",
+      "OPENING_M0_PLAN"
+    ],
+    "S04": [
+      "M0",
+      "E01_CODE",
+      "E01_PRIMARY",
+      "E01_INTERVENTIONS",
+      "FIG4",
+      "ARTICLE",
+      "E01_CONFIG",
+      "OPENING_M0_PLAN"
+    ],
+    "S05": [
+      "M1",
+      "E02_CONFIG",
+      "E02_PRIMARY",
+      "E02_EFFECTS",
+      "FIG5",
+      "ARTICLE"
+    ],
+    "S06": [
+      "M2",
+      "M2_ORACLE",
+      "E03_THRESHOLDS",
+      "E03_GRID",
+      "E03_CONFIG",
+      "FIG2",
+      "FIG6",
+      "ARTICLE"
+    ],
+    "S07": [
+      "M3",
+      "E04_CONFIG",
+      "E04_CURVES",
+      "E04_EFFECTS",
+      "FIG9",
+      "ARTICLE"
+    ],
+    "S08": [
+      "M3",
+      "E05_CROSSINGS",
+      "E05_RESPONSE",
+      "E05_CELLS",
+      "FIG10",
+      "ARTICLE"
+    ],
+    "S09": [
+      "M4",
+      "E06_CODE",
+      "E06_SMOKE",
+      "E06_STANDARD",
+      "CURRENT_STATE"
+    ],
+    "S10": [
+      "ARTICLE",
+      "E03_CONFIG",
+      "CURRENT_STATE"
+    ],
+    "S11": [
+      "ARTICLE",
+      "RDS"
+    ],
+    "A01": [
+      "PARAMS",
+      "E01_CONFIG",
+      "E02_CONFIG",
+      "E03_CONFIG",
+      "E04_CONFIG",
+      "E05_CONFIG",
+      "E06_SMOKE"
+    ],
+    "A02": [
+      "M0",
+      "CORE",
+      "ARTICLE"
+    ],
+    "A03": [
+      "M1",
+      "E02_CODE",
+      "ARTICLE"
+    ],
+    "A04": [
+      "M2",
+      "M2_ORACLE",
+      "FIG2",
+      "E03_CONFIG",
+      "ARTICLE"
+    ],
+    "A05": [
+      "FIG8",
+      "E03_CELLS",
+      "E03_CONFIG",
+      "ARTICLE"
+    ],
+    "A06": [
+      "M3",
+      "E05_CODE",
+      "ARTICLE"
+    ],
+    "A07": [
+      "ARTICLE",
+      "CORE",
+      "E01_CODE",
+      "E02_CODE",
+      "E05_CODE"
+    ],
+    "A08": [
+      "E06_CODE",
+      "E06_SMOKE",
+      "E06_STANDARD",
+      "E06_QUALIFICATION",
+      "E06_DESIGN"
+    ]
+  },
+  "dependencies_from_figure_provenance": {
+    "projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv": "12a1f4befa1ade1a9065a3782fc40a20d9bbed2f91d31a1d3d4dd5771d55a42b",
+    "projects/frontiers_article/publication_v1/data/e01_lambda_response.csv": "df70c4f9b15d4c90b16fe1cff1d99a451464331ee1b01d3489c3b7442e3d8ae3",
+    "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv": "9b9227f43146b96ae7000f572d2249ae6bd4d39bf414715bdd780203afa38d36",
+    "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv": "e58f0603e27a34ab7b94309f8576e96c67c4e8dc4c25e02b7312aed48c021fb9",
+    "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv": "fe37531296d986f0662ce74d6e3976680163e4f19da7240deef5f8e5d97f966f",
+    "projects/frontiers_article/publication_v1/data/e03_grid_map.csv": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab",
+    "projects/frontiers_article/publication_v1/data/e03_grid_summary.csv": "90aebefa0fe66c1f3092879d365c2ede798e71114a1f3b0bb74ee6df083f096a",
+    "projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv": "a43d066f98987a7fd0e326c70929fe442b70134b1ee7ba1b8dbee779cfb91ce5",
+    "projects/frontiers_article/publication_v1/data/e05_crossings.csv": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b",
+    "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv": "0d47aeae4dc4c15e08176c7ff44466740712f3a47000a68d2b7a1231d48a7e10",
+    "projects/frontiers_article/revision_20260929/SUPPLEMENTARY_METHODS.md": "f4c9a5328d03db90f8ae5556302834a9c00950bba6316ff826588eadadc74569",
+    "projects/frontiers_article/revision_20260929/generate_figures.py": "476b4e8ffafdee6dcb1c1134c91f5fdb1c5f1204834d860dfe37f3ca3e304678",
+    "results/summaries/frontiers_m2_regime_replication_v1_cells.csv": "198cb7be9b2a93aa89569d9dd656326f521b7a2ec99543733fd6e779e0508851",
+    "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv": "59d780f3feb3ed03e665de0a75eabd8975fb394d58cbd9c2193a03bb68d73ab7",
+    "results/summaries/frontiers_m3_search_architectures_v1_curves.csv": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4",
+    "src/gifted_masking/models/m2.py": "42b39f1bcf8aac96f830acd5747a215bac24c36a2a2be773294022c019170c5e",
+    "src/gifted_masking/models/m3.py": "091824551b7c6cc5d7ad1ca04d787c82ac5763345d5f09f4eb735dc2f6f381c1"
+  },
+  "illustrations": {
+    "A06": "Constructed counts: 120 good-authentic actions and four mask arms at 70 each, for 400 actions and .70 total masking.",
+    "guide_shared_learning_example": "Alternative single-step calculations: Q(auth)=-.14 after rejection, .16 after acceptance; probabilities from softmax at tau=.25.",
+    "guide_m4_one_step_example": "Alternative M4 one-step outputs from p=.45: .51, .434, .4488 at ka=.12, kr=.04, km=.003, bounds [.05,.95]."
+  },
+  "revised_date": "2026-10-06",
+  "active_presentation": {
+    "main_slides": 11,
+    "backup_slides": 8,
+    "slot_seconds": 720,
+    "speaking_seconds": 660,
+    "reserve_seconds": 60,
+    "status": "MAIN_DECK_BUILT_BACKUPS_PLANNED",
+    "rendered_main_slides": 11,
+    "rendered_backup_slides": 0
+  },
+  "rendered_artifacts": {
+    "S01_pptx": {
+      "path": "output/pptx/masking_slide_01.pptx",
+      "sha256": "06e3ab19ed99cf5b37ca3a6a3cda0ac7afca36e2e29e46639807747ee3da9d15",
+      "status": "Earlier S01 draft; preserved. Superseded for the current talk by the eleven-slide first set."
+    },
+    "S01_png": {
+      "path": "output/pptx/masking_slide_01.png",
+      "sha256": "274165b88043ce3024c41b683032bd02c2a84e570b6d2623e34c938a3d8df957",
+      "status": "Earlier S01 draft; preserved. Superseded for the current talk by the eleven-slide first set."
+    },
+    "MAIN_PPTX": {
+      "path": "output/pptx/masking_mechanisms_first_set.pptx",
+      "sha256": "94b32f9a4cb58e2259ee7f82750bd86bbd53a46910294a48c7fec4d278206900",
+      "bytes": 2221943,
+      "status": "Delivered first set; 6 October 2026."
+    },
+    "MAIN_PDF_PREVIEW": {
+      "path": "output/pdf/masking_mechanisms_first_set.pdf",
+      "sha256": "4335ff3085495d1517c4d8af048460df1136b60465e4bd6c1fbd19fad4f0c869",
+      "bytes": 4043873,
+      "status": "Delivered first set; 6 October 2026."
+    },
+    "MAIN_CONTENT": {
+      "path": "projects/frontiers_article/presentation_prep_20261005/main_deck_20261006/RENDERED_CONTENT.json",
+      "sha256": "355db56cbb1317340b4ca219684e13bf33bbaae6e9144c1b07eaefc7991a9263",
+      "bytes": 26826,
+      "status": "Delivered first set; 6 October 2026."
+    },
+    "ASSET_SOURCES": {
+      "path": "projects/frontiers_article/presentation_prep_20261005/assets/ASSET_SOURCES.json",
+      "sha256": "4c9bc199a8da23492e041fa9b549a1de501110bc14ebda0b0948c471474765db",
+      "bytes": 1945,
+      "status": "Delivered first set; 6 October 2026."
+    },
+    "MAIN_DECK_DATA": {
+      "path": "projects/frontiers_article/presentation_prep_20261005/MAIN_DECK_DATA.json",
+      "sha256": "3479eedae4fd9e7a4e94c8cd52375b8a6b2aeb6007dc33e92bdc615e247594a9",
+      "bytes": 2602,
+      "status": "Delivered first set; 6 October 2026."
+    }
+  },
+  "lecture_script": {
+    "path": "projects/frontiers_article/presentation_prep_20261005/LECTURE_SCRIPT_15_MIN.md",
+    "sha256": "c9f2fd92ba9b7ddb462acfc3b34a17e6be51310a143fd90b74b668a6e5231a9b",
+    "duration_seconds": 900,
+    "spoken_word_count": 1713,
+    "main_slides": 11,
+    "status": "Written and source-checked; actual duration requires rehearsal.",
+    "deck_notes_status": "Original 12-minute edition remains unchanged; use separate script for the 15-minute lecture."
+  },
+  "results_discussion": {
+    "main_slides": 8,
+    "result_slides": 5,
+    "discussion_slides": 3,
+    "section_seconds": 660,
+    "scope": "Separate appendable section; introduction and model setup already supplied by author.",
+    "status": "Built and visually reviewed",
+    "artifacts": {
+      "pptx": {
+        "path": "output/pptx/masking_results_discussion.pptx",
+        "sha256": "f4b354678f6f19c5fe0683fd0569d41bc7e6731aaf5dfa0f6af67c0321d04944"
+      },
+      "pdf": {
+        "path": "output/pdf/masking_results_discussion.pdf",
+        "sha256": "7802015f10664dde7b7cdd6170f68a4bf836dc20929a463dfd823ed1f0138b74"
+      },
+      "speaker_notes": {
+        "path": "projects/frontiers_article/presentation_prep_20261005/results_discussion_20261006/SPEAKER_NOTES.md",
+        "sha256": "490c27ae1f03d32ea045964ac24be4f72ce8cc95a273f525e69c9bd543ae4422"
+      },
+      "data": {
+        "path": "projects/frontiers_article/presentation_prep_20261005/results_discussion_20261006/DATA.json",
+        "sha256": "3523bae44c2fb6140967fc56df50ba251f1b517a9c2012cbc497fc31c1363bbe"
+      },
+      "slide_spec": {
+        "path": "projects/frontiers_article/presentation_prep_20261005/results_discussion_20261006/SLIDE_SPEC.json",
+        "sha256": "9016edfaf5ecb312b67aca6e2b5afa633f3972122bc580bcae01d9ee1de7ac6c"
+      }
+    }
+  }
+}

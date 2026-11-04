@@ -1,0 +1,397 @@
+[
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv",
+    "output_sha256": "9b9227f43146b96ae7000f572d2249ae6bd4d39bf414715bdd780203afa38d36",
+    "source_experiment": "E01",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_hot_stove_v1_effects.csv",
+        "sha256": "4ce67da8b48e8d770388db9e2c6ebe240b868c0696ba90678cc9940de02684d8"
+      }
+    ],
+    "selector": {
+      "level": "across_master_seeds",
+      "p": "pooled_equal_weight_p_0.75_0.85",
+      "lambda": "",
+      "condition": "",
+      "stratum": ""
+    },
+    "fields": [
+      "effect_name",
+      "estimate",
+      "ci_low",
+      "ci_high",
+      "ci_status"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection"
+    ],
+    "notes": "Three primary E01 estimands at the pooled equal-weight p in {0.75, 0.85} across-master-seeds level. Roles encode freeze C.5: sampling is primary, regret is its unit translation, final-mask is a secondary null."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv",
+    "output_sha256": "12a1f4befa1ade1a9065a3782fc40a20d9bbed2f91d31a1d3d4dd5771d55a42b",
+    "source_experiment": "E01",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_hot_stove_v1_effects.csv",
+        "sha256": "4ce67da8b48e8d770388db9e2c6ebe240b868c0696ba90678cc9940de02684d8"
+      }
+    ],
+    "selector": {
+      "level": "across_master_seeds",
+      "p": "pooled_equal_weight_p_0.75_0.85",
+      "stratum": "rejected",
+      "lambda": ""
+    },
+    "fields": [
+      "condition",
+      "metric",
+      "estimate",
+      "ci_low",
+      "ci_high"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection"
+    ],
+    "notes": "Both frozen E01 information-restoration channels at the pooled p selector, rejected stratum. Sign convention: positive means the intervention reduced the quantity relative to baseline. The build asserts that the two final-mask intervals are disjoint, so the ordering used in the article's leverage discussion is licensed by the frozen intervals. These are model information manipulations, not human intervention effect estimates."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e01_lambda_response.csv",
+    "output_sha256": "df70c4f9b15d4c90b16fe1cff1d99a451464331ee1b01d3489c3b7442e3d8ae3",
+    "source_experiment": "E01",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_hot_stove_v1_cells.csv",
+        "sha256": "9d619166b5cdbc0525ea087a762a27ed767a4d039ae3fc280a9c5524825bdfd4"
+      },
+      {
+        "path": "results/summaries/frontiers_hot_stove_v1_effects.csv",
+        "sha256": "4ce67da8b48e8d770388db9e2c6ebe240b868c0696ba90678cc9940de02684d8"
+      }
+    ],
+    "selector": {
+      "condition": "maintained_baseline",
+      "p": "0.65",
+      "stratum": "all",
+      "lambda": [
+        "0.5",
+        "2.5"
+      ]
+    },
+    "fields": [
+      "lambda",
+      "mean_final_window_mask_rate",
+      "mean_q_auth_final",
+      "analytic_subjective_authentic_mean",
+      "analytic_subjective_boundary_p"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection",
+      "equal_weight_master_mean",
+      "master_range",
+      "closed_form_analytic"
+    ],
+    "notes": "Simulated weighting response at the maintained p = .65 cell paired with the exact learner-side boundary p*_lambda (Proposition M0.3) evaluated at the same lambda. The environment is identical across levels: the objective authentic mean and the objective boundary 43/60 are carried on every row and never vary. The build asserts that masking remains the objective optimum at this cell, that the tested levels straddle the learner-side boundary, and that the master means reproduce the frozen contrast."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv",
+    "output_sha256": "fe37531296d986f0662ce74d6e3976680163e4f19da7240deef5f8e5d97f966f",
+    "source_experiment": "E02",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_m1_binary_graded_v1_effects.csv",
+        "sha256": "11d29c72508649a174b285957dfec3752edff76a099aa76de9f6fe3a4e515a8a"
+      }
+    ],
+    "selector": {
+      "level": "across_master_seeds",
+      "p": "pooled_equal_weight_p_0.75_0.85",
+      "stratum": "rejected"
+    },
+    "fields": [
+      "effect_name",
+      "stratum",
+      "estimate",
+      "ci_low",
+      "ci_high",
+      "ci_status"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection"
+    ],
+    "notes": "Four E02 estimands for the approved rejected initial-outcome stratum only. The exploration result may not be shown without the three adverse results."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv",
+    "output_sha256": "e58f0603e27a34ab7b94309f8576e96c67c4e8dc4c25e02b7312aed48c021fb9",
+    "source_experiment": "E02",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_m1_binary_graded_v1_arms.csv",
+        "sha256": "cc19fa67bd40f5c2d5ab59f1f2a7c909c524b80b082c3354c7ad4283694abaf4"
+      }
+    ],
+    "selector": {
+      "p": [
+        "0.75",
+        "0.85"
+      ]
+    },
+    "fields": [
+      "p",
+      "d",
+      "expected_reward",
+      "analytic_optimal_endpoint"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection",
+      "closed_form_analytic"
+    ],
+    "notes": "M1 per-arm expected reward at the two controlled acceptance probabilities. Each frozen value is re-checked against E[R(d)] = b - c + d[a + c - (1-p)(b+r)], which is affine in d, so every strict static optimum is an endpoint."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+    "output_sha256": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab",
+    "source_experiment": "E03",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_m2_regime_replication_v1_cells.csv",
+        "sha256": "198cb7be9b2a93aa89569d9dd656326f521b7a2ec99543733fd6e779e0508851"
+      },
+      {
+        "path": "results/summaries/frontiers_m2_regime_replication_v1_stable_cells.csv",
+        "sha256": "91814ab4430f63bc5e46596c61718e1fec6705d355b6cab3d8c18d29c1dfaea7"
+      }
+    ],
+    "selector": {
+      "component": "exact_grid",
+      "sensitivity_name": "baseline"
+    },
+    "fields": [
+      "p",
+      "eta",
+      "parameter_cell_id",
+      "learned_neutral_action",
+      "objective_neutral_action",
+      "classification",
+      "stable",
+      "neutral_visit_adequate",
+      "objective_neutral_q_gap_auth_minus_mask"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection",
+      "deterministic_join",
+      "count_aggregation"
+    ],
+    "notes": "One row per tested parameter-grid cell of the frozen 21 x 17 baseline exact grid (357 cells). Objective fields are deterministic and verified identical across the five master seeds; learned action and visit adequacy are aggregated by count. publication_category maps an unstable or unclassified cell to 'inconclusive' so that no tested cell is omitted from the map. Counts are tested-grid coverage, not prevalence."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e03_grid_summary.csv",
+    "output_sha256": "90aebefa0fe66c1f3092879d365c2ede798e71114a1f3b0bb74ee6df083f096a",
+    "source_experiment": "E03",
+    "sources": [
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+        "sha256": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab"
+      }
+    ],
+    "selector": {
+      "component": "exact_grid",
+      "sensitivity_name": "baseline"
+    },
+    "fields": [
+      "publication_category",
+      "cell_count"
+    ],
+    "transformation": [
+      "count_aggregation"
+    ],
+    "notes": "Tested-grid coverage counts. 243/357 means 243 of the 357 tested parameter-grid cells. It is not a prevalence, not a share of people or environments, not phase-space volume, and not a probability that masking occurs."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv",
+    "output_sha256": "a43d066f98987a7fd0e326c70929fe442b70134b1ee7ba1b8dbee779cfb91ce5",
+    "source_experiment": "E03",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_m2_regime_replication_v1_thresholds.csv",
+        "sha256": "0987aea9f6085f81bad791454eaca03127c6144f172a7cc9f41cdad6c316f9bf"
+      }
+    ],
+    "selector": {
+      "threshold_kind": "objective_dynamic_authenticity",
+      "tier": "standard"
+    },
+    "fields": [
+      "eta",
+      "lower_p",
+      "upper_p",
+      "midpoint_p",
+      "static_m0_boundary_p"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection",
+      "closed_form_analytic"
+    ],
+    "notes": "Value-iteration bisection brackets for the objective Neutral-state authenticity threshold at the three frozen escape rates, carried alongside the closed-form static M0 boundary 43/60 that they displace. Bracket width is 6.1e-05. The three learned-threshold rows in the same frozen table are censored and are deliberately not extracted: no learned transition threshold may be quoted. Decreasing across the three tested eta values is a tested-range observation, not a monotonicity theorem."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e04_k_response.csv",
+    "output_sha256": "c01c04359b30d425d518566190dcfb27b10f9003e4123d9a6f05ce44382c11b7",
+    "source_experiment": "E04",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv",
+        "sha256": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4"
+      }
+    ],
+    "selector": {
+      "canonical_identity_mode": "fixed",
+      "series": {
+        "one_good": "effective_good_count == 1",
+        "proportional_25": "effective_good_count == max(1, ceil(K/4))",
+        "known_good_reference": "architecture == fixed_known_good (structurally K-invariant)"
+      }
+    },
+    "fields": [
+      "architecture",
+      "K",
+      "effective_good_count",
+      "mean_settled_any_good_auth_argmax"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection",
+      "equal_weight_master_mean",
+      "master_range"
+    ],
+    "notes": "K-response curves on the prespecified primary metric mean_settled_any_good_auth_argmax. master_min/master_max are the observed range across the five master seeds and are a descriptive spread, not a confidence interval; the inferential unit for E04 headline effects is the five master seeds, and those intervals are carried in e04_headline_effects.csv. The proportional_25 series uses the frozen regime definition m = max(1, ceil(K/4)), so it coincides with the one-good series at K = 1, 2, 4."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e04_headline_effects.csv",
+    "output_sha256": "ebcf58f06eef99fa890bbf9039b3c59293bb743417e3e279f35723f3ef501868",
+    "source_experiment": "E04",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_m3_search_architectures_v1_effects.csv",
+        "sha256": "dd426992f0a1a0ae05542756dc6dca918fbf56a589347676a93a309d08a41d44"
+      }
+    ],
+    "selector": {
+      "level": "across_master_seeds"
+    },
+    "fields": [
+      "effect_name",
+      "estimate",
+      "ci_low",
+      "ci_high",
+      "ci_status"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection"
+    ],
+    "notes": "Frozen K = 16 minus K = 1 contrasts on the primary metric for the two search architectures, plus the known-good, global-mask, and proportional-abundance controls that establish the effect is not a trivial K-only reward effect. Student-t across five master seeds (df = 4)."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv",
+    "output_sha256": "0d47aeae4dc4c15e08176c7ff44466740712f3a47000a68d2b7a1231d48a7e10",
+    "source_experiment": "E05",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv",
+        "sha256": "59d780f3feb3ed03e665de0a75eabd8975fb394d58cbd9c2193a03bb68d73ab7"
+      },
+      {
+        "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_transitions.csv",
+        "sha256": "96b8d8dc1cf27e3a226282e4d8755effde74e855d81b8f8bbc6db6515c607097"
+      }
+    ],
+    "selector": {
+      "response_metric": "modal_good_auth_argmax_fraction",
+      "dense_range": [
+        0.3,
+        0.65
+      ]
+    },
+    "fields": [
+      "architecture",
+      "bf",
+      "modal_good_auth_argmax_fraction",
+      "analytic_objective_advantage_good_auth_minus_mask"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection",
+      "equal_weight_master_mean",
+      "master_range"
+    ],
+    "notes": "Across-child modal good-context authentic fraction against comparison cost bf. pooled_response is the equal-n mean over the five master-seed fractions, which is the pooling the frozen PAVA fit used; it is verified to reproduce the frozen raw_dense_start_response and raw_dense_end_response exactly. master_min/master_max are a descriptive range, not a confidence interval. No fit is recomputed here: the reported crossing and its bootstrap interval are read from the frozen transitions table."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e05_crossings.csv",
+    "output_sha256": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b",
+    "source_experiment": "E05",
+    "sources": [
+      {
+        "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_transitions.csv",
+        "sha256": "96b8d8dc1cf27e3a226282e4d8755effde74e855d81b8f8bbc6db6515c607097"
+      },
+      {
+        "path": "results/summaries/frontiers_m3_bflpe_crossover_v1_analytic.csv",
+        "sha256": "e1045d0593709561761ec8c9ba0684ef1a80e26d6b0b15f12f57434b74f22a42"
+      }
+    ],
+    "selector": {
+      "level": "across_master_seeds",
+      "response_metric": "modal_good_auth_argmax_fraction",
+      "fit_method": "nonincreasing_pava_equal_n"
+    },
+    "fields": [
+      "architecture",
+      "transition_bf",
+      "ci_low",
+      "ci_high",
+      "analytic_threshold_bf",
+      "transition_status"
+    ],
+    "transformation": [
+      "row_filter",
+      "column_projection"
+    ],
+    "notes": "Frozen learned crossing and its master-seed bootstrap interval for flat_2k, the exact objective crossover 8/17, and the hierarchical left-censored status. The empirical crossing is reportable descriptively; the design does not isolate a mechanism, and fixed temperature and action-set normalization remain possible contributors."
+  },
+  {
+    "output_file": "projects/frontiers_article/publication_v1/data/e05_displacement.csv",
+    "output_sha256": "4357f2fc10a07d763e2ec140d30adb5732f71ce1933644e83230af5492098213",
+    "source_experiment": "E05",
+    "sources": [
+      {
+        "path": "projects/frontiers_article/publication_v1/data/e05_crossings.csv",
+        "sha256": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b"
+      }
+    ],
+    "selector": {
+      "architecture": "flat_2k"
+    },
+    "fields": [
+      "transition_bf",
+      "ci_low",
+      "ci_high",
+      "analytic_threshold_bf"
+    ],
+    "transformation": [
+      "closed_form_analytic",
+      "rounding_for_display"
+    ],
+    "notes": "Displacement between the learned behavioural crossing and the exact objective crossover, and the objective authenticity advantage still available at the learned crossing, both evaluated in closed form from the frozen crossing. Conditional on the point crossing; the advantage figure carries no separately tabulated uncertainty."
+  }
+]

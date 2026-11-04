@@ -1,0 +1,2049 @@
+{
+  "sources": {
+    "E01_PRIMARY": {
+      "path": "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv",
+      "sha256": "9b9227f43146b96ae7000f572d2249ae6bd4d39bf414715bdd780203afa38d36"
+    },
+    "E01_INTERVENTIONS": {
+      "path": "projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv",
+      "sha256": "12a1f4befa1ade1a9065a3782fc40a20d9bbed2f91d31a1d3d4dd5771d55a42b"
+    },
+    "E02_PRIMARY": {
+      "path": "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv",
+      "sha256": "fe37531296d986f0662ce74d6e3976680163e4f19da7240deef5f8e5d97f966f"
+    },
+    "E03_GRID": {
+      "path": "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+      "sha256": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab"
+    },
+    "E03_THRESHOLDS": {
+      "path": "projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv",
+      "sha256": "a43d066f98987a7fd0e326c70929fe442b70134b1ee7ba1b8dbee779cfb91ce5"
+    },
+    "E04_CURVES": {
+      "path": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv",
+      "sha256": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4"
+    },
+    "E05_RESPONSE": {
+      "path": "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv",
+      "sha256": "0d47aeae4dc4c15e08176c7ff44466740712f3a47000a68d2b7a1231d48a7e10"
+    },
+    "E05_CROSSINGS": {
+      "path": "projects/frontiers_article/publication_v1/data/e05_crossings.csv",
+      "sha256": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b"
+    },
+    "E04_EFFECTS": {
+      "path": "results/summaries/frontiers_m3_search_architectures_v1_effects.csv",
+      "sha256": "dd426992f0a1a0ae05542756dc6dca918fbf56a589347676a93a309d08a41d44"
+    }
+  },
+  "E01": [
+    {
+      "estimate": -2.583704230615776,
+      "low": -3.575251604903057,
+      "high": -1.5921568563284951,
+      "source": "E01_PRIMARY",
+      "claim_id": "E01-C2-SAMPLING",
+      "conversion": "proportion to percentage points"
+    },
+    {
+      "estimate": -0.03432658754774054,
+      "low": -1.1604676797786873,
+      "high": 1.0918145046832064,
+      "source": "E01_PRIMARY",
+      "claim_id": "E01-C2-FINAL-MASK",
+      "conversion": "proportion to percentage points"
+    },
+    {
+      "estimate": -4.65902271980715,
+      "low": -5.995092751470512,
+      "high": -3.3229526881437885,
+      "source": "E01_INTERVENTIONS",
+      "claim_id": "E01-C2-FORCED-MASK",
+      "conversion": "proportion to percentage points; reverse contrast"
+    },
+    {
+      "estimate": -11.813508467965528,
+      "low": -12.6586970252888,
+      "high": -10.968319910642254,
+      "source": "E01_INTERVENTIONS",
+      "claim_id": "E01-C2-CF-MASK",
+      "conversion": "proportion to percentage points; reverse contrast"
+    }
+  ],
+  "E02": [
+    {
+      "estimate": 25.504040052777675,
+      "low": 25.300351098704088,
+      "high": 25.707729006851267,
+      "source": "E02_PRIMARY",
+      "claim_id": "E02-C4-EXPLORATION",
+      "conversion": "proportion to percentage points"
+    },
+    {
+      "estimate": -32.86922325725828,
+      "low": -34.20366913177394,
+      "high": -31.534777382742618,
+      "source": "E02_PRIMARY",
+      "claim_id": "E02-C4-FULL-ENDPOINT",
+      "conversion": "proportion to percentage points"
+    }
+  ],
+  "E03": {
+    "grid": [
+      {
+        "p": 0.0,
+        "eta": 0.0,
+        "category": "inconclusive"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.05,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.1,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.15000000000000002,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.2,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.25,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.30000000000000004,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.35000000000000003,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.4,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.45,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.5,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.55,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.6000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.65,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.7000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.75,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.0,
+        "eta": 0.8,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.0,
+        "category": "inconclusive"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.05,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.1,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.15000000000000002,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.2,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.25,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.30000000000000004,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.35000000000000003,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.4,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.45,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.5,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.55,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.6000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.65,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.7000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.75,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.05,
+        "eta": 0.8,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.0,
+        "category": "inconclusive"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.05,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.1,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.15000000000000002,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.2,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.25,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.30000000000000004,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.35000000000000003,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.4,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.45,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.5,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.55,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.6000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.65,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.7000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.75,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.1,
+        "eta": 0.8,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.0,
+        "category": "inconclusive"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.05,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.1,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.15000000000000002,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.2,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.25,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.30000000000000004,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.35000000000000003,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.4,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.45,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.5,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.55,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.6000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.65,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.7000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.75,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.15000000000000002,
+        "eta": 0.8,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.0,
+        "category": "inconclusive"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.05,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.1,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.15000000000000002,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.2,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.25,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.30000000000000004,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.35000000000000003,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.4,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.45,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.5,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.55,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.6000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.65,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.7000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.75,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.2,
+        "eta": 0.8,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.0,
+        "category": "inconclusive"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.05,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.1,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.15000000000000002,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.2,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.25,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.30000000000000004,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.35000000000000003,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.4,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.45,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.5,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.55,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.6000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.65,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.7000000000000001,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.75,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.25,
+        "eta": 0.8,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.0,
+        "category": "inconclusive"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.05,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.1,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.15000000000000002,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.2,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.25,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.30000000000000004,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.35000000000000003,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.30000000000000004,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.0,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.05,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.1,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.15000000000000002,
+        "category": "learner_matches_objective"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.35000000000000003,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.4,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.45,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.5,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.55,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.6000000000000001,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.65,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.7000000000000001,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.75,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.8500000000000001,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 0.9500000000000001,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.0,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.05,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.1,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.15000000000000002,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.2,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.25,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.30000000000000004,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.35000000000000003,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.4,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.45,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.5,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.55,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.6000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.65,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.7000000000000001,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.75,
+        "category": "learned_suboptimal_masking"
+      },
+      {
+        "p": 1.0,
+        "eta": 0.8,
+        "category": "learned_suboptimal_masking"
+      }
+    ],
+    "counts": {
+      "inconclusive": 7,
+      "learner_matches_objective": 107,
+      "learned_suboptimal_masking": 243
+    },
+    "thresholds": [
+      {
+        "eta": "0.0",
+        "threshold_kind": "objective_dynamic_authenticity",
+        "lower_p": "0.3839111328125",
+        "upper_p": "0.38397216796875",
+        "midpoint_p": "0.383941650390625",
+        "bracket_width": "6.103515625e-05",
+        "static_m0_boundary_p": "0.7166666666666667",
+        "relocation_below_static": "0.3327250162760417",
+        "status": "bracketed"
+      },
+      {
+        "eta": "0.2",
+        "threshold_kind": "objective_dynamic_authenticity",
+        "lower_p": "0.3387451171875",
+        "upper_p": "0.33880615234375",
+        "midpoint_p": "0.338775634765625",
+        "bracket_width": "6.103515625e-05",
+        "static_m0_boundary_p": "0.7166666666666667",
+        "relocation_below_static": "0.3778910319010417",
+        "status": "bracketed"
+      },
+      {
+        "eta": "0.8",
+        "threshold_kind": "objective_dynamic_authenticity",
+        "lower_p": "0.26898193359375",
+        "upper_p": "0.26904296875",
+        "midpoint_p": "0.269012451171875",
+        "bracket_width": "6.103515625e-05",
+        "static_m0_boundary_p": "0.7166666666666667",
+        "relocation_below_static": "0.4476542154947917",
+        "status": "bracketed"
+      }
+    ]
+  },
+  "E04": {
+    "flat_2k": [
+      0.26364600000000005,
+      0.42034400000000005,
+      0.591174,
+      0.742882,
+      0.8419059999999999
+    ],
+    "hierarchical": [
+      0.26448900000000003,
+      0.503263,
+      0.689792,
+      0.806617,
+      0.8726579999999999
+    ],
+    "global_mask": [
+      0.2723,
+      0.263432,
+      0.259975,
+      0.261331,
+      0.257741
+    ],
+    "flat_encounter_K16": 0.9972
+  },
+  "E05": [
+    {
+      "x": 0.0,
+      "y": 0.9400000000000001
+    },
+    {
+      "x": 0.3,
+      "y": 0.5292
+    },
+    {
+      "x": 0.325,
+      "y": 0.47240000000000004
+    },
+    {
+      "x": 0.35,
+      "y": 0.40359999999999996
+    },
+    {
+      "x": 0.375,
+      "y": 0.344
+    },
+    {
+      "x": 0.4,
+      "y": 0.2884
+    },
+    {
+      "x": 0.425,
+      "y": 0.22759999999999997
+    },
+    {
+      "x": 0.45,
+      "y": 0.1712
+    },
+    {
+      "x": 0.47058823529411764,
+      "y": 0.1416
+    },
+    {
+      "x": 0.475,
+      "y": 0.1328
+    },
+    {
+      "x": 0.5,
+      "y": 0.1008
+    },
+    {
+      "x": 0.525,
+      "y": 0.07239999999999999
+    },
+    {
+      "x": 0.55,
+      "y": 0.0508
+    },
+    {
+      "x": 0.575,
+      "y": 0.027200000000000002
+    },
+    {
+      "x": 0.6,
+      "y": 0.0128
+    },
+    {
+      "x": 0.625,
+      "y": 0.0068000000000000005
+    },
+    {
+      "x": 0.65,
+      "y": 0.002
+    },
+    {
+      "x": 0.8,
+      "y": 0.0
+    }
+  ],
+  "E05_crossing": {
+    "architecture": "flat_2k",
+    "architecture_role": "primary",
+    "transition_status": "valid",
+    "transition_bf": "0.31285211267605634",
+    "ci_low": "0.3078358208955224",
+    "ci_high": "0.3169178027050235",
+    "ci_method": "bootstrap_master_seed",
+    "bootstrap_replicates": "10000",
+    "bootstrap_valid_crossings": "10000",
+    "analytic_threshold_bf": "0.47058823529411764",
+    "learned_minus_analytic_threshold": "-0.1577361226180613",
+    "dense_bf_min": "0.3",
+    "dense_bf_max": "0.65",
+    "decision_eligible": "True",
+    "censoring_note": ""
+  },
+  "E04_endpoint_contrast": {
+    "run_id": "frontiers_m3_search_architectures_v1",
+    "experiment_id": "E04",
+    "tier": "standard",
+    "effect_name": "flat_2k_mean_final_window_mask_rate_S16_minus_S1_fixed_one",
+    "level": "across_master_seeds",
+    "master_seed": "",
+    "estimate": "0.5782599999999999",
+    "ci_status": "student_t_95",
+    "ci_low": "0.5742793871138688",
+    "ci_high": "0.5822406128861309",
+    "notes": "primary fixed-one K=16 minus K=1 endpoint contrast"
+  }
+}

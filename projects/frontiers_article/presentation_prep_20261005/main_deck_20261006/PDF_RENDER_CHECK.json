@@ -1,0 +1,90 @@
+[
+  {
+    "page": 1,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 1.7691811342592592
+  },
+  {
+    "page": 2,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 1.7758439429012345
+  },
+  {
+    "page": 3,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 1.9493672839506173
+  },
+  {
+    "page": 4,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 2.091471836419753
+  },
+  {
+    "page": 5,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 2.257406925154321
+  },
+  {
+    "page": 6,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 3.018176601080247
+  },
+  {
+    "page": 7,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 2.6862572337962964
+  },
+  {
+    "page": 8,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 1.5327305169753087
+  },
+  {
+    "page": 9,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 3.21879581404321
+  },
+  {
+    "page": 10,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 3.8104692322530864
+  },
+  {
+    "page": 11,
+    "size": [
+      1920,
+      1080
+    ],
+    "mean_absolute_channel_error_max": 1.2492081404320987
+  }
+]

@@ -1,0 +1,424 @@
+{
+  "pptx": {
+    "path": "output/pptx/masking_mechanisms_first_set.pptx",
+    "sha256": "94b32f9a4cb58e2259ee7f82750bd86bbd53a46910294a48c7fec4d278206900"
+  },
+  "pdf_preview": {
+    "path": "output/pdf/masking_mechanisms_first_set.pdf",
+    "sha256": "4335ff3085495d1517c4d8af048460df1136b60465e4bd6c1fbd19fad4f0c869",
+    "type": "Raster preview of reimported final PPTX"
+  },
+  "scope": "Eleven main slides; eight backups remain planned.",
+  "slides": [
+    {
+      "slide": 1,
+      "title": "What mechanisms could explain masking?",
+      "text_blocks": [
+        "What mechanisms could explain masking?",
+        "Swiatek (1995) · Chan (2005) · Foust, Rudasill & Callahan (2006)",
+        "01",
+        "Research documents ability concealment among gifted learners.",
+        "Patterns vary across age and social settings.",
+        "We examine possible learning mechanisms."
+      ],
+      "table_texts": [],
+      "notes": "Research documents gifted learners concealing their abilities and managing how much others see. Patterns vary across age and social settings. The image introduces that social situation while leaving its explanation open. Our question is what mechanisms could make masking emerge and change over time. We will examine candidate processes through simple computational models, moving from individual learning to persistent social consequences and different peer contexts. These are explanations to investigate, rather than a diagnosis of any particular child.\n35 seconds.\nSwiatek (1995): https://doi.org/10.1177/001698629503900305\nChan (2005): https://files.eric.ed.gov/fulltext/EJ746277.pdf\nFoust et al. (2006): https://files.eric.ed.gov/fulltext/EJ753971.pdf\nAge findings are mixed. The simulations are not calibrated to chronological age. Earlier social-coping and learning mechanisms exist; no blanket novelty claim is made.\nImage: generated using the built-in image generator, 6 October 2026. Illustration only, not an empirical observation. Prompt and provenance: assets/ASSET_SOURCES.json.",
+      "native_tables": 0,
+      "native_charts": [],
+      "picture_count": 1,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-01.png"
+    },
+    {
+      "slide": 2,
+      "title": "A close second",
+      "text_blocks": [
+        "A close second",
+        "The Incredibles (2004) · Pixar / Walt Disney Pictures · Film illustration",
+        "02",
+        "“Second. Close second, yeah!”",
+        "Social expectations can shape displayed ability."
+      ],
+      "table_texts": [],
+      "notes": "Dash could easily win this race. His family encourages him to participate, but also to hold back and finish a close second. His performance reflects both his ability and instructions about how much of it to reveal. Here, the instruction is explicit. Our question is what other mechanisms could produce similar restraint, including through repeated social experience.\n30 seconds. The film illustrates explicit social instruction; parental instruction is not directly implemented in M0.\nFilm: Brad Bird, The Incredibles (2004), Pixar/Walt Disney Pictures.\nOfficial context: https://www.pixar.com/the-incredibles\nQuote: https://clip.cafe/the-incredibles-2004/do-we-have-to-have-cheerleaders-at-the-track-meet/\nStill source: https://cinefilms-planet.fr/fleche-parr-personnage-dans-les-indestructibles/\nImage: https://cinefilms-planet.fr/wp-content/uploads/2010/04/fleche-parr-personnage-les-indestructibles-10-1.jpg",
+      "native_tables": 0,
+      "native_charts": [],
+      "picture_count": 1,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-02.png"
+    },
+    {
+      "slide": 3,
+      "title": "Learning from social experience",
+      "text_blocks": [
+        "Learning from social experience",
+        "Experience changes expectations, which influence the next choice.",
+        "A step is one interaction, not a calibrated year. Negative outcomes can receive extra weight.",
+        "03",
+        "Choose an action",
+        "Experience an outcome",
+        "Update its learned value",
+        "Choose again",
+        "Baseline feedback concerns the chosen action.",
+        "Higher-valued actions become more likely. Exploration continues."
+      ],
+      "table_texts": [],
+      "notes": "The shared assumption is that experience changes expectations. A learner chooses an action, receives an outcome, and updates the value it assigns to that action. Actions with higher learned values become more likely, but exploration continues. In the basic model, the learner receives feedback only about the action it chose. Avoiding an action can therefore restrict new information about it. Later models change the choices or the social consequences; M2 also learns about future value. A simulation step is an interaction, not a calibrated year of a child’s life.\nTiming: 45 seconds.\nSources:\nCORE: src/gifted_masking/core.py\nPARAMS: src/gifted_masking/params.py\nARTICLE: projects/frontiers_article/integrated_article_20261004/ARTICLE.md\nOPENING_M0_PLAN: projects/frontiers_article/presentation_prep_20261005/OPENING_AND_M0_PLAN.md\nThe Incredibles (2004), Pixar official film page https://www.pixar.com/the-incredibles\nDash school-race clip transcript https://clip.cafe/the-incredibles-2004/do-we-have-to-have-cheerleaders-at-the-track-meet/\nInterpretation: Environmental reward and learned value are distinct",
+      "native_tables": 0,
+      "native_charts": [],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-03.png"
+    },
+    {
+      "slide": 4,
+      "title": "M0 · Masking or authenticity",
+      "text_blocks": [
+        "M0 · Masking or authenticity",
+        "Two actions • fixed receptivity p • no persistent social state",
+        "E01: p=.75/.85 pooled, λ=1; 500 learners/cell/master, T=2000, five masters. History final-window CI spans zero.",
+        "04",
+        "Choose",
+        "Mask",
+        "Authentic",
+        "Certain reward",
+        "0.75",
+        "Accepted: p",
+        "+1.60",
+        "Rejected: 1 − p",
+        "−1.40",
+        "THEORY",
+        "Higher expected payoff for authenticity: p > .717",
+        "At p=.75: 0.85 versus 0.75",
+        "SIMULATIONS",
+        "−2.58 pp  authentic sampling",
+        "After initial rejection · 95% CI [−3.58, −1.59]",
+        "−11.81 pp  final masking",
+        "Extra feedback · 95% CI [−12.66, −10.97]"
+      ],
+      "table_texts": [],
+      "notes": "M0 is a two-armed bandit. At each interaction, the learner chooses masking or authenticity. Masking always pays 0.75. Authenticity pays 1.6 when accepted and minus 1.4 when rejected; acceptance has probability p. That probability stays fixed. The payoff equations show that authenticity has the higher average reward whenever p exceeds about 0.717. At p=0.75, its expected reward is 0.85, compared with 0.75 for masking. That is the objective benchmark. The simulations ask what a learner discovers from limited experience. Across the tested p=0.75 and 0.85 conditions, initial rejection reduces subsequent authentic sampling by 2.58 percentage points. Giving authentic feedback even while the learner masks reduces final masking by 11.81 points, without awarding the unchosen payoff. The initial-history comparison alone does not establish a lasting final-window difference. The supported mechanism is that experience and access to information can change action selection even when authenticity is objectively worthwhile.\nTiming: 80 seconds.\nSources:\nM0: src/gifted_masking/models/m0.py\nE01_CODE: src/gifted_masking/experiments/article.py\nE01_PRIMARY: projects/frontiers_article/publication_v1/data/e01_primary_effects.csv\nE01_INTERVENTIONS: projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv\nFIG4: projects/frontiers_article/integrated_article_20261004/figures/figure_04_weighting_history_information.png\nARTICLE: projects/frontiers_article/integrated_article_20261004/ARTICLE.md\nE01_CONFIG: configs/frontiers_article/e01_hot_stove_standard.json\nOPENING_M0_PLAN: projects/frontiers_article/presentation_prep_20261005/OPENING_AND_M0_PLAN.md\nThe Incredibles (2004), Pixar official film page https://www.pixar.com/the-incredibles\nDash school-race clip transcript https://clip.cafe/the-incredibles-2004/do-we-have-to-have-cheerleaders-at-the-track-meet/\nInterpretation: p=.75/.85, equally pooled. Sampling: −2.58 pp [−3.58,−1.59]; feedback final masking: −11.81 pp [−12.66,−10.97]. Final-window history CI spans zero.",
+      "native_tables": 0,
+      "native_charts": [],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-04.png"
+    },
+    {
+      "slide": 5,
+      "title": "M1 · Participation and full expression differ",
+      "text_blocks": [
+        "M1 · Participation and full expression differ",
+        "Five independently learned disclosure levels; no transfer between action values.",
+        "E02: after initial rejection; p=.75/.85 pooled; five masters. CIs: [25.30,25.71] and [−34.20,−31.53] pp.",
+        "05",
+        "Disclosure",
+        "0",
+        "¼",
+        "½",
+        "¾",
+        "1",
+        "Full authenticity Final window",
+        "Any disclosure After the first interaction",
+        "Change versus binary choice (percentage points)",
+        "More participation can coexist with less full expression.",
+        "Theory: the payoff is linear in disclosure; the full endpoint is best in these cells."
+      ],
+      "table_texts": [],
+      "notes": "M1 introduces partial disclosure: a learner can express a quarter, half, or three quarters, as well as nothing or everything. Each level has its own learned value. Success at a partial level does not automatically teach the learner that full expression is safe. E02 compares these five actions with binary choice following initial rejection. Graded options increase the frequency of some disclosure by twenty-five and a half percentage points, but reduce final-window full-authentic use by nearly thirty-three points. Average disclosure intensity also falls in the pooled comparison. The environmental payoff remains linear, so full authenticity is still the best endpoint in these cells. The important distinction is between participation and expression: providing more ways to participate does not automatically produce fuller expression.\nTiming: 85 seconds.\nSources:\nM1: src/gifted_masking/models/m1.py\nE02_CONFIG: configs/frontiers_article/e02_binary_graded_standard.json\nE02_PRIMARY: projects/frontiers_article/publication_v1/data/e02_primary_effects.csv\nE02_EFFECTS: results/summaries/frontiers_m1_binary_graded_v1_effects.csv\nFIG5: projects/frontiers_article/integrated_article_20261004/figures/figure_05_graded_engagement_intensity.png\nARTICLE: projects/frontiers_article/integrated_article_20261004/ARTICLE.md\nInterpretation: Independent arms; rejected stratum, p=.75/.85 pooled. Any disclosure: +25.50 pp [25.30,25.71], post-initial. Full authenticity: −32.87 pp [−34.20,−31.53], final window.",
+      "native_tables": 0,
+      "native_charts": [
+        {
+          "part": "ppt/slides/charts/chart1.xml",
+          "series": [
+            {
+              "values": [
+                25.504040052777675,
+                -32.86922325725828
+              ],
+              "x_values": []
+            }
+          ]
+        }
+      ],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-05.png"
+    },
+    {
+      "slide": 6,
+      "title": "M2 · Persistent social consequences",
+      "text_blocks": [
+        "M2 · Persistent social consequences",
+        "Actions: Mask / Authentic in every state • Learner: 3 × 2 state–action values",
+        "243/357 counts parameter settings, not learners. Neutral-state comparison; full-information discounted benchmark.",
+        "06",
+        "Neutral",
+        "Accepted",
+        "Stigmatized",
+        "Authentic + acceptance",
+        "Authentic + rejection",
+        "Mask / Authentic",
+        "Mask / Authentic",
+        "Mask / Authentic",
+        "Turnover returns Accepted to Neutral. Escape can return Stigmatized to Neutral; redemption can establish acceptance.",
+        "THEORY · Neutral authenticity threshold",
+        "243 / 357",
+        "settings favour learned masking while the dynamic optimum favours authenticity"
+      ],
+      "table_texts": [
+        "Static M0",
+        "M2: η=0",
+        "M2: η=.8",
+        ".717",
+        ".384",
+        ".269"
+      ],
+      "notes": "M2 adds social memory to the environment. A learner can be Neutral, Accepted, or Stigmatized. An action now affects both its current reward and future opportunities. Successful authenticity can establish acceptance, while rejection can produce persistent adverse standing. Escape allows recovery. We therefore calculate the optimal policy from the known rewards and transitions, rather than judging behaviour by immediate payoff alone. Under the reference model, the receptivity needed to make authenticity optimal in Neutral falls from about point seven one seven in the static model to point three eight four, and to point two six nine with greater recovery. Yet the finite learners still favour masking where the dynamic optimum favours authenticity in 243 of 357 tested parameter cells. That disagreement persists at five selected settings through five thousand steps. Persistence is demonstrated over those tested horizons, with explicit sensitivity exceptions.\n100 seconds. State/action distinction: actions are Mask or Authentic in every state. Q has three rows and two columns. The diagram shows the main Neutral branches; masking remains Neutral. Accepted persists unless turnover δ; Stigmatized persists unless successful redemption p/2 or subsequent escape η. Rewards precede next-state transitions; newly entered states are not immediately turned over or escaped. Thresholds: static .716667, dynamic .383942 at η=0, .269012 at η=.8, other reference settings held fixed.\nSources: src/gifted_masking/models/m2.py; src/gifted_masking/analysis/m2_optimal.py; projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv; projects/frontiers_article/publication_v1/data/e03_grid_map.csv; configs/frontiers_article/e03_m2_regime_standard.json; projects/frontiers_article/integrated_article_20261004/ARTICLE.md",
+      "native_tables": 1,
+      "native_charts": [],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-06.png"
+    },
+    {
+      "slide": 7,
+      "title": "M3 · Context is part of the choice",
+      "text_blocks": [
+        "M3 · Context is part of the choice",
+        "Flat model: choose one of 2K group–behaviour pairs • group receptivities stay fixed",
+        "E04: one good context, fixed identity; five-master means. Encounter is over the full run; masking is the final-window action fraction.",
+        "07",
+        "At K = 16, flat model",
+        "84.19%",
+        "final masking",
+        "99.72%",
+        "had experienced acceptance in the good context"
+      ],
+      "table_texts": [
+        "Group 1",
+        "Group 2",
+        "… Group K",
+        "Mask₁ / Authentic₁",
+        "Mask₂ / Authentic₂",
+        "Maskₖ / Authenticₖ"
+      ],
+      "notes": "M3 asks the learner to choose where to interact as well as whether to express itself. One context is receptive, while the others are less receptive. The best available reward stays fixed as we add contexts. In the flat representation, each context has separate masking and authentic actions. At sixteen contexts, final masking reaches eighty-four percent, even though almost every learner has already experienced acceptance in the receptive context. First success therefore does not guarantee sustained later use. Representation matters: choosing a context and then a behaviour shows a similar masking increase, but pooling masking into one shared action keeps masking near twenty-six percent. We cannot conclude that more contexts universally cause masking. The supported result is that how choices share experience changes how an available opportunity gets used.\nTiming: 100 seconds.\nSources:\nM3: src/gifted_masking/models/m3.py\nE04_CONFIG: configs/frontiers_article/e04_m3_search_architectures_standard.json\nE04_CURVES: results/summaries/frontiers_m3_search_architectures_v1_curves.csv\nE04_EFFECTS: results/summaries/frontiers_m3_search_architectures_v1_effects.csv\nFIG9: projects/frontiers_article/integrated_article_20261004/figures/figure_09_context_encounter_sustained_use.png\nARTICLE: projects/frontiers_article/integrated_article_20261004/ARTICLE.md\nInterpretation: One good context, fixed identity. Encounter: fraction of learners over the whole run. Masking: final-window action fraction. Endpoint values are descriptive means.",
+      "native_tables": 1,
+      "native_charts": [
+        {
+          "part": "ppt/slides/charts/chart2.xml",
+          "series": [
+            {
+              "values": [
+                0.26364600000000005,
+                0.42034400000000005,
+                0.591174,
+                0.742882,
+                0.8419059999999999
+              ],
+              "x_values": []
+            },
+            {
+              "values": [
+                0.26448900000000003,
+                0.503263,
+                0.689792,
+                0.806617,
+                0.8726579999999999
+              ],
+              "x_values": []
+            },
+            {
+              "values": [
+                0.2723,
+                0.263432,
+                0.259975,
+                0.261331,
+                0.257741
+              ],
+              "x_values": []
+            }
+          ]
+        }
+      ],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-07.png"
+    },
+    {
+      "slide": 8,
+      "title": "M3 · Social comparison changes the boundary",
+      "text_blocks": [
+        "M3 · Social comparison changes the boundary",
+        "Comparison cost reduces accepted authenticity in the receptive group.",
+        "E05: flat K=4, λ=1, five masters. Learned crossing is a modal-population boundary, not majority-masking onset.",
+        "08",
+        "LEARNED",
+        "0.313",
+        "95% CI [.308, .317]",
+        "OBJECTIVE",
+        "0.471",
+        "Expected payoffs are equal"
+      ],
+      "table_texts": [],
+      "notes": "E05 adds a comparison cost to accepted authenticity in the good context. We can calculate exactly when that cost removes the good context’s objective advantage: approximately point four seven one. But the flat four-context learner population crosses its behavioural boundary much earlier, near point three one three. At that point, authenticity still has positive objective advantage. The behavioural boundary is specific: it is where half the learners have the good-authentic action as their most frequent individual action. It is not where total masking first becomes a majority. Several separate mask actions can together account for most behaviour even when one authentic action is individually the most frequent. This distinction lets us measure a learned boundary without confusing it with environmental indifference.\nTiming: 75 seconds.\nSources:\nM3: src/gifted_masking/models/m3.py\nE05_CROSSINGS: projects/frontiers_article/publication_v1/data/e05_crossings.csv\nE05_RESPONSE: projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv\nE05_CELLS: results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv\nFIG10: projects/frontiers_article/integrated_article_20261004/figures/figure_10_learned_boundary_actual_masking.png\nARTICLE: projects/frontiers_article/integrated_article_20261004/ARTICLE.md\nInterpretation: Flat K=4, lambda=1. Learned crossing .312852, 95% CI [.307836,.316918]. Modal-population crossing, not majority-masking onset.",
+      "native_tables": 0,
+      "native_charts": [
+        {
+          "part": "ppt/slides/charts/chart3.xml",
+          "series": [
+            {
+              "values": [
+                0.9400000000000001,
+                0.5292,
+                0.47240000000000004,
+                0.40359999999999996,
+                0.344,
+                0.2884,
+                0.22759999999999997,
+                0.1712,
+                0.1416,
+                0.1328,
+                0.1008,
+                0.07239999999999999,
+                0.0508,
+                0.027200000000000002,
+                0.0128,
+                0.0068000000000000005,
+                0.002,
+                0.0
+              ],
+              "x_values": [
+                0.0,
+                0.3,
+                0.325,
+                0.35,
+                0.375,
+                0.4,
+                0.425,
+                0.45,
+                0.47058823529411764,
+                0.475,
+                0.5,
+                0.525,
+                0.55,
+                0.575,
+                0.6,
+                0.625,
+                0.65,
+                0.8
+              ]
+            },
+            {
+              "values": [
+                0.0,
+                1.0
+              ],
+              "x_values": [
+                0.31285211267605634,
+                0.31285211267605634
+              ]
+            },
+            {
+              "values": [
+                0.0,
+                1.0
+              ],
+              "x_values": [
+                0.47058823529411764,
+                0.47058823529411764
+              ]
+            }
+          ]
+        }
+      ],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-08.png"
+    },
+    {
+      "slide": 9,
+      "title": "M4 · Behaviour changes future receptivity",
+      "text_blocks": [
+        "M4 · Behaviour changes future receptivity",
+        "Actions: Mask / Authentic • Environment: continuous pₜ • Learner: only two Q-values",
+        "Implemented extension; formal E06 results deferred. Direction-of-change rules are model assumptions; hysteresis is not established.",
+        "09",
+        "Q(Mask), Q(Auth)",
+        "Choose an action",
+        "Current pₜ",
+        "Outcome and reward",
+        "Updates the chosen Q-value",
+        "pₜ is bounded between .05 and .95. The learner does not condition Q on pₜ."
+      ],
+      "table_texts": [
+        "Event",
+        "Next receptivity",
+        "Accepted authenticity",
+        "Increases",
+        "Rejected authenticity",
+        "Decreases",
+        "Masking",
+        "Decreases"
+      ],
+      "notes": "M4 closes a feedback loop. Acceptance after authenticity raises future receptivity; rejection and masking lower it according to specified rates. Current receptivity determines the outcome before it updates. The learner still stores action values rather than values conditioned on receptivity, so this is an endogenous, nonstationary bandit. Its proposed experiment carries learning and receptivity through increasing and decreasing control values, with reset and placebo comparisons. Diagnostic smoke work exists, but the formal E06 evidence remains deferred. Hysteresis is not yet established.\nTiming: 45 seconds.\nSources:\nM4: src/gifted_masking/models/m4.py\nE06_CODE: src/gifted_masking/experiments/e06.py\nE06_SMOKE: configs/frontiers_article/e06_m4_paths_smoke.json\nE06_STANDARD: configs/frontiers_article/e06_m4_paths_standard.json\nCURRENT_STATE: projects/frontiers_article/CURRENT_STATE.md\nInterpretation: Implemented extension; E06 deferred. No confirmed hysteresis claim.",
+      "native_tables": 1,
+      "native_charts": [],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-09.png"
+    },
+    {
+      "slide": 10,
+      "title": "What changes across the models?",
+      "text_blocks": [
+        "What changes across the models?",
+        "Action = a choice • State = the current environmental condition",
+        "E01–E05: five independent master replications. Findings concern specified models; mechanisms in human learners remain empirical questions.",
+        "10"
+      ],
+      "table_texts": [
+        "Model",
+        "Actions",
+        "Environmental state",
+        "Learner memory",
+        "M0",
+        "2 behaviours",
+        "Fixed receptivity",
+        "2 action values",
+        "M1",
+        "5 disclosure levels",
+        "Fixed receptivity",
+        "5 action values",
+        "M2",
+        "2 behaviours",
+        "3 social states",
+        "3 × 2 values",
+        "M3, flat",
+        "2K group–behaviour pairs",
+        "Fixed group receptivities",
+        "2K action values",
+        "M4",
+        "2 behaviours",
+        "Continuous receptivity pₜ",
+        "2 action values"
+      ],
+      "notes": "Read each model along three columns: what can be chosen, what the environment carries forward, and what the learner remembers. M2 explicitly conditions its choices on social state. M3 chooses a context–behaviour pair. M4 changes the environment, but still learns two action values. E01 to E05 each use five master replications. These results establish model behaviours; human mechanisms require empirical tests.\n35 seconds.\nSources: src/gifted_masking/models/m0.py; src/gifted_masking/models/m1.py; src/gifted_masking/models/m2.py; src/gifted_masking/models/m3.py; src/gifted_masking/models/m4.py; projects/frontiers_article/integrated_article_20261004/ARTICLE.md.",
+      "native_tables": 1,
+      "native_charts": [],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-10.png"
+    },
+    {
+      "slide": 11,
+      "title": "Different mechanisms imply different questions",
+      "text_blocks": [
+        "Different mechanisms imply different questions",
+        "Model-derived questions for empirical study",
+        "11",
+        "What does the child expect?",
+        "Which experiences change that expectation?",
+        "Does learning transfer between situations?",
+        "What consequences persist?"
+      ],
+      "table_texts": [],
+      "notes": "Similar concealment can arise through different processes. The models suggest questions to test: what does the child expect, which experiences change that expectation, does learning transfer between situations, and what consequences persist? The contribution is a set of candidate mechanisms and predictions for empirical study.\nTiming: 30 seconds.\nSources:\nARTICLE: projects/frontiers_article/integrated_article_20261004/ARTICLE.md\nRDS: projects/frontiers_article/RDS.md\nInterpretation: Empirical implications are testable hypotheses",
+      "native_tables": 0,
+      "native_charts": [],
+      "picture_count": 0,
+      "preview": "output/qa/masking_mechanisms_first_set/slide-11.png"
+    }
+  ]
+}

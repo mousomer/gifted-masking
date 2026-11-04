@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="612pt" height="439.2pt" viewBox="0 0 612 439.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Integrated frozen-evidence article</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 439.2 
+L 612 439.2 
+L 612 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.67344 177.816708 
+L 130.72626 177.816708 
+Q 138.82302 177.816708 138.82302 171.944604 
+L 138.82302 76.313196 
+Q 138.82302 70.441092 130.72626 70.441092 
+L 30.67344 70.441092 
+Q 22.57668 70.441092 22.57668 76.313196 
+L 22.57668 171.944604 
+Q 22.57668 177.816708 30.67344 177.816708 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #f0f5f8; stroke: #245077; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 30.67344 258.767856 
+L 130.72626 258.767856 
+Q 138.82302 258.767856 138.82302 252.895752 
+L 138.82302 192.916404 
+Q 138.82302 187.0443 130.72626 187.0443 
+L 30.67344 187.0443 
+Q 22.57668 187.0443 22.57668 192.916404 
+L 22.57668 252.895752 
+Q 22.57668 258.767856 30.67344 258.767856 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #f0f5f8; stroke: #287769; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 30.67344 374.951628 
+L 130.72626 374.951628 
+Q 138.82302 374.951628 138.82302 369.079524 
+L 138.82302 273.448116 
+Q 138.82302 267.576012 130.72626 267.576012 
+L 30.67344 267.576012 
+Q 22.57668 267.576012 22.57668 273.448116 
+L 22.57668 369.079524 
+Q 22.57668 374.951628 30.67344 374.951628 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #f0f5f8; stroke: #ac433c; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 434.042857 88.47684 
+Q 442.163328 88.47684 449.165764 88.47684 
+" clip-path="url(#p42aaff98f9)" style="fill: none; stroke: #60666e; stroke-linecap: round"/>
+    <path d="M 445.165764 86.47684 
+L 449.165764 88.47684 
+L 445.165764 90.47684 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #60666e; stroke: #60666e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 434.042857 122.03172 
+Q 442.163328 122.03172 449.165764 122.03172 
+" clip-path="url(#p42aaff98f9)" style="fill: none; stroke: #60666e; stroke-linecap: round"/>
+    <path d="M 445.165764 120.03172 
+L 449.165764 122.03172 
+L 445.165764 124.03172 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #60666e; stroke: #60666e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 434.042857 155.5866 
+Q 442.163328 155.5866 449.165764 155.5866 
+" clip-path="url(#p42aaff98f9)" style="fill: none; stroke: #60666e; stroke-linecap: round"/>
+    <path d="M 445.165764 153.5866 
+L 449.165764 155.5866 
+L 445.165764 157.5866 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #60666e; stroke: #60666e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 434.042857 205.91892 
+Q 442.163328 205.91892 449.165764 205.91892 
+" clip-path="url(#p42aaff98f9)" style="fill: none; stroke: #60666e; stroke-linecap: round"/>
+    <path d="M 445.165764 203.91892 
+L 449.165764 205.91892 
+L 445.165764 207.91892 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #60666e; stroke: #60666e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 434.042857 239.4738 
+Q 442.163328 239.4738 449.165764 239.4738 
+" clip-path="url(#p42aaff98f9)" style="fill: none; stroke: #60666e; stroke-linecap: round"/>
+    <path d="M 445.165764 237.4738 
+L 449.165764 239.4738 
+L 445.165764 241.4738 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #60666e; stroke: #60666e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 434.042857 285.61176 
+Q 442.163328 285.61176 449.165764 285.61176 
+" clip-path="url(#p42aaff98f9)" style="fill: none; stroke: #60666e; stroke-linecap: round"/>
+    <path d="M 445.165764 283.61176 
+L 449.165764 285.61176 
+L 445.165764 287.61176 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #60666e; stroke: #60666e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 434.042857 319.16664 
+Q 442.163328 319.16664 449.165764 319.16664 
+" clip-path="url(#p42aaff98f9)" style="fill: none; stroke: #60666e; stroke-linecap: round"/>
+    <path d="M 445.165764 317.16664 
+L 449.165764 319.16664 
+L 445.165764 321.16664 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #60666e; stroke: #60666e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 434.042857 352.72152 
+Q 442.163328 352.72152 449.165764 352.72152 
+" clip-path="url(#p42aaff98f9)" style="fill: none; stroke: #60666e; stroke-linecap: round"/>
+    <path d="M 445.165764 350.72152 
+L 449.165764 352.72152 
+L 445.165764 354.72152 
+z
+" clip-path="url(#p42aaff98f9)" style="fill: #60666e; stroke: #60666e; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start" x="32.9868" y="28.388025" transform="rotate(-0 32.9868 28.388025)">Social state determines reward and the next opportunity</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #60666e" x="82.1457" y="57.01914" transform="rotate(-0 82.1457 57.01914)">CURRENT STATE</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #60666e" x="252.756" y="57.01914" transform="rotate(-0 252.756 57.01914)">ACTION / OUTCOME</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #60666e" x="403.1244" y="57.01914" transform="rotate(-0 403.1244 57.01914)">REWARD</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #60666e" x="518.7924" y="57.01914" transform="rotate(-0 518.7924 57.01914)">NEXT STATE</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="80.69985" y="126.726947" transform="rotate(-0 80.69985 126.726947)">Neutral (N)</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="80.69985" y="225.504125" transform="rotate(-0 80.69985 225.504125)">Accepted (A)</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="80.69985" y="323.861867" transform="rotate(-0 80.69985 323.861867)">Stigmatized (S)</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="151.5465" y="90.944985" transform="rotate(-0 151.5465 90.944985)">Mask</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.1244" y="91.334692" transform="rotate(-0 403.1244 91.334692)">b−c</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.7924" y="90.944613" transform="rotate(-0 518.7924 90.944613)">N</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="151.5465" y="124.499865" transform="rotate(-0 151.5465 124.499865)">Authentic: accepted (p)</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.1244" y="124.889572" transform="rotate(-0 403.1244 124.889572)">b+a</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.7924" y="124.499493" transform="rotate(-0 518.7924 124.499493)">A</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="151.5465" y="158.054745" transform="rotate(-0 151.5465 158.054745)">Authentic: rejected (1−p)</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.1244" y="158.444022" transform="rotate(-0 403.1244 158.444022)">a−r</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.7924" y="158.054373" transform="rotate(-0 518.7924 158.054373)">S</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="151.5465" y="208.387065" transform="rotate(-0 151.5465 208.387065)">Mask</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.1244" y="208.776772" transform="rotate(-0 403.1244 208.776772)">b−c</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.7924" y="208.387065" transform="rotate(-0 518.7924 208.387065)">N with δ; otherwise A</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="151.5465" y="241.941945" transform="rotate(-0 151.5465 241.941945)">Authentic</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.1244" y="242.331652" transform="rotate(-0 403.1244 242.331652)">b+a</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.7924" y="241.941945" transform="rotate(-0 518.7924 241.941945)">N with δ; otherwise A</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="151.5465" y="288.079905" transform="rotate(-0 151.5465 288.079905)">Mask</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.1244" y="288.469612" transform="rotate(-0 403.1244 288.469612)">b₂−c</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.7924" y="288.079905" transform="rotate(-0 518.7924 288.079905)">N with η; otherwise S</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="151.5465" y="321.634785" transform="rotate(-0 151.5465 321.634785)">Authentic: redeemed (p/2)</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.1244" y="322.024492" transform="rotate(-0 403.1244 322.024492)">b+a</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.7924" y="321.634413" transform="rotate(-0 518.7924 321.634413)">A</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="151.5465" y="355.189665" transform="rotate(-0 151.5465 355.189665)">Authentic: not redeemed (1−p/2)</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.1244" y="355.578942" transform="rotate(-0 403.1244 355.578942)">a−r₂</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.7924" y="355.189665" transform="rotate(-0 518.7924 355.189665)">N with η; otherwise S</text>
+   </g>
+   <g id="text_33">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="310.59" y="397.601172" transform="rotate(-0 310.59 397.601172)">Reward is realized first; then the displayed transition occurs.</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #60666e" x="310.59" y="416.475792" transform="rotate(-0 310.59 416.475792)">Turnover applies to current A. Escape applies only to non-redeemed S paths.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p42aaff98f9">
+   <rect x="21.42" y="8.784" width="578.34" height="419.436"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,11 @@
+p,d,expected_reward,analytic_optimal_endpoint,available_binary_endpoints,available_graded_independent_5
+0.75,0.0,0.75,1,True,True
+0.75,0.25,0.775,1,False,True
+0.75,0.5,0.7999999999999999,1,False,True
+0.75,0.75,0.8249999999999998,1,False,True
+0.75,1.0,0.8500000000000002,1,True,True
+0.85,0.0,0.75,1,True,True
+0.85,0.25,0.8500000000000001,1,False,True
+0.85,0.5,0.9500000000000002,1,False,True
+0.85,0.75,1.0499999999999998,1,False,True
+0.85,1.0,1.1500000000000001,1,True,True

@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "governance_check": "./gov check: passed",
+  "whitespace_check": "git diff --check: passed",
+  "source_hash_checks": 83,
+  "main_slides": 11,
+  "backups_unchanged": 8,
+  "planned_speaking_seconds": 660,
+  "reserve_seconds": 60,
+  "spoken_words": 1070,
+  "slide_notes_match_spec_and_storyboard": true,
+  "archived_scientific_values_preserved": true,
+  "diffstat_existing_task_files": [
+    {
+      "path": "projects/frontiers_article/presentation_prep_20261005/README.md",
+      "insertions": 12,
+      "deletions": 6
+    },
+    {
+      "path": "projects/frontiers_article/presentation_prep_20261005/PPT_STORYBOARD.md",
+      "insertions": 4,
+      "deletions": 4
+    },
+    {
+      "path": "projects/frontiers_article/presentation_prep_20261005/SLIDE_SPEC.json",
+      "insertions": 87,
+      "deletions": 20
+    },
+    {
+      "path": "projects/frontiers_article/presentation_prep_20261005/SOURCE_INDEX.json",
+      "insertions": 40,
+      "deletions": 7
+    },
+    {
+      "path": "projects/frontiers_article/RDS.md",
+      "insertions": 15,
+      "deletions": 1
+    },
+    {
+      "path": "projects/frontiers_article/BACKLOG.md",
+      "insertions": 7,
+      "deletions": 4
+    },
+    {
+      "path": "projects/frontiers_article/CURRENT_STATE.md",
+      "insertions": 10,
+      "deletions": 9
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "insertions": 10,
+      "deletions": 8
+    }
+  ],
+  "full_repository_verifier": "Not run: RDS 0.16 preserved-evidence boundary; read-only integrated verifier passed during production."
+}

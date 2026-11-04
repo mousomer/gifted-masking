@@ -1,0 +1,14 @@
+{
+  "src/gifted_masking/models/m3.py": "091824551b7c6cc5d7ad1ca04d787c82ac5763345d5f09f4eb735dc2f6f381c1",
+  "src/gifted_masking/models/m2.py": "42b39f1bcf8aac96f830acd5747a215bac24c36a2a2be773294022c019170c5e",
+  "src/gifted_masking/models/__init__.py": "20f1a6a96508e1dab19ff297cf25ba31b02b224bcd5d83023567e8dbd4bf3333",
+  "src/gifted_masking/models/m1.py": "59287a423a4fed9bdbedc6c78d36351c28dd062235c11edcd571fa6b90968d15",
+  "src/gifted_masking/models/m4.py": "f3a9e662d7514275aa480790b2ece27effab9854bf4d44542446dccd7afc485f",
+  "src/gifted_masking/models/m0.py": "a2b30aed1b4e8c4f933f773be98c1033cd3dc9262b3d18e1631bf59c600861a7",
+  "output/pptx/masking_mechanisms_first_set.pptx": "94b32f9a4cb58e2259ee7f82750bd86bbd53a46910294a48c7fec4d278206900",
+  "output/pptx/masking_results_discussion.pptx": "f4b354678f6f19c5fe0683fd0569d41bc7e6731aaf5dfa0f6af67c0321d04944",
+  "output/pdf/masking_mechanisms_first_set.pdf": "4335ff3085495d1517c4d8af048460df1136b60465e4bd6c1fbd19fad4f0c869",
+  "output/pdf/masking_results_discussion.pdf": "7802015f10664dde7b7cdd6170f68a4bf836dc20929a463dfd823ed1f0138b74",
+  "projects/frontiers_article/presentation_prep_20261005/LECTURE_SCRIPT_15_MIN.md": "c9f2fd92ba9b7ddb462acfc3b34a17e6be51310a143fd90b74b668a6e5231a9b",
+  "projects/frontiers_article/presentation_prep_20261005/results_discussion_20261006/DATA.json": "3523bae44c2fb6140967fc56df50ba251f1b517a9c2012cbc497fc31c1363bbe"
+}

@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "source_hash_checks": 93,
+  "section_seconds": 660,
+  "speaker_words": 1096,
+  "slide_count": 8,
+  "native_charts": 5,
+  "native_tables": 4,
+  "m2_cells_verified": 357,
+  "pdf_pages": 8,
+  "pdf_embedded_images_match_final_renders": true,
+  "pdf_render_dimensions": [
+    1920,
+    1080
+  ],
+  "visual_review": "All eight final slides inspected or byte-identical to inspected version. PDF pages 1,3,6 additionally visually inspected.",
+  "preserved_artifacts": {
+    "output/pptx/masking_mechanisms_first_set.pptx": "94b32f9a4cb58e2259ee7f82750bd86bbd53a46910294a48c7fec4d278206900",
+    "output/pdf/masking_mechanisms_first_set.pdf": "4335ff3085495d1517c4d8af048460df1136b60465e4bd6c1fbd19fad4f0c869",
+    "projects/frontiers_article/presentation_prep_20261005/LECTURE_SCRIPT_15_MIN.md": "c9f2fd92ba9b7ddb462acfc3b34a17e6be51310a143fd90b74b668a6e5231a9b",
+    "projects/frontiers_article/presentation_prep_20261005/SLIDE_SPEC.json": "1282ed4923124210b649853281bd81f44ae24e1748fc3022f20383328fa8cb14"
+  },
+  "integrated_verifier": "passed: 33 protected experiment outputs, 18 evidence references, 19 prior revision files",
+  "full_verifier": "Not run: RDS 0.18 excludes new simulations and scientific-output writes.",
+  "native_powerpoint_execution_verified": false,
+  "diffstat_existing_files": [
+    {
+      "path": "projects/frontiers_article/RDS.md",
+      "insertions": 15,
+      "deletions": 1
+    },
+    {
+      "path": "projects/frontiers_article/BACKLOG.md",
+      "insertions": 5,
+      "deletions": 0
+    },
+    {
+      "path": "projects/frontiers_article/CURRENT_STATE.md",
+      "insertions": 9,
+      "deletions": 0
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "insertions": 9,
+      "deletions": 0
+    },
+    {
+      "path": "projects/frontiers_article/presentation_prep_20261005/README.md",
+      "insertions": 8,
+      "deletions": 0
+    },
+    {
+      "path": "projects/frontiers_article/presentation_prep_20261005/SOURCE_INDEX.json",
+      "insertions": 34,
+      "deletions": 4
+    }
+  ]
+}

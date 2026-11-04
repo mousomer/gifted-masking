@@ -1,0 +1,2873 @@
+{
+  "article": "integrated_article_20261004",
+  "captions_sha256": "6cf9faa6eea664c6d67a94fbfcaec6c0b94569e29fd14c86cc9dc8562e839e54",
+  "generator_sha256": "90cbfa0dd413b275db3bd1466486902b52af4fad337fc7a9de14f6d24bd2ce65",
+  "inputs": {
+    "projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv": "12a1f4befa1ade1a9065a3782fc40a20d9bbed2f91d31a1d3d4dd5771d55a42b",
+    "projects/frontiers_article/publication_v1/data/e01_lambda_response.csv": "df70c4f9b15d4c90b16fe1cff1d99a451464331ee1b01d3489c3b7442e3d8ae3",
+    "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv": "9b9227f43146b96ae7000f572d2249ae6bd4d39bf414715bdd780203afa38d36",
+    "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv": "e58f0603e27a34ab7b94309f8576e96c67c4e8dc4c25e02b7312aed48c021fb9",
+    "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv": "fe37531296d986f0662ce74d6e3976680163e4f19da7240deef5f8e5d97f966f",
+    "projects/frontiers_article/publication_v1/data/e03_grid_map.csv": "c5def710116248b60ffcc347fa408519ce5d9094547e486fc73f2388e5babbab",
+    "projects/frontiers_article/publication_v1/data/e03_grid_summary.csv": "90aebefa0fe66c1f3092879d365c2ede798e71114a1f3b0bb74ee6df083f096a",
+    "projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv": "a43d066f98987a7fd0e326c70929fe442b70134b1ee7ba1b8dbee779cfb91ce5",
+    "projects/frontiers_article/publication_v1/data/e05_crossings.csv": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b",
+    "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv": "0d47aeae4dc4c15e08176c7ff44466740712f3a47000a68d2b7a1231d48a7e10",
+    "projects/frontiers_article/revision_20260929/SUPPLEMENTARY_METHODS.md": "f4c9a5328d03db90f8ae5556302834a9c00950bba6316ff826588eadadc74569",
+    "projects/frontiers_article/revision_20260929/generate_figures.py": "476b4e8ffafdee6dcb1c1134c91f5fdb1c5f1204834d860dfe37f3ca3e304678",
+    "results/summaries/frontiers_m2_regime_replication_v1_cells.csv": "198cb7be9b2a93aa89569d9dd656326f521b7a2ec99543733fd6e779e0508851",
+    "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv": "59d780f3feb3ed03e665de0a75eabd8975fb394d58cbd9c2193a03bb68d73ab7",
+    "results/summaries/frontiers_m3_search_architectures_v1_curves.csv": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4",
+    "src/gifted_masking/models/m2.py": "42b39f1bcf8aac96f830acd5747a215bac24c36a2a2be773294022c019170c5e",
+    "src/gifted_masking/models/m3.py": "091824551b7c6cc5d7ad1ca04d787c82ac5763345d5f09f4eb735dc2f6f381c1"
+  },
+  "method": "Frozen-data display and exact specification diagrams; no simulations, refits or bootstrap",
+  "mode": "canonical",
+  "outputs": {
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_01_overview.png": "28ab84132ed5b78a8befb9d9e6f3a5dd1038c0ea916e44581a1fc36d16db27f2",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_01_overview.svg": "cf0f3d4878cbe1b3979689e231918f4eed24d700b308bd038b7c8ff7f63d8dc6",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_02_state_kernel.png": "594333d30ad7cc62948984e8f9eddf3f9cff50816a30f17ef1b2bc957d26e809",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_02_state_kernel.svg": "89e9a5af78bfaa7ef07a7f20e242bfddadeefee6cb1430dae20eb723fdc84f4f",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_03_architectures.png": "717c13a67a28f2c06e173d7a99de1be3ed919100a0c23e46786c22cece2f862c",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_03_architectures.svg": "da1871df269cce5625e48101376c15575d0d05e7f2d2f48ccbeb9f532c1df543",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_04_weighting_history_information.png": "5c97f94eb5499da9f6f863c224089004b9c2e9caad83ec3f8235afdb6b9ab0a4",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_04_weighting_history_information.svg": "e9e6d84a3cdd6e4d7eec9bf8870d19ffc20d41a3ac0e15f5dde1934e77b32752",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_05_graded_engagement_intensity.png": "b400258384b78b17b2ca59ddea0f7256fdbef5b18febe3b85d6ab2dc0feca683",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_05_graded_engagement_intensity.svg": "6d0160a3a61118d68ba28d98b8bf054196b8c3adf43dee60e42e85cef8dae534",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_06_dynamic_thresholds_persistence.png": "03b42592aaa08d2e95642496357210f3e86d4dbbd0a444f82af39c80ac481618",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_06_dynamic_thresholds_persistence.svg": "c35e86aa50e9f5f31b2051fbdfdd986e0ecd85dd1ff9f85fcf7dd8ea220d22f2",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_07_dynamic_grid.png": "8db2ce550b31a551aa5effd5b390f3b0e7a4b8ada46102ee15df6b70c95acecf",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_07_dynamic_grid.svg": "fce595cb086eed7d1937daf03d83c024b0f1710b0672cc07ca0ec3335c1ac260",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_08_sensitivity_matrix.png": "2fd0cb36bc8e87d3ed0161e11d0ede7474c7bb5597a84b816ba55590420b804e",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_08_sensitivity_matrix.svg": "4bad519935f0499662310fac7ed25688e894fea54b800d7986ac1f2395a2a2f5",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_09_context_encounter_sustained_use.png": "117bab65488f8a6588a5af30c0d24c02ed9efd39db4e10aa9fedc9d4912ddc7c",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_09_context_encounter_sustained_use.svg": "8d56681a857210896f5ce544cd6022c5321dff04ab5a38cfd1576ee7a40da55d",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_10_learned_boundary_actual_masking.png": "0670c085748552c07a55373b859638f61705d6dc18c262c37b395d83825291e3",
+    "projects/frontiers_article/integrated_article_20261004/figures/figure_10_learned_boundary_actual_masking.svg": "e24d3586dd5a461b9bf3ae310485a58bb829ca5411d08fee70a3c3b7441ed57a"
+  },
+  "panels": {
+    "10A": {
+      "note": "No isotonic refit or bootstrap. Lines connect observed pooled points only; shaded strip is the archived crossing CI.",
+      "selector": "dense-range archived pooled responses by architecture; frozen crossing and CI",
+      "source": [
+        "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv",
+        "projects/frontiers_article/publication_v1/data/e05_crossings.csv"
+      ],
+      "values": {
+        "crossings": [
+          {
+            "analytic_threshold_bf": "0.47058823529411764",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bootstrap_replicates": "10000",
+            "bootstrap_valid_crossings": "10000",
+            "censoring_note": "",
+            "ci_high": "0.3169178027050235",
+            "ci_low": "0.3078358208955224",
+            "ci_method": "bootstrap_master_seed",
+            "decision_eligible": "True",
+            "dense_bf_max": "0.65",
+            "dense_bf_min": "0.3",
+            "learned_minus_analytic_threshold": "-0.1577361226180613",
+            "transition_bf": "0.31285211267605634",
+            "transition_status": "valid"
+          },
+          {
+            "analytic_threshold_bf": "0.47058823529411764",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bootstrap_replicates": "10000",
+            "bootstrap_valid_crossings": "0",
+            "censoring_note": "Left-censored below the observed dense range; no in-range crossing is estimable and none may be extrapolated.",
+            "ci_high": "",
+            "ci_low": "",
+            "ci_method": "bootstrap_master_seed",
+            "decision_eligible": "False",
+            "dense_bf_max": "0.65",
+            "dense_bf_min": "0.3",
+            "learned_minus_analytic_threshold": "",
+            "transition_bf": "",
+            "transition_status": "no_crossing_below"
+          }
+        ],
+        "response": [
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.14500000000000002",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.3",
+            "bf_label": "0.300",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.546",
+            "master_min": "0.506",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.5292",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.12375000000000003",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.325",
+            "bf_label": "0.325",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.488",
+            "master_min": "0.452",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.47240000000000004",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.10250000000000004",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.35",
+            "bf_label": "0.350",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.436",
+            "master_min": "0.384",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.40359999999999996",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.08125000000000004",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.375",
+            "bf_label": "0.375",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.374",
+            "master_min": "0.324",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.344",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.06000000000000005",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.4",
+            "bf_label": "0.400",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.312",
+            "master_min": "0.274",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.2884",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.03875000000000006",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.425",
+            "bf_label": "0.425",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.278",
+            "master_min": "0.188",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.22759999999999997",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.01750000000000007",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.45",
+            "bf_label": "0.450",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.184",
+            "master_min": "0.154",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.1712",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.0",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.47058823529411764",
+            "bf_label": "8over17",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "True",
+            "master_max": "0.158",
+            "master_min": "0.122",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "tie",
+            "pooled_response": "0.1416",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.003750000000000142",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.475",
+            "bf_label": "0.475",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.146",
+            "master_min": "0.118",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.1328",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.02499999999999991",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.5",
+            "bf_label": "0.500",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.122",
+            "master_min": "0.088",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.1008",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.0462499999999999",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.525",
+            "bf_label": "0.525",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.086",
+            "master_min": "0.062",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.07239999999999999",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.06750000000000012",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.55",
+            "bf_label": "0.550",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.066",
+            "master_min": "0.032",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0508",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.08874999999999988",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.575",
+            "bf_label": "0.575",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.038",
+            "master_min": "0.018",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.027200000000000002",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.1100000000000001",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.6",
+            "bf_label": "0.600",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.022",
+            "master_min": "0.008",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0128",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.13124999999999987",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.625",
+            "bf_label": "0.625",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.012",
+            "master_min": "0.002",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0068000000000000005",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.15250000000000008",
+            "architecture": "flat_2k",
+            "architecture_role": "primary",
+            "bf": "0.65",
+            "bf_label": "0.650",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.006",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.002",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.14500000000000002",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.3",
+            "bf_label": "0.300",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.14",
+            "master_min": "0.106",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.11760000000000001",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.12375000000000003",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.325",
+            "bf_label": "0.325",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.088",
+            "master_min": "0.076",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.0828",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.10250000000000004",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.35",
+            "bf_label": "0.350",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.072",
+            "master_min": "0.04",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.055999999999999994",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.08125000000000004",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.375",
+            "bf_label": "0.375",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.042",
+            "master_min": "0.036",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.038400000000000004",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.06000000000000005",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.4",
+            "bf_label": "0.400",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.03",
+            "master_min": "0.018",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.024",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.03875000000000006",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.425",
+            "bf_label": "0.425",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.018",
+            "master_min": "0.008",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.0124",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.01750000000000007",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.45",
+            "bf_label": "0.450",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.01",
+            "master_min": "0.006",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "good_auth",
+            "pooled_response": "0.0076",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "0.0",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.47058823529411764",
+            "bf_label": "8over17",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "True",
+            "master_max": "0.006",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "tie",
+            "pooled_response": "0.0028",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.003750000000000142",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.475",
+            "bf_label": "0.475",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.004",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0028",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.02499999999999991",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.5",
+            "bf_label": "0.500",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.002",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0012000000000000001",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.0462499999999999",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.525",
+            "bf_label": "0.525",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.0",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.06750000000000012",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.55",
+            "bf_label": "0.550",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.002",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0004",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.08874999999999988",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.575",
+            "bf_label": "0.575",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.0",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.1100000000000001",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.6",
+            "bf_label": "0.600",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.0",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.13124999999999987",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.625",
+            "bf_label": "0.625",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.0",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          },
+          {
+            "analytic_objective_advantage_good_auth_minus_mask": "-0.15250000000000008",
+            "architecture": "hierarchical",
+            "architecture_role": "secondary",
+            "bf": "0.65",
+            "bf_label": "0.650",
+            "in_dense_range": "True",
+            "is_analytic_threshold_anchor": "False",
+            "master_max": "0.0",
+            "master_min": "0.0",
+            "n_master_seeds": "5",
+            "n_per_cell": "500",
+            "objective_comparator": "mask",
+            "pooled_response": "0.0",
+            "response_metric": "modal_good_auth_argmax_fraction"
+          }
+        ]
+      }
+    },
+    "10B": {
+      "note": "Descriptive master means; masking has action denominator, modal classification has learner denominator.",
+      "selector": "architecture=flat_2k;bf in {0,.30,.325,8/17};five masters per cell",
+      "source": "results/summaries/frontiers_m3_bflpe_crossover_v1_cells.csv",
+      "values": [
+        {
+          "bf": 0,
+          "mask": 58.8217,
+          "modal": 94.0
+        },
+        {
+          "bf": 0.3,
+          "mask": 77.6073,
+          "modal": 52.92
+        },
+        {
+          "bf": 0.325,
+          "mask": 78.9508,
+          "modal": 47.24
+        },
+        {
+          "bf": 0.47058823529411764,
+          "mask": 85.20049999999999,
+          "modal": 14.16
+        }
+      ]
+    },
+    "1A-1B": {
+      "note": "No quantitative values; arrows organize model mechanisms, not estimated causal effects in children.",
+      "selector": "conceptual synthesis C01-C23",
+      "source": [],
+      "values": []
+    },
+    "2": {
+      "note": "Specification diagram. Turnover is restricted to current Accepted; escape to non-redeemed Stigmatized paths.",
+      "selector": "transition_step; supplementary S4.1",
+      "source": [
+        "src/gifted_masking/models/m2.py",
+        "projects/frontiers_article/revision_20260929/SUPPLEMENTARY_METHODS.md"
+      ],
+      "values": [
+        [
+          0.81,
+          "n_mask",
+          "r_mask",
+          "next_n"
+        ],
+        [
+          0.73,
+          "n_auth_success",
+          "r_auth",
+          "next_a"
+        ],
+        [
+          0.65,
+          "n_auth_reject",
+          "r_reject",
+          "next_s"
+        ],
+        [
+          0.53,
+          "a_mask",
+          "r_mask",
+          "next_turnover"
+        ],
+        [
+          0.45,
+          "a_auth",
+          "r_auth",
+          "next_turnover"
+        ],
+        [
+          0.34,
+          "s_mask",
+          "r_s_mask",
+          "next_escape"
+        ],
+        [
+          0.26,
+          "s_auth_success",
+          "r_auth",
+          "next_a"
+        ],
+        [
+          0.18,
+          "s_auth_fail",
+          "r_s_reject",
+          "next_escape"
+        ]
+      ]
+    },
+    "3A-3D": {
+      "note": "Schematic only. K=3 is illustrative, not an additional simulated condition.",
+      "selector": "simulate;simulate_hierarchical;simulate_global_mask;simulate_fixed_good_pond; supplementary S5.2",
+      "source": [
+        "src/gifted_masking/models/m3.py",
+        "projects/frontiers_article/revision_20260929/SUPPLEMENTARY_METHODS.md"
+      ],
+      "values": {
+        "flat_arms": 6,
+        "global_arms": 4,
+        "illustrative_K": 3,
+        "known_good_arms": 2,
+        "reward_classes": {
+          "bad_authentic": -0.8,
+          "good_authentic": 1.15,
+          "mask": 0.75
+        }
+      }
+    },
+    "4A": {
+      "note": "",
+      "selector": "lambda in {0.5,2.5}; p=.65; equal-weight means of five masters",
+      "source": "projects/frontiers_article/publication_v1/data/e01_lambda_response.csv",
+      "values": [
+        {
+          "analytic_objective_authentic_mean": "0.55",
+          "analytic_objective_boundary_p": "0.7166666666666667",
+          "analytic_subjective_authentic_mean": "0.795",
+          "analytic_subjective_boundary_p": "0.6304347826086957",
+          "lambda": "0.5",
+          "learned_q_mask_final": "0.7499999999999998",
+          "master_count": "5",
+          "master_max_final_window_mask_rate": "0.599165",
+          "master_min_final_window_mask_rate": "0.58439",
+          "mean_final_window_mask_rate": "0.588935",
+          "mean_q_auth_final": "0.629788924192589",
+          "objective_favours_authenticity": "False",
+          "p": "0.65",
+          "subjective_favours_authenticity": "True"
+        },
+        {
+          "analytic_objective_authentic_mean": "0.55",
+          "analytic_objective_boundary_p": "0.7166666666666667",
+          "analytic_subjective_authentic_mean": "-0.185",
+          "analytic_subjective_boundary_p": "0.8333333333333334",
+          "lambda": "2.5",
+          "learned_q_mask_final": "0.7499999999999998",
+          "master_count": "5",
+          "master_max_final_window_mask_rate": "0.9927",
+          "master_min_final_window_mask_rate": "0.9908899999999999",
+          "mean_final_window_mask_rate": "0.991925",
+          "mean_q_auth_final": "-0.7616483965595999",
+          "objective_favours_authenticity": "False",
+          "p": "0.65",
+          "subjective_favours_authenticity": "False"
+        }
+      ]
+    },
+    "4B": {
+      "note": "Exact formula (.75+1.4*lambda)/(1.6+1.4*lambda).",
+      "selector": "reference payoff algebra",
+      "source": "projects/frontiers_article/publication_v1/data/e01_lambda_response.csv",
+      "values": {
+        "lambda": [
+          0.5,
+          0.52,
+          0.54,
+          0.56,
+          0.58,
+          0.6,
+          0.62,
+          0.64,
+          0.66,
+          0.6799999999999999,
+          0.7,
+          0.72,
+          0.74,
+          0.76,
+          0.78,
+          0.8,
+          0.8200000000000001,
+          0.8400000000000001,
+          0.86,
+          0.88,
+          0.9,
+          0.9199999999999999,
+          0.94,
+          0.96,
+          0.98,
+          1.0,
+          1.02,
+          1.04,
+          1.06,
+          1.08,
+          1.1,
+          1.12,
+          1.1400000000000001,
+          1.1600000000000001,
+          1.1800000000000002,
+          1.2000000000000002,
+          1.22,
+          1.24,
+          1.26,
+          1.28,
+          1.3,
+          1.32,
+          1.3399999999999999,
+          1.3599999999999999,
+          1.38,
+          1.4,
+          1.42,
+          1.44,
+          1.46,
+          1.48,
+          1.5,
+          1.52,
+          1.54,
+          1.56,
+          1.58,
+          1.6,
+          1.62,
+          1.6400000000000001,
+          1.66,
+          1.68,
+          1.7,
+          1.72,
+          1.74,
+          1.76,
+          1.78,
+          1.8,
+          1.82,
+          1.84,
+          1.86,
+          1.8800000000000001,
+          1.9000000000000001,
+          1.92,
+          1.94,
+          1.96,
+          1.98,
+          2.0,
+          2.02,
+          2.04,
+          2.06,
+          2.08,
+          2.1,
+          2.12,
+          2.14,
+          2.16,
+          2.1799999999999997,
+          2.2,
+          2.2199999999999998,
+          2.24,
+          2.26,
+          2.2800000000000002,
+          2.3,
+          2.3200000000000003,
+          2.34,
+          2.3600000000000003,
+          2.38,
+          2.4000000000000004,
+          2.42,
+          2.44,
+          2.46,
+          2.48,
+          2.5
+        ],
+        "objective": 0.7166666666666667,
+        "threshold": [
+          0.6304347826086957,
+          0.6348797250859106,
+          0.6392190152801358,
+          0.6434563758389261,
+          0.6475953565505804,
+          0.6516393442622951,
+          0.6555915721231766,
+          0.6594551282051282,
+          0.6632329635499207,
+          0.6669278996865203,
+          0.6705426356589147,
+          0.6740797546012269,
+          0.6775417298937785,
+          0.6809309309309309,
+          0.6842496285289746,
+          0.6875,
+          0.6906841339155749,
+          0.6938040345821326,
+          0.6968616262482168,
+          0.699858757062147,
+          0.7027972027972026,
+          0.7056786703601108,
+          0.7085048010973937,
+          0.7112771739130435,
+          0.7139973082099595,
+          0.7166666666666667,
+          0.7192866578599736,
+          0.7218586387434555,
+          0.7243839169909209,
+          0.7268637532133676,
+          0.7292993630573248,
+          0.7316919191919192,
+          0.7340425531914894,
+          0.7363523573200993,
+          0.7386223862238622,
+          0.7408536585365854,
+          0.7430471584038695,
+          0.7452038369304554,
+          0.7473246135552913,
+          0.7494103773584906,
+          0.7514619883040935,
+          0.7534802784222737,
+          0.7554660529344072,
+          0.757420091324201,
+          0.7593431483578708,
+          0.7612359550561798,
+          0.7630992196209586,
+          0.764933628318584,
+          0.7667398463227223,
+          0.7685185185185185,
+          0.7702702702702702,
+          0.7719957081545064,
+          0.7736954206602769,
+          0.7753699788583509,
+          0.7770199370409233,
+          0.7786458333333333,
+          0.780248190279214,
+          0.7818275154004106,
+          0.7833843017329256,
+          0.784919028340081,
+          0.7864321608040201,
+          0.7879241516966068,
+          0.7893954410307236,
+          0.7908464566929133,
+          0.7922776148582599,
+          0.7936893203883495,
+          0.7950819672131149,
+          0.796455938697318,
+          0.7978116079923881,
+          0.7991493383742911,
+          0.8004694835680752,
+          0.8017723880597014,
+          0.8030583873957368,
+          0.8043278084714549,
+          0.8055809698078682,
+          0.8068181818181818,
+          0.8080397470641373,
+          0.809245960502693,
+          0.8104371097234612,
+          0.8116134751773049,
+          0.8127753303964758,
+          0.8139229422066551,
+          0.8150565709312445,
+          0.8161764705882352,
+          0.8172828890799656,
+          0.8183760683760685,
+          0.8194562446898894,
+          0.8205236486486486,
+          0.8215785054575987,
+          0.8226210350584308,
+          0.8236514522821575,
+          0.8246699669966996,
+          0.8256767842493848,
+          0.8266721044045677,
+          0.8276561232765611,
+          0.8286290322580644,
+          0.8295910184442663,
+          0.8305422647527911,
+          0.831482950039651,
+          0.8324132492113564,
+          0.8333333333333334
+        ]
+      }
+    },
+    "4C": {
+      "note": "",
+      "selector": "claim_id E01-C2-SAMPLING and E01-C2-FINAL-MASK",
+      "source": "projects/frontiers_article/publication_v1/data/e01_primary_effects.csv",
+      "values": [
+        [
+          "Post-initial authentic\nsampling",
+          -2.583704230615776,
+          -3.575251604903057,
+          -1.5921568563284951,
+          "#245077"
+        ],
+        [
+          "Final-window\nmasking",
+          -0.03432658754774054,
+          -1.1604676797786873,
+          1.0918145046832064,
+          "#60666e"
+        ]
+      ]
+    },
+    "4D": {
+      "note": "",
+      "selector": "claim_id E01-C2-FORCED-MASK and E01-C2-CF-MASK",
+      "source": "projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv",
+      "values": [
+        [
+          "5% forced\nauthentic exposure",
+          4.65902271980715,
+          3.3229526881437885,
+          5.995092751470512,
+          "#245077"
+        ],
+        [
+          "Counterfactual\nauthentic feedback",
+          11.813508467965528,
+          10.968319910642254,
+          12.6586970252888,
+          "#ac433c"
+        ]
+      ]
+    },
+    "5A": {
+      "note": "",
+      "selector": "p in {.75,.85}; all five disclosure levels",
+      "source": "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv",
+      "values": [
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "True",
+          "available_graded_independent_5": "True",
+          "d": "0.0",
+          "expected_reward": "0.75",
+          "p": "0.75"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "False",
+          "available_graded_independent_5": "True",
+          "d": "0.25",
+          "expected_reward": "0.775",
+          "p": "0.75"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "False",
+          "available_graded_independent_5": "True",
+          "d": "0.5",
+          "expected_reward": "0.7999999999999999",
+          "p": "0.75"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "False",
+          "available_graded_independent_5": "True",
+          "d": "0.75",
+          "expected_reward": "0.8249999999999998",
+          "p": "0.75"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "True",
+          "available_graded_independent_5": "True",
+          "d": "1.0",
+          "expected_reward": "0.8500000000000002",
+          "p": "0.75"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "True",
+          "available_graded_independent_5": "True",
+          "d": "0.0",
+          "expected_reward": "0.75",
+          "p": "0.85"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "False",
+          "available_graded_independent_5": "True",
+          "d": "0.25",
+          "expected_reward": "0.8500000000000001",
+          "p": "0.85"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "False",
+          "available_graded_independent_5": "True",
+          "d": "0.5",
+          "expected_reward": "0.9500000000000002",
+          "p": "0.85"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "False",
+          "available_graded_independent_5": "True",
+          "d": "0.75",
+          "expected_reward": "1.0499999999999998",
+          "p": "0.85"
+        },
+        {
+          "analytic_optimal_endpoint": "1",
+          "available_binary_endpoints": "True",
+          "available_graded_independent_5": "True",
+          "d": "1.0",
+          "expected_reward": "1.1500000000000001",
+          "p": "0.85"
+        }
+      ]
+    },
+    "5B": {
+      "note": "Var(R)=9(1-p)d[1-(1-p)d]; does not establish a learner variance preference.",
+      "selector": "exact reward variance at plotted disclosure levels",
+      "source": "projects/frontiers_article/publication_v1/data/e02_arm_expected_rewards.csv",
+      "values": [
+        {
+          "d": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "p": 0.75,
+          "variance": [
+            0.0,
+            0.52734375,
+            0.984375,
+            1.37109375,
+            1.6875
+          ]
+        },
+        {
+          "d": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "p": 0.85,
+          "variance": [
+            0.0,
+            0.32484375000000004,
+            0.6243750000000001,
+            0.8985937500000001,
+            1.1475
+          ]
+        }
+      ]
+    },
+    "5C": {
+      "note": "Archived REGRET is binary-minus-graded normalized regret, exactly graded-minus-binary mean disclosure. Units multiply the unit-scale quantities by 100; time windows differ by outcome.",
+      "selector": "all four claims, with REGRET re-expressed as mean-disclosure difference",
+      "source": "projects/frontiers_article/publication_v1/data/e02_primary_effects.csv",
+      "values": [
+        [
+          "Any disclosure (post-initial)",
+          25.504040052777675,
+          25.300351098704088,
+          25.707729006851267,
+          "#287769"
+        ],
+        [
+          "Full authenticity (final window)",
+          -32.86922325725828,
+          -34.20366913177394,
+          -31.534777382742618,
+          "#ac433c"
+        ],
+        [
+          "Unique full-authentic mode",
+          -22.173959296185814,
+          -28.87553011957132,
+          -15.472388472800308,
+          "#245077"
+        ],
+        [
+          "Mean disclosure intensity (full horizon)",
+          -2.9761004211474735,
+          -3.3873679431221757,
+          -2.564832899172771,
+          "#60666e"
+        ]
+      ]
+    },
+    "6A": {
+      "note": "Bars use midpoint; numerical brackets have width 0.00006103515625, not statistical confidence intervals.",
+      "selector": "all three bracketed thresholds plus exact static boundary",
+      "source": "projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv",
+      "values": [
+        {
+          "bracket_width": "6.103515625e-05",
+          "eta": "0.0",
+          "lower_p": "0.3839111328125",
+          "midpoint_p": "0.383941650390625",
+          "relocation_below_static": "0.3327250162760417",
+          "static_m0_boundary_p": "0.7166666666666667",
+          "status": "bracketed",
+          "threshold_kind": "objective_dynamic_authenticity",
+          "upper_p": "0.38397216796875"
+        },
+        {
+          "bracket_width": "6.103515625e-05",
+          "eta": "0.2",
+          "lower_p": "0.3387451171875",
+          "midpoint_p": "0.338775634765625",
+          "relocation_below_static": "0.3778910319010417",
+          "static_m0_boundary_p": "0.7166666666666667",
+          "status": "bracketed",
+          "threshold_kind": "objective_dynamic_authenticity",
+          "upper_p": "0.33880615234375"
+        },
+        {
+          "bracket_width": "6.103515625e-05",
+          "eta": "0.8",
+          "lower_p": "0.26898193359375",
+          "midpoint_p": "0.269012451171875",
+          "relocation_below_static": "0.4476542154947917",
+          "static_m0_boundary_p": "0.7166666666666667",
+          "status": "bracketed",
+          "threshold_kind": "objective_dynamic_authenticity",
+          "upper_p": "0.26904296875"
+        }
+      ]
+    },
+    "6B": {
+      "note": "Bars equal-weight master means; dots show individual archived master values.",
+      "selector": "component=sentinels;sensitivity_name=T;T=5000;five listed (p,eta) pairs;five masters each",
+      "source": "results/summaries/frontiers_m2_regime_replication_v1_cells.csv",
+      "values": [
+        {
+          "eta": 0,
+          "master_values": [
+            99.71358862840776,
+            99.72968717195046,
+            99.65358515636123,
+            99.76540214870305,
+            99.46623346484103
+          ],
+          "mean": 99.6656993140527,
+          "p": 0.4
+        },
+        {
+          "eta": 0,
+          "master_values": [
+            98.20770930518046,
+            98.45258224001027,
+            98.82290934645115,
+            97.57777522672482,
+            98.02720254870727
+          ],
+          "mean": 98.2176357334148,
+          "p": 0.55
+        },
+        {
+          "eta": 0,
+          "master_values": [
+            94.95036685369011,
+            95.84052137243627,
+            94.2079553384508,
+            96.0950220205525,
+            95.99232061435086
+          ],
+          "mean": 95.41723723989612,
+          "p": 0.75
+        },
+        {
+          "eta": 0.2,
+          "master_values": [
+            97.43055240857389,
+            96.68778990004573,
+            97.81094844725119,
+            96.67624351520267,
+            96.98330866214077
+          ],
+          "mean": 97.11776858664284,
+          "p": 0.55
+        },
+        {
+          "eta": 0.2,
+          "master_values": [
+            90.14856483484783,
+            90.40648144928544,
+            90.8693164608084,
+            88.68107062237988,
+            89.72150445018661
+          ],
+          "mean": 89.96538756350164,
+          "p": 0.9
+        }
+      ]
+    },
+    "7": {
+      "note": "Each square is a tested parameter cell. Inconclusive cells retained; no smoothing or inferred boundary.",
+      "selector": "all 357 frozen publication_category rows; p21\u00d7eta17; no reclassification",
+      "source": [
+        "projects/frontiers_article/publication_v1/data/e03_grid_map.csv",
+        "projects/frontiers_article/publication_v1/data/e03_grid_summary.csv"
+      ],
+      "values": {
+        "category_order": [
+          "learned_suboptimal_masking",
+          "learner_matches_objective",
+          "inconclusive"
+        ],
+        "counts": {
+          "inconclusive": 7,
+          "learned_suboptimal_masking": 243,
+          "learner_matches_objective": 107
+        },
+        "eta": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6000000000000001,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8
+        ],
+        "matrix": [
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "p": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6000000000000001,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.8500000000000001,
+          0.9,
+          0.9500000000000001,
+          1.0
+        ]
+      }
+    },
+    "8": {
+      "note": "375 archived classifications; integer count display, not an uncertainty estimate. Gamma also changes the objective.",
+      "selector": "component=sentinels; five explicit disagreement sentinels; 15 separate settings; five masters each",
+      "source": "results/summaries/frontiers_m2_regime_replication_v1_cells.csv",
+      "values": {
+        "details": [
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "baseline",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": null
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "baseline",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": null
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "baseline",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": null
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "baseline",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": null
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "baseline",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": null
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "T",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 2000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "T",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 2000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "T",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 2000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "T",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 2000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "T",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 2000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "T",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 5000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "T",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 5000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "T",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 5000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "T",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 5000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "T",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 5000
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "n",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 320
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "n",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 320
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "n",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 320
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "n",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 320
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "n",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 320
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "final_window_fraction",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "final_window_fraction",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "final_window_fraction",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "final_window_fraction",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "final_window_fraction",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "final_window_fraction",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.4
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "final_window_fraction",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.4
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "final_window_fraction",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 0.4
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "final_window_fraction",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.4
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "final_window_fraction",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 0.4
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "lambda",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "lambda",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "lambda",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "lambda",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "lambda",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "lambda",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 2.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "lambda",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 2.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "lambda",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 2.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "lambda",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 2.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "lambda",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 2.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "q0",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.75
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "q0",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.75
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "q0",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 0.75
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "q0",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.75
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "q0",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 0.75
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "alpha",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.03
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "alpha",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.03
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 3,
+              "learner_matches_objective": 2
+            },
+            "eta": 0,
+            "factor": "alpha",
+            "p": 0.75,
+            "suboptimal_master_count": 3,
+            "value": 0.03
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "alpha",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.03
+          },
+          {
+            "classifications": {
+              "learner_matches_objective": 5
+            },
+            "eta": 0.2,
+            "factor": "alpha",
+            "p": 0.9,
+            "suboptimal_master_count": 0,
+            "value": 0.03
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "alpha",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.3
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "alpha",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.3
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "alpha",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 0.3
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "alpha",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.3
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "alpha",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 0.3
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "tau",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "tau",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "tau",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "tau",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "tau",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 0.1
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "tau",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.6
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "tau",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.6
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 4,
+              "learner_matches_objective": 1
+            },
+            "eta": 0,
+            "factor": "tau",
+            "p": 0.75,
+            "suboptimal_master_count": 4,
+            "value": 0.6
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "tau",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.6
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 2,
+              "learner_matches_objective": 3
+            },
+            "eta": 0.2,
+            "factor": "tau",
+            "p": 0.9,
+            "suboptimal_master_count": 2,
+            "value": 0.6
+          },
+          {
+            "classifications": {
+              "learner_matches_objective": 5
+            },
+            "eta": 0,
+            "factor": "gamma",
+            "p": 0.4,
+            "suboptimal_master_count": 0,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learner_matches_objective": 5
+            },
+            "eta": 0,
+            "factor": "gamma",
+            "p": 0.55,
+            "suboptimal_master_count": 0,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "gamma",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learner_matches_objective": 5
+            },
+            "eta": 0.2,
+            "factor": "gamma",
+            "p": 0.55,
+            "suboptimal_master_count": 0,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "gamma",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 0.5
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "gamma",
+            "p": 0.4,
+            "suboptimal_master_count": 5,
+            "value": 0.99
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "gamma",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.99
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0,
+            "factor": "gamma",
+            "p": 0.75,
+            "suboptimal_master_count": 5,
+            "value": 0.99
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "gamma",
+            "p": 0.55,
+            "suboptimal_master_count": 5,
+            "value": 0.99
+          },
+          {
+            "classifications": {
+              "learned_suboptimal_masking": 5
+            },
+            "eta": 0.2,
+            "factor": "gamma",
+            "p": 0.9,
+            "suboptimal_master_count": 5,
+            "value": 0.99
+          }
+        ],
+        "matrix": [
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            3,
+            5,
+            0
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            4,
+            5,
+            2
+          ],
+          [
+            0,
+            0,
+            5,
+            0,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        ],
+        "sentinels": [
+          [
+            0.4,
+            0
+          ],
+          [
+            0.55,
+            0
+          ],
+          [
+            0.75,
+            0
+          ],
+          [
+            0.55,
+            0.2
+          ],
+          [
+            0.9,
+            0.2
+          ]
+        ],
+        "settings": [
+          [
+            "baseline",
+            null
+          ],
+          [
+            "T",
+            2000
+          ],
+          [
+            "T",
+            5000
+          ],
+          [
+            "n",
+            320
+          ],
+          [
+            "final_window_fraction",
+            0.1
+          ],
+          [
+            "final_window_fraction",
+            0.4
+          ],
+          [
+            "lambda",
+            0.5
+          ],
+          [
+            "lambda",
+            2.5
+          ],
+          [
+            "q0",
+            0.75
+          ],
+          [
+            "alpha",
+            0.03
+          ],
+          [
+            "alpha",
+            0.3
+          ],
+          [
+            "tau",
+            0.1
+          ],
+          [
+            "tau",
+            0.6
+          ],
+          [
+            "gamma",
+            0.5
+          ],
+          [
+            "gamma",
+            0.99
+          ]
+        ],
+        "totals": [
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          18,
+          25,
+          25,
+          21,
+          10,
+          25
+        ]
+      }
+    },
+    "9A-9C,9E-9F": {
+      "note": "Equal-weight descriptive master means; connected lines guide the eye and do not imply intermediate K values. First success is zero-based and capped at T=2000 for non-events.",
+      "selector": "canonical_identity_mode=fixed;effective_good_count=1;K in {1,2,4,8,16};flat_2k,hierarchical,global_mask;five masters per cell",
+      "source": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv",
+      "values": {
+        "flat_2k": {
+          "1": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.10384752000000086,
+            "mean_final_window_mask_rate": 0.26364600000000005,
+            "mean_settled_any_good_auth_argmax": 0.9888,
+            "mean_time_to_first_accepted_good_auth_capped": 3.996
+          },
+          "2": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.17200218999999878,
+            "mean_final_window_mask_rate": 0.42034399999999994,
+            "mean_settled_any_good_auth_argmax": 0.9672000000000001,
+            "mean_time_to_first_accepted_good_auth_capped": 9.4496
+          },
+          "4": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.2503641999999945,
+            "mean_final_window_mask_rate": 0.591174,
+            "mean_settled_any_good_auth_argmax": 0.93,
+            "mean_time_to_first_accepted_good_auth_capped": 19.4356
+          },
+          "8": {
+            "mean_ever_accepted_good_auth": 0.9975999999999999,
+            "mean_expected_static_regret": 0.3254362599999906,
+            "mean_final_window_mask_rate": 0.742882,
+            "mean_settled_any_good_auth_argmax": 0.8527999999999999,
+            "mean_time_to_first_accepted_good_auth_capped": 41.562400000000004
+          },
+          "16": {
+            "mean_ever_accepted_good_auth": 0.9972,
+            "mean_expected_static_regret": 0.3915861499999874,
+            "mean_final_window_mask_rate": 0.841906,
+            "mean_settled_any_good_auth_argmax": 0.7548,
+            "mean_time_to_first_accepted_good_auth_capped": 76.1108
+          }
+        },
+        "global_mask": {
+          "1": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.10570568000000087,
+            "mean_final_window_mask_rate": 0.2723,
+            "mean_settled_any_good_auth_argmax": 0.9816,
+            "mean_time_to_first_accepted_good_auth_capped": 4.6364
+          },
+          "2": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.11247535000000083,
+            "mean_final_window_mask_rate": 0.263432,
+            "mean_settled_any_good_auth_argmax": 0.9892,
+            "mean_time_to_first_accepted_good_auth_capped": 5.1952
+          },
+          "4": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.1290278500000006,
+            "mean_final_window_mask_rate": 0.259975,
+            "mean_settled_any_good_auth_argmax": 0.9924000000000002,
+            "mean_time_to_first_accepted_good_auth_capped": 7.9236
+          },
+          "8": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.16224783999999928,
+            "mean_final_window_mask_rate": 0.261331,
+            "mean_settled_any_good_auth_argmax": 0.9888,
+            "mean_time_to_first_accepted_good_auth_capped": 11.3844
+          },
+          "16": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.22712819999999678,
+            "mean_final_window_mask_rate": 0.257741,
+            "mean_settled_any_good_auth_argmax": 0.9904,
+            "mean_time_to_first_accepted_good_auth_capped": 20.8
+          }
+        },
+        "hierarchical": {
+          "1": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.10384792000000087,
+            "mean_final_window_mask_rate": 0.26448900000000003,
+            "mean_settled_any_good_auth_argmax": 0.9904,
+            "mean_time_to_first_accepted_good_auth_capped": 4.2684
+          },
+          "2": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.19238339999999765,
+            "mean_final_window_mask_rate": 0.5032629999999999,
+            "mean_settled_any_good_auth_argmax": 0.8128,
+            "mean_time_to_first_accepted_good_auth_capped": 9.5468
+          },
+          "4": {
+            "mean_ever_accepted_good_auth": 1.0,
+            "mean_expected_static_regret": 0.26905708999999356,
+            "mean_final_window_mask_rate": 0.689792,
+            "mean_settled_any_good_auth_argmax": 0.7051999999999999,
+            "mean_time_to_first_accepted_good_auth_capped": 19.8704
+          },
+          "8": {
+            "mean_ever_accepted_good_auth": 0.9992000000000001,
+            "mean_expected_static_regret": 0.3288833399999905,
+            "mean_final_window_mask_rate": 0.8066169999999999,
+            "mean_settled_any_good_auth_argmax": 0.606,
+            "mean_time_to_first_accepted_good_auth_capped": 42.4752
+          },
+          "16": {
+            "mean_ever_accepted_good_auth": 0.9964000000000001,
+            "mean_expected_static_regret": 0.38447264999998787,
+            "mean_final_window_mask_rate": 0.872658,
+            "mean_settled_any_good_auth_argmax": 0.5199999999999999,
+            "mean_time_to_first_accepted_good_auth_capped": 75.4224
+          }
+        }
+      }
+    },
+    "9D": {
+      "note": "",
+      "selector": "canonical_identity_mode=fixed;K=16;effective_good_count in {1,4};flat_2k,hierarchical;five masters per cell",
+      "source": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv",
+      "values": [
+        {
+          "K": 16,
+          "architecture": "flat_2k",
+          "good_count": 1,
+          "modal_percent": 75.48
+        },
+        {
+          "K": 16,
+          "architecture": "hierarchical",
+          "good_count": 1,
+          "modal_percent": 51.99999999999999
+        },
+        {
+          "K": 16,
+          "architecture": "flat_2k",
+          "good_count": 4,
+          "modal_percent": 99.36
+        },
+        {
+          "K": 16,
+          "architecture": "hierarchical",
+          "good_count": 4,
+          "modal_percent": 95.8
+        }
+      ]
+    }
+  },
+  "selected_figures": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "text_sha256": "c4f7c1322a4c6638180dd76647324e5c911a3bb74eb2afa7a073d0894a7523cf",
+  "text_source": "projects/frontiers_article/integrated_article_20261004/figure_text.py"
+}

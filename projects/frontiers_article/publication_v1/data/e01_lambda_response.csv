@@ -1,0 +1,4 @@
+lambda,p,master_count,mean_final_window_mask_rate,master_min_final_window_mask_rate,master_max_final_window_mask_rate,mean_q_auth_final,learned_q_mask_final,analytic_subjective_authentic_mean,analytic_subjective_boundary_p,analytic_objective_authentic_mean,analytic_objective_boundary_p,subjective_favours_authenticity,objective_favours_authenticity
+0.5,0.65,5,0.588935,0.58439,0.599165,0.629788924192589,0.7499999999999998,0.795,0.6304347826086957,0.55,0.7166666666666667,True,False
+2.5,0.65,5,0.991925,0.9908899999999999,0.9927,-0.7616483965595999,0.7499999999999998,-0.185,0.8333333333333334,0.55,0.7166666666666667,False,False
+2.5_minus_0.5,0.65,5,0.40299000000000007,0.39536587087194863,0.4106141291280515,,,,,0.55,0.7166666666666667,,False

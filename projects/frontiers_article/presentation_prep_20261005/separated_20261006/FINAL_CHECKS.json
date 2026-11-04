@@ -1,0 +1,49 @@
+{
+  "slides": 16,
+  "planned_seconds": 900,
+  "spoken_words": 1545,
+  "methods_slides": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "results_slides": [
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "M4_status_slide": 14,
+  "charts_preserved": 5,
+  "m2_map_cells_preserved": 357,
+  "prior_files_preserved": 12,
+  "source_hashes_valid": 9,
+  "pixel_identical_to_reviewed_v2": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "changed_visuals_requiring_review": [
+    4
+  ],
+  "pptx_sha256": "a3d98783a63efc6761bb229271780cf07e471550cfbcc794f4be0cab8c1710c0",
+  "pptx_bytes": 2247411,
+  "all_slides_visually_reviewed": true,
+  "final_changed_slide_4_reviewed": true,
+  "delivered_pptx": "output/pptx/masking_methods_then_results.pptx"
+}

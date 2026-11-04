@@ -1,0 +1,19 @@
+{
+  "created_date": "2026-10-06",
+  "child_illustration": {
+    "path": "assets/child_apart_from_peers.png",
+    "origin": "Built-in image_gen tool",
+    "prompt": "Use case: illustration-story. Asset type: small illustration for an academic PowerPoint opening slide. A young school-age child stands slightly apart from a small group of four children who are quietly interacting with one another. Show all five children full length, with a clearly visible gap between the solitary child on the left and the group on the right. The solitary child's posture is quiet and observant; facial expressions are neutral and the reason for the separation is ambiguous. Do not depict bullying, distress, ridicule, or visible rejection. Refined understated editorial illustration, softly textured gouache, natural proportions, muted teal, slate, warm ochre, cream and dusty coral clothing. Minimal details. Transparent background with only subtle grounding shadows. Landscape composition about 3:2, tightly framed around the people with generous separation between the child and group. This sits on a warm off-white (#F6F3ED) slide background. No text, no arrows, no masks, no icons, no border.",
+    "role": "Conceptual illustration; not an empirical photograph or evidence of a mechanism",
+    "transparent_background": true
+  },
+  "dash_still": {
+    "path": "assets/dash_school_race.jpg",
+    "film": "The Incredibles (2004), Pixar / Walt Disney Pictures",
+    "page": "https://cinefilms-planet.fr/fleche-parr-personnage-dans-les-indestructibles/",
+    "image_url": "https://cinefilms-planet.fr/wp-content/uploads/2010/04/fleche-parr-personnage-les-indestructibles-10-1.jpg",
+    "quote_source": "https://clip.cafe/the-incredibles-2004/do-we-have-to-have-cheerleaders-at-the-track-meet/",
+    "official_context": "https://www.pixar.com/the-incredibles",
+    "role": "Actual film still, illustrating explicit encouragement to restrain performance"
+  }
+}

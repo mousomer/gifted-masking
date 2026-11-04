@@ -1,0 +1,611 @@
+{
+  "slide_count": 8,
+  "duration_seconds": 660,
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Feedback changes behaviour under unchanged opportunities",
+      "seconds": 90,
+      "text": [
+        "Feedback changes behaviour",
+        "under unchanged opportunities",
+        "M0 / E01: fixed acceptance probabilities and environmental payoffs",
+        "Five masters; p=.75/.85 pooled, λ=1. Dots show estimates; lines show 95% intervals. pp = percentage points.",
+        "01",
+        "Initial rejection vs acceptance",
+        "After rejection: intervention − baseline",
+        "Authentic sampling after the first interaction",
+        "Final masking: interval includes zero",
+        "5% forced authenticity: final masking",
+        "Authentic feedback: final masking",
+        "Change in the stated outcome (percentage points)",
+        "History affects sampling. Extra information changes later masking."
+      ],
+      "notes": "M0 lets us separate learning from changes in the opportunity itself. On the left, initial rejection reduces subsequent authentic sampling by about two point six percentage points, compared with initial acceptance. But the final-window masking contrast is close to zero, with an interval that spans zero. This history comparison therefore does not establish a lasting final-window difference. On the right, we change what initially rejected learners can experience or learn. Requiring authenticity on five percent of later interactions reduces final masking by about four point seven points. Providing authentic feedback even on masking trials reduces it by about eleven point eight points. The unchosen reward is not added to the learner’s actual return. The two interventions have different intensities, so this comparison does not rank them as practical treatments. What the model establishes is that experience and access to information can change later allocation while environmental payoffs remain fixed.\nTiming: 90 seconds.\nSources:\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/publication_v1/data/e01_primary_effects.csv\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/publication_v1/data/e01_intervention_effects.csv\nHistory: rejection minus acceptance. Information: intervention minus baseline in the rejected stratum. History sampling uses steps 1–1999; masking uses the last 400 of T=2000 steps. n=500/cell/master.",
+      "charts": [
+        {
+          "part": "ppt/slides/charts/chart1.xml",
+          "series": [
+            {
+              "x": [
+                0.0,
+                0.0
+              ],
+              "y": [
+                -0.55,
+                1.55
+              ]
+            },
+            {
+              "x": [
+                -3.575251604903057,
+                -1.5921568563284951
+              ],
+              "y": [
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "x": [
+                -3.575251604903057,
+                -3.575251604903057
+              ],
+              "y": [
+                0.955,
+                1.045
+              ]
+            },
+            {
+              "x": [
+                -1.5921568563284951,
+                -1.5921568563284951
+              ],
+              "y": [
+                0.955,
+                1.045
+              ]
+            },
+            {
+              "x": [
+                -2.583704230615776
+              ],
+              "y": [
+                1.0
+              ]
+            },
+            {
+              "x": [
+                -1.1604676797786873,
+                1.0918145046832064
+              ],
+              "y": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "x": [
+                -1.1604676797786873,
+                -1.1604676797786873
+              ],
+              "y": [
+                -0.045,
+                0.045
+              ]
+            },
+            {
+              "x": [
+                1.0918145046832064,
+                1.0918145046832064
+              ],
+              "y": [
+                -0.045,
+                0.045
+              ]
+            },
+            {
+              "x": [
+                -0.03432658754774054
+              ],
+              "y": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ppt/slides/charts/chart2.xml",
+          "series": [
+            {
+              "x": [
+                0.0,
+                0.0
+              ],
+              "y": [
+                -0.55,
+                1.55
+              ]
+            },
+            {
+              "x": [
+                -5.995092751470512,
+                -3.3229526881437885
+              ],
+              "y": [
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "x": [
+                -5.995092751470512,
+                -5.995092751470512
+              ],
+              "y": [
+                0.955,
+                1.045
+              ]
+            },
+            {
+              "x": [
+                -3.3229526881437885,
+                -3.3229526881437885
+              ],
+              "y": [
+                0.955,
+                1.045
+              ]
+            },
+            {
+              "x": [
+                -4.65902271980715
+              ],
+              "y": [
+                1.0
+              ]
+            },
+            {
+              "x": [
+                -12.6586970252888,
+                -10.968319910642254
+              ],
+              "y": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "x": [
+                -12.6586970252888,
+                -12.6586970252888
+              ],
+              "y": [
+                -0.045,
+                0.045
+              ]
+            },
+            {
+              "x": [
+                -10.968319910642254,
+                -10.968319910642254
+              ],
+              "y": [
+                -0.045,
+                0.045
+              ]
+            },
+            {
+              "x": [
+                -11.813508467965528
+              ],
+              "y": [
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "tables": 0
+    },
+    {
+      "slide": 2,
+      "title": "More participation can coexist with less full expression",
+      "seconds": 75,
+      "text": [
+        "More participation can coexist",
+        "with less full expression",
+        "M1 / E02: graded choices minus binary choices after initial rejection",
+        "p=.75/.85 pooled, five masters, n=500/cell/master, T=2000. Bars are 95% intervals. Independent action values.",
+        "02",
+        "Any disclosure",
+        "After the first interaction",
+        "Full authenticity",
+        "Final window",
+        "Change versus binary choice (percentage points)",
+        "Full expression remains objectively best in these tested settings."
+      ],
+      "notes": "The graded model offers intermediate disclosure levels, each with an independent learned value. Here we compare those options with binary choice after initial rejection. Any disclosure increases by twenty-five and a half percentage points over subsequent interactions. Full authenticity, however, falls by nearly thirty-three points in the final window. These are different outcomes measured over different windows. More participation can therefore coexist with less full expression. In these tested cells, the expected payoff still increases linearly with disclosure, so full expression remains the objectively best endpoint. The result does not show that an intermediate level becomes objectively optimal. It also does not model a ladder on which success at one level automatically teaches the learner about the next. An empirical study would need to measure both the degree of expression and whether learning transfers between levels.\nTiming: 75 seconds.\nSources:\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/publication_v1/data/e02_primary_effects.csv\nAny disclosure is d>0 over steps 1–1999. Full authenticity is d=1 during the final 400 steps. Effects +25.504040052777677 pp and −32.86922325725828 pp.",
+      "charts": [
+        {
+          "part": "ppt/slides/charts/chart3.xml",
+          "series": [
+            {
+              "x": [
+                0.0,
+                0.0
+              ],
+              "y": [
+                -0.55,
+                1.55
+              ]
+            },
+            {
+              "x": [
+                25.300351098704088,
+                25.707729006851267
+              ],
+              "y": [
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "x": [
+                25.300351098704088,
+                25.300351098704088
+              ],
+              "y": [
+                0.955,
+                1.045
+              ]
+            },
+            {
+              "x": [
+                25.707729006851267,
+                25.707729006851267
+              ],
+              "y": [
+                0.955,
+                1.045
+              ]
+            },
+            {
+              "x": [
+                25.504040052777675
+              ],
+              "y": [
+                1.0
+              ]
+            },
+            {
+              "x": [
+                -34.20366913177394,
+                -31.534777382742618
+              ],
+              "y": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "x": [
+                -34.20366913177394,
+                -34.20366913177394
+              ],
+              "y": [
+                -0.045,
+                0.045
+              ]
+            },
+            {
+              "x": [
+                -31.534777382742618,
+                -31.534777382742618
+              ],
+              "y": [
+                -0.045,
+                0.045
+              ]
+            },
+            {
+              "x": [
+                -32.86922325725828
+              ],
+              "y": [
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "tables": 0
+    },
+    {
+      "slide": 3,
+      "title": "Learned choices can disagree with the dynamic optimum",
+      "seconds": 120,
+      "text": [
+        "Learned choices can disagree",
+        "with the dynamic optimum",
+        "M2 / E03: neutral-state action choice across 357 parameter settings",
+        "Baseline: 160 learners/cell/master, T=1000, five masters. Map categories use adequate Neutral visits. No smoothing.",
+        "03",
+        "Recovery probability η",
+        "0.8",
+        "0.6",
+        "0.4",
+        "0.2",
+        "0.0",
+        "0.00",
+        "0.25",
+        "0.50",
+        "0.75",
+        "1.00",
+        "Acceptance probability p",
+        "243 / 357",
+        "Learned masking,",
+        "optimal authenticity",
+        "107 agreement",
+        "7 inconclusive",
+        "Objective authenticity threshold",
+        "Static",
+        "M2: η=0",
+        "M2: η=.8",
+        ".717",
+        ".384",
+        ".269"
+      ],
+      "notes": "For M2, the benchmark includes future social consequences. The map compares learned neutral-state choices with the optimal dynamic policy. Each square is one setting of acceptance probability and recovery from stigma. The rust region contains 243 of the 357 settings. In those cells, adequate neutral-state observations favour masking while the benchmark favours authenticity. The blue region shows agreement, and gray cells are inconclusive. These are counts of parameter settings, not percentages of children. The threshold table explains why the benchmark matters. In the static model, authenticity becomes worthwhile above about point seven one seven. With persistent social states, the reference threshold falls to about point three eight four, and to point two six nine with greater recovery. Persistent acceptance creates future value, and recovery reduces the cost of stigma. The finite learner still has to discover those consequences through experience. The benchmark already knows the environment. At five selected disagreement settings, the difference persists through five thousand interactions, with documented sensitivity exceptions. We therefore have evidence of disagreement over the tested horizons, rather than proof of permanent entrenchment.\nTiming: 120 seconds.\nSources:\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/publication_v1/data/e03_grid_map.csv\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/publication_v1/data/e03_objective_thresholds.csv\n/Users/omer/workspace/personal/repos/gifted-masking/src/gifted_masking/analysis/m2_optimal.py\n243 learned-suboptimal-mask, 107 agreement, 7 inconclusive. All 243 disagreement cells agree across every master. Dynamic thresholds are numerical bracket midpoints, not confidence intervals. Oracle uses untransformed reward and an infinite discounted horizon, gamma=.9.",
+      "charts": [],
+      "tables": 2
+    },
+    {
+      "slide": 4,
+      "title": "Finding a receptive group does not ensure sustained expression",
+      "seconds": 105,
+      "text": [
+        "Finding a receptive group does not",
+        "ensure sustained expression",
+        "M3 / E04: the best available reward stays fixed as K increases",
+        "Flat K=16−1: +57.83 pp final masking [95% CI 57.43, 58.22]. One good group, fixed identity.",
+        "Five masters; n=500/cell/master, T=2000. Curves show descriptive means at discrete K.",
+        "04",
+        "K = 16, flat model",
+        "84.19%",
+        "of final-window actions",
+        "were masking",
+        "99.72%",
+        "of learners experienced",
+        "acceptance in the good group",
+        "The effect depends on how choices are represented."
+      ],
+      "notes": "The best available reward stays fixed as we add groups, but learned allocation changes. In the flat representation, each group has separate masking and authentic actions. With sixteen groups, final masking reaches eighty-four percent. Yet almost every learner has already experienced acceptance in the receptive group at least once. The two percentages have different denominators: one measures late actions, and the other counts learners with a success anywhere in the full run. Successful encounter does not ensure sustained use, and one success does not supply complete knowledge. The curves show why representation matters. Choosing a group and then a behaviour gives a similar increase in masking. Pooling masking into one shared action keeps masking near twenty-six percent. That change affects both information sharing and the initial allocation of choices, so it does not isolate one pure psychological mechanism. The supported conclusion is conditional: the effect of more contexts depends strongly on how the learner represents those choices. It cannot be generalized into a claim that more contexts always cause masking.\nTiming: 105 seconds.\nSources:\n/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/frontiers_m3_search_architectures_v1_curves.csv\n/Users/omer/workspace/personal/repos/gifted-masking/results/summaries/frontiers_m3_search_architectures_v1_effects.csv\nAt K=16 flat final masking=.841906, full-run accepted-good-context encounter=.9972. Shared-mask architecture also changes initial mask probability from 1/2 to 1/(K+1).",
+      "charts": [
+        {
+          "part": "ppt/slides/charts/chart4.xml",
+          "series": [
+            {
+              "x": [],
+              "y": [
+                0.26364600000000005,
+                0.42034400000000005,
+                0.591174,
+                0.742882,
+                0.8419059999999999
+              ]
+            },
+            {
+              "x": [],
+              "y": [
+                0.26448900000000003,
+                0.503263,
+                0.689792,
+                0.806617,
+                0.8726579999999999
+              ]
+            },
+            {
+              "x": [],
+              "y": [
+                0.2723,
+                0.263432,
+                0.259975,
+                0.261331,
+                0.257741
+              ]
+            }
+          ]
+        }
+      ],
+      "tables": 0
+    },
+    {
+      "slide": 5,
+      "title": "The learned boundary occurs before objective indifference",
+      "seconds": 90,
+      "text": [
+        "The learned boundary occurs",
+        "before objective indifference",
+        "M3 / E05: comparison cost reduces accepted authenticity in the receptive group",
+        "Flat K=4, λ=1, five masters, n=500/cell/master, T=2000. Modal classification is distinct from total masking.",
+        "05",
+        "LEARNED",
+        "0.313",
+        "95% CI [.308, .317]",
+        "OBJECTIVE",
+        "0.471",
+        "Expected payoffs are equal",
+        "Authenticity retains an objective advantage at the learned crossing."
+      ],
+      "notes": "The comparison-cost experiment changes the reward for accepted authenticity in the receptive group. The equations place objective indifference at about point four seven one. The flat four-group population crosses its behavioural boundary earlier, near point three one three, with the displayed confidence interval. At that learned crossing, authenticity in the receptive group still has an objective advantage. The vertical axis needs care: it counts learners whose most frequent individual final-window action is authenticity in the good group. Crossing fifty percent therefore has a specific modal meaning. It is not the onset of majority masking. Four separate masking actions can together occupy most interactions even when one authentic action is individually the most frequent. These boundaries answer different questions: when the opportunity loses its expected-payoff advantage, and when the learned population crosses the defined behavioural threshold. The difference is a result for this architecture and finite learning horizon.\nTiming: 90 seconds.\nSources:\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/publication_v1/data/e05_crossings.csv\nLearned crossing=.31285211267605634; 95% CI [.307836, .316918] rounded. Objective=.47058823529411764. Curves connect archived pooled values; no refit or bootstrap.",
+      "charts": [
+        {
+          "part": "ppt/slides/charts/chart5.xml",
+          "series": [
+            {
+              "x": [
+                0.0,
+                0.3,
+                0.325,
+                0.35,
+                0.375,
+                0.4,
+                0.425,
+                0.45,
+                0.47058823529411764,
+                0.475,
+                0.5,
+                0.525,
+                0.55,
+                0.575,
+                0.6,
+                0.625,
+                0.65,
+                0.8
+              ],
+              "y": [
+                0.9400000000000001,
+                0.5292,
+                0.47240000000000004,
+                0.40359999999999996,
+                0.344,
+                0.2884,
+                0.22759999999999997,
+                0.1712,
+                0.1416,
+                0.1328,
+                0.1008,
+                0.07239999999999999,
+                0.0508,
+                0.027200000000000002,
+                0.0128,
+                0.0068000000000000005,
+                0.002,
+                0.0
+              ]
+            },
+            {
+              "x": [
+                0.0,
+                0.8
+              ],
+              "y": [
+                0.5,
+                0.5
+              ]
+            },
+            {
+              "x": [
+                0.31285211267605634,
+                0.31285211267605634
+              ],
+              "y": [
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "x": [
+                0.47058823529411764,
+                0.47058823529411764
+              ],
+              "y": [
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "tables": 0
+    },
+    {
+      "slide": 6,
+      "title": "Could behaviour change future social receptivity?",
+      "seconds": 45,
+      "text": [
+        "Could behaviour change",
+        "future social receptivity?",
+        "M4: an implemented extension with formal results deferred",
+        "Direction-of-change rules are model assumptions. Hysteresis is not established.",
+        "06",
+        "Expression or",
+        "concealment",
+        "Social",
+        "response",
+        "Future",
+        "receptivity",
+        "Shapes the next response",
+        "After this event",
+        "Future receptivity",
+        "Accepted authenticity",
+        "Increases",
+        "Rejection or masking",
+        "Decreases",
+        "Environment: changing pₜ",
+        "Learner: two action values"
+      ],
+      "notes": "A further possibility is that behaviour changes future social opportunities. M4 implements that feedback. Accepted authenticity raises later receptivity, while rejection and masking lower it at specified rates. These directions are assumptions that define the model. Current receptivity determines the present outcome before it updates. The environment therefore evolves, while the learner still keeps only two action values and does not condition them on receptivity. Such a feedback process could make histories matter. Formal E06 results remain deferred, however, and hysteresis has not been established. This is a candidate mechanism for further testing.\nTiming: 45 seconds.\nSources:\n/Users/omer/workspace/personal/repos/gifted-masking/src/gifted_masking/models/m4.py\n/Users/omer/workspace/personal/repos/gifted-masking/src/gifted_masking/experiments/e06.py\nReceptivity is bounded in [.05,.95]. It evolves separately for each learner. Current p determines reward; Q then updates and next p follows. Learner stores two action-only values.",
+      "charts": [],
+      "tables": 1
+    },
+    {
+      "slide": 7,
+      "title": "Similar concealment can arise through different processes",
+      "seconds": 75,
+      "text": [
+        "Similar concealment can arise",
+        "through different processes",
+        "Discussion: observed behaviour leaves several mechanisms possible",
+        "These are findings in specified computational models. Mechanisms in children require empirical evidence.",
+        "07",
+        "Process",
+        "What it helps explain",
+        "Experience and feedback (M0)",
+        "Underuse of a fixed opportunity",
+        "Separate disclosure values (M1)",
+        "Participation without full expression",
+        "Persistent consequences (M2)",
+        "Why immediate reward can mislead",
+        "Context-specific learning (M3)",
+        "Encounter without sustained use",
+        "Concealment alone cannot identify the process that produced it."
+      ],
+      "notes": "The results give several explanations for similar visible concealment. Under fixed opportunities, experience and access to feedback affect what the learner discovers. With partial disclosure, separate action values can support participation without full expression. Persistent social consequences change the value of an action itself, which requires a dynamic benchmark. With multiple contexts, successful encounter and sustained use depend on how choices represent and share experience. These findings should not be collapsed into one universal cause. They also show why a single measure of masking is insufficient: participation, intensity, contextual encounter and repeated use answer different questions. The results establish behaviour in specified computational models. Identifying the corresponding processes in children requires observations or experiments that distinguish these explanations.\nTiming: 75 seconds.\nSources:\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/integrated_article_20261004/ARTICLE.md\nE01–E05 each use five master replications. Broader parameter and human generalization are not established. M4 remains a separate candidate extension.",
+      "charts": [],
+      "tables": 1
+    },
+    {
+      "slide": 8,
+      "title": "What should we measure next?",
+      "seconds": 60,
+      "text": [
+        "What should we measure next?",
+        "Discussion: mechanisms suggest different empirical measurements",
+        "Model-derived questions for empirical study. The simulations are not calibrated to chronological age.",
+        "08",
+        "What does the child expect?",
+        "Expectations before an interaction",
+        "Which experiences change it?",
+        "Feedback and subsequent expectations",
+        "Does learning transfer?",
+        "Expression across levels and contexts",
+        "What consequences persist?",
+        "Social standing, recovery and repeated use",
+        "Specific mechanisms give us predictions we can test."
+      ],
+      "notes": "These models suggest what an empirical study would need to measure. First, ask what the child expects before an interaction, and compare that expectation with the feedback they actually receive. Second, examine which experiences change those expectations. Third, test whether learning transfers: does success with a small disclosure, or in one setting, change expression elsewhere? Finally, track what persists. Social standing and recovery opportunities may affect later choices beyond the immediate response. Repeated observations should record the degree of expression and the context, rather than treating all participation as equivalent. The contribution is a set of mechanisms and distinguishing predictions that we can now test.\nTiming: 60 seconds.\nSources:\n/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/integrated_article_20261004/ARTICLE.md\nEmpirical implications are hypotheses, not established intervention effects in children.",
+      "charts": [],
+      "tables": 0
+    }
+  ],
+  "pptx": {
+    "path": "output/pptx/masking_results_discussion.pptx",
+    "sha256": "f4b354678f6f19c5fe0683fd0569d41bc7e6731aaf5dfa0f6af67c0321d04944"
+  },
+  "pdf": {
+    "path": "output/pdf/masking_results_discussion.pdf",
+    "sha256": "7802015f10664dde7b7cdd6170f68a4bf836dc20929a463dfd823ed1f0138b74"
+  }
+}

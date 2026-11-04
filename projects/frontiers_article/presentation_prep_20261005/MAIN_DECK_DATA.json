@@ -1,0 +1,131 @@
+{
+  "E04": {
+    "flat_2k": [
+      0.26364600000000005,
+      0.42034400000000005,
+      0.591174,
+      0.742882,
+      0.8419059999999999
+    ],
+    "hierarchical": [
+      0.26448900000000003,
+      0.503263,
+      0.689792,
+      0.806617,
+      0.8726579999999999
+    ],
+    "global_mask": [
+      0.2723,
+      0.263432,
+      0.259975,
+      0.261331,
+      0.257741
+    ],
+    "flat_encounter_K16": 0.9972
+  },
+  "sources": {
+    "E04_CURVES": {
+      "path": "results/summaries/frontiers_m3_search_architectures_v1_curves.csv",
+      "sha256": "33f245b36ba6d78489cd9b88948d07d4d3aaf58ef7f8395b4394431df2dd39b4"
+    },
+    "E05_RESPONSE": {
+      "path": "projects/frontiers_article/publication_v1/data/e05_response_vs_bf.csv",
+      "sha256": "0d47aeae4dc4c15e08176c7ff44466740712f3a47000a68d2b7a1231d48a7e10"
+    },
+    "E05_CROSSINGS": {
+      "path": "projects/frontiers_article/publication_v1/data/e05_crossings.csv",
+      "sha256": "866697afb0cdd66f6e6d008cc6b06e52786d1e27f7ba3f71601a56512349076b"
+    }
+  },
+  "E05": [
+    {
+      "x": 0.0,
+      "y": 0.9400000000000001
+    },
+    {
+      "x": 0.3,
+      "y": 0.5292
+    },
+    {
+      "x": 0.325,
+      "y": 0.47240000000000004
+    },
+    {
+      "x": 0.35,
+      "y": 0.40359999999999996
+    },
+    {
+      "x": 0.375,
+      "y": 0.344
+    },
+    {
+      "x": 0.4,
+      "y": 0.2884
+    },
+    {
+      "x": 0.425,
+      "y": 0.22759999999999997
+    },
+    {
+      "x": 0.45,
+      "y": 0.1712
+    },
+    {
+      "x": 0.47058823529411764,
+      "y": 0.1416
+    },
+    {
+      "x": 0.475,
+      "y": 0.1328
+    },
+    {
+      "x": 0.5,
+      "y": 0.1008
+    },
+    {
+      "x": 0.525,
+      "y": 0.07239999999999999
+    },
+    {
+      "x": 0.55,
+      "y": 0.0508
+    },
+    {
+      "x": 0.575,
+      "y": 0.027200000000000002
+    },
+    {
+      "x": 0.6,
+      "y": 0.0128
+    },
+    {
+      "x": 0.625,
+      "y": 0.0068000000000000005
+    },
+    {
+      "x": 0.65,
+      "y": 0.002
+    },
+    {
+      "x": 0.8,
+      "y": 0.0
+    }
+  ],
+  "E05_crossing": {
+    "architecture": "flat_2k",
+    "architecture_role": "primary",
+    "transition_status": "valid",
+    "transition_bf": "0.31285211267605634",
+    "ci_low": "0.3078358208955224",
+    "ci_high": "0.3169178027050235",
+    "ci_method": "bootstrap_master_seed",
+    "bootstrap_replicates": "10000",
+    "bootstrap_valid_crossings": "10000",
+    "analytic_threshold_bf": "0.47058823529411764",
+    "learned_minus_analytic_threshold": "-0.1577361226180613",
+    "dense_bf_min": "0.3",
+    "dense_bf_max": "0.65",
+    "decision_eligible": "True",
+    "censoring_note": ""
+  }
+}

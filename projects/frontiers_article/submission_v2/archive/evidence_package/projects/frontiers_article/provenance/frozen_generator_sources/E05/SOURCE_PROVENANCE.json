@@ -1,0 +1,29 @@
+{
+  "experiment_id": "E05",
+  "run_id": "frontiers_m3_bflpe_crossover_v1",
+  "original_recorded_commit": "e0e9a738986dd440180a228b024b0807336cd957",
+  "original_worktree_dirty": true,
+  "recovered_object_type": "unreachable_root_tree",
+  "recovered_object_sha1": "53f905a2902496bf129e8125c718d78d48695d29",
+  "equivalent_exact_match_root_trees": [
+    "9b51556818bfedf4e5849399e5cb7228cd3b8179",
+    "d17d93d22fa3cca916df2641667b348ffb122c30"
+  ],
+  "expected_source_fingerprint_sha256": "f229a17da2c710d3c76ea5ca571fbf170a21e7c4c6c9c15cadda0366cfa19c02",
+  "recovered_source_fingerprint_sha256": "f229a17da2c710d3c76ea5ca571fbf170a21e7c4c6c9c15cadda0366cfa19c02",
+  "verification_result": "HISTORICAL_SOURCE_RECOVERED",
+  "fingerprint_algorithm": "SHA-256 over each fixed path in declaration order: UTF-8 repository-relative path bytes, the two literal bytes backslash and zero, raw file bytes, then the same two literal bytes; no Git metadata",
+  "files": [
+    {"path":"src/gifted_masking/experiments/e05.py","bytes":77617,"sha256":"5696a4ac08fd1f4bc15fdd78d9be5ccdf894ce9c35a1214190efcaa456b5011a","git_blob_sha1":"37f2ec503ed01eeb00c599928d12d0d7fda1db63"},
+    {"path":"src/gifted_masking/cli.py","bytes":3286,"sha256":"9b70452de820c0c81bdcfcfc2e1a5b32208b667326a94faf72315b585927a6dd","git_blob_sha1":"c92c097fe71e2becd56e99c862fbd995cd097d16"},
+    {"path":"src/gifted_masking/core.py","bytes":2331,"sha256":"5d1fb660f602246b39663e081bacbd6a40d024e4dfed2ccd963fc0971be623c9","git_blob_sha1":"f25723fed941a4c6cd8338f076a1b2d97d67041f"},
+    {"path":"src/gifted_masking/models/m3.py","bytes":7553,"sha256":"091824551b7c6cc5d7ad1ca04d787c82ac5763345d5f09f4eb735dc2f6f381c1","git_blob_sha1":"d4b38cb0620460d096d7fd6f1b005b00a7c1949a"},
+    {"path":"src/gifted_masking/repro.py","bytes":4132,"sha256":"83510e3aa695c71c4a072643b889ada9efcad833d1a91c921cb7ca985100add4","git_blob_sha1":"b6bcfc9cfe8bf223779c872b9e380b1647abd365"},
+    {"path":"configs/frontiers_article/e05_m3_bflpe_crossover_smoke.json","bytes":705,"sha256":"d449af6a8d15af211a57d667d829eccdecb5401bc903c1eacaa2c173da0f386c","git_blob_sha1":"4363c93d83f5c262687a6a640cdfdac2b93c1545"},
+    {"path":"configs/frontiers_article/e05_m3_bflpe_crossover_standard.json","bytes":806,"sha256":"571d3c93b46a97333839f81b53f8c21cc43a21a5427ec97c61cf38f0cd9d9e1f","git_blob_sha1":"77152ca1f15b785665a4154a179580a856ca4e5e"},
+    {"path":"tests/test_article_e05.py","bytes":11738,"sha256":"297be3d6be916ec2ce632ef4d88ec43600b7e1108014510e62cf1591526e3b1a","git_blob_sha1":"d82f19aa872ebb80c74fa6e9133f840bf51bd6c4"},
+    {"path":"projects/frontiers_article/approvals/E05_SMOKE_APPROVAL.md","bytes":29420,"sha256":"2fd4a7090a836c786a87d7f78acec91451640bdfdcd21e2b66278cdea3dcb2b4","git_blob_sha1":"55f935f4e669df5b390fb5a33b5a7086568d73aa"},
+    {"path":"pyproject.toml","bytes":477,"sha256":"957ef2ba419aa6aa8b44a81b7eab26623767c6ca7f359a787d1bbbe4f627ddc1","git_blob_sha1":"d74e4f0d8632b82d24f64b0eb146dfc1c5207ba9"},
+    {"path":"scripts/verify.sh","bytes":1435,"sha256":"15cc42f9b2c9a4809cb7a64e74ede6be9b580da18f4c007e8cd52ab280412357","git_blob_sha1":"2a9ef5106f1a1abfeada14bf2787efb9aad7441d"}
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "source": "projects/frontiers_article/integrated_article_20261004/ARTICLE.md",
+  "source_sha256": "76d6d94463a94f5ee16c58d272035ba1efbd4f7b6c48135c17121332f7f36f4f",
+  "builder_sha256": "0839f33098fb1699d058457736604e7e4e0ab59c2771ff331539008d7f97677b",
+  "started_utc": "2026-10-04T19:58:27.364658+00:00",
+  "scientific_effect": "Presentation only; no simulation or estimation run",
+  "source_word_count": 11608,
+  "figure_inputs": [
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_01_overview.png",
+      "sha256": "28ab84132ed5b78a8befb9d9e6f3a5dd1038c0ea916e44581a1fc36d16db27f2"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_02_state_kernel.png",
+      "sha256": "594333d30ad7cc62948984e8f9eddf3f9cff50816a30f17ef1b2bc957d26e809"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_03_architectures.png",
+      "sha256": "717c13a67a28f2c06e173d7a99de1be3ed919100a0c23e46786c22cece2f862c"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_04_weighting_history_information.png",
+      "sha256": "5c97f94eb5499da9f6f863c224089004b9c2e9caad83ec3f8235afdb6b9ab0a4"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_05_graded_engagement_intensity.png",
+      "sha256": "b400258384b78b17b2ca59ddea0f7256fdbef5b18febe3b85d6ab2dc0feca683"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_06_dynamic_thresholds_persistence.png",
+      "sha256": "03b42592aaa08d2e95642496357210f3e86d4dbbd0a444f82af39c80ac481618"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_07_dynamic_grid.png",
+      "sha256": "8db2ce550b31a551aa5effd5b390f3b0e7a4b8ada46102ee15df6b70c95acecf"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_08_sensitivity_matrix.png",
+      "sha256": "2fd0cb36bc8e87d3ed0161e11d0ede7474c7bb5597a84b816ba55590420b804e"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_09_context_encounter_sustained_use.png",
+      "sha256": "117bab65488f8a6588a5af30c0d24c02ed9efd39db4e10aa9fedc9d4912ddc7c"
+    },
+    {
+      "path": "projects/frontiers_article/integrated_article_20261004/figures/figure_10_learned_boundary_actual_masking.png",
+      "sha256": "0670c085748552c07a55373b859638f61705d6dc18c262c37b395d83825291e3"
+    }
+  ],
+  "tools": {
+    "python": "/Users/omer/workspace/venvs/venv314/bin/python",
+    "pandoc": "pandoc 3.11",
+    "bundled_soffice": "/Users/omer/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/MacOS/soffice",
+    "renderer": "/Users/omer/.codex/plugins/cache/openai-primary-runtime/documents/26.905.11957/skills/documents/render_docx.py",
+    "python_packages": {
+      "python-docx": "1.2.0",
+      "Pillow": "12.2.0",
+      "pypdf": "6.16.1",
+      "lxml": "6.1.1",
+      "pdf2image": "1.17.0"
+    }
+  },
+  "pandoc_command": [
+    "/opt/homebrew/bin/pandoc",
+    "--from=markdown+tex_math_dollars-implicit_figures",
+    "--to=docx",
+    "--standalone",
+    "--resource-path=/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/integrated_article_20261004",
+    "--output",
+    "/Users/omer/workspace/personal/repos/gifted-masking/output/docx/integrated_article_20261004.docx",
+    "/Users/omer/workspace/personal/repos/gifted-masking/projects/frontiers_article/integrated_article_20261004/ARTICLE.md"
+  ],
+  "pandoc_output": "",
+  "presentation": {
+    "caption_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "figure_sizes": [
+      {
+        "figure": "figure_01_overview",
+        "width_inches": 6.2,
+        "height_inches": 3.8658823529411768
+      },
+      {
+        "figure": "figure_02_state_kernel",
+        "width_inches": 6.2,
+        "height_inches": 4.449411764705883
+      },
+      {
+        "figure": "figure_03_architectures",
+        "width_inches": 6.2,
+        "height_inches": 4.887058823529412
+      },
+      {
+        "figure": "figure_04_weighting_history_information",
+        "width_inches": 6.2,
+        "height_inches": 4.96
+      },
+      {
+        "figure": "figure_05_graded_engagement_intensity",
+        "width_inches": 6.2,
+        "height_inches": 4.887058823529412
+      },
+      {
+        "figure": "figure_06_dynamic_thresholds_persistence",
+        "width_inches": 6.2,
+        "height_inches": 3.1
+      },
+      {
+        "figure": "figure_07_dynamic_grid",
+        "width_inches": 6.2,
+        "height_inches": 4.376470588235295
+      },
+      {
+        "figure": "figure_08_sensitivity_matrix",
+        "width_inches": 6.2,
+        "height_inches": 5.105882352941176
+      },
+      {
+        "figure": "figure_09_context_encounter_sustained_use",
+        "width_inches": 6.2,
+        "height_inches": 4.036458333333333
+      },
+      {
+        "figure": "figure_10_learned_boundary_actual_masking",
+        "width_inches": 6.2,
+        "height_inches": 3.2094117647058824
+      }
+    ],
+    "normalized_overbar_accents": 4
+  },
+  "docx_checks": {
+    "images": 10,
+    "captions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "native_equations": 278,
+    "display_equations": 14,
+    "native_top_bars": 6,
+    "remaining_literal_overbar_accents": 0,
+    "external_hyperlinks": [],
+    "title_style": "Title",
+    "raw_latex_paragraphs": 0
+  },
+  "outputs": {
+    "docx": {
+      "path": "output/docx/integrated_article_20261004.docx",
+      "sha256": "d116272e7da093034ff7e04b8c20f22b41deae17cdfa889f33d653dea0ddf408"
+    },
+    "pdf": {
+      "path": "output/pdf/integrated_article_20261004.pdf",
+      "sha256": "8b885059980c40ec9ca06fb246faa9e537e81c8628daaab57fb22b7410247152"
+    }
+  },
+  "human_visual_acceptance": "PASS: all 32 pages inspected at original resolution. Pages 1-11 by root, 12-21 by production, 22-32 by narrative; repaired final pages 7,13,27,29 reinspected by production and 7,29 by root. Other 28 final PNGs byte-identical to reviewed render. See QA.md.",
+  "render": {
+    "command": [
+      "/Users/omer/workspace/venvs/venv314/bin/python",
+      "-B",
+      "/Users/omer/.codex/plugins/cache/openai-primary-runtime/documents/26.905.11957/skills/documents/render_docx.py",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/docx/integrated_article_20261004.docx",
+      "--output_dir",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z",
+      "--emit_pdf",
+      "--dpi",
+      "150",
+      "--verbose"
+    ],
+    "log": "[render_docx] $ /Users/omer/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/soffice -env:UserInstallation=file:///private/tmp/soffice_profile_duawg4zt --invisible --headless --norestore --convert-to pdf --outdir /private/tmp/soffice_convert_zbp_xbe7 /Users/omer/workspace/personal/repos/gifted-masking/output/docx/integrated_article_20261004.docx\nconvert /Users/omer/workspace/personal/repos/gifted-masking/output/docx/integrated_article_20261004.docx as a Writer document -> /private/tmp/soffice_convert_zbp_xbe7/integrated_article_20261004.pdf using filter : writer_pdf_Export\n\nFontconfig warning: no <cachedir> elements found. Check configuration.\nFontconfig warning: adding <cachedir>/@.__________________________________________________OOO/var/cache/fontconfig</cachedir>\nFontconfig warning: adding <cachedir prefix=\"xdg\">fontconfig</cachedir>\n\nPages rendered to /Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z\n",
+    "directory": "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z",
+    "pages": 32,
+    "page_images": [
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-1.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-2.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-3.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-4.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-5.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-6.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-7.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-8.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-9.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-10.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-11.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-12.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-13.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-14.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-15.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-16.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-17.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-18.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-19.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-20.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-21.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-22.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-23.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-24.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-25.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-26.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-27.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-28.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-29.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-30.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-31.png",
+      "/Users/omer/workspace/personal/repos/gifted-masking/output/qa/integrated_article_20261004/render_20261004T195827364658Z/page-32.png"
+    ],
+    "caption_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1
+    },
+    "pdf_encrypted": false
+  },
+  "finished_utc": "2026-10-04T19:58:39.424037+00:00"
+}

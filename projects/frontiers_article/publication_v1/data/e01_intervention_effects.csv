@@ -1,0 +1,5 @@
+claim_id,condition,condition_label,metric,metric_label,effect_name,estimate,ci_low,ci_high,ci_status
+E01-C2-FORCED-MASK,forced_authentic_0.05,5% forced authentic exploration,mask,final-window mask rate,baseline_minus_intervention_final_mask_rate_after_rejection,0.0465902271980715,0.03322952688143788,0.05995092751470512,student_t_95
+E01-C2-FORCED-REGRET,forced_authentic_0.05,5% forced authentic exploration,regret,normalized objective regret,baseline_minus_intervention_normalized_regret_after_rejection,0.057953521694166274,0.045613861990490334,0.07029318139784221,student_t_95
+E01-C2-CF-MASK,counterfactual_authentic_feedback,counterfactual authentic feedback,mask,final-window mask rate,baseline_minus_intervention_final_mask_rate_after_rejection,0.11813508467965528,0.10968319910642255,0.126586970252888,student_t_95
+E01-C2-CF-REGRET,counterfactual_authentic_feedback,counterfactual authentic feedback,regret,normalized objective regret,baseline_minus_intervention_normalized_regret_after_rejection,0.14131821456252255,0.13236915377111952,0.1502672753539256,student_t_95

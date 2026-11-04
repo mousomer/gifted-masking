@@ -1,0 +1,108 @@
+{
+  "status": "pass",
+  "scope": "15-minute spoken manuscript; existing deck unchanged",
+  "slides": [
+    {
+      "slide": 1,
+      "seconds": 65,
+      "spoken_words": 125
+    },
+    {
+      "slide": 2,
+      "seconds": 45,
+      "spoken_words": 87
+    },
+    {
+      "slide": 3,
+      "seconds": 80,
+      "spoken_words": 153
+    },
+    {
+      "slide": 4,
+      "seconds": 120,
+      "spoken_words": 220
+    },
+    {
+      "slide": 5,
+      "seconds": 90,
+      "spoken_words": 177
+    },
+    {
+      "slide": 6,
+      "seconds": 135,
+      "spoken_words": 259
+    },
+    {
+      "slide": 7,
+      "seconds": 120,
+      "spoken_words": 226
+    },
+    {
+      "slide": 8,
+      "seconds": 90,
+      "spoken_words": 171
+    },
+    {
+      "slide": 9,
+      "seconds": 75,
+      "spoken_words": 144
+    },
+    {
+      "slide": 10,
+      "seconds": 40,
+      "spoken_words": 77
+    },
+    {
+      "slide": 11,
+      "seconds": 40,
+      "spoken_words": 74
+    }
+  ],
+  "spoken_words": 1713,
+  "allocated_seconds": 900,
+  "local_links": 5,
+  "source_hash_checks": 79,
+  "protected_artifacts_unchanged": {
+    "output/pptx/masking_mechanisms_first_set.pptx": "94b32f9a4cb58e2259ee7f82750bd86bbd53a46910294a48c7fec4d278206900",
+    "output/pdf/masking_mechanisms_first_set.pdf": "4335ff3085495d1517c4d8af048460df1136b60465e4bd6c1fbd19fad4f0c869",
+    "projects/frontiers_article/presentation_prep_20261005/SLIDE_SPEC.json": "1282ed4923124210b649853281bd81f44ae24e1748fc3022f20383328fa8cb14",
+    "projects/frontiers_article/presentation_prep_20261005/PPT_STORYBOARD.md": "9e329e95bbdd045c366e2bb3ff6f8c7bd4f974db4b4ebf9927fb07a2fdf9d50d",
+    "projects/frontiers_article/presentation_prep_20261005/SIMULATION_GUIDE.md": "e2d638f65e3e7901655043e2aae1a0b426f788c2120b617b6b8b6d7c14adeda1"
+  },
+  "integrated_verifier": "PASS: workspace Python read-only integrated verification preserved 33 experiment outputs, 18 evidence references, 19 earlier revision files.",
+  "governance": "./gov check passed; LOCAL_FIX/development context resolved.",
+  "full_verifier": "./scripts/verify.sh omitted under RDS 0.17 preserved-evidence boundary; no simulations or model changes.",
+  "human_remaining": "Rehearse actual duration. Original PPTX notes use the shorter edition.",
+  "existing_file_diffstat": [
+    {
+      "path": "projects/frontiers_article/RDS.md",
+      "insertions": 13,
+      "deletions": 1
+    },
+    {
+      "path": "projects/frontiers_article/BACKLOG.md",
+      "insertions": 4,
+      "deletions": 1
+    },
+    {
+      "path": "projects/frontiers_article/CURRENT_STATE.md",
+      "insertions": 7,
+      "deletions": 0
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "insertions": 7,
+      "deletions": 0
+    },
+    {
+      "path": "projects/frontiers_article/presentation_prep_20261005/README.md",
+      "insertions": 7,
+      "deletions": 0
+    },
+    {
+      "path": "projects/frontiers_article/presentation_prep_20261005/SOURCE_INDEX.json",
+      "insertions": 13,
+      "deletions": 4
+    }
+  ]
+}
